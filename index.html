@@ -3,221 +3,263 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPI STEPS - Chalo aur UPI me paise pao</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>UPI STEPS - Walk • Earn • Grow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); color: #fff; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-    .container { max-width: 600px; background: rgba(255,255,255,0.05); padding: 40px 30px; border-radius: 24px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-    .logo { font-size: 48px; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
-    .logo span { color: #00FF88; text-shadow: 0 0 15px rgba(0,255,136,0.5); }
-    h1 { font-size: 32px; margin-bottom: 15px; font-weight: 800; }
-    p { font-size: 16px; opacity: 0.9; margin-bottom: 25px; line-height: 1.6; }
-    .live-alert { background: rgba(0, 255, 136, 0.15); border: 1px solid #00FF88; color: #00FF88; padding: 8px 15px; border-radius: 50px; display: inline-block; font-size: 13px; font-weight: 600; margin-bottom: 25px; animation: pulse 2s infinite; }
-    .calc-box { background: rgba(255,255,255,0.08); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.05); }
-    .calc-box label { display: block; font-size: 14px; margin-bottom: 10px; opacity: 0.8; }
-    .slider { -webkit-appearance: none; width: 100%; height: 8px; border-radius: 5px; background: #ddd; outline: none; margin-bottom: 15px; }
-    .slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #00FF88; cursor: pointer; box-shadow: 0 0 10px rgba(0,255,136,0.5); }
-    .calc-result { font-size: 20px; font-weight: 600; color: #00FF88; }
-    .features { display: flex; gap: 12px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap; }
-    .feature { background: rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 50px; font-size: 14px; font-weight: 600; border: 1px solid rgba(255,255,255,0.05); }
-    .email-box { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
-    .email-box input { width: 100%; padding: 18px; border: none; border-radius: 12px; font-size: 16px; background: rgba(255,255,255,0.9); color: #000; text-align: center; font-weight: 600; }
-    .email-box input:focus { outline: 3px solid #00FF88; }
-    .email-box button { width: 100%; padding: 18px; border: none; border-radius: 12px; background: #00FF88; color: #000; font-weight: 800; font-size: 18px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,255,136,0.3); }
-    .email-box button:hover { background: #00e67a; transform: translateY(-2px); box-shadow: 0 12px 25px rgba(0,255,136,0.5); }
-    .social { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .social a { color: #fff; text-decoration: none; margin: 0 12px; opacity: 0.6; font-size: 14px; transition: opacity 0.2s; }
-    .social a:hover { opacity: 1; color: #00FF88; }
-    .footer { margin-top: 25px; font-size: 12px; opacity: 0.5; }
-    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+    :root {
+      --bg-gradient: linear-gradient(135deg, #050b14 0%, #0a192f 100%);
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #ffffff;
+      --text-sub: rgba(255, 255, 255, 0.7);
+      --primary: #00FF88;
+      --primary-glow: rgba(0, 255, 136, 0.3);
+      --accent: #FFD700;
+    }
+
+    [data-theme="light"] {
+      --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      --card-bg: #ffffff;
+      --card-border: rgba(0, 0, 0, 0.08);
+      --text-main: #0a192f;
+      --text-sub: #4a5568;
+      --primary: #00b35f;
+      --primary-glow: rgba(0, 179, 95, 0.2);
+      --accent: #d4af37;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: background 0.3s, color 0.3s; }
+    
+    body { background: var(--bg-gradient); color: var(--text-main); min-height: 100vh; padding: 0 20px; overflow-x: hidden; }
+    
+    /* Global Container */
+    .wrapper { max-width: 1100px; margin: 0 auto; padding: 40px 0; }
+
+    /* Header & Toggle */
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
+    .logo { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+    .logo span { color: var(--primary); }
+    
+    .theme-btn { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); padding: 10px 18px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+    /* Hero Section split for Desktop */
+    .hero-container { display: grid; grid-template-columns: 1.2f 1fr; gap: 40px; align-items: center; margin-bottom: 80px; }
+    
+    @media (max-width: 768px) {
+      .hero-container { grid-template-columns: 1fr; text-align: center; }
+      .hero-left { display: flex; flex-direction: column; align-items: center; }
+    }
+
+    .live-badge { background: var(--primary-glow); border: 1px solid var(--primary); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 20px; }
+    
+    .hero-left h1 { font-size: 48px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    @media (max-width: 480px) { .hero-left h1 { font-size: 34px; } }
+    
+    .hero-left p { font-size: 16px; color: var(--text-sub); margin-bottom: 30px; line-height: 1.6; }
+
+    /* Premium Input Box */
+    .optin-box { background: var(--card-bg); border: 1px solid var(--card-border); padding: 30px; border-radius: 24px; width: 100%; max-width: 480px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .optin-box input { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid var(--card-border); margin-bottom: 15px; font-size: 16px; outline: none; background: rgba(255,255,255,0.9); color: #000; font-weight: 600; text-align: center; }
+    .optin-box button { width: 100%; padding: 16px; border: none; border-radius: 12px; background: var(--primary); color: #000; font-weight: 800; font-size: 16px; cursor: pointer; box-shadow: 0 8px 20px var(--primary-glow); transform: translateY(0); transition: transform 0.2s; }
+    .optin-box button:hover { transform: translateY(-2px); }
+    .optin-box small { display: block; margin-top: 12px; font-size: 12px; color: var(--text-sub); }
+
+    /* Calculator Section */
+    .section-title { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 35px; }
+    .section-title span { color: var(--primary); }
+    
+    .calc-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 40px 20px; border-radius: 24px; text-align: center; max-width: 700px; margin: 0 auto 80px auto; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+    .slider { -webkit-appearance: none; width: 100%; height: 10px; border-radius: 5px; background: var(--card-border); outline: none; margin: 25px 0; }
+    .slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--primary); cursor: pointer; box-shadow: 0 0 10px var(--primary); }
+    .calc-output { font-size: 24px; font-weight: 700; color: var(--primary); }
+    .calc-output span { color: var(--accent); }
+
+    /* Features Grid */
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 80px; }
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .card h3 { font-size: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .card p { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
+    .card ul { list-style: none; margin-top: 10px; }
+    .card ul li { font-size: 13.5px; margin-bottom: 8px; color: var(--text-sub); display: flex; gap: 6px; }
+
+    /* Community Channels Section */
+    .channels-box { background: var(--card-bg); border: 2px solid var(--primary); padding: 45px 20px; border-radius: 28px; text-align: center; margin-bottom: 80px; }
+    .channels-box h2 { font-size: 30px; margin-bottom: 15px; }
+    .channels-box p { color: var(--text-sub); margin-bottom: 30px; font-size: 15px; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .social-btn { padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px; color: #fff; }
+    .tg-btn { background: #229ED9; }
+    .yt-btn { background: #FF0000; }
+    .tw-btn { background: #1DA1F2; }
+
+    /* FAQ Section */
+    .faq-container { max-width: 750px; margin: 0 auto 80px auto; }
+    .faq-item { background: var(--card-bg); border: 1px solid var(--card-border); padding: 20px; border-radius: 15px; margin-bottom: 15px; text-align: left; }
+    .faq-item strong { display: block; font-size: 16px; margin-bottom: 6px; }
+    .faq-item p { font-size: 14px; color: var(--text-sub); line-height: 1.5; }
+
+    /* Footer */
+    footer { text-align: center; border-top: 1px solid var(--card-border); padding-top: 30px; font-size: 13px; color: var(--text-sub); }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="live-alert">🔥 <span id="user-count">4,842</span> Log Early Access le chuke hain!</div>
-    <div class="logo">UPI<span>STEPS</span></div>
-    <h1>Chalo aur UPI me paise pao 💰</h1>
-    <p>Har 1,000 steps chalne pe seedhe bank account me cash reward. <br><strong>Health bhi, Paisa bhi!</strong> Launching October 2026.</p>
-    <div class="calc-box">
-      <label for="step-slider">Check karo aap kitna kama sakte ho roz:</label>
+
+  <div class="wrapper">
+    <!-- Top Header -->
+    <header>
+      <div class="logo">UPI<span>STEPS</span></div>
+      <button class="theme-btn" id="theme-toggle">☀️ Light Mode</button>
+    </header>
+
+    <!-- Hero / Early Access Section -->
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="live-badge">🔥 <span id="counter">4,845</span> Log Early Access le chuke hain!</div>
+        <h1>Walk • Earn • Grow</h1>
+        <p>Namaste! Hum laaye hain <strong>UPI Steps App</strong> jahan aapke har kadam ka milega guaranteed reward. Har 1,000 steps chalne pe milenge coins jise aap seedhe apne bank account me withdraw kar sakte hain. Health bhi, Paisa bhi!</p>
+        
+        <div class="optin-box">
+          <form onsubmit="alert('Badhai ho! Aapka ₹50 Welcome Bonus lock ho gaya hai.'); return false;">
+            <input type="email" placeholder="Apna sahi wala Email address daalo" required>
+            <button type="submit">Early Access + ₹50 Bonus Claim Karo</button>
+          </form>
+          <small>⚠️ Dhyaan dein: Yeh sirf official pre-launch offer hai. Sirf pehle 10,000 users ke liye valid hai.</small>
+        </div>
+      </div>
+      
+      <!-- Right Side Info Box for Look balance -->
+      <div class="card" style="border-left: 5px solid var(--primary); padding: 35px;">
+        <h3 style="font-size: 22px; color: var(--primary);">🚀 App Launching Soon</h3>
+        <p style="margin: 15px 0 25px 0; font-size: 15px;">UPI STEPS abhi development stage par hai aur iska official launch <strong>October 2026</strong> me hone ja raha hai. Niche diye gaye features pre-tested aur ready hain!</p>
+        <ul class="content-list">
+          <li style="margin-bottom: 12px;">✔️ Get ₹50 Welcome Bonus after 3 days active use!</li>
+          <li style="margin-bottom: 12px;">✔️ 100% Free, Secure and Verified by Earnly India.</li>
+          <li style="margin-bottom: 12px;">✔️ Premium motion sensor tech zero battery drain ke sath.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Live Calculator Section -->
+    <h2 class="section-title">Kamai <span>Live Calculate</span> Karein</h2>
+    <div class="calc-card">
+      <p style="font-size: 15px; color: var(--text-sub);">Apne daily chalne ke steps badhakar check karein kitna cash milega:</p>
       <input type="range" min="1000" max="20000" step="1000" value="5000" class="slider" id="step-slider">
-      <div class="calc-result">🚶 <span id="step-val">5,000</span> Steps = <span id="money-val">₹50</span>/Daily!</div>
+      <div class="calc-output">
+        🚶 <span id="step-val" style="color: var(--text-main);">5,000</span> Steps = 🪙 <span id="coin-val">500</span> Coins = <span>₹5.00</span> Daily Cash!
+      </div>
+      <small style="display:block; margin-top:15px; opacity:0.6; font-size: 12px;">*Math rules: 1,250 Coins = ₹12.50. Jitna jyada chalenge, utne badhenge rewards!</small>
     </div>
-    <div class="features">
-      <div class="feature">👟 Automatic Counter</div>
-      <div class="feature">⚡ Instant UPI Transfer</div>
-      <div class="feature">🛡️ 100% Free & Secure</div>
+
+    <!-- App Dashboard Features Grid -->
+    <h2 class="section-title">App Inside <span>Features</span></h2>
+    <div class="grid-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <h3>🏃 Home & Dashboard</h3>
+        <p>Ekdum clean aur dark modern ring dashboard jo aapke daily steps, complete tracking history, total calories burned, aur productive minutes ko live monitor karta hai.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <h3>🎁 Earning Hub</h3>
+        <ul>
+          <li>🎯 <strong>Lucky Spin:</strong> Rozana unlimited spin wheel chalao aur extra coins jeeto.</li>
+          <li>🃏 <strong>Scratch Card:</strong> Cards scratch karke instant bonus rewards unlock karo.</li>
+          <li>📺 <strong>Watch Ads:</strong> Short optional video ads dekh kar instant high value coins payout.</li>
+        </ul>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <h3>⚡ Instant Withdrawals</h3>
+        <ul>
+          <li>📲 <strong>UPI Instant:</strong> Ek click me kamai direct aapki upi id par.</li>
+          <li>💳 <strong>Bank Transfer:</strong> Safe aur legal directly bank me deposit option.</li>
+          <li>🎁 <strong>Amazon Gift Cards:</strong> E-commerce lovers ke liye digital gift cards coupons.</li>
+        </ul>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <h3>💎 Earnly Plus & Social</h3>
+        <ul>
+          <li>🏆 <strong>Leaderboard:</strong> Weekly/Monthly rank check karo aur top positions par bada cash prize jeeto.</li>
+          <li>👥 <strong>Refer & Earn:</strong> Dosto ko invite karo aur 100 Coins flat bonus pao.</li>
+        </ul>
+      </div>
     </div>
-    <form class="email-box" onsubmit="alert('Badhai ho! ₹50 Bonus lock ho gaya hai. Launch pe link mil jaega.'); return false;">
-      <input type="email" placeholder="Apna sahi wala Email daalo" required>
-      <button type="submit">Early Access + ₹50 Bonus Claim Karo</button>
-    </form>
-    <small style="opacity: 0.7; font-size: 13px;">⚠️ Sirf pehle 10,000 users ko ₹50 signing bonus milega.</small>
-    <div class="social">
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-      <a href="#">Contact Support</a>
+
+    <!-- Community Official Channels Grid -->
+    <div class="channels-box">
+      <h2>Join Our Official Channels 🚀</h2>
+      <p>Yaha aapko milega: App ki latest updates, Earning tips & walking challenges, aur complete community support.</p>
+      <div class="btn-group">
+        <!-- REPLACE '#' WITH YOUR ACTUAL SOCIAL LINKS HERE -->
+        <a href="#" target="_blank" class="social-btn tg-btn">✈️ Join Telegram</a>
+        <a href="#" target="_blank" class="social-btn yt-btn">📺 Subscribe YouTube</a>
+        <a href="#" target="_blank" class="social-btn tw-btn">🐦 Follow Twitter / X</a>
+      </div>
     </div>
-    <div class="footer">
-      © 2026 UPI STEPS | A Premium Product of Earnly India
+
+    <!-- FAQ Section -->
+    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <strong>Q: Steps automatically track kaise hote hain?</strong>
+        <p>A: Aapke smartphone ke premium internal hardware motion sensors ka accurate use kiya jata hai. App background me band hone par bhi safe track karta hai.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Q: Kya app ko chalane ke charges lagte hain?</strong>
+        <p>A: Bilkul nahi! UPI STEPS 100% free app hai jise pure India ko fit aur financially strong banane ke liye launch kiya ja raha hai.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Q: Mera data secure rahega ya nahi?</strong>
+        <p>A: Data safety humari top priority hai. Earnly India ke rules ke mutabik aapka registration aur tracking details securely encrypted format me rahenge.</p>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 UPI STEPS | Designed professionally for Earnly India Official. All rights reserved.</p>
+    </footer>
   </div>
+
   <script>
+    // Theme Toggle Functionality
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        toggleBtn.innerHTML = '☀️ Light Mode';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        toggleBtn.innerHTML = '🌙 Dark Mode';
+      }
+    });
+
+    // Dynamic Coins/Cash Math Calculator
     const slider = document.getElementById('step-slider');
     const stepVal = document.getElementById('step-val');
-    const moneyVal = document.getElementById('money-val');
+    const coinVal = document.getElementById('coin-val');
+    const calcOutput = document.querySelector('.calc-output span:last-of-type');
+
     slider.oninput = function() {
-      let steps = this.value;
-      stepVal.innerHTML = Number(steps).toLocaleString('en-IN');
-      moneyVal.innerHTML = '₹' + (steps / 100);
+      let steps = Number(this.value);
+      stepVal.innerHTML = steps.toLocaleString('en-IN');
+      
+      // Math: 1,000 steps gives 100 coins. So coins = steps / 10
+      let coins = steps / 10;
+      coinVal.innerHTML = coins.toLocaleString('en-IN');
+      
+      // Math: 1250 coins = ₹12.50 (Basically 100 coins = ₹1)
+      let money = coins / 100;
+      calcOutput.innerHTML = '₹' + money.toFixed(2);
     }
-    let count = 4842;
+
+    // Dynamic Users counter Hype
+    let count = 4845;
     setInterval(() => {
       count += Math.floor(Math.random() * 3) + 1;
-      document.getElementById('user-count').innerHTML = count.toLocaleString('en-IN');
-    }, 3000);
+      document.getElementById('counter').innerHTML = count.toLocaleString('en-IN');
+    }, 4000);
   </script>
 </body>
 </html>
-<div class="features">
-  <div class="feature">👟 Automatic Counter</div>
-  <div class="feature">⚡ Instant UPI Transfer</div>
-  <div class="feature">🛡️ 100% Free & Secure</div>
-</div>
-<div class="features">
-  <div class="feature">👟 Automatic Step Tracking</div>
-  <div class="feature">🏆 Daily Challenges</div>
-  <div class="feature">🎁 Scratch Rewards</div>
-  <div class="feature">💰 Secure Reward Wallet</div>
-  <div class="feature">💎 Earnly Plus Membership</div>
-  <div class="feature">⚡ Fast UPI Withdraw</div>
-  <div class="feature">🔒 Privacy First</div>
-  <div class="feature">🇮🇳 Made in India</div>
-</div>
-<div class="calc-box">
-<h2>🚀 How UPI STEPS Works</h2>
-<div class="calc-box">
-<h2>🚀 How UPI STEPS Works</h2>
-
-<p>
-1️⃣ Walk Daily<br>
-2️⃣ Complete Step Goals<br>
-3️⃣ Earn Earnly Coins<br>
-4️⃣ Redeem Rewards Securely
-</p>
-</div>
-  <div class="calc-box">
-<h2>💎 Earnly Plus</h2>
-
-<p>
-
-✔ Exclusive Challenges<br>
-
-✔ Extra Scratch Cards<br>
-
-✔ Premium Badge<br>
-
-✔ Faster Rewards<br>
-
-✔ Fitness Insights
-
-</p>
-
-  </div>
-  <div class="calc-box">
-<h2>❓Frequently Asked Questions</h2>
-
-<p>
-
-How are steps counted?<br>
-
-Using your phone sensors.
-
-<br><br>
-
-When is the app launching?
-
-<br>
-
-October 2026.
-
-<br><br>
-
-Is my data secure?
-
-<br>
-
-Yes. Your privacy comes first.
-
-</p>
-
-  </div>
-<a href="#">Instagram</a>
-<a href="https://instagram.com/USERNAME" target="_blank">Instagram</a>
-<div class="calc-box">
-<h2 style="margin-bottom:20px;">📱 App Preview</h2>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;">
-
-<div style="background:rgba(255,255,255,0.08);padding:20px;border-radius:16px;">
-<h3>🏠 Home</h3>
-<p>Daily Steps<br>Coins<br>Challenges</p>
-</div>
-
-<div style="background:rgba(255,255,255,0.08);padding:20px;border-radius:16px;">
-<h3>💰 Wallet</h3>
-<p>Coins Balance<br>UPI Withdraw<br>History</p>
-</div>
-
-<div style="background:rgba(255,255,255,0.08);padding:20px;border-radius:16px;">
-<h3>🎁 Rewards</h3>
-<p>Scratch Cards<br>Daily Bonus<br>Tasks</p>
-</div>
-
-<div style="background:rgba(255,255,255,0.08);padding:20px;border-radius:16px;">
-<h3>💎 Plus</h3>
-<p>Premium Badge<br>Extra Rewards<br>Challenges</p>
-</div>
-
-</div>
-
-</div>
-<div class="calc-box">
-
-<h2>🛡 Why Choose UPI STEPS?</h2>
-
-<p>
-
-✅ Premium Experience<br><br>
-
-✅ Clean & Modern Design<br><br>
-
-✅ Fitness Focused Rewards<br><br>
-
-✅ Secure Wallet System<br><br>
-
-✅ Built by Earnly India
-
-</p>
-
-</div>
-<div class="calc-box">
-
-<h2>🚀 Coming Soon</h2>
-
-<p>
-
-UPI STEPS is currently under development.
-
-Official Launch:
-
-<b>October 2026</b>
-
-<br><br>
-
-Join Early Access today and be among the first users.
-
-</p>
-
-</div>
