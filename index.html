@@ -348,16 +348,18 @@ cursor: pointer;
 box-shadow: 0 4px 15px rgba(0,212,255,0.3);
 }
 
-/* --- Fixed Vector Marquee Layout (Zero Overlap) --- */
+/* --- Fixed Vector Marquee Layout (Zero Overlap Guaranteed) --- */
 .gallery-marquee-section {
 width: 100%;
 overflow: hidden;
 background: rgba(5, 8, 22, 0.6);
-padding: 40px 0;
+padding: 30px 0;
 border-top: 1px solid rgba(255,255,255,0.05);
 border-bottom: 1px solid rgba(255,255,255,0.05);
 position: relative;
-z-index: 5;
+z-index: 10;
+clear: both;
+display: block;
 }
 
 .marquee-wrapper {
@@ -370,14 +372,14 @@ animation: infiniteScroll 25s linear infinite;
 display: flex;
 justify-content: flex-start;
 width: 50%;
-gap: 40px; /* Increased padding gap */
-padding: 0 20px;
+gap: 30px; 
+padding: 0 15px;
 }
 
 .vector-slide-card {
-width: 250px;
-min-width: 250px; /* Fixed structural size layout constraint */
-background: rgba(11, 15, 36, 0.9);
+width: 260px;
+min-width: 260px; 
+background: #0b0f24;
 border: 1px solid rgba(0, 212, 255, 0.2);
 border-radius: 16px;
 padding: 15px 20px;
@@ -407,13 +409,11 @@ font-size: 15px;
 font-weight: 600;
 margin-bottom: 2px;
 color: #ffffff;
-white-space: nowrap;
 }
 
 .vector-card-info p {
 font-size: 12px;
 color: #8c92b2;
-white-space: nowrap;
 }
 
 @keyframes infiniteScroll {
@@ -425,10 +425,16 @@ white-space: nowrap;
 section {
 position: relative;
 z-index: 3;
+display: block;
+clear: both;
 }
 
 .features, .rewards, .membership, .trust-guidelines, .faq, .contact, .social {
 padding: 100px 8%;
+}
+
+.trust-guidelines {
+padding-top: 120px; /* Secure extra structural distance to avoid marquee collision */
 }
 
 .section-title{
@@ -749,6 +755,7 @@ flex-direction: column;
 text-align: center;
 padding-top: 140px;
 gap: 40px;
+min-height: auto; /* Prevent pushing down layouts */
 }
 .left h1 {
 font-size: 40px;
@@ -758,6 +765,9 @@ justify-content: center;
 }
 .section-title h2 {
 font-size: 32px;
+}
+.trust-guidelines {
+padding-top: 60px; /* Reset padding dynamically */
 }
 }
 
@@ -968,341 +978,4 @@ Earnly <span>India</span>
 <div class="reward-grid">
 <div class="reward-card">
 <div class="reward-icon">👣</div>
-<h3>Daily Step Goals</h3>
-<p>Complete your daily walking goals and maintain consistency.</p>
-</div>
-<div class="reward-card">
-<div class="reward-icon">🎯</div>
-<h3>Weekly Challenges</h3>
-<p>Take part in special weekly missions released inside the app.</p>
-</div>
-<div class="reward-card">
-<div class="reward-icon">🎁</div>
-<h3>Bonus Rewards</h3>
-<p>Participate in promotional campaigns and unlock bonus opportunities.</p>
-</div>
-<div class="reward-card">
-<div class="reward-icon">🏅</div>
-<h3>Achievement Badges</h3>
-<p>Earn badges by reaching important fitness milestones.</p>
-</div>
-</div>
-</section>
-
-<!-- ================= MEMBERSHIP SECTION ================= -->
-<section id="membership" class="membership">
-<div class="section-title">
-<span>PREMIUM MEMBERSHIP</span>
-<h2>Unlock More Benefits</h2>
-<p>Enjoy upcoming premium features, exclusive events and priority access.</p>
-</div>
-<div class="membership-grid">
-<div class="membership-card">
-<h3>FREE</h3>
-<h1>₹0</h1>
-<ul>
-<li>✔ Daily Step Tracking</li>
-<li>✔ Basic Rewards</li>
-<li>✔ Referral Access</li>
-<li>✔ Community Support</li>
-</ul>
-<button class="primary" onclick="comingSoon()">Current Plan</button>
-</div>
-<div class="membership-card premium">
-<div class="premium-badge">MOST POPULAR</div>
-<h3>GOLD</h3>
-<h1>Coming Soon</h1>
-<ul>
-<li>✔ Exclusive Campaigns</li>
-<li>✔ Priority Support</li>
-<li>✔ Premium Rewards</li>
-<li>✔ VIP Features</li>
-</ul>
-<button class="download-btn" onclick="comingSoon()">Coming Soon</button>
-</div>
-</div>
-</section>
-
-<!-- ================= FAQ SECTION ================= -->
-<section id="faq" class="faq">
-<div class="section-title">
-<span>FAQ</span>
-<h2>Frequently Asked Questions</h2>
-<p>Find answers to the most common questions about UPI Steps.</p>
-</div>
-<div class="faq-container">
-<div class="faq-item">
-<h3>How does UPI Steps work?</h3>
-<p>Track your daily activity, complete eligible goals and participate in available reward programs inside the app.</p>
-</div>
-<div class="faq-item">
-<h3>How can I invite friends?</h3>
-<p>After launch, you'll receive a referral code inside the app. Rewards are provided according to the referral program rules.</p>
-</div>
-<div class="faq-item">
-<h3>When will Premium Membership be available?</h3>
-<p>Premium Membership is under development and will be announced in a future update.</p>
-</div>
-</div>
-</section>
-
-<!-- ================= CONTACT SECTION ================= -->
-<section id="contact" class="contact">
-<div class="section-title">
-<span>CONTACT</span>
-<h2>Get In Touch</h2>
-<p>We would love to hear your feedback.</p>
-</div>
-<form class="contact-form" onsubmit="event.preventDefault(); comingSoon();">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Email Address" required>
-<textarea rows="6" placeholder="Write your message"></textarea>
-<button class="primary" type="submit">Send Message</button>
-</form>
-</section>
-
-<!-- ================= SOCIAL SECTION ================= -->
-<section class="social">
-<div class="section-title">
-<span>FOLLOW US</span>
-<h2>Join Earnly India</h2>
-</div>
-<div class="social-icons">
-<a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-<a href="https://t.me/EarnlyIndiaOfficial" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-<a href="https://x.com/EarnlyIndia_" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-<a href="https://youtube.com/@earnlyindiaofficial" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-</div>
-</section>
-
-<!-- ================= FOOTER SECTION ================= -->
-<footer class="footer">
-<div class="footer-container">
-<div class="footer-logo">
-<h2>Earnly India</h2>
-<p>Building the future of fitness rewards with UPI Steps.</p>
-</div>
-<div class="footer-links">
-<h3>Quick Links</h3>
-<a href="#home">Home</a>
-<a href="#features">Features</a>
-<a href="#rewards">Rewards</a>
-<a href="#membership">Membership</a>
-<a href="#faq">FAQ</a>
-</div>
-
-<!-- Updated Clickable Support Links with Active Modal Popups -->
-<div class="footer-links">
-<h3>Support</h3>
-<a onclick="openSupportModal('privacy')">Privacy Policy</a>
-<a onclick="openSupportModal('terms')">Terms & Conditions</a>
-<a onclick="openSupportModal('help')">Help Center</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
-<div class="copyright">
-© 2026 Earnly India. All Rights Reserved.
-</div>
-</footer>
-
-<!-- ================= POPUP BOX MODAL ================= -->
-<div id="popup" class="popup">
-<div class="popup-box">
-<h2 id="modalTitle">🚀 Coming Soon</h2>
-<div id="modalBody" style="margin-bottom: 20px; line-height: 1.7; color: #d6d6d6; font-size: 14px;">
-  This feature is currently under development and will be available in a future update.
-</div>
-<button onclick="closePopup()">Close</button>
-</div>
-</div>
-
-<script>
-// Generic functional modals trigger definitions
-function comingSoon(){
-document.getElementById("modalTitle").innerText = "🚀 Coming Soon";
-document.getElementById("modalBody").innerHTML = "<p>This feature is currently under development and will be available in a future update.</p>";
-document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-
-window.onclick = function(event) {
-let popup = document.getElementById("popup");
-if (event.target == popup) {
-popup.style.display = "none";
-}
-}
-
-// Support links controller framework block
-function openSupportModal(type) {
-  let title = "";
-  let body = "";
-  
-  if(type === 'privacy') {
-    title = "🔒 Privacy Policy";
-    body = "<p>Your trust is crucial to us. Earnly India does not sell, lease or rent your location coordinates or profile activity statistics data arrays. All tracked logs inside the UPI Steps application ecosystem are safely hosted using advanced system security patterns to monitor progress details safely.</p>";
-  } else if(type === 'terms') {
-    title = "📄 Terms & Conditions";
-    body = "<p>By joining UPI Steps, users pledge to upload authentic fitness activities. Creating simulated accounts, executing background tap emulation macros or executing structural layout spoofing will render account distributions subject to administrative blocks instantly under user guidelines rules.</p>";
-  } else if(type === 'help') {
-    title = "💡 Help Center";
-    body = "<p><b>Q: My steps counter isn't running?</b><br>A: Verify if background notification access permissions are completely enabled inside the application configurations panel.<br><br><b>Q: What are EC coins distributions?</b><br>A: These denote points achieved during active fitness goals which act as system indexes for operational features inside active application panels.</p>";
-  } else if(type === 'download') {
-    title = "📥 Download Application";
-    body = "<p>The premium application dashboard build variant releases are under safe processing tests. Official download anchors will drop on our Telegram and WhatsApp channels soon. Stay subbed to get download packets directly!</p>";
-  }
-  
-  document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalBody").innerHTML = body;
-  document.getElementById("popup").style.display = "flex";
-}
-
-// Dual Language Context Dictionary Map
-const languages = {
-  en: {
-    logo: "Earnly <span>India</span>",
-    home: "Home", features: "Features", rewards: "Rewards", membership: "Membership", faq: "FAQ", contact: "Contact",
-    tag: "🔥 India's Premium Walk & Earn Platform",
-    hTitle: "Walk Smart.<br>Earn Better.<br>Live Healthier.",
-    hDesc: "UPI Steps is the flagship rewards platform by Earnly India. Complete eligible activities, stay active and enjoy a premium fitness experience.",
-    gStart: "Get Started", wDemo: "Watch Demo",
-    tSpan: "100% SECURE NETWORK",
-    tTitle: "Our App Guidelines & Integrity Policy",
-    tDesc: "Earnly India operates under transparent, reliable standards ensuring your daily achievements are calculated fairly and safely.",
-    tcT1: "Anti-Cheat Verification", tcD1: "Our steps algorithm tracks system-level motions accurately. False hardware manipulation or automated system simulation tools are automatically restricted to protect fairness.",
-    tcT2: "Verified Payout Rules", tcD2: "All eligible points/EC system distribution rewards are credited based on transparent eligibility criteria inside our user panel framework dashboard transparently.",
-    tcT3: "Encrypted User Privacy", tcD3: "Your background activity records and critical dashboard data files are safely locked under standard network data vault procedures safely without safety leaks.",
-    pSteps: "Steps today", pCal: "Calories", pDist: "Distance", pBtn: "<i class='fa-solid fa-wallet' style='margin-right:8px;'></i> Redeem Rewards"
-  },
-  hi: {
-    logo: "अर्नली <span>इंडिया</span>",
-    home: "होम", features: "विशेषताएं", rewards: "पुरस्कार", membership: "सदस्यता", faq: "सवाल-जवाब", contact: "संपर्क करें",
-    tag: "🔥 भारत का प्रीमियम वॉक एंड अर्न प्लेटफॉर्म",
-    hTitle: "स्मार्ट चलें।<br>बेहतर कमाएं।<br>स्वस्थ रहें।",
-    hDesc: "UPI Steps अर्नली इंडिया का प्रमुख रिवॉर्ड प्लेटफॉर्म है। दैनिक गतिविधियों को पूरा करें, सक्रिय रहें और एक प्रीमियम फिटनेस यात्रा का आनंद लें।",
-    gStart: "शुरू करें", wDemo: "डेमो देखें",
-    tSpan: "100% सुरक्षित नेटवर्क",
-    tTitle: "हमारे ऐप दिशानिर्देश और ईमानदारी नीति",
-    tDesc: "अर्नली इंडिया पारदर्शी और विश्वसनीय मानकों के तहत काम करता है जिससे यह सुनिश्चित होता है कि आपके दैनिक लक्ष्य सही और सुरक्षित रूप से गिने जाएं।",
-    tcT1: "एंटी-चीट वेरिफिकेशन", tcD1: "हमारा स्टेप्स एल्गोरिदम मोशन सेंसर डेटा को सटीकता से ट्रैक करता है। निष्पक्षता बनाए रखने के लिए किसी भी नकली हार्डवेयर या ऑटोमेटेड सिम्युलेटर टूल का उपयोग ब्लॉक कर दिया जाता है।",
-    tcT2: "सत्यापित भुगतान नियम", tcD2: "सभी योग्य अंक और EC कॉइन्स रिवॉर्ड सिस्टम यूजर डैशबोर्ड के अंदर दिए गए स्पष्ट पात्रता मानदंडों के आधार पर पारदर्शी तरीके से दिए जाते हैं।",
-    tcT3: "सुरक्षित डेटा प्राइवेसी", tcD3: "आपकी बैकग्राउंड एक्टिविटी और क्रिटिकल प्रोफाइल डेटा फ़ाइलों को बिना किसी लीक के पूरी तरह से नेटवर्क सुरक्षा नियमों के तहत सुरक्षित रखा जाता है।",
-    pSteps: "आज के कदम", pCal: "कैलोरी", pDist: "दूरी", pBtn: "<i class='fa-solid fa-wallet' style='margin-right:8px;'></i> पुरस्कार भुनाएं"
-  }
-};
-
-function changeLanguage(lang) {
-  const data = languages[lang];
-  document.getElementById("headerLogo").innerHTML = data.logo;
-  document.getElementById("navHome").innerText = data.home;
-  document.getElementById("navFeatures").innerText = data.features;
-  document.getElementById("navRewards").innerText = data.rewards;
-  document.getElementById("navMembership").innerText = data.membership;
-  document.getElementById("navFaq").innerText = data.faq;
-  document.getElementById("navContact").innerText = data.contact;
-  
-  document.getElementById("heroTag").innerText = data.tag;
-  document.getElementById("heroTitle").innerHTML = data.hTitle;
-  document.getElementById("heroDesc").innerText = data.hDesc;
-  document.getElementById("btnGetStarted").innerText = data.gStart;
-  document.getElementById("btnWatchDemo").innerText = data.wDemo;
-  
-  document.getElementById("trustSpan").innerText = data.tSpan;
-  document.getElementById("trustTitle").innerText = data.tTitle;
-  document.getElementById("trustDesc").innerText = data.tDesc;
-  
-  document.getElementById("tCardTitle1").innerText = data.tcT1;
-  document.getElementById("tCardDesc1").innerText = data.tcD1;
-  document.getElementById("tCardTitle2").innerText = data.tcT2;
-  document.getElementById("tCardDesc2").innerText = data.tcD2;
-  document.getElementById("tCardTitle3").innerText = data.tcT3;
-  document.getElementById("tCardDesc3").innerText = data.tcD3;
-  
-  document.getElementById("phoneStepsText").innerText = data.pSteps;
-  document.getElementById("phoneCalText").innerText = data.pCal;
-  document.getElementById("phoneDistText").innerText = data.pDist;
-  document.getElementById("phoneBtnText").innerHTML = data.pBtn;
-}
-
-/* --- JavaScript logic for Live Falling EC Coins Animation Loop --- */
-const canvas = document.getElementById('coinCanvas');
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-const coins = [];
-const maxCoins = 25; 
-
-class Coin {
-constructor() {
-this.reset();
-this.y = Math.random() * canvas.height; 
-}
-reset() {
-this.x = Math.random() * canvas.width;
-this.y = -20;
-this.size = Math.random() * 10 + 10; 
-this.speedY = Math.random() * 1.0 + 0.6;
-this.spinSpeed = Math.random() * 0.03 + 0.01;
-this.angle = Math.random() * Math.PI;
-this.opacity = Math.random() * 0.3 + 0.2; 
-}
-update() {
-this.y += this.speedY;
-this.angle += this.spinSpeed;
-if (this.y > canvas.height + 20) {
-this.reset();
-}
-}
-draw() {
-ctx.save();
-ctx.translate(this.x, this.y);
-ctx.scale(Math.sin(this.angle), 1);
-ctx.beginPath();
-ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-
-let gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
-gradient.addColorStop(0, `rgba(0, 212, 255, ${this.opacity})`);
-gradient.addColorStop(0.8, `rgba(0, 102, 255, ${this.opacity})`);
-gradient.addColorStop(1, `rgba(0, 212, 255, ${this.opacity * 0.3})`);
-
-ctx.fillStyle = gradient;
-ctx.fill();
-ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity + 0.1})`;
-ctx.lineWidth = 1.0;
-ctx.stroke();
-
-ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
-ctx.font = `bold ${this.size * 0.75}px Poppins`;
-ctx.textAlign = 'center';
-ctx.textBaseline = 'middle';
-ctx.fillText('EC', 0, 0);
-
-ctx.restore();
-}
-}
-
-for (let i = 0; i < maxCoins; i++) {
-coins.push(new Coin());
-}
-
-function animateCoins() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-coins.forEach(coin => {
-coin.update();
-coin.draw();
-});
-requestAnimationFrame(animateCoins);
-}
-animateCoins();
-</script>
-
-</body>
-</html>
+<h3>Daily Step Goals</
