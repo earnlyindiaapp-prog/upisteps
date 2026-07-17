@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UPI STEPS | Earnly India Premium Move-To-Earn Ecosystem</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <style>
-    /* Premium CSS Variables */
     :root {
-      --bg-dark: #070A13;
+      --bg-dark: #050811;
       --card-bg: rgba(255, 255, 255, 0.02);
       --card-border: rgba(16, 185, 129, 0.15);
       --neon-green: #10B981;
-      --neon-glow: rgba(16, 185, 129, 0.4);
+      --neon-glow: rgba(16, 185, 129, 0.3);
       --gold-accent: #F59E0B;
       --text-main: #FFFFFF;
       --text-sub: #94A3B8;
-      --glass-nav: rgba(7, 10, 19, 0.85);
+      --glass-nav: rgba(5, 8, 17, 0.9);
     }
 
     * {
@@ -34,22 +33,22 @@
       overflow-x: hidden;
     }
 
-    /* Scrollbar Style */
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
     }
     ::-webkit-scrollbar-track {
       background: var(--bg-dark);
     }
     ::-webkit-scrollbar-thumb {
       background: var(--neon-green);
-      border-radius: 4px;
+      border-radius: 3px;
     }
 
-    /* Glowing Animations */
+    /* Keyframe Animations */
     @keyframes pulseGlow {
       0%, 100% { box-shadow: 0 0 15px var(--neon-glow); }
-      50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.7); }
+      50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.6); }
     }
 
     @keyframes textTicker {
@@ -57,22 +56,22 @@
       100% { transform: translate3d(-50%, 0, 0); }
     }
 
-    @keyframes floatEffect {
+    @keyframes mockupFloat {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-8px); }
     }
 
-    /* Header Nav */
+    /* Navigation Bar */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       background: var(--glass-nav);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       z-index: 9999;
-      padding: 15px 5%;
+      padding: 12px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -81,13 +80,15 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .brand-logo {
-      width: 35px;
-      height: 35px;
-      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1.5px solid var(--neon-green);
     }
 
     .brand-name {
@@ -101,20 +102,21 @@
       color: var(--neon-green);
     }
 
-    .nav-buttons {
+    .nav-actions {
       display: flex;
-      gap: 15px;
+      align-items: center;
+      gap: 12px;
     }
 
     .btn-nav {
-      padding: 10px 20px;
+      padding: 8px 16px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
       border: 1px solid var(--neon-green);
       color: var(--text-main);
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
     .btn-nav.active {
@@ -123,7 +125,19 @@
     }
 
     .btn-nav:hover {
-      box-shadow: 0 0 15px var(--neon-green);
+      box-shadow: 0 0 10px var(--neon-green);
+    }
+
+    /* Menu Sidebar Button */
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 5px;
     }
 
     /* Hero Section */
@@ -132,8 +146,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 120px 5% 60px 5%;
-      background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+      padding: 110px 5% 50px 5%;
+      background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
     }
 
     .hero-container {
@@ -141,17 +155,17 @@
       width: 100%;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
+      gap: 40px;
       align-items: center;
     }
 
     .hero-content h1 {
       font-family: 'Poppins', sans-serif;
       font-weight: 900;
-      font-size: 58px;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin-bottom: 25px;
+      font-size: 52px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
     }
 
     .hero-content h1 span {
@@ -160,24 +174,25 @@
 
     .hero-content p {
       color: var(--text-sub);
-      font-size: 18px;
-      margin-bottom: 40px;
-      max-width: 600px;
+      font-size: 16px;
+      margin-bottom: 35px;
+      max-width: 580px;
+      line-height: 1.6;
     }
 
     .hero-badges {
       display: flex;
-      gap: 15px;
-      margin-bottom: 30px;
+      gap: 12px;
+      margin-bottom: 25px;
       flex-wrap: wrap;
     }
 
     .badge {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--card-border);
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 50px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
     }
 
@@ -185,41 +200,111 @@
       color: var(--neon-green);
     }
 
-    /* Phone Mockup */
+    /* Live Animated Phone Mockup Interface */
     .phone-showcase {
       display: flex;
       justify-content: center;
-      position: relative;
     }
 
     .phone-wrapper {
-      width: 290px;
-      height: 580px;
+      width: 280px;
+      height: 560px;
       border: 10px solid #1E293B;
-      border-radius: 40px;
+      border-radius: 36px;
       overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      animation: floatEffect 5s ease-in-out infinite;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      animation: mockupFloat 4s ease-in-out infinite;
       background: #000;
+      position: relative;
+      cursor: pointer;
     }
 
     .phone-screen {
       width: 100%;
       height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097494.png');
+      padding: 25px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: radial-gradient(circle at center, #0F172A 0%, #020617 100%);
     }
 
-    /* Moving Banner (Doors Studio Style) */
+    .phone-header {
+      font-size: 11px;
+      color: var(--text-sub);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .step-circle {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 6px solid rgba(16, 185, 129, 0.1);
+      border-top-color: var(--neon-green);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: auto 0;
+      position: relative;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .step-circle:active {
+      transform: scale(0.95);
+    }
+
+    .step-circle h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--neon-green);
+    }
+
+    .step-circle p {
+      font-size: 10px;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .phone-stats {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .stat-mini {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1.5px solid var(--card-border);
+      padding: 10px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-mini h4 {
+      font-size: 14px;
+      color: var(--neon-green);
+    }
+
+    .stat-mini p {
+      font-size: 9px;
+      color: var(--text-sub);
+    }
+
+    /* Moving Banner Ticker */
     .ticker-container {
       background: var(--neon-green);
       color: #000;
-      padding: 20px 0;
+      padding: 18px 0;
       overflow: hidden;
       white-space: nowrap;
-      border-top: 1px solid rgba(0,0,0,0.1);
-      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
     .ticker-wrap {
@@ -231,23 +316,23 @@
       display: inline-block;
       font-family: 'Poppins', sans-serif;
       font-weight: 900;
-      font-size: 32px;
+      font-size: 26px;
       text-transform: uppercase;
-      padding-right: 50px;
+      padding-right: 40px;
     }
 
     /* Trust Section */
     .trust-section {
       padding: 80px 5%;
       text-align: center;
-      background: #0B0E17;
+      background: #080B13;
     }
 
     .trust-section h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: 42px;
+      font-size: 36px;
       font-weight: 800;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
     .trust-section h2 span {
@@ -257,39 +342,127 @@
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 25px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .trust-card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 40px 30px;
-      border-radius: 20px;
-      transition: 0.4s;
+      border: 1.5px solid var(--card-border);
+      padding: 35px 25px;
+      border-radius: 16px;
+      transition: 0.3s ease;
     }
 
     .trust-card:hover {
       border-color: var(--neon-green);
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+      transform: translateY(-8px);
     }
 
     .trust-card h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: 22px;
-      margin-bottom: 15px;
+      font-size: 18px;
+      margin-bottom: 12px;
     }
 
     .trust-card p {
       color: var(--text-sub);
-      font-size: 14px;
+      font-size: 13.5px;
+      line-height: 1.5;
     }
 
-    /* Refer and Earn */
+    /* Premium AI Membership Plans */
+    .pricing-section {
+      padding: 80px 5%;
+      text-align: center;
+    }
+
+    .pricing-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+
+    .pricing-grid {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .price-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 320px;
+      text-align: left;
+      transition: 0.3s ease;
+    }
+
+    .price-card.popular {
+      border: 2px solid var(--neon-green);
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+    }
+
+    .price-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .price-card .cost {
+      font-family: 'Poppins', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--neon-green);
+      margin-bottom: 20px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .price-card ul li {
+      margin-bottom: 12px;
+      font-size: 13.5px;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .price-btn.primary {
+      background: var(--neon-green);
+      color: #000;
+    }
+
+    .price-btn.secondary {
+      background: rgba(255,255,255,0.02);
+      border: 1.5px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    /* Refer and Earn Section */
     .referral-container {
-      padding: 100px 5%;
+      padding: 80px 5%;
       display: flex;
       justify-content: center;
     }
@@ -297,58 +470,52 @@
     .referral-box {
       max-width: 1000px;
       width: 100%;
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(7, 10, 19, 0.9) 100%);
-      border: 1px solid var(--neon-green);
-      border-radius: 30px;
-      padding: 60px 50px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 8, 17, 0.95) 100%);
+      border: 1.5px solid var(--neon-green);
+      border-radius: 24px;
+      padding: 50px;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      gap: 30px;
       align-items: center;
     }
 
     .referral-text h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: 38px;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
-    .referral-text h2 span {
-      color: var(--neon-green);
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 15px;
     }
 
     .referral-text p {
       color: var(--text-sub);
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.6;
     }
 
     .referral-btn {
-      padding: 18px 36px;
+      padding: 16px 32px;
       background: var(--neon-green);
       color: #000;
       text-decoration: none;
       font-weight: 800;
-      border-radius: 12px;
+      border-radius: 10px;
       text-align: center;
       transition: 0.3s;
-      animation: pulseGlow 2s infinite;
+      animation: pulseGlow 2.5s infinite;
     }
 
-    /* Infinite Carousel / Partner Slideshow */
+    /* Partner Carousel (Infinite Horizontal Loop) */
     .carousel-section {
-      padding: 60px 0;
-      background: #070A13;
+      padding: 50px 0;
+      background: #050811;
       border-top: 1px solid rgba(255,255,255,0.03);
-      border-bottom: 1px solid rgba(255,255,255,0.03);
     }
 
     .carousel-wrapper {
       display: flex;
       overflow: hidden;
       white-space: nowrap;
-      position: relative;
     }
 
     .carousel-track {
@@ -357,25 +524,19 @@
     }
 
     .carousel-item {
-      width: 160px;
-      height: 60px;
-      margin: 0 40px;
+      width: 140px;
+      height: 50px;
+      margin: 0 35px;
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      filter: grayscale(1) brightness(2);
-      opacity: 0.5;
-      transition: 0.3s;
+      filter: grayscale(1) brightness(2.5);
+      opacity: 0.4;
     }
 
-    .carousel-item:hover {
-      filter: grayscale(0) brightness(1);
-      opacity: 1;
-    }
-
-    /* Custom Support & Quick Links Footer */
+    /* Footer with Customer Care & Legal Directories */
     footer {
-      background: #04060B;
+      background: #03050a;
       padding: 80px 5% 40px 5%;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
@@ -384,17 +545,17 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     .footer-col h4 {
       font-family: 'Poppins', sans-serif;
-      font-size: 16px;
-      margin-bottom: 25px;
+      font-size: 15px;
+      margin-bottom: 20px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: var(--neon-green);
     }
 
@@ -403,71 +564,69 @@
     }
 
     .footer-col ul li {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .footer-col ul li a {
       color: var(--text-sub);
       text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
+      font-size: 13.5px;
+      transition: 0.2s;
     }
 
     .footer-col ul li a:hover {
       color: var(--neon-green);
-      padding-left: 5px;
     }
 
     .footer-bottom {
       max-width: 1200px;
       margin: 0 auto;
-      padding-top: 40px;
+      padding-top: 30px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 15px;
       color: var(--text-sub);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    /* Floating WhatsApp Button */
+    /* Responsive Floating WhatsApp Action */
     .whatsapp-btn {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
       background: #25D366;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
       z-index: 99999;
       transition: 0.3s;
     }
 
     .whatsapp-btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
     }
 
     .whatsapp-btn svg {
-      width: 32px;
-      height: 32px;
+      width: 26px;
+      height: 26px;
       fill: #FFF;
     }
 
-    /* Responsive adjustments */
+    /* Tablet & Mobile Media Queries */
     @media (max-width: 968px) {
       .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
       }
       .hero-content h1 {
-        font-size: 42px;
+        font-size: 38px;
       }
       .hero-content p {
         margin: 0 auto 30px auto;
@@ -478,146 +637,136 @@
       .referral-box {
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 30px 20px;
+      }
+      .whatsapp-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 46px;
+        height: 46px;
+      }
+      .whatsapp-btn svg {
+        width: 22px;
+        height: 22px;
       }
     }
   </style>
 </head>
 <body>
 
-  <a href="https://wa.me/919999999999" class="whatsapp-btn" target="_blank" title="Contact Us on WhatsApp">
+  <!-- Floating WhatsApp Channel -->
+  <a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" class="whatsapp-btn" target="_blank" title="Join WhatsApp Channel">
     <svg viewBox="0 0 24 24">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.59 2.017 14.124.992 11.5.991c-5.44 0-9.863 4.37-9.867 9.8-.001 1.73.475 3.41 1.378 4.881l-1.016 3.714 3.822-.987zm11.367-7.25c-.29-.144-1.711-.834-1.976-.93-.264-.096-.456-.144-.65.145-.19.287-.74.93-.906 1.12-.167.19-.333.21-.623.066-.29-.144-1.223-.444-2.33-1.419-.86-.757-1.44-1.691-1.61-1.98-.17-.288-.018-.444.127-.587.13-.13.29-.333.435-.5.145-.165.19-.282.285-.47.095-.188.047-.353-.024-.498-.07-.144-.65-1.547-.89-2.12-.23-.556-.467-.48-.65-.489-.167-.008-.36-.01-.553-.01-.193 0-.507.07-.77.356-.265.285-1.012.977-1.012 2.384 0 1.408 1.036 2.766 1.18 2.958.145.19 2.037 3.076 4.935 4.31.688.293 1.227.469 1.646.601.693.218 1.325.187 1.823.111.554-.084 1.712-.69 1.953-1.353.24-.662.24-1.229.17-1.353-.07-.124-.265-.196-.554-.342z"/>
     </svg>
   </a>
 
+  <!-- Responsive Navigation Bar -->
   <header>
     <div class="brand">
-      <img src="https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png" class="brand-logo" alt="Earnly Logo">
+      <img src="1000097647.png" class="brand-logo" alt="UPI Steps Brand Logo">
       <div class="brand-name">EARNLY<span>INDIA</span></div>
     </div>
-    <div class="nav-buttons">
+    <div class="nav-actions">
       <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="btn-nav">Telegram</a>
-      <a href="https://youtube.com/@earnlyindiaofficial" target="_blank" class="btn-nav active">YouTube Channel</a>
+      <a href="https://youtube.com/@earnlyindiaofficial" target="_blank" class="btn-nav active">YouTube</a>
+      <button class="menu-toggle" aria-label="Open Sidebar Menu">☰</button>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badges">
-          <div class="badge">🚀 Project: <span>UPI STEPS APP</span></div>
-          <div class="badge">🔥 Status: <span>COMING SOON (Oct 2026)</span></div>
+          <div class="badge">👟 Project: <span>UPI STEPS APP</span></div>
+          <div class="badge">🔔 Status: <span>PRE-LAUNCHING SOON (2026)</span></div>
         </div>
-        <h1>Chalo aur UPI me <br><span>paise pao 💰</span></h1>
-        <p>Har 1,000 steps chalne pe seedhe bank account me cash rewards. Google Fit aur iOS Health tracker automatic syncing support ke sath absolute security setup.</p>
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-          <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="referral-btn" style="text-decoration: none;">Join Official Telegram Channel</a>
+        <h1>Chalo walk karo,<br><span>aur UPI me paise pao 🪙</span></h1>
+        <p>Apne daily running aur walking metrics ko secure parameters ke sath track karein. 1,000 steps se start karke directly bank transfer and reward options explore karein.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" target="_blank" class="referral-btn" style="text-decoration:none;">Join WhatsApp Channel</a>
         </div>
       </div>
+      
+      <!-- Interactive Mockup Box -->
       <div class="phone-showcase">
-        <div class="phone-wrapper">
-          <div class="phone-screen"></div>
+        <div class="phone-wrapper" id="mockup-trigger" title="Tap to sync steps!">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <span>GPS Active 🟢</span>
+              <span>100% Secure</span>
+            </div>
+            
+            <div class="step-circle" id="circle-element">
+              <h2 id="step-live">7,421</h2>
+              <p>STEPS SYNCED</p>
+            </div>
+
+            <div class="phone-stats">
+              <div class="stat-mini">
+                <h4 id="stat-coins">742.1</h4>
+                <p>COINS BAL</p>
+              </div>
+              <div class="stat-mini">
+                <h4 id="stat-cash">₹7.42</h4>
+                <p>INSTANT CASH</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Rolling Ticker Lines -->
   <div class="ticker-container">
     <div class="ticker-wrap">
-      <span class="ticker-item">⚡ UPI STEPS APP IS COMING SOON</span>
-      <span class="ticker-item">👟 WALK • EARN • GROW</span>
-      <span class="ticker-item">💎 EARNLY PLUS MEMBERSHIP</span>
-      <span class="ticker-item">🔒 100% SECURE INTEGRATION</span>
-      <span class="ticker-item">💸 INSTANT UPI WITHDRAWAL</span>
-      <span class="ticker-item">⚡ UPI STEPS APP IS COMING SOON</span>
-      <span class="ticker-item">👟 WALK • EARN • GROW</span>
-      <span class="ticker-item">💎 EARNLY PLUS MEMBERSHIP</span>
-      <span class="ticker-item">🔒 100% SECURE INTEGRATION</span>
-      <span class="ticker-item">💸 INSTANT UPI WITHDRAWAL</span>
+      <span class="ticker-item">🚀 UPI STEPS LIVE PRE-LAUNCH MODULES</span>
+      <span class="ticker-item">👟 NO SHAKE BLOCKER ACTIVE</span>
+      <span class="ticker-item">⭐ EARNLY INDIA VERIFIED APPLICATION</span>
+      <span class="ticker-item">💰 INSTANT REFUND & TRANSFERS</span>
+      <!-- Duplicate content to ensure seamless infinite loop -->
+      <span class="ticker-item">🚀 UPI STEPS LIVE PRE-LAUNCH MODULES</span>
+      <span class="ticker-item">👟 NO SHAKE BLOCKER ACTIVE</span>
+      <span class="ticker-item">⭐ EARNLY INDIA VERIFIED APPLICATION</span>
+      <span class="ticker-item">💰 INSTANT REFUND & TRANSFERS</span>
     </div>
   </div>
 
+  <!-- Trust Features -->
   <section class="trust-section">
     <h2>Why Choose <span>UPI STEPS?</span></h2>
     <div class="trust-grid">
       <div class="trust-card">
-        <h3>👟 Automatic Counter</h3>
-        <p>Low-battery background auto-step monitoring capability so you don't keep app open always.</p>
+        <h3>👟 Smart Background Count</h3>
+        <p>Sync background status using built-in sensors on Android or iOS devices seamlessly.</p>
       </div>
       <div class="trust-card">
-        <h3>⚡ Instant UPI Transfer</h3>
-        <p>Minimum payout boundary starts at ₹50. Single swipe transfers rewards directly to verified IDs.</p>
+        <h3>🔒 Fraud Prevention Framework</h3>
+        <p>Equipped with responsive anti-shake modules to block emulated hacks.</p>
       </div>
       <div class="trust-card">
-        <h3>🛡️ 100% Free & Secure</h3>
-        <p>Advanced anti-shake & anti-cheat engine to block emulator hacks and ensure true fair-play.</p>
+        <h3>💸 Low Transfer Limits</h3>
+        <p>Transfer instantly to any UPI ID once wallet balances reach ₹50 threshold.</p>
       </div>
     </div>
   </section>
 
-  <div class="carousel-section">
-    <div class="carousel-wrapper">
-      <div class="carousel-track">
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/earnlyindiaapp-prog/upisteps/main/1000097647.png');"></div>
-      </div>
-    </div>
-  </div>
-
-  <section class="referral-container">
-    <div class="referral-box">
-      <div class="referral-text">
-        <h2>Refer Friends & <span>Earn Big! 🎁</span></h2>
-        <p>Share your love for fitness. Bring your squad under the move-to-earn community structure. Secure up to flat ₹5 bonus instantly on their initial verified check-in target.</p>
-      </div>
-      <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="referral-btn">Invite Squad Now</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>Ecosystem</h4>
+  <!-- Membership Pricing Tables -->
+  <section class="pricing-section">
+    <h2>Premium AI Coach <span>Pricing Plans</span></h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Monthly Plan</h3>
+        <div class="cost">₹49</div>
         <ul>
-          <li><a href="#">Dashboard Preview</a></li>
-          <li><a href="#">Step Wallet</a></li>
-          <li><a href="#">Challenges Arena</a></li>
-          <li><a href="#">Anti-Cheat Engine</a></li>
+          <li>✔️ AI Health Coach</li>
+          <li>✔️ Meal & Diet Scanner</li>
+          <li>❌ Annual Discount Benefits</li>
         </ul>
+        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="price-btn secondary">Unlock Plan</a>
       </div>
-      <div class="footer-col">
-        <h4>Legal & Guidelines</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Fraud Guard Rules</a></li>
-          <li><a href="#">Refund & Membership Terms</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Channels</h4>
-        <ul>
-          <li><a href="https://t.me/EarnlyIndiaOfficial" target="_blank">Telegram Hub</a></li>
-          <li><a href="https://youtube.com/@earnlyindiaofficial" target="_blank">YouTube Channel</a></li>
-          <li><a href="https://x.com/EarnlyIndia_" target="_blank">Twitter / X Page</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Earnly India | UPI STEPS. Fully Secure Web Application Build.</p>
-      <p>Made with ❤️ in India</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+      <div class="price-card popular">
+        <h3>Quarterly Plan</h3>
+      
