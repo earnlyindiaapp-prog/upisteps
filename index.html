@@ -348,47 +348,56 @@ cursor: pointer;
 box-shadow: 0 4px 15px rgba(0,212,255,0.3);
 }
 
-/* --- Fixed Isolated Vector Marquee Section (No Overlaps) --- */
+/* --- Fixed Static Triangle Shape Cards Section (Zero Overlap) --- */
 .gallery-marquee-section {
 width: 100%;
-overflow: hidden;
-background: rgba(11, 15, 36, 0.4);
-padding: 30px 0;
-border-top: 1px solid rgba(255,255,255,0.08);
-border-bottom: 1px solid rgba(255,255,255,0.08);
+max-width: 900px;
+margin: 40px auto;
+padding: 0 5%;
 position: relative;
 z-index: 10;
 display: block;
 clear: both;
-margin-top: 20px;
-margin-bottom: 20px;
 }
 
-.marquee-wrapper {
+.triangle-grid-layout {
 display: flex;
-width: 200%;
-animation: infiniteScroll 25s linear infinite;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+width: 100%;
 }
 
-.marquee-group {
+.triangle-row-top {
 display: flex;
-justify-content: flex-start;
-width: 50%;
-gap: 30px; 
-padding: 0 15px;
+justify-content: center;
+gap: 25px;
+width: 100%;
+flex-wrap: wrap;
+}
+
+.triangle-row-bottom {
+display: flex;
+justify-content: center;
+width: 100%;
 }
 
 .vector-slide-card {
-width: 260px;
-min-width: 260px; 
+width: 270px;
 background: #0d1230;
 border: 1px solid rgba(0, 212, 255, 0.25);
 border-radius: 16px;
-padding: 15px 20px;
+padding: 18px 20px;
 display: flex;
 align-items: center;
 gap: 15px;
 box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+transition: transform 0.3s ease;
+}
+
+.vector-slide-card:hover {
+transform: translateY(-5px);
+border-color: #00d4ff;
 }
 
 .vector-slide-card i {
@@ -411,18 +420,11 @@ font-size: 15px;
 font-weight: 600;
 margin-bottom: 2px;
 color: #ffffff;
-white-space: nowrap;
 }
 
 .vector-card-info p {
 font-size: 12px;
 color: #8c92b2;
-white-space: nowrap;
-}
-
-@keyframes infiniteScroll {
-0% { transform: translateX(0); }
-100% { transform: translateX(-50%); }
 }
 
 /* --- Sections Base Styling --- */
@@ -438,7 +440,7 @@ padding: 100px 8%;
 }
 
 .trust-guidelines {
-padding-top: 80px; 
+padding-top: 60px; 
 }
 
 .section-title{
@@ -770,9 +772,6 @@ justify-content: center;
 .section-title h2 {
 font-size: 32px;
 }
-.trust-guidelines {
-padding-top: 40px; 
-}
 }
 
 @media (max-width: 600px) {
@@ -795,6 +794,15 @@ font-size: 32px;
 }
 .left p {
 font-size: 15px;
+}
+.triangle-row-top {
+flex-direction: column;
+align-items: center;
+gap: 15px;
+}
+.vector-slide-card {
+width: 100%;
+max-width: 320px;
 }
 .features, .rewards, .membership, .trust-guidelines, .faq, .contact, .social {
 padding: 60px 5%;
@@ -885,24 +893,19 @@ Earnly <span>India</span>
 </div>
 </section>
 
-<!-- ================= INFINITE VECTOR MARQUEE CAROUSEL (Fully Isolated Structure) ================= -->
+<!-- ================= NEW TRIANGLE STRUCTURE GRID (No Marquee, Zero Conflict) ================= -->
 <div class="gallery-marquee-section">
-<div class="marquee-wrapper">
-<div class="marquee-group">
-<div class="vector-slide-card"><i class="fa-solid fa-person-walking"></i><div class="vector-card-info"><h5>Outdoor Run</h5><p>Activity Logged</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-bicycle"></i><div class="vector-card-info"><h5>Cycling Routine</h5><p>Distance Counter</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-heart-pulse"></i><div class="vector-card-info"><h5>Cardio Session</h5><p>BPM Monitor Active</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-child"></i><div class="vector-card-info"><h5>Free Play Style</h5><p>Dynamic Counter</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-medal"></i><div class="vector-card-info"><h5>Daily Streak</h5><p>Target Achieved</p></div></div>
-</div>
-<div class="marquee-group">
-<div class="vector-slide-card"><i class="fa-solid fa-person-walking"></i><div class="vector-card-info"><h5>Outdoor Run</h5><p>Activity Logged</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-bicycle"></i><div class="vector-card-info"><h5>Cycling Routine</h5><p>Distance Counter</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-heart-pulse"></i><div class="vector-card-info"><h5>Cardio Session</h5><p>BPM Monitor Active</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-child"></i><div class="vector-card-info"><h5>Free Play Style</h5><p>Dynamic Counter</p></div></div>
-<div class="vector-slide-card"><i class="fa-solid fa-medal"></i><div class="vector-card-info"><h5>Daily Streak</h5><p>Target Achieved</p></div></div>
-</div>
-</div>
+  <div class="triangle-grid-layout">
+    <!-- Top base row of triangle (2 Cards balanced) -->
+    <div class="triangle-row-top">
+      <div class="vector-slide-card"><i class="fa-solid fa-person-walking"></i><div class="vector-card-info"><h5>Outdoor Run</h5><p>Activity Logged</p></div></div>
+      <div class="vector-slide-card"><i class="fa-solid fa-bicycle"></i><div class="vector-card-info"><h5>Cycling Routine</h5><p>Distance Counter</p></div></div>
+    </div>
+    <!-- Bottom apex center card of triangle structure -->
+    <div class="triangle-row-bottom">
+      <div class="vector-slide-card"><i class="fa-solid fa-heart-pulse"></i><div class="vector-card-info"><h5>Cardio Session</h5><p>BPM Monitor Active</p></div></div>
+    </div>
+  </div>
 </div>
 
 <!-- ================= TRUSTED GUIDELINES SECTION ================= -->
@@ -983,4 +986,36 @@ Earnly <span>India</span>
 <div class="reward-card">
 <div class="reward-icon">👣</div>
 <h3>Daily Step Goals</h3>
-<p>Complete your daily walking goals
+<p>Complete your daily walking goals and maintain consistency.</p>
+</div>
+<div class="reward-card">
+<div class="reward-icon">🎯</div>
+<h3>Weekly Challenges</h3>
+<p>Take part in special weekly missions released inside the app.</p>
+</div>
+<div class="reward-card">
+<div class="reward-icon">🎁</div>
+<h3>Bonus Rewards</h3>
+<p>Participate in promotional campaigns and unlock bonus opportunities.</p>
+</div>
+<div class="reward-card">
+<div class="reward-icon">🏅</div>
+<h3>Achievement Badges</h3>
+<p>Earn badges by reaching important fitness milestones.</p>
+</div>
+</div>
+</section>
+
+<!-- ================= MEMBERSHIP SECTION ================= -->
+<section id="membership" class="membership">
+<div class="section-title">
+<span>PREMIUM MEMBERSHIP</span>
+<h2>Unlock More Benefits</h2>
+<p>Enjoy upcoming premium features, exclusive events and priority access.</p>
+</div>
+<div class="membership-grid">
+<div class="membership-card">
+<h3>FREE</h3>
+<h1>₹0</h1>
+<ul>
+<li>✔ Daily S
