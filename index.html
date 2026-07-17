@@ -2,21 +2,15 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Earnly India | UPI Steps</title>
 
-<meta name="description" content="Earnly India Official Website - Walk Smart, Earn Better with UPI Steps">
-<meta name="keywords" content="Earnly India, UPI Steps, Walk and Earn, Step Counter">
-
+<!-- Google Fonts & Icon Libraries -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -29,47 +23,18 @@ body{
 background:#050816;
 color:white;
 overflow-x:hidden;
+position: relative;
 }
 
-/* --- Smooth Floating Background Animation --- */
-@keyframes pulseGlow1 {
-  0% { transform: translate(0px, 0px) scale(1); }
-  50% { transform: translate(40px, -60px) scale(1.1); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-
-@keyframes pulseGlow2 {
-  0% { transform: translate(0px, 0px) scale(1); }
-  50% { transform: translate(-50px, 50px) scale(1.15); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-
-body::before{
-content:"";
-position:fixed;
-width:700px;
-height:700px;
-background:linear-gradient(45deg,#00d4ff,#0066ff);
-filter:blur(220px);
-top:-220px;
-right:-200px;
-opacity:.35;
-z-index:-1;
-animation: pulseGlow1 12s infinite ease-in-out;
-}
-
-body::after{
-content:"";
-position:fixed;
-width:650px;
-height:650px;
-background:linear-gradient(45deg,#7b2cff,#00bfff);
-filter:blur(220px);
-bottom:-250px;
-left:-250px;
-opacity:.25;
-z-index:-1;
-animation: pulseGlow2 14s infinite ease-in-out;
+/* --- Live EC Coins Canvas Layer --- */
+#coinCanvas {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 1;
 }
 
 header{
@@ -81,16 +46,13 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(5, 8, 22, 0.65);
+background:rgba(5, 8, 22, 0.75);
 backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(255,255,255,.08);
 z-index:999;
 }
 
-/* --- Clean Text Logo Only (Image and Heart Removed) --- */
 .logo{
-display:flex;
-align-items:center;
 font-size:26px;
 font-weight:700;
 color:#fff;
@@ -135,13 +97,16 @@ transform:translateY(-3px);
 box-shadow: 0 0 35px rgba(0,212,255,.6);
 }
 
+/* --- Responsive Hero Grid Layout --- */
 .hero{
-min-height:100vh;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:140px 8% 120px 8%;
-gap:60px;
+position: relative;
+z-index: 2;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 140px 8% 80px 8%;
+gap: 50px;
 }
 
 .left{
@@ -160,14 +125,15 @@ font-weight: 500;
 }
 
 .left h1{
-font-size:64px;
-line-height:1.15;
+font-size:56px;
+line-height:1.2;
 margin-bottom:25px;
+font-weight: 800;
 }
 
 .left p{
-font-size:18px;
-line-height:1.9;
+font-size:17px;
+line-height:1.8;
 color:#d7d7d7;
 margin-bottom:35px;
 }
@@ -217,897 +183,393 @@ justify-content:center;
 align-items:center;
 }
 
-/* --- Phone Container Layout --- */
+/* --- Premium Phone Frame mockup --- */
 .phone{
-width:320px;
-height:640px;
+width:310px;
+height:620px;
 border-radius:45px;
 background:#0b0f24;
 border:4px solid rgba(255,255,255,.15);
 display:flex;
 flex-direction: column;
-box-shadow:0 0 60px rgba(0,212,255,.3);
+box-shadow:0 0 50px rgba(0,212,255,.25);
 overflow:hidden;
 position: relative;
 padding: 20px 15px;
 }
 
-/* --- Animated Premium Fitness App UI Inside Phone Mockup --- */
 .app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 25px;
-  font-size: 14px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+margin-bottom: 25px;
+font-size: 13px;
+color: #8c92b2;
 }
+
 .app-title {
-  font-weight: 700;
-  color: #00d4ff;
+font-weight: 700;
+color: #00d4ff;
 }
+
 .app-screen-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+flex: 1;
+width: 100%;
 }
+
 .step-circle-container {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
+position: relative;
+width: 170px;
+height: 170px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 35px;
 }
+
 .circle-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 8px solid rgba(255,255,255,0.05);
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 8px solid rgba(255,255,255,0.05);
 }
+
 .circle-progress {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 8px solid transparent;
-  border-top-color: #00d4ff;
-  border-right-color: #0066ff;
-  transform: rotate(45deg);
-  animation: spinCircle 4s linear infinite;
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 8px solid transparent;
+border-top-color: #00d4ff;
+border-right-color: #0066ff;
+transform: rotate(45deg);
 }
-@keyframes spinCircle {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+
 .step-data {
-  text-align: center;
-  z-index: 2;
+text-align: center;
+z-index: 2;
 }
+
 .step-data h3 {
-  font-size: 32px;
-  font-weight: 800;
-  color: #fff;
+font-size: 30px;
+font-weight: 800;
 }
+
 .step-data p {
-  font-size: 12px;
-  color: #a0a5c0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+font-size: 11px;
+color: #a0a5c0;
+text-transform: uppercase;
 }
+
 .app-metrics-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  width: 100%;
-  margin-bottom: 25px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+width: 100%;
+margin-bottom: 30px;
 }
+
 .metric-box {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 14px;
-  text-align: center;
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.06);
+border-radius: 16px;
+padding: 12px;
+text-align: center;
 }
+
 .metric-box i {
-  color: #00d4ff;
-  font-size: 18px;
-  margin-bottom: 6px;
+color: #00d4ff;
+font-size: 16px;
+margin-bottom: 6px;
 }
+
 .metric-box h4 {
-  font-size: 16px;
-  font-weight: 700;
+font-size: 14px;
+font-weight: 700;
 }
+
 .metric-box p {
-  font-size: 11px;
-  color: #8c92b2;
+font-size: 10px;
+color: #8c92b2;
 }
+
 .app-btn {
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(90deg, #00d4ff, #0066ff);
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+width: 100%;
+padding: 14px;
+background: linear-gradient(90deg, #00d4ff, #0066ff);
+border: none;
+border-radius: 25px;
+color: white;
+font-weight: 600;
+font-size: 13px;
+cursor: pointer;
+box-shadow: 0 4px 15px rgba(0,212,255,0.3);
 }
 
-</style>
+/* --- Premium Infinite Image Marquee Carousel Section --- */
+.gallery-marquee-section {
+width: 100%;
+overflow: hidden;
+background: rgba(5, 8, 22, 0.4);
+padding: 40px 0;
+border-top: 1px solid rgba(255,255,255,0.05);
+border-bottom: 1px solid rgba(255,255,255,0.05);
+position: relative;
+z-index: 5;
+}
 
-</head>
+.marquee-wrapper {
+display: flex;
+width: 200%;
+animation: infiniteScroll 25s linear infinite;
+}
 
-<body>
+.marquee-group {
+display: flex;
+justify-content: space-around;
+width: 50%;
+gap: 20px;
+padding: 0 10px;
+}
 
-<header>
+.marquee-group img {
+width: 280px;
+height: 180px;
+object-fit: cover;
+border-radius: 18px;
+border: 1px solid rgba(255, 255, 255, 0.1);
+box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+transition: transform 0.3s ease;
+}
 
-<div class="logo">
-  Earnly <span>India</span>
-</div>
+.marquee-group img:hover {
+transform: scale(1.04);
+border-color: #00d4ff;
+}
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#features">Features</a>
-  <a href="#rewards">Rewards</a>
-  <a href="#membership">Membership</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
-</nav>
+@keyframes infiniteScroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
 
-<button class="download-btn" onclick="comingSoon()">
-Download App
-</button>
+/* --- Sections Base Styling --- */
+section {
+position: relative;
+z-index: 3;
+}
 
-</header>
-
-<section id="home" class="hero">
-
-<div class="left">
-
-<div class="tag">
-🔥 India's Premium Walk & Earn Platform
-</div>
-
-<h1>
-Walk Smart.<br>
-Earn Better.<br>
-Live Healthier.
-</h1>
-
-<p>
-UPI Steps is the flagship rewards platform by Earnly India.
-Complete eligible activities, stay active and enjoy a premium fitness experience.
-</p>
-
-<div class="hero-buttons">
-<button class="primary" onclick="comingSoon()">
-Get Started
-</button>
-<button class="secondary" onclick="comingSoon()">
-Watch Demo
-</button>
-</div>
-
-</div>
-
-<div class="right">
-
-  <div class="phone">
-    <div class="app-header">
-      <span class="app-title"><i class="fa-solid fa-bolt"></i> UPI Steps</span>
-      <span>10:55 AM <i class="fa-solid fa-battery-three-quarters" style="margin-left:5px;"></i></span>
-    </div>
-    
-    <div class="app-screen-content">
-      <div class="step-circle-container">
-        <div class="circle-bg"></div>
-        <div class="circle-progress"></div>
-        <div class="step-data">
-          <h3>7,482</h3>
-          <p>Steps today</p>
-        </div>
-      </div>
-      
-      <div class="app-metrics-grid">
-        <div class="metric-box">
-          <i class="fa-solid fa-fire"></i>
-          <h4>342 kcal</h4>
-          <p>Calories</p>
-        </div>
-        <div class="metric-box">
-          <i class="fa-solid fa-route"></i>
-          <h4>5.2 km</h4>
-          <p>Distance</p>
-        </div>
-      </div>
-      
-      <button class="app-btn" onclick="comingSoon()">
-        <i class="fa-solid fa-wallet" style="margin-right:8px;"></i> Redeem Rewards
-      </button>
-    </div>
-  </div>
-
-</div>
-
-</section>
-
-<section id="features" class="features">
-
-<div class="section-title">
-<span>WHY CHOOSE US</span>
-<h2>Everything You Need In One Platform</h2>
-<p>
-Earnly India combines fitness, technology and rewards into one premium experience.
-</p>
-</div>
-
-<div class="feature-grid">
-
-<div class="card">
-<div class="icon">👣</div>
-<h3>Smart Step Counter</h3>
-<p>
-Track your daily walking activity with high accuracy and beautiful statistics.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🎁</div>
-<h3>Daily Rewards</h3>
-<p>
-Complete eligible daily activities and participate in reward campaigns.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">👥</div>
-<h3>Referral Program</h3>
-<p>
-Invite friends and grow together through our referral ecosystem.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🏆</div>
-<h3>Leaderboard</h3>
-<p>
-Compete with other users and stay motivated every single day.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">💳</div>
-<h3>Reward Redemption</h3>
-<p>
-Eligible rewards can be redeemed through the available redemption methods.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">⭐</div>
-<h3>Premium Membership</h3>
-<p>
-Unlock upcoming premium benefits and exclusive campaigns.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-.features{
-padding:120px 8%;
+.features, .rewards, .membership, .referral, .stats, .leaderboard, .reviews, .faq, .contact, .social {
+padding: 100px 8%;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:70px;
+margin-bottom:60px;
 }
 
 .section-title span{
 color:#00d4ff;
 font-weight:600;
 letter-spacing:2px;
+font-size: 14px;
 }
 
 .section-title h2{
-font-size:48px;
-margin:18px 0;
+font-size:42px;
+margin:14px 0;
+font-weight: 700;
 }
 
 .section-title p{
 color:#bcbcbc;
-max-width:720px;
+max-width:700px;
 margin:auto;
-line-height:1.8;
+line-height:1.7;
+font-size: 15px;
 }
 
-.feature-grid{
+/* Grids Design Setup */
+.feature-grid, .reward-grid, .stats-grid, .review-grid {
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
-.card{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:24px;
-padding:35px;
-transition:.35s;
-position: relative;
+.card, .reward-card, .stat-card, .review-card, .leader, .faq-item {
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.07);
+border-radius:20px;
+padding:30px;
+transition:.3s ease-in-out;
 }
 
-.card:hover{
-transform:translateY(-10px);
+.card:hover, .reward-card:hover, .stat-card:hover, .review-card:hover, .leader:hover {
+transform:translateY(-8px);
 border-color:#00d4ff;
-box-shadow:0 0 40px rgba(0,212,255,.25);
+box-shadow:0 10px 30px rgba(0,212,255,.15);
 }
 
-.icon{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.card h3{
-margin-bottom:14px;
-}
-
-.card p{
-color:#d4d4d4;
-line-height:1.8;
-}
-
-</style>
-
-<section id="rewards" class="rewards">
-
-<div class="section-title">
-<span>REWARDS</span>
-<h2>Stay Active. Unlock Rewards.</h2>
-<p>
-Earnly India encourages a healthy lifestyle through activities, community events and reward opportunities available inside UPI Steps.
-</p>
-</div>
-
-<div class="reward-grid">
-
-<div class="reward-card">
-<div class="reward-icon">👣</div>
-<h3>Daily Step Goals</h3>
-<p>
-Complete your daily walking goals and maintain consistency.
-</p>
-</div>
-
-<div class="reward-card">
-<div class="reward-icon">🎯</div>
-<h3>Weekly Challenges</h3>
-<p>
-Take part in special weekly missions released inside the app.
-</p>
-</div>
-
-<div class="reward-card">
-<div class="reward-icon">🎁</div>
-<h3>Bonus Rewards</h3>
-<p>
-Participate in promotional campaigns and unlock bonus opportunities.
-</p>
-</div>
-
-<div class="reward-card">
-<div class="reward-icon">🏅</div>
-<h3>Achievement Badges</h3>
-<p>
-Earn badges by reaching important fitness milestones.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-.rewards{
-padding:120px 8%;
-}
-
-.reward-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:28px;
-margin-top:60px;
-}
-
-.reward-card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(18px);
-border-radius:25px;
-padding:35px;
-transition:.35s;
-text-align:center;
-}
-
-.reward-card:hover{
-transform:translateY(-10px);
-border-color:#00d4ff;
-box-shadow:0 0 35px rgba(0,212,255,.25);
-}
-
-.reward-icon{
-font-size:52px;
-margin-bottom:20px;
-}
-
-.reward-card h3{
+.icon, .reward-icon {
+font-size:36px;
 margin-bottom:15px;
-font-size:24px;
 }
 
-.reward-card p{
-line-height:1.8;
-color:#d7d7d7;
+.card h3, .reward-card h3 {
+margin-bottom:12px;
+font-size: 20px;
 }
 
-</style>
-
-<section id="membership" class="membership">
-
-<div class="section-title">
-<span>PREMIUM MEMBERSHIP</span>
-<h2>Unlock More Benefits</h2>
-<p>
-Enjoy upcoming premium features, exclusive events and priority access.
-</p>
-</div>
-
-<div class="membership-grid">
-
-<div class="membership-card">
-<h3>FREE</h3>
-<h1>₹0</h1>
-<ul>
-<li>✔ Daily Step Tracking</li>
-<li>✔ Basic Rewards</li>
-<li>✔ Referral Access</li>
-<li>✔ Community Support</li>
-</ul>
-<button class="primary" onclick="comingSoon()">
-Current Plan
-</button>
-</div>
-
-<div class="membership-card premium">
-<div class="premium-badge">
-MOST POPULAR
-</div>
-<h3>GOLD</h3>
-<h1>Coming Soon</h1>
-<ul>
-<li>✔ Exclusive Campaigns</li>
-<li>✔ Priority Support</li>
-<li>✔ Premium Rewards</li>
-<li>✔ VIP Features</li>
-</ul>
-<button class="download-btn" onclick="comingSoon()">
-Coming Soon
-</button>
-</div>
-
-</div>
-
-</section>
-
-<section class="referral">
-
-<div class="section-title">
-<span>REFER & GROW</span>
-<h2>Invite Friends</h2>
-<p>
-Share your referral code after launch and grow the Earnly India community together.
-</p>
-</div>
-
-<div class="referral-box">
-<h2>Referral Rewards</h2>
-<p>
-Invite eligible users through your referral code. Rewards are credited according to the app's referral policy and eligibility criteria.
-</p>
-<button class="primary" onclick="comingSoon()">
-Referral Dashboard
-</button>
-</div>
-
-</section>
-
-<style>
-
-.membership,
-.referral{
-padding:120px 8%;
+.card p, .reward-card p, .review-card p, .leader p, .faq-item p {
+color:#c2c5d6;
+line-height:1.7;
+font-size:14px;
 }
 
 .membership-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
-margin-top:60px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+max-width: 900px;
+margin: 40px auto 0;
 }
 
 .membership-card{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.08);
-padding:40px;
-border-radius:28px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.07);
+padding:40px 30px;
+border-radius:24px;
 text-align:center;
 position:relative;
-transition:.35s;
-}
-
-.membership-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 40px rgba(0,212,255,.25);
-border-color:#00d4ff;
+transition:.3s;
 }
 
 .premium{
 border:2px solid #00d4ff;
+box-shadow: 0 5px 25px rgba(0,212,255,0.1);
 }
 
 .premium-badge{
 position:absolute;
-top:18px;
-right:18px;
+top:15px;
+right:15px;
 background:#00d4ff;
 color:#000;
-padding:6px 14px;
-font-size:12px;
+padding:5px 12px;
+font-size:11px;
 border-radius:20px;
 font-weight:700;
 }
 
 .membership-card h1{
-margin:20px 0;
-font-size:38px;
+margin:15px 0;
+font-size:36px;
 }
 
 .membership-card ul{
 list-style:none;
-margin:25px 0;
+margin:20px 0;
+text-align: left;
+display: inline-block;
 }
 
 .membership-card li{
-padding:10px 0;
+padding:8px 0;
 color:#d7d7d7;
+font-size: 14px;
 }
 
-.referral-box{
-max-width:900px;
-margin:50px auto;
-background:rgba(255,255,255,.05);
-padding:45px;
-border-radius:28px;
-border:1px solid rgba(255,255,255,.08);
+.referral-box {
+max-width:800px;
+margin:0 auto;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.07);
+padding:40px;
+border-radius:24px;
 text-align:center;
-backdrop-filter:blur(18px);
 }
 
 .referral-box p{
-margin:25px 0;
-line-height:1.8;
+margin:20px 0 30px 0;
+line-height:1.7;
 color:#d7d7d7;
 }
 
-</style>
-
-<section class="stats">
-
-<div class="section-title">
-<span>OUR GROWTH</span>
-<h2>Growing Every Day</h2>
-<p>
-Join the Earnly India community and be a part of our fitness journey.
-</p>
-</div>
-
-<div class="stats-grid">
-
-<div class="stat-card">
-<h1 id="userCounter">50K+</h1>
-<p>Community Members</p>
-</div>
-
-<div class="stat-card">
-<h1 id="downloadCounter">10K+</h1>
-<p>Downloads</p>
-</div>
-
-<div class="stat-card">
-<h1 id="stepCounter">1M+</h1>
-<p>Steps Tracked</p>
-</div>
-
-<div class="stat-card">
-<h1>24×7</h1>
-<p>Support</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="leaderboard">
-
-<div class="section-title">
-<span>TOP COMMUNITY</span>
-<h2>Leaderboard</h2>
-<p>
-Top performers will appear here after the official launch.
-</p>
-</div>
-
-<div class="leaderboard-box">
-
-<div class="leader">
-<span>🥇</span>
-<h3>Coming Soon</h3>
-<p>Top Walker</p>
-</div>
-
-<div class="leader">
-<span>🥈</span>
-<h3>Coming Soon</h3>
-<p>Top Referrer</p>
-</div>
-
-<div class="leader">
-<span>🥉</span>
-<h3>Coming Soon</h3>
-<p>Top Reward Earner</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="reviews">
-
-<div class="section-title">
-<span>REVIEWS</span>
-<h2>What Users Say</h2>
-</div>
-
-<div class="review-grid">
-
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<p>
-"Beautiful design and smooth experience. Waiting for the official release."
-</p>
-<h4>- Early User</h4>
-</div>
-
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<p>
-"One of the best fitness reward concepts I have seen."
-</p>
-<h4>- Community Member</h4>
-</div>
-
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<p>
-"Premium UI and modern experience."
-</p>
-<h4>- Beta Visitor</h4>
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-.stats,
-.leaderboard,
-.reviews{
-padding:120px 8%;
-}
-
-.stats-grid,
-.review-grid,
-.leaderboard-box{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:50px;
-}
-
-.stat-card,
-.review-card,
-.leader{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-border-radius:25px;
-padding:35px;
-text-align:center;
-backdrop-filter:blur(20px);
-transition:.35s;
-}
-
-.stat-card:hover,
-.review-card:hover,
-.leader:hover{
-transform:translateY(-8px);
-border-color:#00d4ff;
-box-shadow:0 0 35px rgba(0,212,255,.25);
-}
-
 .stat-card h1{
-font-size:48px;
+font-size:42px;
 color:#00d4ff;
-margin-bottom:10px;
+margin-bottom:8px;
+font-weight: 800;
 }
 
-.review-card p,
-.leader p{
-margin:20px 0;
-color:#d6d6d6;
-line-height:1.8;
-}
-
-</style>
-
-<section id="faq" class="faq">
-
-<div class="section-title">
-<span>FAQ</span>
-<h2>Frequently Asked Questions</h2>
-<p>Find answers to the most common questions about UPI Steps.</p>
-</div>
-
-<div class="faq-container">
-
-<div class="faq-item">
-<h3>How does UPI Steps work?</h3>
-<p>
-Track your daily activity, complete eligible goals and participate in available reward programs inside the app.
-</p>
-</div>
-
-<div class="faq-item">
-<h3>How can I invite friends?</h3>
-<p>
-After launch, you'll receive a referral code inside the app. Rewards are provided according to the referral program rules.
-</p>
-</div>
-
-<div class="faq-item">
-<h3>When will Premium Membership be available?</h3>
-<p>
-Premium Membership is under development and will be announced in a future update.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="contact">
-
-<div class="section-title">
-<span>CONTACT</span>
-<h2>Get In Touch</h2>
-<p>We would love to hear your feedback.</p>
-</div>
-
-<form class="contact-form" onsubmit="event.preventDefault(); comingSoon();">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Email Address" required>
-<textarea rows="6" placeholder="Write your message"></textarea>
-<button class="primary" type="submit">
-Send Message
-</button>
-</form>
-
-</section>
-
-<section class="social">
-
-<div class="section-title">
-<span>FOLLOW US</span>
-<h2>Join Earnly India</h2>
-</div>
-
-<div class="social-icons">
-<a href="#whatsapp" onclick="comingSoon()"><i class="fa-brands fa-whatsapp"></i></a>
-<a href="#telegram" onclick="comingSoon()"><i class="fa-brands fa-telegram"></i></a>
-<a href="#instagram" onclick="comingSoon()"><i class="fa-brands fa-instagram"></i></a>
-<a href="#youtube" onclick="comingSoon()"><i class="fa-brands fa-youtube"></i></a>
-<a href="#facebook" onclick="comingSoon()"><i class="fa-brands fa-facebook"></i></a>
-</div>
-
-</section>
-
-<style>
-
-.faq,
-.contact,
-.social{
-padding:120px 8%;
+.leaderboard-box {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+gap: 25px;
+max-width: 960px;
+margin: 0 auto;
 }
 
 .faq-container{
 display:grid;
 gap:20px;
-margin-top:40px;
-}
-
-.faq-item{
-background:rgba(255,255,255,.05);
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
+max-width: 800px;
+margin: 0 auto;
 }
 
 .faq-item h3{
-margin-bottom:15px;
+margin-bottom:10px;
 color:#00d4ff;
-}
-
-.faq-item p{
-line-height:1.8;
-color:#d7d7d7;
+font-size: 17px;
 }
 
 .contact-form{
-max-width:700px;
+max-width:650px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:20px;
-margin-top:50px;
+gap:18px;
 }
 
 .contact-form input,
 .contact-form textarea{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-padding:18px;
-border-radius:15px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.07);
+padding:16px;
+border-radius:12px;
 color:white;
 outline:none;
+font-size: 14px;
+transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+border-color: #00d4ff;
 }
 
 .social-icons{
 display:flex;
 justify-content:center;
-gap:25px;
-margin-top:50px;
+gap:20px;
+margin-top:30px;
 flex-wrap:wrap;
 }
 
 .social-icons a{
-width:70px;
-height:70px;
+width:65px;
+height:65px;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:28px;
-background:rgba(255,255,255,.05);
+font-size:26px;
+background:rgba(255,255,255,.04);
+border: 1px solid rgba(255,255,255,0.06);
 border-radius:50%;
 text-decoration:none;
 color:white;
@@ -1117,73 +579,33 @@ transition:.3s;
 .social-icons a:hover{
 background:#00d4ff;
 color:#000;
-transform:translateY(-8px);
+transform:translateY(-6px);
+box-shadow: 0 5px 20px rgba(0,212,255,0.4);
 }
 
-</style>
-
-<footer class="footer">
-
-<div class="footer-container">
-
-<div class="footer-logo">
-<h2>Earnly India</h2>
-<p>
-Building the future of fitness rewards with UPI Steps.
-</p>
-</div>
-
-<div class="footer-links">
-<h3>Quick Links</h3>
-<a href="#home">Home</a>
-<a href="#features">Features</a>
-<a href="#rewards">Rewards</a>
-<a href="#membership">Membership</a>
-<a href="#faq">FAQ</a>
-</div>
-
-<div class="footer-links">
-<h3>Support</h3>
-<a href="#privacy" onclick="comingSoon()">Privacy Policy</a>
-<a href="#terms" onclick="comingSoon()">Terms & Conditions</a>
-<a href="#help" onclick="comingSoon()">Help Center</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-<div class="copyright">
-© 2026 Earnly India. All Rights Reserved.
-</div>
-
-</footer>
-
-<div id="popup" class="popup">
-
-<div class="popup-box">
-<h2>🚀 Coming Soon</h2>
-<p>
-This feature is currently under development and will be available in a future update.
-</p>
-<button onclick="closePopup()">
-Close
-</button>
-</div>
-
-</div>
-
-<style>
-
 .footer{
-padding:80px 8% 30px;
+position: relative;
+z-index: 3;
+padding: 80px 8% 30px;
 background:#070b1d;
-margin-top:100px;
+border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .footer-container{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:40px;
+}
+
+.footer-logo h2 {
+font-size: 24px;
+margin-bottom: 15px;
+}
+
+.footer-logo p {
+font-size: 14px;
+color: #a0a5c0;
+line-height: 1.6;
 }
 
 .footer-links{
@@ -1192,9 +614,16 @@ flex-direction:column;
 gap:12px;
 }
 
+.footer-links h3 {
+font-size: 16px;
+margin-bottom: 5px;
+}
+
 .footer-links a{
 color:#d6d6d6;
 text-decoration:none;
+font-size: 14px;
+transition: 0.2s;
 }
 
 .footer-links a:hover{
@@ -1202,11 +631,15 @@ color:#00d4ff;
 }
 
 .copyright{
-margin-top:40px;
+margin-top:50px;
 text-align:center;
 color:#8f8f8f;
+font-size: 13px;
+border-top: 1px solid rgba(255,255,255,0.05);
+padding-top: 25px;
 }
 
+/* Popup Configurations */
 .popup{
 display:none;
 position:fixed;
@@ -1214,7 +647,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.75);
+background:rgba(0,0,0,.8);
 justify-content:center;
 align-items:center;
 z-index:9999;
@@ -1223,26 +656,27 @@ z-index:9999;
 .popup-box{
 background:#11182c;
 padding:35px;
-border-radius:25px;
-max-width:420px;
+border-radius:24px;
+max-width:400px;
 width:90%;
 text-align:center;
 border:1px solid rgba(255,255,255,.08);
 }
 
 .popup-box h2{
-margin-bottom:15px;
+margin-bottom:12px;
 color:#00d4ff;
 }
 
 .popup-box p{
-line-height:1.8;
-margin-bottom:25px;
+line-height:1.7;
+margin-bottom:20px;
 color:#d6d6d6;
+font-size: 14px;
 }
 
 .popup-box button{
-padding:14px 30px;
+padding:12px 28px;
 border:none;
 border-radius:40px;
 background:#00d4ff;
@@ -1251,25 +685,519 @@ font-weight:700;
 cursor:pointer;
 }
 
+/* --- Mobile Responsive Rules Media Queries (Desktop vs Phone View adjustments) --- */
+@media (max-width: 991px) {
+header {
+padding: 15px 5%;
+}
+.hero {
+flex-direction: column;
+text-align: center;
+padding-top: 120px;
+gap: 40px;
+}
+.left h1 {
+font-size: 40px;
+}
+.hero-buttons {
+justify-content: center;
+}
+.section-title h2 {
+font-size: 32px;
+}
+}
+
+@media (max-width: 600px) {
+header nav {
+display: none; /* Can add a responsive dropdown if needed */
+}
+.left h1 {
+font-size: 32px;
+}
+.left p {
+font-size: 15px;
+}
+.features, .rewards, .membership, .referral, .stats, .leaderboard, .reviews, .faq, .contact, .social {
+padding: 60px 5%;
+}
+.footer {
+padding: 50px 5% 20px;
+}
+}
 </style>
+</head>
+
+<body>
+
+<!-- Live EC Coins Simulation layer -->
+<canvas id="coinCanvas"></canvas>
+
+<header>
+<div class="logo">
+Earnly <span>India</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#rewards">Rewards</a>
+<a href="#membership">Membership</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button class="download-btn" onclick="comingSoon()">
+Download App
+</button>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section id="home" class="hero">
+<div class="left">
+<div class="tag">🔥 India's Premium Walk & Earn Platform</div>
+<h1>Walk Smart.<br>Earn Better.<br>Live Healthier.</h1>
+<p>UPI Steps is the flagship rewards platform by Earnly India. Complete eligible activities, stay active and enjoy a premium fitness experience.</p>
+<div class="hero-buttons">
+<button class="primary" onclick="comingSoon()">Get Started</button>
+<button class="secondary" onclick="comingSoon()">Watch Demo</button>
+</div>
+</div>
+
+<div class="right">
+<div class="phone">
+<div class="app-header">
+<span class="app-title"><i class="fa-solid fa-bolt"></i> UPI Steps</span>
+<span>10:55 AM <i class="fa-solid fa-battery-three-quarters" style="margin-left:5px;"></i></span>
+</div>
+<div class="app-screen-content">
+<div class="step-circle-container">
+<div class="circle-bg"></div>
+<div class="circle-progress"></div>
+<div class="step-data">
+<h3>7,482</h3>
+<p>Steps today</p>
+</div>
+</div>
+<div class="app-metrics-grid">
+<div class="metric-box">
+<i class="fa-solid fa-fire"></i>
+<h4>342 kcal</h4>
+<p>Calories</p>
+</div>
+<div class="metric-box">
+<i class="fa-solid fa-route"></i>
+<h4>5.2 km</h4>
+<p>Distance</p>
+</div>
+</div>
+<button class="app-btn" onclick="comingSoon()">
+<i class="fa-solid fa-wallet" style="margin-right:8px;"></i> Redeem Rewards
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= INFINITE RUNNING GALLERY SECTION ================= -->
+<div class="gallery-marquee-section">
+<div class="marquee-wrapper">
+<div class="marquee-group">
+<img src="1000097814.jpg" alt="Fitness Activity">
+<img src="1000097813.jpg" alt="Walking & Cycling">
+<img src="1000097812.jpg" alt="Family Happiness">
+<img src="1000097811.jpg" alt="Healthy Lifestyle">
+<img src="1000097810.jpg" alt="Park Workout">
+<img src="1000097816.jpg" alt="Outdoor Sports">
+<img src="1000097815.jpg" alt="Kids Fun Time">
+</div>
+<div class="marquee-group">
+<img src="1000097814.jpg" alt="Fitness Activity">
+<img src="1000097813.jpg" alt="Walking & Cycling">
+<img src="1000097812.jpg" alt="Family Happiness">
+<img src="1000097811.jpg" alt="Healthy Lifestyle">
+<img src="1000097810.jpg" alt="Park Workout">
+<img src="1000097816.jpg" alt="Outdoor Sports">
+<img src="1000097815.jpg" alt="Kids Fun Time">
+</div>
+</div>
+</div>
+
+<!-- ================= FEATURES SECTION ================= -->
+<section id="features" class="features">
+<div class="section-title">
+<span>WHY CHOOSE US</span>
+<h2>Everything You Need In One Platform</h2>
+<p>Earnly India combines fitness, technology and rewards into one premium experience.</p>
+</div>
+<div class="feature-grid">
+<div class="card">
+<div class="icon">👣</div>
+<h3>Smart Step Counter</h3>
+<p>Track your daily walking activity with high accuracy and beautiful statistics.</p>
+</div>
+<div class="card">
+<div class="icon">🎁</div>
+<h3>Daily Rewards</h3>
+<p>Complete eligible daily activities and participate in reward campaigns.</p>
+</div>
+<div class="card">
+<div class="icon">👥</div>
+<h3>Referral Program</h3>
+<p>Invite friends and grow together through our referral ecosystem.</p>
+</div>
+<div class="card">
+<div class="icon">🏆</div>
+<h3>Leaderboard</h3>
+<p>Compete with other users and stay motivated every single day.</p>
+</div>
+<div class="card">
+<div class="icon">💳</div>
+<h3>Reward Redemption</h3>
+<p>Eligible rewards can be redeemed through the available redemption methods.</p>
+</div>
+<div class="card">
+<div class="icon">⭐</div>
+<h3>Premium Membership</h3>
+<p>Unlock upcoming premium benefits and exclusive campaigns.</p>
+</div>
+</div>
+</section>
+
+<!-- ================= REWARDS SECTION ================= -->
+<section id="rewards" class="rewards">
+<div class="section-title">
+<span>REWARDS</span>
+<h2>Stay Active. Unlock Rewards.</h2>
+<p>Earnly India encourages a healthy lifestyle through activities, community events and reward opportunities available inside UPI Steps.</p>
+</div>
+<div class="reward-grid">
+<div class="reward-card">
+<div class="reward-icon">👣</div>
+<h3>Daily Step Goals</h3>
+<p>Complete your daily walking goals and maintain consistency.</p>
+</div>
+<div class="reward-card">
+<div class="reward-icon">🎯</div>
+<h3>Weekly Challenges</h3>
+<p>Take part in special weekly missions released inside the app.</p>
+</div>
+<div class="reward-card">
+<div class="reward-icon">🎁</div>
+<h3>Bonus Rewards</h3>
+<p>Participate in promotional campaigns and unlock bonus opportunities.</p>
+</div>
+<div class="reward-card">
+<div class="reward-icon">🏅</div>
+<h3>Achievement Badges</h3>
+<p>Earn badges by reaching important fitness milestones.</p>
+</div>
+</div>
+</section>
+
+<!-- ================= MEMBERSHIP SECTION ================= -->
+<section id="membership" class="membership">
+<div class="section-title">
+<span>PREMIUM MEMBERSHIP</span>
+<h2>Unlock More Benefits</h2>
+<p>Enjoy upcoming premium features, exclusive events and priority access.</p>
+</div>
+<div class="membership-grid">
+<div class="membership-card">
+<h3>FREE</h3>
+<h1>₹0</h1>
+<ul>
+<li>✔ Daily Step Tracking</li>
+<li>✔ Basic Rewards</li>
+<li>✔ Referral Access</li>
+<li>✔ Community Support</li>
+</ul>
+<button class="primary" onclick="comingSoon()">Current Plan</button>
+</div>
+<div class="membership-card premium">
+<div class="premium-badge">MOST POPULAR</div>
+<h3>GOLD</h3>
+<h1>Coming Soon</h1>
+<ul>
+<li>✔ Exclusive Campaigns</li>
+<li>✔ Priority Support</li>
+<li>✔ Premium Rewards</li>
+<li>✔ VIP Features</li>
+</ul>
+<button class="download-btn" onclick="comingSoon()">Coming Soon</button>
+</div>
+</div>
+</section>
+
+<!-- ================= REFERRAL SECTION ================= -->
+<section class="referral">
+<div class="section-title">
+<span>REFER & GROW</span>
+<h2>Invite Friends</h2>
+<p>Share your referral code after launch and grow the Earnly India community together.</p>
+</div>
+<div class="referral-box">
+<h2>Referral Rewards</h2>
+<p>Invite eligible users through your referral code. Rewards are credited according to the app's referral policy and eligibility criteria.</p>
+<button class="primary" onclick="comingSoon()">Referral Dashboard</button>
+</div>
+</section>
+
+<!-- ================= LIVE STATS SECTION ================= -->
+<section class="stats">
+<div class="section-title">
+<span>OUR GROWTH</span>
+<h2>Growing Every Day</h2>
+<p>Join the Earnly India community and be a part of our fitness journey.</p>
+</div>
+<div class="stats-grid">
+<div class="stat-card">
+<h1>50K+</h1>
+<p>Community Members</p>
+</div>
+<div class="stat-card">
+<h1>10K+</h1>
+<p>Downloads</p>
+</div>
+<div class="stat-card">
+<h1>1M+</h1>
+<p>Steps Tracked</p>
+</div>
+<div class="stat-card">
+<h1>24×7</h1>
+<p>Support</p>
+</div>
+</div>
+</section>
+
+<!-- ================= LEADERBOARD SECTION ================= -->
+<section class="leaderboard">
+<div class="section-title">
+<span>TOP COMMUNITY</span>
+<h2>Leaderboard</h2>
+<p>Top performers will appear here after the official launch.</p>
+</div>
+<div class="leaderboard-box">
+<div class="leader">
+<span>🥇</span>
+<h3>Coming Soon</h3>
+<p>Top Walker</p>
+</div>
+<div class="leader">
+<span>🥈</span>
+<h3>Coming Soon</h3>
+<p>Top Referrer</p>
+</div>
+<div class="leader">
+<span>🥉</span>
+<h3>Coming Soon</h3>
+<p>Top Reward Earner</p>
+</div>
+</div>
+</section>
+
+<!-- ================= TESTIMONIALS SECTION ================= -->
+<section class="reviews">
+<div class="section-title">
+<span>REVIEWS</span>
+<h2>What Users Say</h2>
+</div>
+<div class="review-grid">
+<div class="review-card">⭐⭐⭐⭐⭐
+<p>"Beautiful design and smooth experience. Waiting for the official release."</p>
+<h4>- Early User</h4>
+</div>
+<div class="review-card">⭐⭐⭐⭐⭐
+<p>"One of the best fitness reward concepts I have seen."</p>
+<h4>- Community Member</h4>
+</div>
+<div class="review-card">⭐⭐⭐⭐⭐
+<p>"Premium UI and modern experience."</p>
+<h4>- Beta Visitor</h4>
+</div>
+</div>
+</section>
+
+<!-- ================= FAQ SECTION ================= -->
+<section id="faq" class="faq">
+<div class="section-title">
+<span>FAQ</span>
+<h2>Frequently Asked Questions</h2>
+<p>Find answers to the most common questions about UPI Steps.</p>
+</div>
+<div class="faq-container">
+<div class="faq-item">
+<h3>How does UPI Steps work?</h3>
+<p>Track your daily activity, complete eligible goals and participate in available reward programs inside the app.</p>
+</div>
+<div class="faq-item">
+<h3>How can I invite friends?</h3>
+<p>After launch, you'll receive a referral code inside the app. Rewards are provided according to the referral program rules.</p>
+</div>
+<div class="faq-item">
+<h3>When will Premium Membership be available?</h3>
+<p>Premium Membership is under development and will be announced in a future update.</p>
+</div>
+</div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="contact">
+<div class="section-title">
+<span>CONTACT</span>
+<h2>Get In Touch</h2>
+<p>We would love to hear your feedback.</p>
+</div>
+<form class="contact-form" onsubmit="event.preventDefault(); comingSoon();">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Email Address" required>
+<textarea rows="6" placeholder="Write your message"></textarea>
+<button class="primary" type="submit">Send Message</button>
+</form>
+</section>
+
+<!-- ================= SOCIAL SECTION (Fixed Channel Handles) ================= -->
+<section class="social">
+<div class="section-title">
+<span>FOLLOW US</span>
+<h2>Join Earnly India</h2>
+</div>
+<div class="social-icons">
+<a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="https://t.me/EarnlyIndiaOfficial" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+<a href="https://x.com/EarnlyIndia_" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="https://youtube.com/@earnlyindiaofficial" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+</div>
+</section>
+
+<!-- ================= FOOTER SECTION ================= -->
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-logo">
+<h2>Earnly India</h2>
+<p>Building the future of fitness rewards with UPI Steps.</p>
+</div>
+<div class="footer-links">
+<h3>Quick Links</h3>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#rewards">Rewards</a>
+<a href="#membership">Membership</a>
+<a href="#faq">FAQ</a>
+</div>
+<div class="footer-links">
+<h3>Support</h3>
+<a href="#privacy" onclick="comingSoon()">Privacy Policy</a>
+<a href="#terms" onclick="comingSoon()">Terms & Conditions</a>
+<a href="#help" onclick="comingSoon()">Help Center</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+<div class="copyright">
+© 2026 Earnly India. All Rights Reserved.
+</div>
+</footer>
+
+<!-- ================= POPUP MODAL ================= -->
+<div id="popup" class="popup">
+<div class="popup-box">
+<h2>🚀 Coming Soon</h2>
+<p>This feature is currently under development and will be available in a future update.</p>
+<button onclick="closePopup()">Close</button>
+</div>
+</div>
 
 <script>
-
 function comingSoon(){
 document.getElementById("popup").style.display="flex";
 }
-
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
-
 window.onclick = function(event) {
-  let popup = document.getElementById("popup");
-  if (event.target == popup) {
-    popup.style.display = "none";
-  }
+let popup = document.getElementById("popup");
+if (event.target == popup) {
+popup.style.display = "none";
+}
 }
 
+/* --- JavaScript logic for Live Falling EC Coins Animation Loop --- */
+const canvas = document.getElementById('coinCanvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+const coins = [];
+const maxCoins = 35; 
+
+class Coin {
+constructor() {
+this.reset();
+this.y = Math.random() * canvas.height; 
+}
+reset() {
+this.x = Math.random() * canvas.width;
+this.y = -20;
+this.size = Math.random() * 14 + 12; 
+this.speedY = Math.random() * 1.5 + 1;
+this.spinSpeed = Math.random() * 0.03 + 0.01;
+this.angle = Math.random() * Math.PI;
+this.opacity = Math.random() * 0.4 + 0.3; 
+}
+update() {
+this.y += this.speedY;
+this.angle += this.spinSpeed;
+if (this.y > canvas.height + 20) {
+this.reset();
+}
+}
+draw() {
+ctx.save();
+ctx.translate(this.x, this.y);
+ctx.scale(Math.sin(this.angle), 1);
+ctx.beginPath();
+ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+
+// Golden-Cyan Premium Coin Style
+let gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
+gradient.addColorStop(0, `rgba(0, 212, 255, ${this.opacity})`);
+gradient.addColorStop(0.8, `rgba(0, 102, 255, ${this.opacity})`);
+gradient.addColorStop(1, `rgba(0, 212, 255, ${this.opacity * 0.5})`);
+
+ctx.fillStyle = gradient;
+ctx.fill();
+ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
+ctx.lineWidth = 1.5;
+ctx.stroke();
+
+// Typography inside coin: "EC"
+ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.3})`;
+ctx.font = `bold ${this.size * 0.8}px Poppins`;
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText('EC', 0, 0);
+
+ctx.restore();
+}
+}
+
+for (let i = 0; i < maxCoins; i++) {
+coins.push(new Coin());
+}
+
+function animateCoins() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+coins.forEach(coin => {
+coin.update();
+coin.draw();
+});
+requestAnimationFrame(animateCoins);
+}
+animateCoins();
 </script>
 
 </body>
