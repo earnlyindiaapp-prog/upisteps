@@ -1,4 +1,3 @@
-<!-- File Name: Earnly india foundation web.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Earnly India Foundation | UPI Steps - Ultimate Premium Exercise & Fitness Reward Hub</title>
 
-<!-- Google Fonts & Premium Icon Typography Packs -->
+<!-- Google Fonts & Professional Icon Typography Packs -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -92,16 +91,26 @@ nav a:hover, nav a.active {
     color: #00d4ff;
 }
 
-.lang-selector {
+.lang-selector-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(0, 212, 255, 0.25);
-    color: white;
     padding: 8px 14px;
     border-radius: 20px;
-    outline: none;
-    cursor: pointer;
+    color: white;
     font-size: 13px;
     font-weight: 500;
+}
+
+.lang-selector-container span {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lang-selector-container span:hover {
+    color: #00d4ff;
 }
 
 .download-btn {
@@ -114,6 +123,9 @@ nav a:hover, nav a.active {
     cursor: pointer;
     box-shadow: 0 0 25px rgba(0, 212, 255, 0.35);
     transition: .3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .download-btn:hover {
@@ -132,7 +144,7 @@ nav a:hover, nav a.active {
 .dedicated-legal-page {
     display: none;
     padding: 180px 8% 100px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     min-height: 100vh;
 }
@@ -223,6 +235,9 @@ nav a:hover, nav a.active {
     cursor: pointer;
     box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
     transition: .3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .primary:hover {
@@ -412,13 +427,13 @@ section {
     font-size: 16px;
 }
 
-.feature-grid, .reward-grid {
+.feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 35px;
 }
 
-.card, .reward-card {
+.card {
     background: rgba(10, 14, 38, 0.7);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -427,25 +442,25 @@ section {
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card:hover, .reward-card:hover {
+.card:hover {
     transform: translateY(-8px);
     border-color: rgba(0, 212, 255, 0.4);
     box-shadow: 0 15px 40px rgba(0, 212, 255, 0.12);
 }
 
-.icon, .reward-icon {
-    font-size: 42px;
+.icon {
+    font-size: 2.5rem;
     margin-bottom: 20px;
     display: inline-block;
 }
 
-.card h3, .reward-card h3 {
+.card h3 {
     margin-bottom: 15px;
     font-size: 22px;
     font-weight: 700;
 }
 
-.card p, .reward-card p {
+.card p {
     color: #a3aed0;
     line-height: 1.75;
     font-size: 14px;
@@ -571,7 +586,7 @@ section {
     text-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
 }
 
-/* --- FIXED CRITICAL STABLE RESPONSIVE REFERRAL SYSTEM --- */
+/* --- REFERRAL SYSTEM RESPONSIVE GRID --- */
 .upgraded-referral-matrix-box {
     max-width: 1100px;
     margin: 60px auto 0;
@@ -581,17 +596,6 @@ section {
     padding: 50px 40px;
     position: relative;
     overflow: hidden;
-}
-
-.upgraded-referral-matrix-box::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0,212,255,0.04) 0%, transparent 60%);
-    pointer-events: none;
 }
 
 .refer-title {
@@ -614,7 +618,6 @@ section {
     line-height: 1.7;
 }
 
-/* Stable Layout Configuration Grid Box */
 .refer-input-responsive-container {
     display: flex;
     align-items: center;
@@ -626,7 +629,7 @@ section {
     max-width: 650px;
     margin: 0 auto;
     gap: 20px;
-    flex-wrap: wrap; /* Prevents text overflow onto buttons dynamically */
+    flex-wrap: wrap;
 }
 
 .refer-code-txt {
@@ -714,14 +717,15 @@ section {
 }
 
 .blog-meta {
-    font-size: 12px;
-    color: #718096;
+    font-size: 0.9rem;
+    color: #a3aed0;
     margin-bottom: 12px;
 }
 
 .blog-body h4 {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
+    margin-top: 5px;
     margin-bottom: 14px;
     line-height: 1.4;
     color: #ffffff;
@@ -745,7 +749,7 @@ section {
     cursor: pointer;
 }
 
-/* --- Massive AdSense Compliant Master Content Styling --- */
+/* --- Master AdSense Compliance Section --- */
 .adsense-master-section {
     background: #06091c;
     border-top: 1px solid rgba(0, 212, 255, 0.1);
@@ -758,7 +762,7 @@ section {
     margin: 0 auto;
 }
 
-.adsense-article-header h2 {
+.adsense-wrapper h2 {
     font-size: 38px;
     color: #ffffff;
     font-weight: 800;
@@ -776,54 +780,31 @@ section {
     text-align: justify;
 }
 
-.adsense-subheading {
-    font-size: 24px;
-    color: #00d4ff;
-    font-weight: 700;
-    margin-top: 45px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.adsense-list {
-    padding-left: 25px;
-    margin-bottom: 30px;
-}
-
-.adsense-list li {
-    margin-bottom: 14px;
-    font-size: 15.5px;
-    color: #b4c2e0;
-    line-height: 1.7;
-}
-
 /* --- Unified Legal Content Formatting Structure --- */
 .legal-document-layout h1 {
-    font-size: 42px;
+    font-size: 2.5rem;
     font-weight: 900;
     margin-bottom: 20px;
     color: #ffffff;
-    border-bottom: 2px solid #00d4ff;
+    border-bottom: 3px solid #00d4ff;
     padding-bottom: 15px;
 }
 .legal-document-layout h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-top: 40px;
     margin-bottom: 15px;
     color: #00d4ff;
 }
-.legal-document-layout p {
-    font-size: 16px;
+.legal-document-layout p, .legal-document-layout li {
+    font-size: 1.05rem;
     line-height: 1.9;
     color: #b4c2e0;
     margin-bottom: 20px;
     text-align: justify;
 }
 
-/* --- Interactive Dashboard Systems --- */
+/* --- Dynamic Forms --- */
 .contact-form {
     max-width: 700px;
     margin: auto;
@@ -848,35 +829,6 @@ section {
 .contact-form textarea:focus {
     border-color: #00d4ff;
     background: rgba(0, 212, 255, 0.02);
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.social-icons a {
-    width: 65px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 26px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    color: white;
-    transition: 0.3s ease;
-}
-
-.social-icons a:hover {
-    background: #00d4ff;
-    color: #000;
-    transform: translateY(-6px);
-    box-shadow: 0 5px 25px rgba(0, 212, 255, 0.45);
 }
 
 /* --- Premium Footer --- */
@@ -988,13 +940,12 @@ section {
 /* --- Responsive Engine Configuration Rules --- */
 @media (max-width: 1024px) {
     header { padding: 18px 5%; }
-    nav { gap: 18px; }
+    nav { display: none; }
     .hero { padding-top: 150px; gap: 40px; }
     .left h1 { font-size: 44px; }
 }
 
 @media (max-width: 820px) {
-    header nav { display: none; }
     .hero { flex-direction: column; text-align: center; padding-top: 140px; }
     .hero-buttons { justify-content: center; }
     .left h1 { font-size: 36px; }
@@ -1002,545 +953,33 @@ section {
     .refer-input-responsive-container { justify-content: center; text-align: center; padding: 20px; }
     .refer-code-txt { text-align: center; }
     .premium-rank-row { padding: 15px 20px; }
-    .user-identity-block .name { font-size: 15px; }
-    .rank-right-cluster .metrics-value { font-size: 16px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Live Golden/Cyan Coin Dynamic Particle Simulation Canvas -->
 <canvas id="coinCanvas"></canvas>
 
 <!-- Top Fixed Header Panel -->
 <header>
 <div class="logo">Earnly <span>India</span></div>
 <div class="header-right">
-    <nav>
-        <a onclick="navigateToView('home')" class="active">Home</a>
-        <a onclick="navigateToView('features')">Features</a>
-        <a onclick="navigateToView('leaderboard')">Leaderboard</a>
-        <a onclick="navigateToView('blog')">Insights</a>
-        <a onclick="navigateToView('adsense-content')">Compliance</a>
-        <a onclick="navigateToView('contact')">Contact</a>
-    </nav>
+    <div class="lang-selector-container">
+        <span onclick="changeLanguage('en')"><i class="fa-solid fa-globe"></i> English (US)</span>
+        <span onclick="changeLanguage('hi')"><i class="fa-solid fa-globe"></i> हिंदी (HI)</span>
+    </div>
 
-    <select class="lang-selector" onchange="changeLanguage(this.value)">
-        <option value="en">🌐 English (US)</option>
-        <option value="hi">🌐 हिंदी (HI)</option>
-    </select>
-
-    <button class="download-btn" onclick="openSupportModal('download')">Download App</button>
+    <button class="download-btn" onclick="openSupportModal('download')">
+        <i class="fa-solid fa-download"></i> Download App
+    </button>
 </div>
 </header>
 
-<!-- ================= WRAPPER FOR SYSTEM WEB MAIN VIEWS ================= -->
+<!-- ================= MAIN WEB VIEWS ================= -->
 <div id="mainAppViewContainer" class="app-view-container">
 
-    <!-- Hero Base Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
     <div class="left">
-        <div class="tag" id="heroTag">🚀 INDIA'S MOST TRUSTED VERIFIED STEP REWARDS HUB</div>
-        <h1 id="heroTitle">Every Single Step<br>You Take Earns<br>Premium Value.</h1>
-        <p id="heroDesc">UPI Steps by Earnly India transforms walking, cycling, and routine physical movements into robust dynamic points tracking structures. Stay fit, invite partners, and unlock premium tiers today.</p>
-        <div class="hero-buttons">
-            <button class="primary" onclick="openSupportModal('download')" id="btnGetStarted">Get Started Instantly</button>
-            <button class="secondary" onclick="openSupportModal('demo')" id="btnWatchDemo">Interactive Demo</button>
-        </div>
-    </div>
-
-    <div class="right">
-        <div class="phone">
-            <div class="app-header">
-                <span class="app-title"><i class="fa-solid fa-heart-pulse"></i> UPI Steps Live</span>
-                <span>12:45 PM <i class="fa-solid fa-battery-full" style="margin-left:5px;"></i></span>
-            </div>
-            <div class="app-screen-content">
-                <div class="step-circle-container">
-                    <div class="circle-bg"></div>
-                    <div class="circle-progress"></div>
-                    <div class="step-data">
-                        <h3 id="liveStepsDisplay">9,840</h3>
-                        <p id="phoneStepsText">Steps Taken</p>
-                    </div>
-                </div>
-                <div class="app-metrics-grid">
-                    <div class="metric-box">
-                        <i class="fa-solid fa-fire-flame-simple"></i>
-                        <h4>412 kcal</h4>
-                        <p id="phoneCalText">Burned</p>
-                    </div>
-                    <div class="metric-box">
-                        <i class="fa-solid fa-road"></i>
-                        <h4>6.8 km</h4>
-                        <p id="phoneDistText">Distance Covered</p>
-                    </div>
-                </div>
-                <button class="app-btn" onclick="openSupportModal('redeem')" id="phoneBtnText">
-                    <i class="fa-solid fa-wallet" style="margin-right:8px;"></i> Redeem Hub Matrix
-                </button>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <!-- Capabilities Section -->
-    <section id="features" class="features">
-    <div class="section-title">
-        <span id="featSpan">Core Capabilities</span>
-        <h2 id="featTitle">Engineered For Absolute Integrity</h2>
-        <p id="featDesc">Explore the premium architecture that positions Earnly India as the leading compliance-driven platform across the region.</p>
-    </div>
-    <div class="feature-grid">
-        <div class="card">
-            <div class="icon">🤖</div>
-            <h3 id="fT1">Hardware Sensor Integration</h3>
-            <p id="fD1">Syncs organically with system-level step counts to avoid manual entry manipulations or spoofed parameters.</p>
-        </div>
-        <div class="card">
-            <div class="icon">🔒</div>
-            <h3 id="fT2">SSL Encrypted Ledgers</h3>
-            <p id="fD2">Every single milestone achieved is safely updated on high-security networks with bank-level encryption protocols.</p>
-        </div>
-        <div class="card">
-            <div class="icon">⚡</div>
-            <h3 id="fT3">Instant Eligibility Feedback</h3>
-            <p id="fD3">Know instantly when your performance falls into standard distributions and fits specific campaign requirements.</p>
-        </div>
-    </div>
-    </section>
-
-    <!-- HIGH-END RE-DESIGNED LIVE RADAR LEADERBOARD MATRIX -->
-    <section id="leaderboard">
-    <div class="section-title">
-        <span>TOP ELITE ACTIVITY LOGS</span>
-        <h2>Global Performance Standings</h2>
-        <p>Real-time high-fidelity activity charts displaying verified 5-Star data distribution logs metrics across network frameworks.</p>
-    </div>
-    
-    <div class="premium-leaderboard-panel">
-        <div class="leaderboard-meta-header">
-            <h3><i class="fa-solid fa-crown"></i> Live Network Rankings</h3>
-            <span style="font-size: 13px; color: #00d4ff; font-weight: 700;"><i class="fa-solid fa-shield-halved"></i> 100% Secure Nodes</span>
-        </div>
-        
-        <div class="premium-rank-grid">
-            <div class="premium-rank-row">
-                <div class="rank-left-cluster">
-                    <div class="premium-badge-slot">1</div>
-                    <div class="user-identity-block">
-                        <span class="name">Aarav Sharma</span>
-                        <div class="star-rating-cluster"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                </div>
-                <div class="rank-right-cluster">
-                    <span class="metrics-value">24,850 Steps</span>
-                </div>
-            </div>
-            
-            <div class="premium-rank-row">
-                <div class="rank-left-cluster">
-                    <div class="premium-badge-slot">2</div>
-                    <div class="user-identity-block">
-                        <span class="name">Priya Patel</span>
-                        <div class="star-rating-cluster"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                </div>
-                <div class="rank-right-cluster">
-                    <span class="metrics-value">22,140 Steps</span>
-                </div>
-            </div>
-
-            <div class="premium-rank-row">
-                <div class="rank-left-cluster">
-                    <div class="premium-badge-slot">3</div>
-                    <div class="user-identity-block">
-                        <span class="name">Vikram Singh</span>
-                        <div class="star-rating-cluster"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                </div>
-                <div class="rank-right-cluster">
-                    <span class="metrics-value">20,900 Steps</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- RE-DESIGNED NO-OVERFLOW COMPLETELY RESPONSIVE REFERRAL SYSTEM BOX -->
-    <div class="upgraded-referral-matrix-box">
-        <div class="refer-title"><i class="fa-solid fa-share-nodes" style="color: #00d4ff;"></i> Exclusive Network Referral Mechanism</div>
-        <div class="refer-desc">Share your unified referral matrix signature link with your community circles. When active protocols register inside data parameters, your network access index upgrades immediately.</div>
-        <div class="refer-input-responsive-container">
-            <span class="refer-code-txt" id="referralCodeText">EARNLY-IND-99X</span>
-            <button class="refer-action-btn" onclick="copyReferralLink()"><i class="fa-solid fa-copy"></i> Copy Activation Code</button>
-        </div>
-    </div>
-    </section>
-
-    <!-- Insights Section -->
-    <section id="blog">
-    <div class="section-title">
-        <span>FITNESS INSIGHTS</span>
-        <h2>Earnly Corporate Blog & Research Articles</h2>
-        <p>Read comprehensive editorial research on bio-metrics, step calculation standards, and digital reward economics.</p>
-    </div>
-    <div class="blog-grid">
-        <div class="blog-post-card">
-            <div class="blog-dummy-img">
-                <i class="fa-solid fa-notes-medical"></i>
-                <span class="blog-badge">Health & Tech</span>
-            </div>
-            <div class="blog-body">
-                <div class="blog-meta">July 17, 2026 • 5 Min Read</div>
-                <h4>How Daily Step Targets Improve Metabolic Efficiency</h4>
-                <p>Discover the molecular benefits behind taking 10,000 steps daily and how step trackers safely calibrate movement sensors.</p>
-                <a class="blog-read-more" onclick="renderLegalOrBlogPage('blog1')">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-        <div class="blog-post-card">
-            <div class="blog-dummy-img">
-                <i class="fa-solid fa-shield-halved"></i>
-                <span class="blog-badge">Security Integrity</span>
-            </div>
-            <div class="blog-body">
-                <div class="blog-meta">July 15, 2026 • 8 Min Read</div>
-                <h4>The Role of Anti-Cheat Algorithms in Step Validation</h4>
-                <p>An in-depth technical analysis on how Earnly India ensures 100% network compliance by detecting hardware emulator loops.</p>
-                <a class="blog-read-more" onclick="renderLegalOrBlogPage('blog2')">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <!-- Master AdSense Compliance Articles Section -->
-    <section id="adsense-content" class="adsense-master-section">
-    <div class="adsense-wrapper">
-        <h2>What is UPI Steps by Earnly India and How Does It Work? Detailed Explanations</h2>
-        <p class="adsense-body-text">
-            Welcome to the definitive informational portal of <strong>Earnly India Foundation</strong>, the country's premium fitness rewards ecosystem designed specifically to transform your daily physical activities into exciting rewards. Our flagship web application platform, <strong>UPI Steps</strong>, bridges the gap between biological health data tracking and digital incentives.
-        </p>
-        <p class="adsense-body-text">
-            Our platform operates as a secure, transparent middleware framework that interacts with smartphone pedometer chips, device-level gyroscope sensors, and accelerometer matrices to gather real-time performance indicators. By processing these data streams cleanly, Earnly India translates abstract steps into structured analytical graphs, providing users with absolute control over their fitness benchmarks while building an inclusive community.
-        </p>
-    </div>
-    </section>
-
-    <!-- Contact Control Architecture -->
-    <section id="contact">
-    <div class="section-title">
-        <span>COMMUNICATION DISPATCH</span>
-        <h2>Submit Inquiries</h2>
-        <p>Reach our technical support desks directly with any queries regarding your data layout files or validation statuses.</p>
-    </div>
-    <form class="contact-form" onsubmit="event.preventDefault(); handleContactSubmit();">
-        <input type="text" placeholder="Your Official Full Name" id="contactName" required>
-        <input type="email" placeholder="Verified Email Address" id="contactEmail" required>
-        <textarea rows="6" placeholder="Detailed query message regarding dashboard compliance panels..." id="contactMessage" required></textarea>
-        <button class="primary" type="submit">Dispatch Secure Transmission</button>
-    </form>
-    </section>
-
-</div>
-
-<!-- ================= HIGH DEFINITION 1000-WORD DEDICATED FULL ROUTED PAGE CONTAINER ================= -->
-<div id="dedicatedLegalPageContainer" class="dedicated-legal-page">
-    <button class="back-home-btn" onclick="returnToMainView()"><i class="fa-solid fa-chevron-left"></i> Return to Main Website</button>
-    <div id="dynamicLegalContentInject" class="legal-document-layout">
-        <!-- Content gets programmatically placed here inside high resolution parameters safely -->
-    </div>
-</div>
-
-<!-- ================= FOOTER ARCHITECTURE ================= -->
-<footer class="footer">
-<div class="footer-container">
-    <div class="footer-logo">
-        <h2>Earnly India</h2>
-        <p>Advancing structural mobility tracking protocols under pristine compliance frameworks.</p>
-    </div>
-    <div class="footer-links">
-        <h3>Structural Maps</h3>
-        <a onclick="navigateToView('home')">Home Base</a>
-        <a onclick="navigateToView('features')">Capabilities</a>
-        <a onclick="navigateToView('leaderboard')">Leaderboard Matrices</a>
-        <a onclick="navigateToView('blog')">Research Blog</a>
-    </div>
-    <div class="footer-links">
-        <h3>Privacy Compliance</h3>
-        <a onclick="renderLegalOrBlogPage('privacy')">Privacy Policy Docs (1000 Words)</a>
-        <a onclick="renderLegalOrBlogPage('terms')">Terms & Conditions Full Layout</a>
-        <a href="#contact">Contact Desk</a>
-    </div>
-</div>
-<div class="copyright">
-    © 2026 Earnly India Foundation. All Rights Reserved. Structural Build Version 5.0.0 (AdSense Approved Maximum Dynamic Configuration).
-</div>
-</footer>
-
-<!-- Unified Popup Notification Modals -->
-<div id="popup" class="popup">
-<div class="popup-box">
-    <h2 id="modalTitle">🚀 System Notice</h2>
-    <div id="modalBody" style="margin-bottom: 25px; line-height: 1.8; color: #b4c2e0; font-size: 14.5px;"></div>
-    <button onclick="closePopup()">Acknowledge & Close</button>
-</div>
-</div>
-
-<script>
-// Deep Routed Single Page Navigation Render Management Engines
-function renderLegalOrBlogPage(targetKey) {
-    window.scrollTo(0,0);
-    document.getElementById("mainAppViewContainer").classList.add("hidden");
-    const legalPage = document.getElementById("dedicatedLegalPageContainer");
-    legalPage.classList.add("active");
-    
-    let injectedHTML = "";
-    
-    if(targetKey === 'privacy') {
-        injectedHTML = `
-            <h1>🔒 Premium Privacy Policy and Personal Bio-Metric Security Disclosure</h1>
-            <p><b>Effective Date: July 17, 2026</b></p>
-            <h2>1. Structural Framework Overview</h2>
-            <p>At Earnly India Foundation, user data protection and programmatic privacy standards are fundamental pillars of our digital ecosystems. This exhaustive Privacy Policy document clarifies the operational methods used to process metrics generated by the UPI Steps tracking framework. We enforce multiple layers of advanced technical protections to ensure compliance with global publishing networks, local structural laws, and modern data collection practices.</p>
-            
-            <h2>2. Pedometer, Sensor, and Technical Data Ingestion Parameters</h2>
-            <p>To operate accurately without latency, our mobile architecture interfaces directly with system level motion hardware chips embedded inside your mobile device ecosystem. This collection logs device metrics including daily step metrics, step acceleration counts, running frequency indicators, local device time logs, and estimated calorie distribution values. This information is evaluated locally via internal encryption logic arrays, completely isolated from malicious programmatic scrapers or external identity engines.</p>
-            
-            <h2>3. Zero Absolute Location Sharing Manifestos</h2>
-            <p>Unlike standard generic positioning applications, UPI Steps strictly enforces a permanent restrictive grid on active GPS coordinates log files. Your specific structural longitude and latitude parameters are completely excluded from data collection practices. Distance metrics are calculated as aggregate values inside local memory loops, ensuring your privacy is safe from trackable location analysis systems.</p>
-            
-            <h2>4. Network Transmission, Encryption, and Data Vault Lifecycles</h2>
-            <p>When high-priority milestones are pushed to cloud networks for rank generation updates, data packets travel exclusively through secure SSL layers. These records are held inside sandboxed database architectures protected under enterprise security parameters. Inactive historical activity logs face automatic truncation and deletion algorithms every calendar cycle to reduce digital risk vectors to absolute zero.</p>
-            
-            <h2>5. Strategic Data Processing for AdSense Publishing Integrity</h2>
-            <p>We work in perfect symmetry with global ad distribution layers like Google AdSense. User interaction cycles are monitored for security logs and statistical distributions only. We never sell, rent, lease, or distribute verified personal files to third-party tracking corporations. The content remains pristine, compliant, and ad-safe across all global network requirements.</p>
-            
-            <h2>6. User Assertions, System Consent, and Final Rights</h2>
-            <p>By continuing utilization parameters within our domain spaces, you agree to these clear collection methods. Users retain the total right to clear data records from our active vaults instantly by lodging direct removal requests through our dedicated technical contact interfaces.</p>
-        `;
-    } else if(targetKey === 'terms') {
-        injectedHTML = `
-            <h1>📄 Comprehensive Terms of Service, User Responsibilities, and Fair-Use Systems</h1>
-            <p><b>System Policy Version: 5.0.0 (Calibrated for 2026 Deployment)</b></p>
-            <h2>1. Legal Acceptance Vectors</h2>
-            <p>Welcome to the premium digital framework of Earnly India Foundation. By accessing our core platforms, utilizing user interfaces, or compiling source application packages, you enter into a legally binding compliance agreement with us. If any specific criteria defined here conflict with personal operational limits, we request immediate disconnection from all system assets.</p>
-            
-            <h2>2. Fair-Use Movement Tracking Integrity Rules</h2>
-            <p>The core purpose of the UPI Steps reward system is to incentivize authentic physical human motion. Consequently, strict system rules apply across all validation layers. Generating simulated step frequencies via mechanical phone shaking systems, automated pendulum rigs, running mock GPS loop routines, or compiling dual instance files inside hardware system spaces is strictly forbidden.</p>
-            
-            <h2>3. Algorithmic Countermeasures, Auditing Protocols, and Penalty Schemes</h2>
-            <p>Earnly India Foundation runs continuous pattern scanners that check step datasets against baseline biological parameters. Sudden accelerations, perfect rhythmic counts, or unusual midnight activity loops are automatically flagged for review. Profiles caught violating fair-use policies will experience immediate access termination, tier status suspension, and permanent reduction of accumulated milestone tokens without exception.</p>
-            
-            <h2>4. Multi-Tier Reward Architecture and Allocation Payout Guidelines</h2>
-            <p>Milestone targets, daily streaks, and premium performance badges do not constitute legal financial liabilities. They represent internal tracking points used to calibrate system placement inside global leaderboard configurations. All payout rules, campaign limits, and access conditions are managed dynamically by the framework dashboard based on current verified traffic states.</p>
-            
-            <h2>5. Intellectual Property Rights and System Domain Protections</h2>
-            <p>All graphical assets, typography layout arrays, custom falling coin animations, background engine configurations, and operational trademarks are the absolute property of Earnly India Foundation. Unauthorized distribution, copying source code, or launching clone domains will instantly face standard legal enforcement actions.</p>
-            
-            <h2>6. Liability Limits and Systematic Updates</h2>
-            <p>We provide our digital assets purely on an "As-Is" framework without warranties regarding perpetual operational state availability. We reserve the full right to implement structural design changes, data adjustments, and policy upgrades at any time to preserve system security and network integrity.</p>
-        `;
-    } else if(targetKey === 'blog1') {
-        injectedHTML = `
-            <h1>📰 How Daily Step Targets Improve Metabolic Efficiency: A Technical Deep Dive</h1>
-            <p><b>Published on Corporate Insights Desk • 600 Words Extensive Review</b></p>
-            <p>Walking regularly serves as a primary driver for increasing systemic human metabolic metrics. When a person maintains an active baseline movement habit, muscle cell engines increase oxygen usage, optimizing how glucose molecules are split across active muscle zones. This biological transformation changes abstract walking steps into concrete metabolic benefits, significantly lowering long-term cardiovascular risk profiles.</p>
-            <p>Modern mobile phones track this progression cleanly by interpreting data streams generated from micro-electromechanical systems (MEMS) accelerometers. These chips record acceleration along three spatial directions, converting physical movement into clean numerical records. By aiming for a standard daily goal of 10,000 steps, individuals can effectively prevent modern sedentary wellness issues while helping keep their metabolic systems performing at peak levels.</p>
-            <p>Furthermore, maintaining persistent step goals helps control baseline energy use, helping managing steady caloric deficits easily. The regular rhythm of walking coordinates human breathing, circulation, and muscle deployment into a balanced pattern, showing that simple, daily consistent movements remain a highly effective way to protect long-term personal health.</p>
-        `;
-    } else if(targetKey === 'blog2') {
-        injectedHTML = `
-            <h1>📰 The Role of Anti-Cheat Algorithms in Modern Step Validation Layers</h1>
-            <p><b>Published on Corporate Insights Desk • 600 Words Technical Analysis</b></p>
-            <p>To establish true, trusted value within digital wellness networks, platforms must use strong programmatic verification methods. Earnly India deploys complex anomaly filters that carefully analyze step intervals, natural acceleration shifts, and physical rotation patterns. If a user deploys a hardware shaking machine or attempts to simulate steps via automated emulators, the system flags the suspicious activity signature instantly.</p>
-            <p>Natural human walking has structural variation; no one takes steps with perfectly identical microsecond precision over a long period. Our system uses this basic biological fact to separate genuine steps from artificial macro loops. By cross-checking sensor data streams, the tracking platform safely protects honest users while keeping the rewards pool fair and secure for the entire community.</p>
-            <p>This anti-cheat layer is crucial for maintaining top-tier ad safety ratings required by premium publishing networks like Google AdSense. By ensuring every tracked event corresponds to real physical movement, Earnly India builds a trusted, secure ecosystem that corporate partners and users can rely on completely.</p>
-        `;
-    }
-    
-    document.getElementById("dynamicLegalContentInject").innerHTML = injectedHTML;
-}
-
-function returnToMainView() {
-    document.getElementById("dedicatedLegalPageContainer").classList.remove("active");
-    document.getElementById("mainAppViewContainer").classList.remove("hidden");
-    navigateToView('home');
-}
-
-function navigateToView(id) {
-    document.getElementById("dedicatedLegalPageContainer").classList.remove("active");
-    document.getElementById("mainAppViewContainer").classList.remove("hidden");
-    
-    let element = document.getElementById(id);
-    if(element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    let links = document.querySelectorAll('header nav a');
-    links.forEach(link => {
-        link.classList.remove('active');
-        if(link.innerText.toLowerCase().includes(id.substring(0,4))) {
-            link.classList.add('active');
-        }
-    });
-}
-
-// Clipboard Management System for Referrals
-function copyReferralLink() {
-    let textToCopy = document.getElementById("referralCodeText").innerText;
-    navigator.clipboard.writeText(textToCopy);
-    
-    document.getElementById("modalTitle").innerText = "📋 Referral Code Copied";
-    document.getElementById("modalBody").innerHTML = "<p>Your unique referral signature code <b>" + textToCopy + "</b> has been cloned securely to your clipboard. Share it within your fitness network to increase access indices.</p>";
-    document.getElementById("popup").style.display = "flex";
-}
-
-// Unified Form Submission Protocol Handler
-function handleContactSubmit() {
-    let name = document.getElementById("contactName").value;
-    document.getElementById("modalTitle").innerText = "✉️ Transmission Dispatched";
-    document.getElementById("modalBody").innerHTML = "<p>Thank you, <b>" + name + "</b>. Your compliance query file has been logged under system token #" + Math.floor(Math.random()*900000+100000) + ". Our network support engineers will contact you within 24 operational hours.</p>";
-    document.getElementById("popup").style.display = "flex";
-    document.getElementById("contactName").value = "";
-    document.getElementById("contactEmail").value = "";
-    document.getElementById("contactMessage").value = "";
-}
-
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-}
-
-function openSupportModal(type) {
-    let title = "";
-    let body = "";
-    
-    if(type === 'download') {
-        title = "📥 Application Packaging Queue";
-        body = "<p>The verified application source code arrays are currently completing secure sandboxed optimization updates. Direct downloadable packages will be distributed exclusively through our official Telegram and WhatsApp ecosystems soon.</p>";
-    } else if(type === 'demo') {
-        title = "📺 Interactive Validation Demo";
-        body = "<p>Our modular technical simulation video walkthrough is undergoing localization rendering processes. This framework details how real-time step streams seamlessly convert into highly organized graphical milestones within our cloud infrastructure securely.</p>";
-    } else if(type === 'redeem') {
-        title = "💳 Reward Matrix Redemption Protocol";
-        body = "<p>Redemption features automatically activate once an account completes standard verification profiles and meets specific campaign thresholds. Full distribution processes follow verified transparent guidelines.</p>";
-    }
-    
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalBody").innerHTML = body;
-    document.getElementById("popup").style.display = "flex";
-}
-
-// Language Translation Mapping Configurations
-const translationMatrix = {
-    en: {
-        tag: "🚀 INDIA'S MOST TRUSTED VERIFIED STEP REWARDS HUB",
-        hTitle: "Every Single Step<br>You Take Earns<br>Premium Value.",
-        hDesc: "UPI Steps by Earnly India transforms walking, cycling, and routine physical movements into robust dynamic points tracking structures. Stay fit, invite partners, and unlock premium tiers today.",
-        gStart: "Get Started Instantly", wDemo: "Interactive Demo"
-    },
-    hi: {
-        tag: "🚀 भारत का सबसे विश्वसनीय सत्यापित स्टेप रिवॉर्ड हब",
-        hTitle: "आपके द्वारा उठाया गया<br>हर एक कदम कमाता है<br>प्रीमियम मूल्य।",
-        hDesc: "अर्नली इंडिया द्वारा संचालित UPI Steps आपके चलने, साइकिल चलाने और नियमित शारीरिक गतिविधियों को मजबूत डिजिटल पॉइंट ट्रैकिंग संरचनाओं में बदल देता है। आज ही फिट रहें और प्रीमियम टियर अनलॉक करें।",
-        gStart: "तुरंत शुरू करें", wDemo: "इंटरैक्टिव डेमो देखें"
-    }
-};
-
-function changeLanguage(lang) {
-    const matrix = translationMatrix[lang];
-    document.getElementById("heroTag").innerText = matrix.tag;
-    document.getElementById("heroTitle").innerHTML = matrix.hTitle;
-    document.getElementById("heroDesc").innerText = matrix.hDesc;
-    document.getElementById("btnGetStarted").innerText = matrix.gStart;
-    document.getElementById("btnWatchDemo").innerText = matrix.wDemo;
-}
-
-/* --- Falling EC Coins Background Animation Canvas Script --- */
-const canvas = document.getElementById('coinCanvas');
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-const coins = [];
-const maxCoins = 35;
-
-class Coin {
-    constructor() {
-        this.reset();
-        this.y = Math.random() * canvas.height; 
-    }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = -30;
-        this.size = Math.random() * 12 + 10; 
-        this.speedY = Math.random() * 0.9 + 0.5;
-        this.spinSpeed = Math.random() * 0.04 + 0.01;
-        this.angle = Math.random() * Math.PI;
-        this.opacity = Math.random() * 0.25 + 0.15; 
-    }
-    update() {
-        this.y += this.speedY;
-        this.angle += this.spinSpeed;
-        if (this.y > canvas.height + 30) {
-            this.reset();
-        }
-    }
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.scale(Math.sin(this.angle), 1);
-        ctx.beginPath();
-        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-
-        let gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
-        gradient.addColorStop(0, `rgba(0, 212, 255, ${this.opacity})`);
-        gradient.addColorStop(0.75, `rgba(0, 102, 255, ${this.opacity * 0.8})`);
-        gradient.addColorStop(1, `rgba(0, 212, 255, 0)`);
-
-        ctx.fillStyle = gradient;
-        ctx.fill();
-        ctx.strokeStyle = `rgba(0, 212, 255, ${this.opacity + 0.1})`;
-        ctx.lineWidth = 1.2;
-        ctx.stroke();
-
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
-        ctx.font = `bold ${this.size * 0.7}px Poppins`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('EC', 0, 0);
-
-        ctx.restore();
-    }
-}
-
-for (let i = 0; i < maxCoins; i++) {
-    coins.push(new Coin());
-}
-
-let stepsCounter = 9840;
-setInterval(() => {
-    stepsCounter += Math.floor(Math.random() * 3);
-    const liveDisplay = document.getElementById("liveStepsDisplay");
-    if(liveDisplay) {
-        liveDisplay.innerText = stepsCounter.toLocaleString();
-    }
-}, 3000);
-
-function animateCoins() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    coins.forEach(coin => {
-        coin.update();
-        coin.draw();
-    });
-    requestAnimationFrame(animateCoins);
-}
-animateCoins();
-</script>
-
-</body>
-</html>
+      
