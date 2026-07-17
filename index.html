@@ -60,13 +60,13 @@ body {
     z-index: 1;
 }
 
-/* --- Premium Left-Oriented Navigation Header --- */
+/* --- Premium Optimized Header Flow Layout --- */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 12px 4%;
+    padding: 14px 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,7 +79,6 @@ header {
 .left-nav-cluster {
     display: flex;
     align-items: center;
-    gap: 15px;
 }
 
 .logo {
@@ -97,39 +96,11 @@ header {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-/* Compact Interface Selector Triggers */
-.action-trigger-pill {
-    background: rgba(0, 212, 255, 0.05);
-    border: 1px solid rgba(0, 212, 255, 0.25);
-    padding: 8px 14px;
-    border-radius: 20px;
-    color: var(--text-main);
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: 0.2s ease-in-out;
-}
-
-.action-trigger-pill:hover {
-    background: rgba(0, 212, 255, 0.15);
-    border-color: #00d4ff;
-}
-
-.theme-toggle-btn {
-    background: linear-gradient(90deg, #f59e0b, #d97706);
-    border: none;
-    color: white;
+    gap: 15px;
 }
 
 .download-btn {
-    padding: 10px 18px;
+    padding: 10px 20px;
     background: linear-gradient(90deg, #00d4ff, #0066ff);
     border: none;
     border-radius: 25px;
@@ -141,7 +112,7 @@ header {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .download-btn:hover {
@@ -149,30 +120,68 @@ header {
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
-/* --- Top Corner Support Floating Menu Architecture --- */
+/* --- Clean Chota 3-Line Hamburger Menu Setup --- */
 .support-menu-anchor {
     position: relative;
+}
+
+.hamburger-trigger-icon {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    color: var(--text-main);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+}
+
+.hamburger-trigger-icon:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: #00d4ff;
 }
 
 .dropdown-panel-wrapper {
     display: none;
     position: absolute;
-    top: 45px;
-    left: 0;
+    top: 50px;
+    right: 0;
     background: var(--bg-secondary);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    width: 250px;
+    width: 260px;
     padding: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     z-index: 100000;
 }
 
 .dropdown-panel-wrapper.active {
     display: flex;
+}
+
+/* Inside Dropdown Theme Button Styling */
+.menu-theme-toggle-pill {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    width: 100%;
 }
 
 .dropdown-link-item {
@@ -443,7 +452,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 .faq-answer-view { display: none; margin-top: 12px; color: var(--text-muted); font-size: 14px; line-height: 1.7; }
 .faq-element.active .faq-answer-view { display: block; }
 
-/* --- NEW COMPONENT: PREMIUM VISUAL SOCIAL CHANNELS HUBS --- */
+/* --- DYNAMIC BRAND ALIGNED SOCIAL MEDIA CHANNELS MATRIX --- */
 .social-matrix-container {
     max-width: 900px;
     margin: 40px auto 0;
@@ -477,10 +486,11 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
     transform: translateY(-5px) scale(1.05);
 }
 
+/* Authentic Application Brand Custom Colors */
 .node-whatsapp { background: #25D366; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-.node-telegram { background: #229ED9; box-shadow: 0 4px 20px rgba(34, 158, 217, 0.4); }
-.node-youtube { background: #FF0000; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4); }
-.node-twitter { background: #1DA1F2; box-shadow: 0 4px 20px rgba(29, 161, 242, 0.4); }
+.node-telegram { background: #0088cc; box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4); }
+.node-youtube { background: #ff0000; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4); }
+.node-twitter { background: #000000; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); }
 
 /* --- Input Form Dispatchers --- */
 .contact-form { max-width: 650px; margin: auto; display: flex; flex-direction: column; gap: 18px; }
@@ -509,7 +519,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 
 /* --- Responsive Engine Rules --- */
 @media (max-width: 900px) {
-    header { padding: 10px 3%; }
+    header { padding: 10px 4%; }
     .hero { flex-direction: column; text-align: center; padding-top: 140px; }
     .hero-buttons { justify-content: center; }
     .left h1 { font-size: 32px; }
@@ -525,13 +535,23 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 <header>
 <div class="left-nav-cluster">
     <a href="#" class="logo" onclick="returnToMainView()">Earnly <span>India</span></a>
+</div>
+
+<div class="header-right">
+    <button class="download-btn" onclick="openSupportModal('download')">
+        <i class="fa-solid fa-download"></i> Download App
+    </button>
     
-    <!-- Left Aligned Dropdown Dashboard Trigger -->
+    <!-- Left/Right Corner Positioned Chota 3-Line Hamburger Trigger Button -->
     <div class="support-menu-anchor">
-        <button class="action-trigger-pill" onclick="toggleSupportDropdown(event)">
-            <i class="fa-solid fa-bars-staggered" style="color:#00d4ff;"></i> Menu Dashboard
+        <button class="hamburger-trigger-icon" onclick="toggleSupportDropdown(event)">
+            <i class="fa-solid fa-bars"></i>
         </button>
         <div class="dropdown-panel-wrapper" id="topCornerDropdown">
+            <!-- Dynamic Mode Switch Trigger Added INSIDE Menu Panel -->
+            <button class="menu-theme-toggle-pill" onclick="toggleThemeEngine()">
+                <i class="fa-solid fa-circle-half-stroke"></i> Switch Theme Mode
+            </button>
             <div class="dropdown-link-item" onclick="scrollToMainSection('features')"><i class="fa-solid fa-bolt"></i> App Features</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('kyc-section')"><i class="fa-solid fa-id-card"></i> Trusted KYC Verify</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('leaderboard')"><i class="fa-solid fa-trophy"></i> Global Standings</div>
@@ -545,16 +565,6 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
             <div class="dropdown-link-item" style="color:#00b074;" onclick="changeLanguage('hi')"><i class="fa-solid fa-globe"></i> हिंदी (HI)</div>
         </div>
     </div>
-</div>
-
-<div class="header-right">
-    <!-- Theme Light/Dark Dynamic Controller -->
-    <button class="action-trigger-pill theme-toggle-btn" onclick="toggleThemeEngine()">
-        <i class="fa-solid fa-circle-half-stroke"></i> Theme
-    </button>
-    <button class="download-btn" onclick="openSupportModal('download')">
-        <i class="fa-solid fa-download"></i> Download App
-    </button>
 </div>
 </header>
 
@@ -703,7 +713,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
     </div>
     </section>
 
-    <!-- NEW COMPONENT: PREMIUM VISUAL SOCIAL CHANNELS HUBS -->
+    <!-- DYNAMIC BRAND ALIGNED SOCIAL MEDIA CHANNELS MATRIX -->
     <section id="social-networks">
     <div class="section-title">
         <span>100% GENUINE INTEGRATION</span>
@@ -829,7 +839,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
     </div>
 </div>
 <div class="copyright">
-    © 2026 Earnly India Foundation. All Rights Reserved. Structural Build Version 7.5.0 (Social Mesh Node Setup).
+    © 2026 Earnly India Foundation. All Rights Reserved. Structural Build Version 8.0.0 (Premium Floating Coins Configured).
 </div>
 </footer>
 
@@ -970,7 +980,7 @@ function changeLanguage(lang) {
     }
 }
 
-// Neon Ambient Particle Falling Coin Script Logic
+// --- HIGH FIDELITY REAL GOLDEN 3D COIN BACKGROUND VECTOR DRAW SYSTEM ---
 const canvas = document.getElementById('coinCanvas');
 const ctx = canvas.getContext('2d');
 function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
@@ -978,18 +988,68 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 const coins = [];
-class Coin {
-    constructor() { this.reset(); this.y = Math.random() * canvas.height; }
-    reset() { this.x = Math.random() * canvas.width; this.y = -20; this.size = Math.random() * 8 + 6; this.speedY = Math.random() * 0.7 + 0.3; this.angle = Math.random() * Math.PI; this.opacity = Math.random() * 0.15 + 0.05; }
-    update() { this.y += this.speedY; this.angle += 0.015; if (this.y > canvas.height + 20) this.reset(); }
+class RealisticCoin {
+    constructor() { 
+        this.reset(); 
+        this.y = Math.random() * canvas.height; 
+    }
+    reset() { 
+        this.x = Math.random() * canvas.width; 
+        this.y = -40; 
+        this.size = Math.random() * 12 + 14; // Bigger premium layout
+        this.speedY = Math.random() * 0.5 + 0.3; 
+        this.angle = Math.random() * Math.PI; 
+        this.spinSpeed = Math.random() * 0.02 + 0.01;
+        this.opacity = Math.random() * 0.4 + 0.3; // Visible shiny scale
+    }
+    update() { 
+        this.y += this.speedY; 
+        this.angle += this.spinSpeed; 
+        if (this.y > canvas.height + 40) this.reset(); 
+    }
     draw() {
-        ctx.save(); ctx.translate(this.x, this.y); ctx.scale(Math.sin(this.angle), 1);
-        ctx.beginPath(); ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 212, 255, ${this.opacity})`; ctx.fill();
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.scale(Math.sin(this.angle), 1); // 3D Spin Calculation
+        ctx.globalAlpha = this.opacity;
+
+        // Outer Realistic Coin Rim (Dark Gold Blend)
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+        let goldGrad = ctx.createLinearGradient(-this.size, -this.size, this.size, this.size);
+        goldGrad.addColorStop(0, '#FFF3A8');
+        goldGrad.addColorStop(0.2, '#D4AF37'); // Metallic Gold
+        goldGrad.addColorStop(0.5, '#AA7C11');
+        goldGrad.addColorStop(0.8, '#D4AF37');
+        goldGrad.addColorStop(1, '#5B4006');
+        ctx.fillStyle = goldGrad;
+        ctx.fill();
+
+        // Inner Ridge Line Border Layer
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size * 0.82, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Core Dynamic "EC" Brand Typography Graphic
+        ctx.fillStyle = '#4A3200';
+        ctx.font = `bold ${this.size * 0.7}px Poppins`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('EC', 0, 1);
+
+        // Highlight Glow Layer Reflection
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+        ctx.font = `bold ${this.size * 0.7}px Poppins`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('EC', -0.5, -0.5);
+
         ctx.restore();
     }
 }
-for (let i = 0; i < 30; i++) coins.push(new Coin());
+for (let i = 0; i < 22; i++) coins.push(new RealisticCoin());
 
 let stepsCounter = 9840;
 setInterval(() => {
@@ -999,7 +1059,11 @@ setInterval(() => {
     }
 }, 2500);
 
-function animateCoins() { ctx.clearRect(0, 0, canvas.width, canvas.height); coins.forEach(c => { c.update(); c.draw(); }); requestAnimationFrame(animateCoins); }
+function animateCoins() { 
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    coins.forEach(c => { c.update(); c.draw(); }); 
+    requestAnimationFrame(animateCoins); 
+}
 animateCoins();
 </script>
 
