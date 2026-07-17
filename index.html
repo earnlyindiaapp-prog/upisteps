@@ -3,97 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FitPaise - Walk, Earn, Grow</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <title>UPI STEPS - Walk • Earn • Grow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0F172A;
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --accent-green: #10B981;
-      --accent-orange: #F59E0B;
-      --text-white: #FFFFFF;
-      --text-gray: #94A3B8;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #FFFFFF;
+      --text-sub: #94A3B8;
+      --primary: #10B981;
+      --primary-glow: rgba(16, 185, 129, 0.2);
+      --accent: #F59E0B;
+      --purple-glow: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--bg-dark); color: var(--text-white); line-height: 1.6; }
-    
-    h1, h2 { font-family: 'Poppins', sans-serif; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    [data-theme="light"] {
+      --bg-dark: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --card-border: rgba(0, 0, 0, 0.06);
+      --text-main: #0F172A;
+      --text-sub: #64748B;
+      --primary: #059669;
+      --primary-glow: rgba(5, 150, 105, 0.1);
+      --accent: #D97706;
+    }
 
-    /* Animation */
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-in { animation: fadeInUp 0.8s ease-out; }
-    .hover-up { transition: 0.3s; }
-    .hover-up:hover { transform: translateY(-10px); cursor: pointer; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; transition: all 0.3s var(--purple-glow); }
+    body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; }
+    
+    .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; }
+    .logo { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -1px; }
+    .logo span { color: var(--primary); }
+    .theme-btn { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); padding: 10px 20px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 14px; }
 
     /* Hero Section */
-    .hero { padding: 80px 0; text-align: center; background: radial-gradient(circle, #2e1065 0%, #0f172a 70%); }
-    .hero h1 { font-size: 56px; margin-bottom: 20px; }
-    .hero p { font-size: 18px; color: var(--text-gray); margin-bottom: 30px; }
-    .btn { padding: 15px 30px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; margin: 5px; }
-    .btn-primary { background: var(--accent-green); color: white; }
-    .btn-secondary { background: transparent; border: 1px solid var(--text-gray); color: white; }
+    .hero { padding: 80px 0; text-align: center; background: radial-gradient(circle at center, rgba(16, 185, 129, 0.08) 0%, transparent 70%); }
+    .badge { background: var(--primary-glow); border: 1px solid var(--primary); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 24px; animation: pulse 2s infinite; }
+    .hero h1 { font-family: 'Poppins', sans-serif; font-size: 54px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { font-size: 18px; color: var(--text-sub); max-width: 700px; margin: 0 auto 40px auto; }
+    
+    .btn-group { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn { padding: 16px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 16px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+    .btn-primary { background: var(--primary); color: #FFF; box-shadow: 0 10px 25px var(--primary-glow); }
+    .btn-secondary { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); }
+    .btn:hover { transform: translateY(-3px); }
 
-    /* Features Grid */
-    .features { padding: 80px 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .card { background: var(--card-bg); padding: 30px; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-    .card h3 { color: var(--accent-green); margin-bottom: 10px; }
+    /* Main Section Title */
+    .section-title { text-align: center; margin: 100px 0 50px 0; font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 800; }
+    .section-title span { color: var(--primary); }
 
-    /* Earning Section */
-    .earning { padding: 80px 0; background: rgba(255,255,255,0.02); }
-    .step-box { display: flex; align-items: center; gap: 20px; margin-top: 20px; }
-    .step-num { background: var(--accent-orange); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800; }
+    /* Grid Layouts */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 32px; border-radius: 24px; backdrop-filter: blur(12px); position: relative; overflow: hidden; }
+    .card:hover { transform: translateY(-6px); border-color: var(--primary); }
+    .card-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+    .card h3 { font-family: 'Poppins', sans-serif; font-size: 20px; margin-bottom: 12px; }
+    .card p { color: var(--text-sub); font-size: 14px; line-height: 1.6; }
+    .card-tag { background: var(--primary-glow); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; position: absolute; top: 20px; right: 20px; }
 
-    /* Premium Section */
-    .pricing { padding: 80px 0; text-align: center; }
-    .price-card { background: var(--card-bg); padding: 40px; border-radius: 20px; margin-top: 30px; display: inline-block; width: 100%; max-width: 400px; }
+    /* App Screens / Modules Layout */
+    .blueprint-box { margin-top: 40px; }
+    .module-header { display: flex; align-items: center; gap: 12px; margin: 60px 0 24px 0; border-left: 4px solid var(--primary); padding-left: 16px; }
+    .module-header h2 { font-family: 'Poppins', sans-serif; font-size: 24px; }
+
+    /* Live Calculator Section */
+    .calc-box { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 24px; padding: 40px; text-align: center; max-width: 800px; margin: 60px auto; }
+    .slider { -webkit-appearance: none; width: 100%; height: 8px; border-radius: 5px; background: var(--card-border); outline: none; margin: 30px 0; }
+    .slider::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--primary); cursor: pointer; box-shadow: 0 0 15px var(--primary); }
+    .calc-output { font-size: 24px; font-weight: 700; color: var(--primary); }
+    .calc-output span { color: var(--accent); }
+
+    /* Premium Pricing Cards */
+    .pricing-grid { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 60px; }
+    .price-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 40px 30px; border-radius: 24px; text-align: center; width: 100%; max-width: 320px; }
+    .price-card.popular { border: 2px solid var(--primary); background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%); }
+    .price-card h4 { font-size: 18px; text-transform: uppercase; color: var(--text-sub); letter-spacing: 1px; }
+    .price-card .cost { font-size: 42px; font-weight: 800; margin: 20px 0; font-family: 'Poppins', sans-serif; }
+    .price-card ul { list-style: none; text-align: left; margin-bottom: 30px; font-size: 14px; color: var(--text-sub); }
+    .price-card ul li { margin-bottom: 12px; display: flex; gap: 8px; }
+
+    /* Community Sync */
+    .community-banner { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%); border: 1px solid var(--primary); border-radius: 28px; padding: 50px 30px; text-align: center; margin: 80px 0; }
+    .social-grid { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 30px; }
+    .social-btn { padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; color: #FFF; font-size: 14px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--card-border); padding: 40px 0; text-align: center; color: var(--text-sub); font-size: 14px; }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 38px; }
+      .hero p { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero fade-in">
-    <div class="container">
-      <h1>Chalo Walk Karo, Paise Kamao 💰</h1>
-      <p>5000 steps = ₹2. Ad dekho = ₹5 Bonus. Instant UPI Withdrawal</p>
-      <a href="#" class="btn btn-primary">App Download Karein</a>
-      <a href="#" class="btn btn-secondary">Dekho Kaise Kaam Karta Hai</a>
-    </div>
-  </section>
+  <div class="wrapper">
+    <!-- Navbar -->
+    <header>
+      <div class="logo">UPI<span>STEPS</span></div>
+      <button class="theme-btn" id="theme-toggle">☀️ Light Mode</button>
+    </header>
 
-  <!-- Features Grid -->
-  <section class="features container">
-    <h2 style="text-align: center; margin-bottom: 50px;">Features</h2>
-    <div class="grid">
-      <div class="card hover-up"><h3>Smart Step Counter</h3><p>Auto Track. Low Battery.</p></div>
-      <div class="card hover-up"><h3>Health Pool</h3><p>₹10 se ₹50 Challenge.</p></div>
-      <div class="card hover-up"><h3>Instant UPI</h3><p>₹50 hote hi 1-click Withdraw</p></div>
-      <div class="card hover-up"><h3>AI Diet Coach</h3><p>Photo bhejo, Calorie check.</p></div>
-      <div class="card hover-up"><h3>Reminder</h3><p>Neend + Pani Reminder.</p></div>
-      <div class="card hover-up"><h3>Anti-Cheat</h3><p>Fake Steps Blocked.</p></div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge">🚀 v1.0 App Blueprint Live Deployment</div>
+      <h1>Chalo Walk Karo,<br><span>Paise Kamao 💰</span></h1>
+      <p>Namaste! Hum laaye hain India ka premier Move-to-Earn system. Google Fit aur Apple HealthKit API integration ke sath bina zero-battery drain ke real cash withdraw karein.</p>
+      <div class="btn-group">
+        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="btn btn-primary">Join Official Telegram</a>
+        <a href="#explore" class="btn btn-secondary">Explore All Modules ↓</a>
+      </div>
+    </section>
 
-  <!-- Earning Section -->
-  <section class="earning">
-    <div class="container">
-      <h2>3 Easy Steps</h2>
-      <div class="step-box"><div class="step-num">1</div><p>App Download karo</p></div>
-      <div class="step-box"><div class="step-num">2</div><p>5000 Steps complete karo = ₹2</p></div>
-      <div class="step-box"><div class="step-num">3</div><p>15 sec Ad dekho = ₹5 Bonus</p></div>
+    <!-- App Live Earning Calculator -->
+    <div class="calc-box">
+      <h3 style="font-family:'Poppins'; margin-bottom:10px;">Apni Daily Kamai Check Karein</h3>
+      <p style="color:var(--text-sub); font-size:14px;">Slider ko ghuma kar check karein steps vs real cash ratio:</p>
+      <input type="range" min="1000" max="20000" step="1000" value="5000" class="slider" id="step-slider">
+      <div class="calc-output">
+        🚶 <span id="step-val" style="color:var(--text-main)">5,000</span> Steps = 🪙 <span id="coin-val">500</span> Coins = <span id="cash-val">₹2.00</span> Base Cash
+      </div>
+      <p style="margin-top:15px; font-size:13px; color:var(--accent);">🔥 Tip: 15-Sec Ad dekhne par ye cash turant <strong>₹5.00 (Double Bonus)</strong> ho jata hai!</p>
     </div>
-  </section>
 
-  <!-- Premium Section -->
-  <section class="pricing container">
-    <h2>Premium AI Access</h2>
-    <div class="price-card hover-up">
-      <p>Monthly ₹49 | Quarterly ₹129</p>
-      <button class="btn btn-primary" style="margin-top: 20px; border:none; cursor:pointer;">Upgrade Now (Razorpay)</button>
+    <!-- MAIN BLUEPRINT MODULES SECTION -->
+    <div id="explore">
+      <h2 class="section-title">App Inside <span>Modules & Architecture</span></h2>
+
+      <!-- MODULE 1 -->
+      <div class="module-header">
+        <h2>Module 1: Core Fitness & User Journey</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="card-icon">👟</span>
+          <h3>Smart Step Counter</h3>
+          <p>Google Fit (Android) & Apple HealthKit (iOS) API Integration. Background sensor algorithm bina battery heavy drain kiye steps calculate karega.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔥</span>
+          <h3>Calorie & Activity Monitor</h3>
+          <p>Live modern ring dashboard jo real-time tracking par total covered distance, duration aur active burnt calories score calculate karta hai.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">💧</span>
+          <h3>Daily Hydration Reminder</h3>
+          <p>Har 2 ghante me custom reminder alerts jo body optimization banaye rakhe. One-click instant water log features system.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏅</span>
+          <h3>Streak Gamification</h3>
+          <p>7-Day core challenge active rakho. 7 din continuously target meet karne par special Fitness Badge aur next week 1.1x earning multiplier milega.</p>
+        </div>
+      </div>
+
+      <!-- MODULE 2 -->
+      <div class="module-header">
+        <h2>Module 2: Earning & Ad Infrastructure</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="card-tag">REVENUE</span>
+          <span class="card-icon">📺</span>
+          <h3>Ad Integration Kit</h3>
+          <p>Google AdMob aur Unity Ads SDK implementation. Target rewards poora hone par seamless rewarded video stream generation system.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag">P2P ENGINE</span>
+          <span class="card-icon">🏆</span>
+          <h3>The "Health Pool"</h3>
+          <p>₹10 se ₹50 tak ki custom entry lagakar dosto ke sath 7-day walk rooms banayein. Total pooled prize ka 90% direct winner ko, aur 10% platform fee revenue.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag">PAYOUT</span>
+          <span class="card-icon">💳</span>
+          <h3>Instant UPI Payout</h3>
+          <p>RazorpayX aur Cashfree automated API setup. Jaise hi aapke dashboard wallet me ₹50 complete hote hain, instantly single-click me secure bank payout access.</p>
+        </div>
+      </div>
+
+      <!-- MODULE 3 -->
+      <div class="module-header">
+        <h2>Module 3: Premium AI Guide & Coach</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="card-icon">👁️</span>
+          <h3>Food Image Analyzer</h3>
+          <p>OpenAI GPT-4o-mini & Gemini Flash optimization. Apne khane ki bas photo khicho, AI instant calories, ingredients aur complete macro breakdown bata dega.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🤖</span>
+          <h3>24/7 Virtual Health Coach</h3>
+          <p>Emergency fitness queries ya exercise routines guidance ke liye high-speed natural chatbot assistance har time active.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🍱</span>
+          <h3>Custom Indian Diet Planner</h3>
+          <p>Aapke budget aur height-weight metrics ke hisab se customized Indian household items (Poha, Roti, Idli) ka balanced nutritional charts output.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎙️</span>
+          <h3>Voice Mode Integration</h3>
+          <p>Advanced Speech-to-Text layer framework. Chalte-chalte bina type kiye direct chat mode se interact karne ka premium capability feature.</p>
+        </div>
+      </div>
+
+      <!-- PREMIUM SUBSCRIPTION PRICING -->
+      <h2 class="section-title">Premium AI Coach <span>Pricing Plans</span></h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h4>Monthly Plan</h4>
+          <div class="cost">₹49</div>
+          <ul>
+            <li>✔️ 24/7 AI Health Coach</li>
+            <li>✔️ Food Camera Scanner</li>
+            <li>❌ Annual Discount Bonus</li>
+          </ul>
+          <button class="btn btn-secondary" style="width:100%; justify-content:center;">Unlock via Razorpay</button>
+        </div>
+        <div class="price-card popular">
+          <h4 style="color:var(--primary)">Quarterly Plan</h4>
+          <div class="cost">₹129</div>
+          <ul>
+            <li>✔️ Complete AI Ecosystem</li>
+            <li>✔️ Indian Custom Diet Plans</li>
+            <li>✔️ Priority Fast Server Access</li>
+          </ul>
+          <button class="btn btn-primary" style="width:100%; justify-content:center;">Unlock via Razorpay</button>
+        </div>
+        <div class="price-card">
+          <h4>Annual Plan</h4>
+          <div class="cost">₹399</div>
+          <ul>
+            <li>✔️ Everything Included</li>
+            <li>✔️ Voice Mode Activation</li>
+            <li>✔️ Maximum Financial Saving</li>
+          </ul>
+          <button class="btn btn-secondary" style="width:100%; justify-content:center;">Unlock via Razorpay</button>
+        </div>
+      </div>
+
+      <!-- MODULE 4 -->
+      <div class="module-header">
+        <h2>Module 4: Fraud & Anti-Cheat Engine</h2>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));">
+        <div class="card" style="border-left: 5px solid #EF4444;">
+          <span class="card-icon">🛡️</span>
+          <h3>Anti-Shake Sensor Filtering Algorithm</h3>
+          <p>Accelerometer data checking matrix framework. Agar users bina live GPS movement ke phone ko sirf high-frequency speed par shake karenge (jaise haath se hilana), toh tracker engine un steps ko automatic catch karke completely block kar dega.</p>
+        </div>
+        <div class="card" style="border-left: 5px solid #EF4444;">
+          <span class="card-icon">🚫</span>
+          <h3>Device Emulation & Root Protection Blocker</h3>
+          <p>App strict protection environment me run hota hai. Kisi bhi rooted android device, jailbroken iOS version, ya PC emulator formats par application initiate nahi hoga taaki automated scripts aur fake ad-fraud activities ko 100% stop kiya ja sake.</p>
+        </div>
+      </div>
     </div>
-  </section>
 
+    <!-- Official Community Connections Box -->
+    <div class="community-banner">
+      <h2 style="font-family:'Poppins'; font-size: 28px;">Earnly India Official Community Hub</h2>
+      <p style="color:var(--text-sub); margin-top:10px;">Pre-launch systems ki transparency aur quick beta feedback ke liye abhi channels se judein.</p>
+      <div class="social-grid">
+        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="social-btn" style="background:#229ED9;">✈️ Join Telegram</a>
+        <a href="https://youtube.com/@earnlyindiaofficial" target="_blank" class="social-btn" style="background:#FF0000;">📺 Subscribe YouTube</a>
+        <a href="https://x.com/EarnlyIndia_" target="_blank" class="social-btn" style="background:#1DA1F2;">🐦 Follow Twitter / X</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 UPI STEPS | Designed professionally for Earnly India Official ecosystem. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Theme Toggle Script
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        toggleBtn.innerHTML = '☀️ Light Mode';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        toggleBtn.innerHTML = '🌙 Dark Mode';
+      }
+    });
+
+    // Real-Time Math Calculator Formula
+    const slider = document.getElementById('step-slider');
+    const stepVal = document.getElementById('step-val');
+    const coinVal = document.getElementById('coin-val');
+    const cashVal = document.getElementById('cash-val');
+
+    slider.oninput = function() {
+      let steps = Number(this.value);
+      stepVal.innerHTML = steps.toLocaleString('en-IN');
+      
+      let coins = steps / 10;
+      coinVal.innerHTML = coins.toLocaleString('en-IN');
+      
+      let money = 2; // Base cash rule from blueprint
+      if(steps > 5000) {
+        money = 2 + ((steps - 5000) / 5000) * 2; 
+      } else if (steps < 5000) {
+        money = (steps / 5000) * 2;
+      }
+      cashVal.innerHTML = '₹' + money.toFixed(2);
+    }
+  </script>
 </body>
 </html>
