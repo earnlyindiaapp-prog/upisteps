@@ -58,11 +58,11 @@ font-weight:700;
 color:#fff;
 letter-spacing: 0.5px;
 }
-<nav>
+<div class="menu">
   <a href="index.html">Home</a>
   <a href="blog.html">Blog</a>
   <a href="#kyc">About</a>
-</nav>
+</div>  
 .logo span{
 color:#00d4ff;
 }
@@ -89,11 +89,19 @@ gap:24px;
 nav a{
 text-decoration:none;
 color:white;
-font-size:15px;
+font-size: 15px;
 font-weight: 500;
 transition:.3s;
 }
-
+.menu{
+  display:flex;
+  gap:20px;
+}
+.menu a{
+  color:#00d4ff;
+  text-decoration:none;
+  font-weight:600;
+}
 nav a:hover{
 color:#00d4ff;
 }
