@@ -46,7 +46,7 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(5, 8, 22, 0.75);
+background:rgba(5, 8, 22, 0.85);
 backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(255,255,255,.08);
 z-index:999;
@@ -61,6 +61,12 @@ letter-spacing: 0.5px;
 
 .logo span{
 color:#00d4ff;
+}
+
+.header-right {
+display: flex;
+align-items: center;
+gap: 20px;
 }
 
 nav{
@@ -78,6 +84,30 @@ transition:.3s;
 
 nav a:hover{
 color:#00d4ff;
+}
+
+/* Language Selector Menu Styling */
+.lang-selector {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(0, 212, 255, 0.3);
+color: white;
+padding: 8px 14px;
+border-radius: 20px;
+outline: none;
+cursor: pointer;
+font-size: 14px;
+font-weight: 500;
+transition: 0.3s;
+}
+
+.lang-selector:hover {
+border-color: #00d4ff;
+background: rgba(0, 212, 255, 0.1);
+}
+
+.lang-selector option {
+background: #0b0f24;
+color: white;
 }
 
 .download-btn{
@@ -105,7 +135,7 @@ min-height: 100vh;
 display: flex;
 align-items: center;
 justify-content: space-between;
-padding: 140px 8% 80px 8%;
+padding: 160px 8% 80px 8%;
 gap: 50px;
 }
 
@@ -248,6 +278,12 @@ border: 8px solid transparent;
 border-top-color: #00d4ff;
 border-right-color: #0066ff;
 transform: rotate(45deg);
+animation: rotateProgress 8s infinite linear;
+}
+
+@keyframes rotateProgress {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .step-data {
@@ -311,12 +347,12 @@ cursor: pointer;
 box-shadow: 0 4px 15px rgba(0,212,255,0.3);
 }
 
-/* --- Premium Infinite Image Marquee Carousel Section --- */
+/* --- Premium Vectorized CSS Infinite Loop Marquee (Replaced broken images) --- */
 .gallery-marquee-section {
 width: 100%;
 overflow: hidden;
-background: rgba(5, 8, 22, 0.4);
-padding: 40px 0;
+background: rgba(5, 8, 22, 0.6);
+padding: 35px 0;
 border-top: 1px solid rgba(255,255,255,0.05);
 border-bottom: 1px solid rgba(255,255,255,0.05);
 position: relative;
@@ -326,30 +362,46 @@ z-index: 5;
 .marquee-wrapper {
 display: flex;
 width: 200%;
-animation: infiniteScroll 25s linear infinite;
+animation: infiniteScroll 20s linear infinite;
 }
 
 .marquee-group {
 display: flex;
 justify-content: space-around;
 width: 50%;
-gap: 20px;
+gap: 25px;
 padding: 0 10px;
 }
 
-.marquee-group img {
-width: 280px;
-height: 180px;
-object-fit: cover;
-border-radius: 18px;
-border: 1px solid rgba(255, 255, 255, 0.1);
-box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-transition: transform 0.3s ease;
+.vector-slide-card {
+width: 260px;
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(0, 212, 255, 0.15);
+border-radius: 16px;
+padding: 20px;
+display: flex;
+align-items: center;
+gap: 15px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-.marquee-group img:hover {
-transform: scale(1.04);
-border-color: #00d4ff;
+.vector-slide-card i {
+font-size: 28px;
+color: #00d4ff;
+background: rgba(0, 212, 255, 0.1);
+padding: 12px;
+border-radius: 12px;
+}
+
+.vector-card-info h5 {
+font-size: 15px;
+font-weight: 600;
+margin-bottom: 2px;
+}
+
+.vector-card-info p {
+font-size: 12px;
+color: #8c92b2;
 }
 
 @keyframes infiniteScroll {
@@ -363,7 +415,7 @@ position: relative;
 z-index: 3;
 }
 
-.features, .rewards, .membership, .referral, .stats, .leaderboard, .reviews, .faq, .contact, .social {
+.features, .rewards, .membership, .trust-guidelines, .stats, .leaderboard, .reviews, .faq, .contact, .social {
 padding: 100px 8%;
 }
 
@@ -394,13 +446,13 @@ font-size: 15px;
 }
 
 /* Grids Design Setup */
-.feature-grid, .reward-grid, .stats-grid, .review-grid {
+.feature-grid, .reward-grid, .stats-grid, .review-grid, .trust-grid {
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
-.card, .reward-card, .stat-card, .review-card, .leader, .faq-item {
+.card, .reward-card, .stat-card, .review-card, .leader, .faq-item, .trust-card {
 background:rgba(255,255,255,.04);
 backdrop-filter:blur(15px);
 border:1px solid rgba(255,255,255,.07);
@@ -409,23 +461,27 @@ padding:30px;
 transition:.3s ease-in-out;
 }
 
-.card:hover, .reward-card:hover, .stat-card:hover, .review-card:hover, .leader:hover {
+.card:hover, .reward-card:hover, .stat-card:hover, .review-card:hover, .leader:hover, .trust-card:hover {
 transform:translateY(-8px);
 border-color:#00d4ff;
 box-shadow:0 10px 30px rgba(0,212,255,.15);
 }
 
-.icon, .reward-icon {
+.icon, .reward-icon, .trust-icon {
 font-size:36px;
 margin-bottom:15px;
 }
 
-.card h3, .reward-card h3 {
+.trust-icon {
+color: #00d4ff;
+}
+
+.card h3, .reward-card h3, .trust-card h3 {
 margin-bottom:12px;
 font-size: 20px;
 }
 
-.card p, .reward-card p, .review-card p, .leader p, .faq-item p {
+.card p, .reward-card p, .review-card p, .leader p, .faq-item p, .trust-card p {
 color:#c2c5d6;
 line-height:1.7;
 font-size:14px;
@@ -482,22 +538,6 @@ display: inline-block;
 padding:8px 0;
 color:#d7d7d7;
 font-size: 14px;
-}
-
-.referral-box {
-max-width:800px;
-margin:0 auto;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.07);
-padding:40px;
-border-radius:24px;
-text-align:center;
-}
-
-.referral-box p{
-margin:20px 0 30px 0;
-line-height:1.7;
-color:#d7d7d7;
 }
 
 .stat-card h1{
@@ -624,6 +664,7 @@ color:#d6d6d6;
 text-decoration:none;
 font-size: 14px;
 transition: 0.2s;
+cursor: pointer;
 }
 
 .footer-links a:hover{
@@ -639,7 +680,7 @@ border-top: 1px solid rgba(255,255,255,0.05);
 padding-top: 25px;
 }
 
-/* Popup Configurations */
+/* Custom Modal View Box Configs */
 .popup{
 display:none;
 position:fixed;
@@ -647,25 +688,27 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.8);
+background:rgba(0,0,0,.82);
 justify-content:center;
 align-items:center;
 z-index:9999;
 }
 
 .popup-box{
-background:#11182c;
+background:#0e132b;
 padding:35px;
 border-radius:24px;
-max-width:400px;
+max-width:500px;
 width:90%;
-text-align:center;
-border:1px solid rgba(255,255,255,.08);
+text-align:left;
+border:1px solid rgba(0, 212, 255, 0.2);
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .popup-box h2{
-margin-bottom:12px;
+margin-bottom:15px;
 color:#00d4ff;
+font-size: 24px;
 }
 
 .popup-box p{
@@ -676,24 +719,30 @@ font-size: 14px;
 }
 
 .popup-box button{
-padding:12px 28px;
-border:none;
-border-radius:40px;
-background:#00d4ff;
-color:#000;
-font-weight:700;
-cursor:pointer;
+width: 100%;
+padding: 12px;
+border: none;
+border-radius: 40px;
+background: #00d4ff;
+color: #000;
+font-weight: 700;
+cursor: pointer;
+transition: 0.3s;
+text-align: center;
 }
 
-/* --- Mobile Responsive Rules Media Queries (Desktop vs Phone View adjustments) --- */
+/* --- Mobile Responsive Rules Media Queries --- */
 @media (max-width: 991px) {
 header {
 padding: 15px 5%;
 }
+header nav {
+display: none;
+}
 .hero {
 flex-direction: column;
 text-align: center;
-padding-top: 120px;
+padding-top: 140px;
 gap: 40px;
 }
 .left h1 {
@@ -708,16 +757,13 @@ font-size: 32px;
 }
 
 @media (max-width: 600px) {
-header nav {
-display: none; /* Can add a responsive dropdown if needed */
-}
 .left h1 {
 font-size: 32px;
 }
 .left p {
 font-size: 15px;
 }
-.features, .rewards, .membership, .referral, .stats, .leaderboard, .reviews, .faq, .contact, .social {
+.features, .rewards, .membership, .trust-guidelines, .stats, .leaderboard, .reviews, .faq, .contact, .social {
 padding: 60px 5%;
 }
 .footer {
@@ -733,33 +779,41 @@ padding: 50px 5% 20px;
 <canvas id="coinCanvas"></canvas>
 
 <header>
-<div class="logo">
+<div class="logo" id="headerLogo">
 Earnly <span>India</span>
 </div>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#features">Features</a>
-<a href="#rewards">Rewards</a>
-<a href="#membership">Membership</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
-</nav>
+<div class="header-right">
+  <nav>
+  <a href="#home" id="navHome">Home</a>
+  <a href="#features" id="navFeatures">Features</a>
+  <a href="#rewards" id="navRewards">Rewards</a>
+  <a href="#membership" id="navMembership">Membership</a>
+  <a href="#faq" id="navFaq">FAQ</a>
+  <a href="#contact" id="navContact">Contact</a>
+  </nav>
 
-<button class="download-btn" onclick="comingSoon()">
-Download App
-</button>
+  <!-- Dynamic Selector Option Menu Element -->
+  <select class="lang-selector" onchange="changeLanguage(this.value)">
+    <option value="en">🌐 English</option>
+    <option value="hi">🌐 Hindi (हिंदी)</option>
+  </select>
+
+  <button class="download-btn" onclick="openSupportModal('download')">
+  Download App
+  </button>
+</div>
 </header>
 
 <!-- ================= HERO SECTION ================= -->
 <section id="home" class="hero">
 <div class="left">
-<div class="tag">🔥 India's Premium Walk & Earn Platform</div>
-<h1>Walk Smart.<br>Earn Better.<br>Live Healthier.</h1>
-<p>UPI Steps is the flagship rewards platform by Earnly India. Complete eligible activities, stay active and enjoy a premium fitness experience.</p>
+<div class="tag" id="heroTag">🔥 India's Premium Walk & Earn Platform</div>
+<h1 id="heroTitle">Walk Smart.<br>Earn Better.<br>Live Healthier.</h1>
+<p id="heroDesc">UPI Steps is the flagship rewards platform by Earnly India. Complete eligible activities, stay active and enjoy a premium fitness experience.</p>
 <div class="hero-buttons">
-<button class="primary" onclick="comingSoon()">Get Started</button>
-<button class="secondary" onclick="comingSoon()">Watch Demo</button>
+<button class="primary" onclick="openSupportModal('download')" id="btnGetStarted">Get Started</button>
+<button class="secondary" onclick="comingSoon()" id="btnWatchDemo">Watch Demo</button>
 </div>
 </div>
 
@@ -775,22 +829,22 @@ Download App
 <div class="circle-progress"></div>
 <div class="step-data">
 <h3>7,482</h3>
-<p>Steps today</p>
+<p id="phoneStepsText">Steps today</p>
 </div>
 </div>
 <div class="app-metrics-grid">
 <div class="metric-box">
 <i class="fa-solid fa-fire"></i>
 <h4>342 kcal</h4>
-<p>Calories</p>
+<p id="phoneCalText">Calories</p>
 </div>
 <div class="metric-box">
 <i class="fa-solid fa-route"></i>
 <h4>5.2 km</h4>
-<p>Distance</p>
+<p id="phoneDistText">Distance</p>
 </div>
 </div>
-<button class="app-btn" onclick="comingSoon()">
+<button class="app-btn" onclick="comingSoon()" id="phoneBtnText">
 <i class="fa-solid fa-wallet" style="margin-right:8px;"></i> Redeem Rewards
 </button>
 </div>
@@ -798,29 +852,51 @@ Download App
 </div>
 </section>
 
-<!-- ================= INFINITE RUNNING GALLERY SECTION ================= -->
+<!-- ================= INFINITE VECTOR MARQUEE CAROUSEL ================= -->
 <div class="gallery-marquee-section">
 <div class="marquee-wrapper">
 <div class="marquee-group">
-<img src="1000097814.jpg" alt="Fitness Activity">
-<img src="1000097813.jpg" alt="Walking & Cycling">
-<img src="1000097812.jpg" alt="Family Happiness">
-<img src="1000097811.jpg" alt="Healthy Lifestyle">
-<img src="1000097810.jpg" alt="Park Workout">
-<img src="1000097816.jpg" alt="Outdoor Sports">
-<img src="1000097815.jpg" alt="Kids Fun Time">
+<div class="vector-slide-card"><i class="fa-solid fa-person-walking"></i><div class="vector-card-info"><h5>Outdoor Run</h5><p>Activity Logged</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-bicycle"></i><div class="vector-card-info"><h5>Cycling Routine</h5><p>Distance Counter</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-heart-pulse"></i><div class="vector-card-info"><h5>Cardio Session</h5><p>BPM Monitor Active</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-child"></i><div class="vector-card-info"><h5>Free Play Style</h5><p>Dynamic Counter</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-medal"></i><div class="vector-card-info"><h5>Daily Streak</h5><p>Verified Target Achieved</p></div></div>
 </div>
 <div class="marquee-group">
-<img src="1000097814.jpg" alt="Fitness Activity">
-<img src="1000097813.jpg" alt="Walking & Cycling">
-<img src="1000097812.jpg" alt="Family Happiness">
-<img src="1000097811.jpg" alt="Healthy Lifestyle">
-<img src="1000097810.jpg" alt="Park Workout">
-<img src="1000097816.jpg" alt="Outdoor Sports">
-<img src="1000097815.jpg" alt="Kids Fun Time">
+<div class="vector-slide-card"><i class="fa-solid fa-person-walking"></i><div class="vector-card-info"><h5>Outdoor Run</h5><p>Activity Logged</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-bicycle"></i><div class="vector-card-info"><h5>Cycling Routine</h5><p>Distance Counter</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-heart-pulse"></i><div class="vector-card-info"><h5>Cardio Session</h5><p>BPM Monitor Active</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-child"></i><div class="vector-card-info"><h5>Free Play Style</h5><p>Dynamic Counter</p></div></div>
+<div class="vector-slide-card"><i class="fa-solid fa-medal"></i><div class="vector-card-info"><h5>Daily Streak</h5><p>Verified Target Achieved</p></div></div>
 </div>
 </div>
 </div>
+
+<!-- ================= TRUSTED GUIDELINES SECTION ================= -->
+<section class="trust-guidelines">
+<div class="section-title">
+<span id="trustSpan">100% SECURE NETWORK</span>
+<h2 id="trustTitle">Our App Guidelines & Integrity Policy</h2>
+<p id="trustDesc">Earnly India operates under transparent, reliable standards ensuring your daily achievements are calculated fairly and safely.</p>
+</div>
+<div class="trust-grid">
+<div class="trust-card">
+<div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+<h3 id="tCardTitle1">Anti-Cheat Verification</h3>
+<p id="tCardDesc1">Our steps algorithm tracks system-level motions accurately. False hardware manipulation or automated system simulation tools are automatically restricted to protect fairness.</p>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><i class="fa-solid fa-user-check"></i></div>
+<h3 id="tCardTitle2">Verified Payout Rules</h3>
+<p id="tCardDesc2">All eligible points/EC system distribution rewards are credited based on transparent eligibility criteria inside our user panel framework dashboard transparently.</p>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><i class="fa-solid fa-lock"></i></div>
+<h3 id="tCardTitle3">Encrypted User Privacy</h3>
+<p id="tCardDesc3">Your background activity records and critical dashboard data files are safely locked under standard network data vault procedures safely without safety leaks.</p>
+</div>
+</div>
+</section>
 
 <!-- ================= FEATURES SECTION ================= -->
 <section id="features" class="features">
@@ -928,95 +1004,6 @@ Download App
 </div>
 </section>
 
-<!-- ================= REFERRAL SECTION ================= -->
-<section class="referral">
-<div class="section-title">
-<span>REFER & GROW</span>
-<h2>Invite Friends</h2>
-<p>Share your referral code after launch and grow the Earnly India community together.</p>
-</div>
-<div class="referral-box">
-<h2>Referral Rewards</h2>
-<p>Invite eligible users through your referral code. Rewards are credited according to the app's referral policy and eligibility criteria.</p>
-<button class="primary" onclick="comingSoon()">Referral Dashboard</button>
-</div>
-</section>
-
-<!-- ================= LIVE STATS SECTION ================= -->
-<section class="stats">
-<div class="section-title">
-<span>OUR GROWTH</span>
-<h2>Growing Every Day</h2>
-<p>Join the Earnly India community and be a part of our fitness journey.</p>
-</div>
-<div class="stats-grid">
-<div class="stat-card">
-<h1>50K+</h1>
-<p>Community Members</p>
-</div>
-<div class="stat-card">
-<h1>10K+</h1>
-<p>Downloads</p>
-</div>
-<div class="stat-card">
-<h1>1M+</h1>
-<p>Steps Tracked</p>
-</div>
-<div class="stat-card">
-<h1>24×7</h1>
-<p>Support</p>
-</div>
-</div>
-</section>
-
-<!-- ================= LEADERBOARD SECTION ================= -->
-<section class="leaderboard">
-<div class="section-title">
-<span>TOP COMMUNITY</span>
-<h2>Leaderboard</h2>
-<p>Top performers will appear here after the official launch.</p>
-</div>
-<div class="leaderboard-box">
-<div class="leader">
-<span>🥇</span>
-<h3>Coming Soon</h3>
-<p>Top Walker</p>
-</div>
-<div class="leader">
-<span>🥈</span>
-<h3>Coming Soon</h3>
-<p>Top Referrer</p>
-</div>
-<div class="leader">
-<span>🥉</span>
-<h3>Coming Soon</h3>
-<p>Top Reward Earner</p>
-</div>
-</div>
-</section>
-
-<!-- ================= TESTIMONIALS SECTION ================= -->
-<section class="reviews">
-<div class="section-title">
-<span>REVIEWS</span>
-<h2>What Users Say</h2>
-</div>
-<div class="review-grid">
-<div class="review-card">⭐⭐⭐⭐⭐
-<p>"Beautiful design and smooth experience. Waiting for the official release."</p>
-<h4>- Early User</h4>
-</div>
-<div class="review-card">⭐⭐⭐⭐⭐
-<p>"One of the best fitness reward concepts I have seen."</p>
-<h4>- Community Member</h4>
-</div>
-<div class="review-card">⭐⭐⭐⭐⭐
-<p>"Premium UI and modern experience."</p>
-<h4>- Beta Visitor</h4>
-</div>
-</div>
-</section>
-
 <!-- ================= FAQ SECTION ================= -->
 <section id="faq" class="faq">
 <div class="section-title">
@@ -1055,7 +1042,7 @@ Download App
 </form>
 </section>
 
-<!-- ================= SOCIAL SECTION (Fixed Channel Handles) ================= -->
+<!-- ================= SOCIAL SECTION ================= -->
 <section class="social">
 <div class="section-title">
 <span>FOLLOW US</span>
@@ -1084,11 +1071,13 @@ Download App
 <a href="#membership">Membership</a>
 <a href="#faq">FAQ</a>
 </div>
+
+<!-- Updated Clickable Support Links with Active Modal Popups -->
 <div class="footer-links">
 <h3>Support</h3>
-<a href="#privacy" onclick="comingSoon()">Privacy Policy</a>
-<a href="#terms" onclick="comingSoon()">Terms & Conditions</a>
-<a href="#help" onclick="comingSoon()">Help Center</a>
+<a onclick="openSupportModal('privacy')">Privacy Policy</a>
+<a onclick="openSupportModal('terms')">Terms & Conditions</a>
+<a onclick="openSupportModal('help')">Help Center</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
@@ -1097,27 +1086,125 @@ Download App
 </div>
 </footer>
 
-<!-- ================= POPUP MODAL ================= -->
+<!-- ================= POPUP BOX MODAL ================= -->
 <div id="popup" class="popup">
 <div class="popup-box">
-<h2>🚀 Coming Soon</h2>
-<p>This feature is currently under development and will be available in a future update.</p>
+<h2 id="modalTitle">🚀 Coming Soon</h2>
+<div id="modalBody" style="margin-bottom: 20px; line-height: 1.7; color: #d6d6d6; font-size: 14px;">
+  This feature is currently under development and will be available in a future update.
+</div>
 <button onclick="closePopup()">Close</button>
 </div>
 </div>
 
 <script>
+// Generic functional modals trigger definitions
 function comingSoon(){
+document.getElementById("modalTitle").innerText = "🚀 Coming Soon";
+document.getElementById("modalBody").innerHTML = "<p>This feature is currently under development and will be available in a future update.</p>";
 document.getElementById("popup").style.display="flex";
 }
+
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
+
 window.onclick = function(event) {
 let popup = document.getElementById("popup");
 if (event.target == popup) {
 popup.style.display = "none";
 }
+}
+
+// Support links controller framework block
+function openSupportModal(type) {
+  let title = "";
+  let body = "";
+  
+  if(type === 'privacy') {
+    title = "🔒 Privacy Policy";
+    body = "<p>Your trust is crucial to us. Earnly India does not sell, lease or rent your location coordinates or profile activity statistics data arrays. All tracked logs inside the UPI Steps application ecosystem are safely hosted using advanced system security patterns to monitor progress details safely.</p>";
+  } else if(type === 'terms') {
+    title = "📄 Terms & Conditions";
+    body = "<p>By joining UPI Steps, users pledge to upload authentic fitness activities. Creating simulated accounts, executing background tap emulation macros or executing structural layout spoofing will render account distributions subject to administrative blocks instantly under user guidelines rules.</p>";
+  } else if(type === 'help') {
+    title = "💡 Help Center";
+    body = "<p><b>Q: My steps counter isn't running?</b><br>A: Verify if background notification access permissions are completely enabled inside the application configurations panel.<br><br><b>Q: What are EC coins distributions?</b><br>A: These denote points achieved during active fitness goals which act as system indexes for operational features inside active application panels.</p>";
+  } else if(type === 'download') {
+    title = "📥 Download Application";
+    body = "<p>The premium application dashboard build variant releases are under safe processing tests. Official download anchors will drop on our Telegram and WhatsApp channels soon. Stay subbed to get download packets directly!</p>";
+  }
+  
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalBody").innerHTML = body;
+  document.getElementById("popup").style.display = "flex";
+}
+
+// Dual Language Context Dictionary Map
+const languages = {
+  en: {
+    logo: "Earnly <span>India</span>",
+    home: "Home", features: "Features", rewards: "Rewards", membership: "Membership", faq: "FAQ", contact: "Contact",
+    tag: "🔥 India's Premium Walk & Earn Platform",
+    hTitle: "Walk Smart.<br>Earn Better.<br>Live Healthier.",
+    hDesc: "UPI Steps is the flagship rewards platform by Earnly India. Complete eligible activities, stay active and enjoy a premium fitness experience.",
+    gStart: "Get Started", wDemo: "Watch Demo",
+    tSpan: "100% SECURE NETWORK",
+    tTitle: "Our App Guidelines & Integrity Policy",
+    tDesc: "Earnly India operates under transparent, reliable standards ensuring your daily achievements are calculated fairly and safely.",
+    tcT1: "Anti-Cheat Verification", tcD1: "Our steps algorithm tracks system-level motions accurately. False hardware manipulation or automated system simulation tools are automatically restricted to protect fairness.",
+    tcT2: "Verified Payout Rules", tcD2: "All eligible points/EC system distribution rewards are credited based on transparent eligibility criteria inside our user panel framework dashboard transparently.",
+    tcT3: "Encrypted User Privacy", tcD3: "Your background activity records and critical dashboard data files are safely locked under standard network data vault procedures safely without safety leaks.",
+    pSteps: "Steps today", pCal: "Calories", pDist: "Distance", pBtn: "<i class='fa-solid fa-wallet' style='margin-right:8px;'></i> Redeem Rewards"
+  },
+  hi: {
+    logo: "अर्नली <span>इंडिया</span>",
+    home: "होम", features: "विशेषताएं", rewards: "पुरस्कार", membership: "सदस्यता", faq: "सवाल-जवाब", contact: "संपर्क करें",
+    tag: "🔥 भारत का प्रीमियम वॉक एंड अर्न प्लेटफॉर्म",
+    hTitle: "स्मार्ट चलें।<br>बेहतर कमाएं।<br>स्वस्थ रहें।",
+    hDesc: "UPI Steps अर्नली इंडिया का प्रमुख रिवॉर्ड प्लेटफॉर्म है। दैनिक गतिविधियों को पूरा करें, सक्रिय रहें और एक प्रीमियम फिटनेस यात्रा का आनंद लें।",
+    gStart: "शुरू करें", wDemo: "डेमो देखें",
+    tSpan: "100% सुरक्षित नेटवर्क",
+    tTitle: "हमारे ऐप दिशानिर्देश और ईमानदारी नीति",
+    tDesc: "अर्नली इंडिया पारदर्शी और विश्वसनीय मानकों के तहत काम करता है जिससे यह सुनिश्चित होता है कि आपके दैनिक लक्ष्य सही और सुरक्षित रूप से गिने जाएं।",
+    tcT1: "एंटी-चीट वेरिफिकेशन", tcD1: "हमारा स्टेप्स एल्गोरिदम मोशन सेंसर डेटा को सटीकता से ट्रैक करता है। निष्पक्षता बनाए रखने के लिए किसी भी नकली हार्डवेयर या ऑटोमेटेड सिम्युलेटर टूल का उपयोग ब्लॉक कर दिया जाता है।",
+    tcT2: "सत्यापित भुगतान नियम", tcD2: "सभी योग्य अंक और EC कॉइन्स रिवॉर्ड सिस्टम यूजर डैशबोर्ड के अंदर दिए गए स्पष्ट पात्रता मानदंडों के आधार पर पारदर्शी तरीके से दिए जाते हैं।",
+    tcT3: "सुरक्षित डेटा प्राइवेसी", tcD3: "आपकी बैकग्राउंड एक्टिविटी और क्रिटिकल प्रोफाइल डेटा फ़ाइलों को बिना किसी लीक के पूरी तरह से नेटवर्क सुरक्षा नियमों के तहत सुरक्षित रखा जाता है।",
+    pSteps: "आज के कदम", pCal: "कैलोरी", pDist: "दूरी", pBtn: "<i class='fa-solid fa-wallet' style='margin-right:8px;'></i> पुरस्कार भुनाएं"
+  }
+};
+
+function changeLanguage(lang) {
+  const data = languages[lang];
+  document.getElementById("headerLogo").innerHTML = data.logo;
+  document.getElementById("navHome").innerText = data.home;
+  document.getElementById("navFeatures").innerText = data.features;
+  document.getElementById("navRewards").innerText = data.rewards;
+  document.getElementById("navMembership").innerText = data.membership;
+  document.getElementById("navFaq").innerText = data.faq;
+  document.getElementById("navContact").innerText = data.contact;
+  
+  document.getElementById("heroTag").innerText = data.tag;
+  document.getElementById("heroTitle").innerHTML = data.hTitle;
+  document.getElementById("heroDesc").innerText = data.hDesc;
+  document.getElementById("btnGetStarted").innerText = data.gStart;
+  document.getElementById("btnWatchDemo").innerText = data.wDemo;
+  
+  document.getElementById("trustSpan").innerText = data.tSpan;
+  document.getElementById("trustTitle").innerText = data.tTitle;
+  document.getElementById("trustDesc").innerText = data.tDesc;
+  
+  document.getElementById("tCardTitle1").innerText = data.tcT1;
+  document.getElementById("tCardDesc1").innerText = data.tcD1;
+  document.getElementById("tCardTitle2").innerText = data.tcT2;
+  document.getElementById("tCardDesc2").innerText = data.tcD2;
+  document.getElementById("tCardTitle3").innerText = data.tcT3;
+  document.getElementById("tCardDesc3").innerText = data.tcD3;
+  
+  document.getElementById("phoneStepsText").innerText = data.pSteps;
+  document.getElementById("phoneCalText").innerText = data.pCal;
+  document.getElementById("phoneDistText").innerText = data.pDist;
+  document.getElementById("phoneBtnText").innerHTML = data.pBtn;
 }
 
 /* --- JavaScript logic for Live Falling EC Coins Animation Loop --- */
@@ -1132,7 +1219,7 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 const coins = [];
-const maxCoins = 35; 
+const maxCoins = 30; 
 
 class Coin {
 constructor() {
@@ -1142,11 +1229,11 @@ this.y = Math.random() * canvas.height;
 reset() {
 this.x = Math.random() * canvas.width;
 this.y = -20;
-this.size = Math.random() * 14 + 12; 
-this.speedY = Math.random() * 1.5 + 1;
+this.size = Math.random() * 12 + 12; 
+this.speedY = Math.random() * 1.2 + 0.8;
 this.spinSpeed = Math.random() * 0.03 + 0.01;
 this.angle = Math.random() * Math.PI;
-this.opacity = Math.random() * 0.4 + 0.3; 
+this.opacity = Math.random() * 0.35 + 0.25; 
 }
 update() {
 this.y += this.speedY;
@@ -1162,21 +1249,19 @@ ctx.scale(Math.sin(this.angle), 1);
 ctx.beginPath();
 ctx.arc(0, 0, this.size, 0, Math.PI * 2);
 
-// Golden-Cyan Premium Coin Style
 let gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
 gradient.addColorStop(0, `rgba(0, 212, 255, ${this.opacity})`);
 gradient.addColorStop(0.8, `rgba(0, 102, 255, ${this.opacity})`);
-gradient.addColorStop(1, `rgba(0, 212, 255, ${this.opacity * 0.5})`);
+gradient.addColorStop(1, `rgba(0, 212, 255, ${this.opacity * 0.4})`);
 
 ctx.fillStyle = gradient;
 ctx.fill();
-ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
-ctx.lineWidth = 1.5;
+ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity + 0.15})`;
+ctx.lineWidth = 1.2;
 ctx.stroke();
 
-// Typography inside coin: "EC"
 ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.3})`;
-ctx.font = `bold ${this.size * 0.8}px Poppins`;
+ctx.font = `bold ${this.size * 0.75}px Poppins`;
 ctx.textAlign = 'center';
 ctx.textBaseline = 'middle';
 ctx.fillText('EC', 0, 0);
