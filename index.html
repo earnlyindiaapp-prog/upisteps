@@ -31,6 +31,19 @@ color:white;
 overflow-x:hidden;
 }
 
+/* --- Smooth Floating Background Animation --- */
+@keyframes pulseGlow1 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(40px, -60px) scale(1.1); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes pulseGlow2 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-50px, 50px) scale(1.15); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
 body::before{
 content:"";
 position:fixed;
@@ -42,6 +55,7 @@ top:-220px;
 right:-200px;
 opacity:.35;
 z-index:-1;
+animation: pulseGlow1 12s infinite ease-in-out;
 }
 
 body::after{
@@ -55,6 +69,7 @@ bottom:-250px;
 left:-250px;
 opacity:.25;
 z-index:-1;
+animation: pulseGlow2 14s infinite ease-in-out;
 }
 
 header{
@@ -66,28 +81,20 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(255,255,255,.05);
+background:rgba(5, 8, 22, 0.65);
 backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(255,255,255,.08);
 z-index:999;
 }
 
+/* --- Clean Text Logo Only (Image and Heart Removed) --- */
 .logo{
 display:flex;
 align-items:center;
-font-size:28px;
+font-size:26px;
 font-weight:700;
 color:#fff;
-}
-
-/* Adjusted Custom Logo Styling Block */
-.logo img{
-width:42px;
-height:42px;
-border-radius:12px;
-margin-right:10px;
-object-fit:cover;
-border: 1px solid rgba(255, 255, 255, 0.15);
+letter-spacing: 0.5px;
 }
 
 .logo span{
@@ -103,6 +110,7 @@ nav a{
 text-decoration:none;
 color:white;
 font-size:15px;
+font-weight: 500;
 transition:.3s;
 }
 
@@ -124,6 +132,7 @@ transition:.3s;
 
 .download-btn:hover{
 transform:translateY(-3px);
+box-shadow: 0 0 35px rgba(0,212,255,.6);
 }
 
 .hero{
@@ -131,7 +140,7 @@ min-height:100vh;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:140px 8% 120px 8%; /* Added top padding to prevent fixed navigation overlay */
+padding:140px 8% 120px 8%;
 gap:60px;
 }
 
@@ -147,6 +156,7 @@ border:1px solid rgba(255,255,255,.1);
 border-radius:30px;
 margin-bottom:25px;
 color:#00d4ff;
+font-weight: 500;
 }
 
 .left h1{
@@ -207,26 +217,126 @@ justify-content:center;
 align-items:center;
 }
 
-/* Adjusted Phone Wrapper Container */
+/* --- Phone Container Layout --- */
 .phone{
 width:320px;
 height:640px;
-border-radius:40px;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,.12);
+border-radius:45px;
+background:#0b0f24;
+border:4px solid rgba(255,255,255,.15);
 display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 0 60px rgba(0,212,255,.25);
-overflow:hidden; /* Perfectly keeps the nested image edges rounded */
+flex-direction: column;
+box-shadow:0 0 60px rgba(0,212,255,.3);
+overflow:hidden;
+position: relative;
+padding: 20px 15px;
 }
 
-.phone img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+/* --- Animated Premium Fitness App UI Inside Phone Mockup --- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+.app-title {
+  font-weight: 700;
+  color: #00d4ff;
+}
+.app-screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+.step-circle-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.circle-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid rgba(255,255,255,0.05);
+}
+.circle-progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top-color: #00d4ff;
+  border-right-color: #0066ff;
+  transform: rotate(45deg);
+  animation: spinCircle 4s linear infinite;
+}
+@keyframes spinCircle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.step-data {
+  text-align: center;
+  z-index: 2;
+}
+.step-data h3 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+}
+.step-data p {
+  font-size: 12px;
+  color: #a0a5c0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.app-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.metric-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+}
+.metric-box i {
+  color: #00d4ff;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.metric-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+.metric-box p {
+  font-size: 11px;
+  color: #8c92b2;
+}
+.app-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #00d4ff, #0066ff);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,212,255,0.3);
 }
 
 </style>
@@ -238,8 +348,7 @@ display:block;
 <header>
 
 <div class="logo">
-  <img src="assets/logo.png" alt="Earnly India Logo">
-  <span>Earnly India</span>
+  Earnly <span>India</span>
 </div>
 
 <nav>
@@ -289,9 +398,40 @@ Watch Demo
 
 <div class="right">
 
-<div class="phone">
-  <img src="assets/upi-steps-screen.png" alt="UPI Steps App Preview">
-</div>
+  <div class="phone">
+    <div class="app-header">
+      <span class="app-title"><i class="fa-solid fa-bolt"></i> UPI Steps</span>
+      <span>10:55 AM <i class="fa-solid fa-battery-three-quarters" style="margin-left:5px;"></i></span>
+    </div>
+    
+    <div class="app-screen-content">
+      <div class="step-circle-container">
+        <div class="circle-bg"></div>
+        <div class="circle-progress"></div>
+        <div class="step-data">
+          <h3>7,482</h3>
+          <p>Steps today</p>
+        </div>
+      </div>
+      
+      <div class="app-metrics-grid">
+        <div class="metric-box">
+          <i class="fa-solid fa-fire"></i>
+          <h4>342 kcal</h4>
+          <p>Calories</p>
+        </div>
+        <div class="metric-box">
+          <i class="fa-solid fa-route"></i>
+          <h4>5.2 km</h4>
+          <p>Distance</p>
+        </div>
+      </div>
+      
+      <button class="app-btn" onclick="comingSoon()">
+        <i class="fa-solid fa-wallet" style="margin-right:8px;"></i> Redeem Rewards
+      </button>
+    </div>
+  </div>
 
 </div>
 
@@ -403,6 +543,7 @@ border:1px solid rgba(255,255,255,.08);
 border-radius:24px;
 padding:35px;
 transition:.35s;
+position: relative;
 }
 
 .card:hover{
@@ -892,11 +1033,11 @@ Send Message
 </div>
 
 <div class="social-icons">
-<a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-<a href="https://t.me/EarnlyIndiaOfficial" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-<a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-<a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-<a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+<a href="#whatsapp" onclick="comingSoon()"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="#telegram" onclick="comingSoon()"><i class="fa-brands fa-telegram"></i></a>
+<a href="#instagram" onclick="comingSoon()"><i class="fa-brands fa-instagram"></i></a>
+<a href="#youtube" onclick="comingSoon()"><i class="fa-brands fa-youtube"></i></a>
+<a href="#facebook" onclick="comingSoon()"><i class="fa-brands fa-facebook"></i></a>
 </div>
 
 </section>
@@ -986,7 +1127,7 @@ transform:translateY(-8px);
 <div class="footer-container">
 
 <div class="footer-logo">
-<h2>💙 Earnly India</h2>
+<h2>Earnly India</h2>
 <p>
 Building the future of fitness rewards with UPI Steps.
 </p>
@@ -1003,9 +1144,9 @@ Building the future of fitness rewards with UPI Steps.
 
 <div class="footer-links">
 <h3>Support</h3>
-<a href="#" onclick="comingSoon()">Privacy Policy</a>
-<a href="#" onclick="comingSoon()">Terms & Conditions</a>
-<a href="#" onclick="comingSoon()">Help Center</a>
+<a href="#privacy" onclick="comingSoon()">Privacy Policy</a>
+<a href="#terms" onclick="comingSoon()">Terms & Conditions</a>
+<a href="#help" onclick="comingSoon()">Help Center</a>
 <a href="#contact">Contact</a>
 </div>
 
@@ -1122,7 +1263,6 @@ function closePopup(){
 document.getElementById("popup").style.display="none";
 }
 
-// Closes modal correctly upon backdrop clicks
 window.onclick = function(event) {
   let popup = document.getElementById("popup");
   if (event.target == popup) {
