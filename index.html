@@ -348,18 +348,20 @@ cursor: pointer;
 box-shadow: 0 4px 15px rgba(0,212,255,0.3);
 }
 
-/* --- Fixed Vector Marquee Layout (Zero Overlap Guaranteed) --- */
+/* --- Fixed Isolated Vector Marquee Section (No Overlaps) --- */
 .gallery-marquee-section {
 width: 100%;
 overflow: hidden;
-background: rgba(5, 8, 22, 0.6);
+background: rgba(11, 15, 36, 0.4);
 padding: 30px 0;
-border-top: 1px solid rgba(255,255,255,0.05);
-border-bottom: 1px solid rgba(255,255,255,0.05);
+border-top: 1px solid rgba(255,255,255,0.08);
+border-bottom: 1px solid rgba(255,255,255,0.08);
 position: relative;
 z-index: 10;
-clear: both;
 display: block;
+clear: both;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 
 .marquee-wrapper {
@@ -379,14 +381,14 @@ padding: 0 15px;
 .vector-slide-card {
 width: 260px;
 min-width: 260px; 
-background: #0b0f24;
-border: 1px solid rgba(0, 212, 255, 0.2);
+background: #0d1230;
+border: 1px solid rgba(0, 212, 255, 0.25);
 border-radius: 16px;
 padding: 15px 20px;
 display: flex;
 align-items: center;
 gap: 15px;
-box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
 .vector-slide-card i {
@@ -409,11 +411,13 @@ font-size: 15px;
 font-weight: 600;
 margin-bottom: 2px;
 color: #ffffff;
+white-space: nowrap;
 }
 
 .vector-card-info p {
 font-size: 12px;
 color: #8c92b2;
+white-space: nowrap;
 }
 
 @keyframes infiniteScroll {
@@ -434,7 +438,7 @@ padding: 100px 8%;
 }
 
 .trust-guidelines {
-padding-top: 120px; /* Secure extra structural distance to avoid marquee collision */
+padding-top: 80px; 
 }
 
 .section-title{
@@ -753,9 +757,9 @@ display: none;
 .hero {
 flex-direction: column;
 text-align: center;
-padding-top: 140px;
+padding-top: 130px;
 gap: 40px;
-min-height: auto; /* Prevent pushing down layouts */
+min-height: auto; 
 }
 .left h1 {
 font-size: 40px;
@@ -767,7 +771,7 @@ justify-content: center;
 font-size: 32px;
 }
 .trust-guidelines {
-padding-top: 60px; /* Reset padding dynamically */
+padding-top: 40px; 
 }
 }
 
@@ -881,7 +885,7 @@ Earnly <span>India</span>
 </div>
 </section>
 
-<!-- ================= INFINITE VECTOR MARQUEE CAROUSEL (Fixed Structure) ================= -->
+<!-- ================= INFINITE VECTOR MARQUEE CAROUSEL (Fully Isolated Structure) ================= -->
 <div class="gallery-marquee-section">
 <div class="marquee-wrapper">
 <div class="marquee-group">
@@ -978,4 +982,5 @@ Earnly <span>India</span>
 <div class="reward-grid">
 <div class="reward-card">
 <div class="reward-icon">👣</div>
-<h3>Daily Step Goals</
+<h3>Daily Step Goals</h3>
+<p>Complete your daily walking goals
