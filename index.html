@@ -13,6 +13,8 @@
       --card-border: rgba(16, 185, 129, 0.15);
       --neon-green: #10B981;
       --neon-glow: rgba(16, 185, 129, 0.3);
+      --telegram-blue: #0088cc;
+      --telegram-glow: rgba(0, 136, 204, 0.4);
       --gold-accent: #F59E0B;
       --text-main: #FFFFFF;
       --text-sub: #94A3B8;
@@ -47,8 +49,8 @@
 
     /* Animations */
     @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 12px var(--neon-glow); }
-      50% { box-shadow: 0 0 22px rgba(16, 185, 129, 0.6); }
+      0%, 100% { box-shadow: 0 0 12px var(--telegram-glow); }
+      50% { box-shadow: 0 0 22px rgba(0, 136, 204, 0.7); }
     }
 
     @keyframes textTicker {
@@ -61,7 +63,7 @@
       50% { transform: translateY(-8px); }
     }
 
-    /* Floating WhatsApp Button with Notification Dot */
+    /* Floating WhatsApp Button */
     .whatsapp-btn {
       position: fixed;
       bottom: 20px;
@@ -74,7 +76,7 @@
       justify-content: center;
       align-items: center;
       box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-      z-index: 99999;
+      z-index: 999;
       transition: 0.3s ease;
     }
 
@@ -108,7 +110,7 @@
       background: var(--glass-nav);
       backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      z-index: 999;
+      z-index: 99;
       padding: 14px 5%;
       display: flex;
       justify-content: space-between;
@@ -121,12 +123,13 @@
       gap: 10px;
     }
 
+    /* Gold Logo Fixed */
     .brand-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
       object-fit: cover;
-      border: 1px solid var(--neon-green);
+      border: 1.5px solid var(--gold-accent);
     }
 
     .brand-name {
@@ -311,6 +314,27 @@
 
     .badge span {
       color: var(--neon-green);
+    }
+
+    /* Premium Telegram Button Style */
+    .btn-telegram-primary {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: var(--telegram-blue);
+      color: #FFFFFF;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px var(--telegram-glow);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-telegram-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px var(--telegram-blue);
     }
 
     /* Live Phone Mockup with Dynamic Simulated Screen */
@@ -570,6 +594,8 @@
       font-weight: 700;
       font-size: 13px;
       text-decoration: none;
+      cursor: pointer;
+      border: none;
       transition: 0.3s;
     }
 
@@ -654,14 +680,114 @@
 
     .referral-btn {
       padding: 14px 28px;
-      background: var(--neon-green);
-      color: #000;
+      background: var(--telegram-blue);
+      color: #fff;
+      border: none;
       text-decoration: none;
       font-weight: 800;
       border-radius: 8px;
       text-align: center;
+      cursor: pointer;
       transition: 0.3s;
       animation: pulseGlow 2.5s infinite;
+    }
+
+    /* Global Beautiful Popup (Modal) Style */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 8, 17, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #0f172a;
+      border: 2px solid var(--telegram-blue);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      transform: scale(0.85);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 15px 40px rgba(0, 136, 204, 0.2);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-emoji {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .modal-card h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #FFF;
+      margin-bottom: 10px;
+    }
+
+    .modal-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal-btn-telegram {
+      background: var(--telegram-blue);
+      color: #FFF;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .modal-btn-telegram:hover {
+      box-shadow: 0 0 15px var(--telegram-blue);
+    }
+
+    .modal-btn-close {
+      background: transparent;
+      color: var(--text-sub);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .modal-btn-close:hover {
+      background: rgba(255,255,255,0.05);
+      color: #FFF;
     }
 
     /* Footer */
@@ -736,7 +862,7 @@
   <!-- Header Navigation -->
   <header>
     <div class="brand">
-      <img src="1000097647.png" class="brand-logo" alt="UPI Steps Logo">
+      <img src="1000097434.png" class="brand-logo" alt="UPI Steps Gold Logo">
       <div class="brand-name">EARNLY<span>INDIA</span></div>
     </div>
     <div class="nav-actions">
@@ -768,7 +894,8 @@
         <h1>Chalo walk karo,<br><span>aur UPI me paise pao 🪙</span></h1>
         <p>Apne daily running aur walking metrics ko secure parameters ke sath track karein. 1,000 steps se start karke directly bank transfer and reward options explore karein.</p>
         <div>
-          <a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" target="_blank" class="referral-btn" style="text-decoration:none;">Join Official WhatsApp Channel</a>
+          <!-- Changed to Telegram Blue & Button Text -->
+          <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="btn-telegram-primary">Join Official Telegram Channel</a>
         </div>
       </div>
       
@@ -851,7 +978,7 @@
             <li>❌ Annual Discount Benefits</li>
           </ul>
         </div>
-        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="price-btn secondary">Unlock Plan</a>
+        <button class="price-btn secondary pricing-btn-click">Unlock Plan</button>
       </div>
       <!-- Quarterly -->
       <div class="price-card popular">
@@ -864,7 +991,7 @@
             <li>✔️ Customized Indian Macros</li>
           </ul>
         </div>
-        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="price-btn primary">Unlock Plan</a>
+        <button class="price-btn primary pricing-btn-click">Unlock Plan</button>
       </div>
       <!-- Annual -->
       <div class="price-card">
@@ -877,7 +1004,7 @@
             <li>✔️ Maximum Financial Savings</li>
           </ul>
         </div>
-        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="price-btn secondary">Unlock Plan</a>
+        <button class="price-btn secondary pricing-btn-click">Unlock Plan</button>
       </div>
     </div>
   </section>
@@ -886,19 +1013,19 @@
   <div class="carousel-section">
     <div class="carousel-wrapper">
       <div class="carousel-track">
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
         <!-- Duplicate loop items -->
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
-        <div class="carousel-item" style="background-image: url('1000097647.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
+        <div class="carousel-item" style="background-image: url('1000097434.png');"></div>
       </div>
     </div>
   </div>
@@ -910,9 +1037,35 @@
         <h2>Refer & Secure <span>Earning Boosts 🎁</span></h2>
         <p>Invite friends to join the move-to-earn community. Secure flat ₹5 bonus immediately on their first verified tracking sync milestone.</p>
       </div>
-      <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="referral-btn">Invite Friends Now</a>
+      <button class="referral-btn" id="referral-click-btn">Invite Friends Now</button>
     </div>
   </section>
+
+  <!-- POPUP 1: Coming Soon for Pricing Plans -->
+  <div class="modal-overlay" id="pricing-modal">
+    <div class="modal-card">
+      <div class="modal-emoji">🚀</div>
+      <h2>Coming Soon!</h2>
+      <p>Premium AI Coach feature jald hi launch hone wala hai. Tab tak sabhi update aur launch date ke liye humara Telegram channel join karein!</p>
+      <div class="modal-actions">
+        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="modal-btn-telegram">Join Telegram Now</a>
+        <button class="modal-btn-close" id="pricing-modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP 2: Refer & Invite popup (Dosto ke sath khelo) -->
+  <div class="modal-overlay" id="referral-modal">
+    <div class="modal-card">
+      <div class="modal-emoji">🤝</div>
+      <h2>Dosto ke sath khelo aur milke earning kro!</h2>
+      <p>Invite and referral system active hone ke baad apne dosto ko share karke flat cash earn kr sakein gey. Launch updates ke liye channel se jude rahein.</p>
+      <div class="modal-actions">
+        <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="modal-btn-telegram">Join Telegram Now</a>
+        <button class="modal-btn-close" id="referral-modal-close">Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer Directory -->
   <footer>
@@ -986,6 +1139,47 @@
       setTimeout(() => {
         circle.style.transform = 'scale(1)';
       }, 150);
+    });
+
+    // POPUPS INTERACTS LOGIC
+    const pricingModal = document.getElementById('pricing-modal');
+    const pricingCloseBtn = document.getElementById('pricing-modal-close');
+    const pricingTriggerButtons = document.querySelectorAll('.pricing-btn-click');
+
+    const referralModal = document.getElementById('referral-modal');
+    const referralCloseBtn = document.getElementById('referral-modal-close');
+    const referralTriggerBtn = document.getElementById('referral-click-btn');
+
+    // Open Pricing Popup
+    pricingTriggerButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        pricingModal.classList.add('active');
+      });
+    });
+
+    // Close Pricing Popup
+    pricingCloseBtn.addEventListener('click', () => {
+      pricingModal.classList.remove('active');
+    });
+
+    // Open Referral Popup
+    referralTriggerBtn.addEventListener('click', () => {
+      referralModal.classList.add('active');
+    });
+
+    // Close Referral Popup
+    referralCloseBtn.addEventListener('click', () => {
+      referralModal.classList.remove('active');
+    });
+
+    // Close on overlay outer click
+    window.addEventListener('click', (e) => {
+      if (e.target === pricingModal) {
+        pricingModal.classList.remove('active');
+      }
+      if (e.target === referralModal) {
+        referralModal.classList.remove('active');
+      }
     });
   </script>
 </body>
