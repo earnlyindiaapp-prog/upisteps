@@ -48,7 +48,7 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* --- Golden & Blue EI Coins Canvas Background Animation --- */
+/* --- Real EI Golden Coins Canvas Background Animation --- */
 #coinCanvas {
     position: fixed;
     top: 0;
@@ -233,7 +233,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 .section-title span { color: #00d4ff; font-weight: 600; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; }
 .section-title h2 { font-size: 34px; margin-top: 10px; font-weight: 800; }
 
-/* Custom Engineered Integrity Grid Layout matching Image 1000098845.png */
+/* Custom Engineered Integrity Grid Layout */
 .integrity-grid-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -342,7 +342,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 
 <body>
 
-<!-- Golden & Blue EI Coins Canvas Background Animation -->
+<!-- Real EI Golden Coins Canvas Background Animation -->
 <canvas id="coinCanvas"></canvas>
 
 <!-- Top Premium Navigation Panel -->
@@ -420,7 +420,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         </div>
     </section>
 
-    <!-- Engineered For Absolute Integrity Section (Matched from Image 1000098845.png) -->
+    <!-- Engineered For Absolute Integrity Section -->
     <section id="features">
         <div class="section-title">
             <span>Core Capabilities</span>
@@ -509,7 +509,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         </div>
     </section>
 
-    <!-- Blog Section (22 Comprehensive Articles including Fitness-Earning connection) -->
+    <!-- Blog Section (All 22 Detailed Articles with Clickable Full Reading View) -->
     <section id="blog">
         <div class="section-title">
             <span>Insights</span>
@@ -554,6 +554,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                 <a onclick="scrollToMainSection('features')">Features</a>
                 <a onclick="scrollToMainSection('leaderboard')">Leaderboard</a>
                 <a onclick="scrollToMainSection('social-networks')">Official Channels</a>
+                <a onclick="scrollToMainSection('blog')">Blog</a>
                 <a onclick="scrollToMainSection('faq')">Help & FAQ</a>
             </div>
             <div class="footer-links">
@@ -590,7 +591,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 </div>
 
 <script>
-// --- Canvas Background Vector Golden & Blue EI Coins Matrix Animation ---
+// --- Real EI Golden Coins Canvas Background Animation ---
 const canvas = document.getElementById('coinCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -601,43 +602,70 @@ function resizeCanvas() {
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
+// Programmatically draw the exact EI golden coin matching user's uploaded reference image
+const coinCanvasPattern = document.createElement('canvas');
+coinCanvasPattern.width = 60;
+coinCanvasPattern.height = 60;
+const pCtx = coinCanvasPattern.getContext('2d');
+
+// Draw Golden Coin Body with Embossed Rim and "EI" letters
+pCtx.beginPath();
+pCtx.arc(30, 30, 28, 0, Math.PI * 2);
+pCtx.fillStyle = '#d4af37';
+pCtx.fill();
+pCtx.lineWidth = 3;
+pCtx.strokeStyle = '#aa7c11';
+pCtx.stroke();
+
+// Inner Rim circle
+pCtx.beginPath();
+pCtx.arc(30, 30, 22, 0, Math.PI * 2);
+pCtx.strokeStyle = '#b8860b';
+pCtx.lineWidth = 1.5;
+pCtx.stroke();
+
+// Embossed "EI" Text inside
+pCtx.fillStyle = '#654321';
+pCtx.font = '900 16px Poppins, sans-serif';
+pCtx.textAlign = 'center';
+pCtx.textBaseline = 'middle';
+pCtx.fillText('EI', 30, 30);
+
 const coins = [];
-const numCoins = 45;
+const numCoins = 40;
 
 for(let i=0; i<numCoins; i++) {
     coins.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 4 + 1.5,
-        speedY: (Math.random() * 0.7 + 0.2) * (Math.random() < 0.5 ? 1 : -1),
+        radius: Math.random() * 12 + 14, // size 14px to 26px
+        speedY: (Math.random() * 0.6 + 0.2) * (Math.random() < 0.5 ? 1 : -1),
         speedX: (Math.random() * 0.4 - 0.2),
-        opacity: Math.random() * 0.7 + 0.2,
-        isGold: Math.random() > 0.5
+        opacity: Math.random() * 0.6 + 0.3,
+        rotation: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() * 0.02 - 0.01)
     });
 }
 
 function animateCoins() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
     coins.forEach(c => {
-        ctx.beginPath();
-        ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
-        
-        if (c.isGold) {
-            ctx.fillStyle = isDark ? `rgba(255, 215, 0, ${c.opacity})` : `rgba(218, 165, 32, ${c.opacity})`;
-        } else {
-            ctx.fillStyle = isDark ? `rgba(0, 212, 255, ${c.opacity})` : `rgba(0, 102, 255, ${c.opacity})`;
-        }
-        ctx.fill();
+        ctx.save();
+        ctx.globalAlpha = c.opacity;
+        ctx.translate(c.x, c.y);
+        ctx.rotate(c.rotation);
+        ctx.drawImage(coinCanvasPattern, -c.radius, -c.radius, c.radius * 2, c.radius * 2);
+        ctx.restore();
 
         c.y += c.speedY;
         c.x += c.speedX;
+        c.rotation += c.rotSpeed;
 
-        if(c.y < 0) c.y = canvas.height;
-        if(c.y > canvas.height) c.y = 0;
-        if(c.x < 0) c.x = canvas.width;
-        if(c.x > canvas.width) c.x = 0;
+        if(c.y < -30) c.y = canvas.height + 30;
+        if(c.y > canvas.height + 30) c.y = -30;
+        if(c.x < -30) c.x = canvas.width + 30;
+        if(c.x > canvas.width + 30) c.x = -30;
     });
 
     requestAnimationFrame(animateCoins);
@@ -938,7 +966,7 @@ const legalDocs = {
     `
 };
 
-// Render all 22 Blogs on Homepage
+// Render all 22 Blogs on Homepage with fully clickable open reading view
 function renderBlogGrid() {
     const container = document.getElementById('blogGridContainer');
     if(!container) return;
@@ -951,22 +979,20 @@ function renderBlogGrid() {
         const bDoc = legalDocs[blogKey];
         if(!bDoc) continue;
         
-        // Extract title from h1
         const titleMatch = bDoc.match(/<h1>(.*?)<\/h1>/);
-        const titleText = titleMatch ? titleMatch : `Expert Article ${i}`;
+        const titleText = titleMatch ? titleMatch[1] : `Expert Article ${i}`;
         
-        // Extract description from first paragraph
         const pMatch = bDoc.match(/<p>(.*?)<\/p>/);
-        const pText = pMatch ? pMatch.substring(0, 110) + '...' : 'Read our comprehensive expert guide on Earnify India.';
+        const pText = pMatch ? pMatch[1].substring(0, 110) + '...' : 'Read our comprehensive expert guide on Earnify India.';
 
         html += `
-            <div class="blog-post-card">
+            <div class="blog-post-card" onclick="showLegalPage('${blogKey}')" style="cursor: pointer;">
                 <div class="blog-dummy-img"><i class="fa-solid ${icons[(i - 1) % icons.length]}"></i></div>
                 <div class="blog-body">
                     <div class="blog-meta"><span>Guide #${i}</span><span>Earn Steps AI</span></div>
                     <h4>${titleText}</h4>
                     <p>${pText}</p>
-                    <div class="blog-read-more" onclick="showLegalPage('${blogKey}')">Read Full Article <i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="blog-read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
         `;
