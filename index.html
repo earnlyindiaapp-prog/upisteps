@@ -249,16 +249,6 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 .premium-rank-row:nth-child(3) .premium-badge-slot { background: linear-gradient(135deg, #dc7633 0%, #ba4a00 100%); color: #fff; }
 .metrics-value { font-size: 18px; font-weight: 800; color: #00d4ff; }
 
-.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
-.blog-post-card { background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; max-width: 500px; margin: 0 auto; width: 100%; }
-.blog-dummy-img { height: 160px; background: var(--bg-panel); display: flex; align-items: center; justify-content: center; }
-.blog-dummy-img i { font-size: 45px; color: rgba(0, 212, 255, 0.15); }
-.blog-body { padding: 25px; }
-.blog-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; display: flex; gap: 15px; }
-.blog-body h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: var(--text-main); }
-.blog-body p { color: var(--text-muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 20px; }
-.blog-read-more { color: #00d4ff; font-weight: 600; font-size: 13.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-
 .faq-stack-box { max-width: 900px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 15px; }
 .faq-element { background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; cursor: pointer; transition: 0.3s; }
 .faq-element h4 { font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
@@ -271,9 +261,9 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
     width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px; color: white; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease;
 }
 .social-circle-node:hover { transform: translateY(-5px) scale(1.05); }
-.node-whatsapp { background: #25D366; }
-.node-telegram { background: #0088cc; }
 .node-youtube { background: #ff0000; }
+.node-telegram { background: #0088cc; }
+.node-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
 .node-twitter { background: #000000; border: 1px solid rgba(255, 255, 255, 0.15); }
 
 .legal-document-layout h1 { font-size: 2.2rem; font-weight: 800; color: var(--text-main); border-bottom: 3px solid #00d4ff; padding-bottom: 12px; margin-bottom: 20px; }
@@ -329,7 +319,6 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
             <div class="dropdown-link-item" onclick="scrollToMainSection('features')"><i class="fa-solid fa-bolt"></i> App Features</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('leaderboard')"><i class="fa-solid fa-trophy"></i> Global Standings</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('social-networks')"><i class="fa-solid fa-share-nodes"></i> Official Channels</div>
-            <div class="dropdown-link-item" onclick="scrollToMainSection('blog')"><i class="fa-solid fa-book"></i> Blog</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('faq')"><i class="fa-solid fa-circle-question"></i> Help & FAQ</div>
         </div>
     </div>
@@ -462,22 +451,11 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         <div class="social-matrix-container">
             <p style="color: var(--text-muted); font-size: 14px;">Connect with the Earnify India community and stay updated with Earn Steps AI announcements.</p>
             <div class="social-circle-grid">
-                <a href="https://whatsapp.com" target="_blank" class="social-circle-node node-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://telegram.org" target="_blank" class="social-circle-node node-telegram" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://youtube.com" target="_blank" class="social-circle-node node-youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://twitter.com" target="_blank" class="social-circle-node node-twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://youtube.com/@earnlyindiaofficial?si=_huMkzx1lPQ1F6GN" target="_blank" class="social-circle-node node-youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="social-circle-node node-telegram" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.instagram.com/earnlyindiaofficial?igsh=MXdqcWF5bzZuOWhocQ==" target="_blank" class="social-circle-node node-instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/EarnlyIndia_" target="_blank" class="social-circle-node node-twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-        </div>
-    </section>
-
-    <!-- Blog Section (1 Featured Blog) -->
-    <section id="blog">
-        <div class="section-title">
-            <span>Insights</span>
-            <h2>Latest Expert Guide</h2>
-        </div>
-        <div class="blog-grid" id="blogGridContainer">
-            <!-- Dynamic 1 Blog Rendered -->
         </div>
     </section>
 
@@ -514,7 +492,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                 <h3>Quick Navigation</h3>
                 <a onclick="scrollToMainSection('features')">Features</a>
                 <a onclick="scrollToMainSection('leaderboard')">Leaderboard</a>
-                <a onclick="scrollToMainSection('blog')">Blog</a>
+                <a onclick="scrollToMainSection('social-networks')">Official Channels</a>
                 <a onclick="scrollToMainSection('faq')">Help & FAQ</a>
             </div>
             <div class="footer-links">
@@ -533,7 +511,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
     </footer>
 </div>
 
-<!-- Dedicated Legal Pages & Blog Article Container -->
+<!-- Dedicated Legal Pages Container -->
 <div class="dedicated-legal-page" id="legalPageView">
     <button class="back-home-btn" onclick="returnToMainView()"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
     <div class="legal-document-layout" id="legalContentArea">
@@ -676,7 +654,7 @@ function closeSupportModal() {
     document.getElementById('supportPopup').style.display = 'none';
 }
 
-// --- Professional Legal Documents & 1 Featured Blog ---
+// --- Professional Legal Documents ---
 const legalDocs = {
     terms: `
         <h1>Terms & Conditions</h1>
@@ -707,39 +685,8 @@ const legalDocs = {
         
         <h2>1. Health & Wellness Notice</h2>
         <p>The fitness tips, step tracking metrics, and wellness guides provided on Earnify India are intended solely for general motivational and educational purposes. Always consult a qualified medical professional before undertaking any strenuous physical exercise routine.</p>
-    `,
-    blog1: `
-        <h1>How Earn Steps AI is Revolutionizing Daily Fitness Motivations</h1>
-        <div class="blog-date">July 20, 2026 | Fitness AI Insights</div>
-        <p>In today's fast-paced digital era, maintaining a consistent physical fitness routine has become increasingly difficult for urban populations. Sedentary lifestyles driven by desk jobs, prolonged screen times, and vehicle commutes have significantly lowered average daily movement metrics across India. Recognizing this growing societal hurdle, Earnify India developed Earn Steps AI—an innovative technology platform designed to seamlessly merge physical health tracking with tangible digital reward incentives. By leveraging cutting-edge machine learning and mobile motion sensors, Earn Steps AI transforms mundane walking into an engaging, gamified experience that encourages users to stay active.</p>
-        <h2>The Psychology Behind Gamified Health Tracking</h2>
-        <p>Human psychology responds remarkably well to immediate positive reinforcement. Traditional fitness tracking apps provide raw data graphs such as step counts or calorie burn numbers, but often fail to provide emotional or material incentives to keep users going after the initial enthusiasm wears off. Earn Steps AI bridges this critical psychological gap. When users realize that every single step they take during their morning jog or office commute contributes directly toward accumulating redeemable digital rewards, motivation multiplies exponentially. This intrinsic reward mechanism rewires daily habits, turning what once felt like a tiresome workout chore into an anticipated daily ritual.</p>
-        <h2>Advanced AI Algorithms for Precision Motion Analysis</h2>
-        <p>One of the primary technical hurdles in step-counting applications is false positive detection—such as hand gestures, vehicle vibrations, or random device movements being miscalculated as walking steps. Earn Steps AI solves this problem through sophisticated neural network algorithms. The app analyzes acceleration frequency, rhythm consistency, and gait patterns to isolate genuine walking motion from external noise. As a result, users receive hyper-accurate step metrics while enjoying optimized battery consumption. As Earnify India continues to expand its ecosystem, Earn Steps AI remains committed to delivering state-of-the-art reliability, ensuring that every user's fitness journey is both accurate and genuinely rewarding.</p>
     `
 };
-
-// Render 1 Featured Blog on Homepage
-function renderBlogGrid() {
-    const container = document.getElementById('blogGridContainer');
-    if(!container) return;
-    
-    container.innerHTML = `
-        <div class="blog-post-card">
-            <div class="blog-dummy-img"><i class="fa-solid fa-person-walking"></i></div>
-            <div class="blog-body">
-                <div class="blog-meta"><span>Featured Guide</span><span>Earn Steps AI</span></div>
-                <h4>How Earn Steps AI is Revolutionizing Daily Fitness Motivations</h4>
-                <p>Read our comprehensive expert guide on transforming your daily walking routine into an engaging wellness habit with Earnify India.</p>
-                <div class="blog-read-more" onclick="showLegalPage('blog1')">Read Full Article <i class="fa-solid fa-arrow-right"></i></div>
-            </div>
-        </div>
-    `;
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    renderBlogGrid();
-});
 
 function showLegalPage(docKey) {
     document.getElementById('mainAppView').classList.add('hidden');
