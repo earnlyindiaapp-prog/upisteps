@@ -5,7 +5,7 @@
 <link rel="icon" type="image/png" href="./favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Earnly India Foundation | UPI Steps - Professional Exercise & KYC Reward Framework</title>
+<title>Earnify India Foundation | Earn Steps AI - Professional Exercise & KYC Reward Framework</title>
 <!-- Premium Favicon - Website ka Logo -->
 <!-- High-Fidelity Professional Icon Packs & Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -562,7 +562,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 <!-- Top Premium Navigation Panel Wrapper -->
 <header>
 <div class="left-nav-cluster">
-    <a href="#" class="logo" onclick="returnToMainView()">Earnly <span>India</span></a>
+    <a href="#" class="logo" onclick="returnToMainView()">Earnify <span>India</span></a>
 </div>
 
 <div class="header-right">
@@ -586,675 +586,378 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
             <div class="dropdown-link-item" onclick="scrollToMainSection('social-networks')"><i class="fa-solid fa-share-nodes"></i> Official Channels</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('blog')"><i class="fa-solid fa-book"></i> Blog</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('faq')"><i class="fa-solid fa-circle-question"></i> Help & FAQ</div>
-            <div class="dropdown-link-item" onclick="renderLegalOrBlogPage('privacy')"><i class="fa-solid fa-user-shield"></i> Privacy Guidelines</div>
-            <div class="dropdown-link-item" onclick="renderLegalOrBlogPage('terms')"><i class="fa-solid fa-file-contract"></i> System Niyams</div>
-            <hr style="border:0; border-top:1px solid var(--border-color); margin:5px 0;">
-            <div class="dropdown-link-item" style="color:#00b074;" onclick="changeLanguage('en')"><i class="fa-solid fa-globe"></i> English (US)</div>
-            <div class="dropdown-link-item" style="color:#00b074;" onclick="changeLanguage('hi')"><i class="fa-solid fa-globe"></i> हिंदी (HI)</div>
         </div>
     </div>
 </div>
 </header>
 
-<!-- ================= MAIN CORE APP VIEW WRAPPER ================= -->
-<div id="mainAppViewContainer" class="app-view-container">
-
-    <!-- Hero Matrix Section -->
-    <section id="home" class="hero">
-    <div class="left">
-        <div class="tag" id="heroTag">🚀 INDIA'S MOST TRUSTED VERIFIED STEP REWARDS HUB</div>
-        <h1 id="heroTitle">Every Single Step<br>You Take Earns<br>Premium Value.</h1>
-        <p id="heroDesc">UPI Steps by Earnly India transforms walking, cycling, and routine physical movements into robust dynamic points tracking structures. Stay fit, invite partners, download our package bundle instantly and unlock premium verification values today.</p>
-        <div class="hero-buttons">
-            <button class="primary" onclick="openSupportModal('download')" id="btnGetStarted">Download App & Earn</button>
-            <button class="secondary" onclick="openSupportModal('demo')" id="btnWatchDemo">Interactive Demo</button>
-        </div>
-    </div>
-
-    <div class="right">
-        <div class="phone">
-            <div class="app-header">
-                <span class="app-title"><i class="fa-solid fa-heart-pulse"></i> UPI Steps Live</span>
-                <span>12:45 PM <i class="fa-solid fa-battery-full" style="margin-left:5px;"></i></span>
-            </div>
-            <div class="app-screen-content">
-                <div class="step-circle-container">
-                    <div class="circle-bg"></div>
-                    <div class="circle-progress"></div>
-                    <div class="step-data">
-                        <h3 id="liveStepsDisplay">9,840</h3>
-                        <p id="phoneStepsText">Steps Taken</p>
-                    </div>
-                </div>
-                <div class="app-metrics-grid">
-                    <div class="metric-box">
-                        <i class="fa-solid fa-fire-flame-simple" style="color:#ef4444;"></i>
-                        <h4>412 kcal</h4>
-                        <p>Burned</p>
-                    </div>
-                    <div class="metric-box">
-                        <i class="fa-solid fa-road" style="color:#3b82f6;"></i>
-                        <h4>6.8 km</h4>
-                        <p>Distance</p>
-                    </div>
-                </div>
-                <button class="app-btn" onclick="openSupportModal('redeem')">
-                    <i class="fa-solid fa-wallet"></i> Redeem Hub Matrix
-                </button>
+<!-- Main App View Container -->
+<div class="app-view-container" id="mainAppView">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="left">
+            <span class="tag">🚀 Powered by Earn Steps AI</span>
+            <h1>Transform Your Daily Fitness & Activity Into Rewards with Earn Steps AI</h1>
+            <p>Welcome to Earnify India. Track your steps, complete smart activity steps, and convert your everyday movement into secure verified payouts using our advanced AI-driven platform.</p>
+            <div class="hero-buttons">
+                <button class="primary" onclick="openSupportModal('download')">Get Started Now</button>
+                <button class="secondary" onclick="scrollToMainSection('features')">Explore Features</button>
             </div>
         </div>
-    </div>
+        <div class="right">
+            <div class="phone">
+                <div class="app-header">
+                    <span>Earn Steps AI</span>
+                    <span id="liveClock">12:00</span>
+                </div>
+                <div class="app-screen-content">
+                    <div class="step-circle-container">
+                        <div class="circle-bg"></div>
+                        <div class="circle-progress"></div>
+                        <div class="step-data">
+                            <h3>8,420</h3>
+                            <p>Daily Steps</p>
+                        </div>
+                    </div>
+                    <div class="app-metrics-grid">
+                        <div class="metric-box">
+                            <i class="fa-solid fa-fire"></i>
+                            <h4>340 kcal</h4>
+                            <p>Burned</p>
+                        </div>
+                        <div class="metric-box">
+                            <i class="fa-solid fa-coins"></i>
+                            <h4>₹125.50</h4>
+                            <p>Earned</p>
+                        </div>
+                    </div>
+                    <button class="app-btn" onclick="openSupportModal('claim')"><i class="fa-solid fa-bolt"></i> Sync & Claim</button>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Capabilities Section -->
+    <!-- Features Section -->
     <section id="features">
-    <div class="section-title">
-        <span>Core Capabilities</span>
-        <h2>Engineered For Absolute Integrity</h2>
-    </div>
-    <div class="feature-grid">
-        <div class="card">
-            <div class="icon" style="color: #3b82f6; font-size: 30px; margin-bottom: 15px;"><i class="fa-solid fa-robot"></i></div>
-            <h3>Hardware Sensor Integration</h3>
-            <p>Syncs organically with system-level step counts to avoid manual entry manipulations or spoofed parameters.</p>
+        <div class="section-title">
+            <span>Capabilities</span>
+            <h2>Core Platform Features</h2>
         </div>
-        <div class="card">
-            <div class="icon" style="color: #00b074; font-size: 30px; margin-bottom: 15px;"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>SSL Encrypted Ledgers</h3>
-            <p>Every single milestone achieved is safely updated on high-security networks with bank-level encryption protocols.</p>
+        <div class="feature-grid">
+            <div class="card">
+                <i class="fa-solid fa-brain" style="font-size: 28px; color: #00d4ff; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 20px; margin-bottom: 12px;">AI Step Tracking</h3>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Precision motion analysis powered by Earn Steps AI algorithms to accurately count your daily steps without draining battery.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-shield-halved" style="font-size: 28px; color: #00d4ff; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 20px; margin-bottom: 12px;">Secure Ledger System</h3>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Advanced security protocols and encrypted transaction ledgers ensure your earned reward history remains completely safe. (Coming Soon)</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-user-check" style="font-size: 28px; color: #00d4ff; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 20px; margin-bottom: 12px;">KYC Verification</h3>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Streamlined verification framework built for secure payout compliance and anti-fraud protection.</p>
+            </div>
         </div>
-        <div class="card">
-            <div class="icon" style="color: #f59e0b; font-size: 30px; margin-bottom: 15px;"><i class="fa-solid fa-bolt-lightning"></i></div>
-            <h3>Instant Feedback</h3>
-            <p>Know instantly when your performance falls into standard distributions and fits specific campaign requirements.</p>
-        </div>
-    </div>
     </section>
 
-    <!-- TRUSTED SECURE KYC VERIFICATION ENGINE -->
+    <!-- KYC Section -->
     <section id="kyc-section">
-    <div class="section-title">
-        <span>100% TRUSTED IDENTITY VAULT</span>
-        <h2>100% Secure & Encrypted KYC Verification</h2>
-        <p>Your privacy is our core mandate. Earnly India deploys isolated cryptographic protocols ensuring absolute user legal identity security.</p>
-    </div>
-    <div class="kyc-verification-box">
-        <div class="kyc-layout-split">
-            <div class="kyc-info-side">
-                <div class="kyc-status-badge"><i class="fa-solid fa-shield-check"></i> Verified Secure Data Processing</div>
-                <h3 style="font-size:22px; margin-bottom:12px; color:var(--text-main);">Anti-Fraud Ledger Validation</h3>
-                <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">To comply with premium programmatic system frameworks and ensure bots are excluded from payment cycles, our identity parameters are handled via secure automated cryptographic hashes. No unauthorized human reviews or lease structures exist.</p>
-            </div>
-            <div class="kyc-action-side">
-                <i class="fa-solid fa-user-shield" style="font-size:45px; color:#00b074; margin-bottom:15px; display:block;"></i>
-                <button class="primary" onclick="openSupportModal('kyc')" style="font-size:13px; padding:12px 24px; width:100%;">Initialize Secure KYC</button>
+        <div class="section-title">
+            <span>Security & Trust</span>
+            <h2>Trusted KYC Verification Suite</h2>
+        </div>
+        <div class="kyc-verification-box">
+            <div class="kyc-layout-split">
+                <div class="kyc-info-side">
+                    <div class="kyc-status-badge"><i class="fa-solid fa-circle-check"></i> Compliant Protocol</div>
+                    <h3 style="font-size: 22px; margin-bottom: 12px;">Fast & Secure Verification</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">To protect our users and maintain an honest reward framework, Earnify India implements standard verification checks before major reward withdrawals are processed.</p>
+                </div>
+                <div class="kyc-action-side">
+                    <i class="fa-solid fa-id-card-clip" style="font-size: 36px; color: #00d4ff; margin-bottom: 15px;"></i>
+                    <h4 style="font-size: 16px; margin-bottom: 10px;">Verify Identity</h4>
+                    <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Complete quick verification inside the Earn Steps AI app.</p>
+                    <button class="primary" style="width: 100%; padding: 10px; font-size: 12px;" onclick="openSupportModal('kyc')">Start KYC</button>
+                </div>
             </div>
         </div>
-    </div>
     </section>
 
-    <!-- Global Leaderboard Standings Grid -->
+    <!-- Leaderboard Section -->
     <section id="leaderboard">
-    <div class="section-title">
-        <span>TOP ELITE ACTIVITY LOGS</span>
-        <h2>Global Performance Standings</h2>
-    </div>
-    <div class="premium-leaderboard-panel">
-        <div class="leaderboard-meta-header">
-            <h3 style="font-weight: 800;"><i class="fa-solid fa-crown" style="color:#ffd700;"></i> Live Network Rankings</h3>
-            <span style="font-size: 12px; color: #00d4ff; font-weight: 700;"><i class="fa-solid fa-shield-halved"></i> 100% Secure Nodes</span>
+        <div class="section-title">
+            <span>Standings</span>
+            <h2>Global Activity Leaderboard</h2>
         </div>
-        <div class="premium-rank-grid">
-            <div class="premium-rank-row">
-                <div class="rank-left-cluster">
-                    <div class="premium-badge-slot">1</div>
-                    <div>
-                        <strong style="display:block; font-size:16px;">Aarav Sharma</strong>
-                        <span style="color:#ffd700; font-size:11px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Verified</span>
-                    </div>
-                </div>
-                <span class="metrics-value">24,850 Steps</span>
+        <div class="premium-leaderboard-panel">
+            <div class="leaderboard-meta-header">
+                <h4 style="font-size: 16px;">Top Performers Today</h4>
+                <span style="font-size: 12px; color: var(--text-muted);">Updated Live</span>
             </div>
-            <div class="premium-rank-row">
-                <div class="rank-left-cluster">
-                    <div class="premium-badge-slot">2</div>
-                    <div>
-                        <strong style="display:block; font-size:16px;">Priya Patel</strong>
-                        <span style="color:#ffd700; font-size:11px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Verified</span>
+            <div class="premium-rank-grid">
+                <div class="premium-rank-row">
+                    <div class="rank-left-cluster">
+                        <div class="premium-badge-slot">1</div>
+                        <div>
+                            <h4 style="font-size: 15px;">Aarav Sharma</h4>
+                            <p style="font-size: 12px; color: var(--text-muted);">24,500 Steps</p>
+                        </div>
                     </div>
+                    <div class="metrics-value">₹450</div>
                 </div>
-                <span class="metrics-value">22,140 Steps</span>
+                <div class="premium-rank-row">
+                    <div class="rank-left-cluster">
+                        <div class="premium-badge-slot">2</div>
+                        <div>
+                            <h4 style="font-size: 15px;">Priya Patel</h4>
+                            <p style="font-size: 12px; color: var(--text-muted);">21,800 Steps</p>
+                        </div>
+                    </div>
+                    <div class="metrics-value">₹380</div>
+                </div>
+                <div class="premium-rank-row">
+                    <div class="rank-left-cluster">
+                        <div class="premium-badge-slot">3</div>
+                        <div>
+                            <h4 style="font-size: 15px;">Rahul Verma</h4>
+                            <p style="font-size: 12px; color: var(--text-muted);">19,200 Steps</p>
+                        </div>
+                    </div>
+                    <div class="metrics-value">₹310</div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- PROFESSIONALIZED REFERRAL MECHANICS SYSTEM -->
-    <div class="upgraded-referral-matrix-box">
-        <h3 style="font-weight: 800; margin-bottom:10px;"><i class="fa-solid fa-users" style="color: #00d4ff;"></i> Network Invitation Protocol</h3>
-        <p style="color:var(--text-muted); font-size:14px; margin-bottom:25px;">Share your customized community registration profile link with friends to grow together.</p>
-        <div class="referral-reward-badge">
-            <i class="fa-solid fa-gift"></i> Per Valid Refer: 500 EC (₹5 Instant Balance Value Added)
-        </div>
-        <div style="margin-top:15px;">
-            <button class="primary" onclick="copyReferralLink()"><i class="fa-solid fa-link"></i> Generate Referral Network Key</button>
-        </div>
-    </div>
     </section>
 
-    <!-- DYNAMIC BRAND ALIGNED SOCIAL MEDIA CHANNELS MATRIX -->
+    <!-- Social Networks Section -->
     <section id="social-networks">
-    <div class="section-title">
-        <span>100% GENUINE INTEGRATION</span>
-        <h2>Connect With Our Official Communities</h2>
-        <p>Join our secure networks to receive daily payout announcements, system validation logs, and community event distributions.</p>
-    </div>
-    <div class="social-matrix-container">
-        <div class="social-circle-grid">
-            <a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" target="_blank" class="social-circle-node node-whatsapp" title="WhatsApp Channel">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" class="social-circle-node node-telegram" title="Telegram Group">
-                <i class="fa-brands fa-telegram"></i>
-            </a>
-            <a href="https://youtube.com/@earnlyindiaofficial" target="_blank" class="social-circle-node node-youtube" title="YouTube Channel">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="https://x.com/EarnlyIndia_" target="_blank" class="social-circle-node node-twitter" title="Twitter / X Network">
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
+        <div class="section-title">
+            <span>Community</span>
+            <h2>Official Channels</h2>
         </div>
-    </div>
-    </section>
-
-    <!-- Deep In-Depth Research Blogs & Articles Section (500+ Words Each) -->
-    <section id="blog" style="scroll-margin-top: 120px; padding-top: 20px;">
-    <div class="section-title">
-        <span>FITNESS INSIGHTS</span>
-        <h2>Earnly Corporate Blog & Research Articles</h2>
-    </div>
-    <div class="blog-grid">
-        <div class="blog-post-card">
-            <div class="blog-dummy-img"><i class="fa-solid fa-notes-medical"></i></div>
-            <div class="blog-body">
-                <div class="blog-meta">
-                    <span><i class="fa-regular fa-calendar-days"></i> July 17, 2026</span>
-                    <span><i class="fa-regular fa-clock"></i> 5 Min Read</span>
-                </div>
-                <h4>How Daily Step Targets Improve Metabolic Efficiency</h4>
-                <p>Discover the molecular benefits behind taking 10,000 steps daily and how step trackers safely calibrate movement sensors.</p>
-                <a class="blog-read-more" href="#blog-article-1">Read Full Article (500+ Words) <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="blog-post-card">
-            <div class="blog-dummy-img"><i class="fa-solid fa-shield-halved"></i></div>
-            <div class="blog-body">
-                <div class="blog-meta">
-                    <span><i class="fa-regular fa-calendar-days"></i> July 15, 2026</span>
-                    <span><i class="fa-regular fa-clock"></i> 8 Min Read</span>
-                </div>
-                <div class="blog-post-card">
-    <div class="blog-dummy-img"><i class="fa-solid fa-laptop-code"></i></div>
-    <div class="blog-body">
-        <div class="blog-meta">
-            <span><i class="fa-regular fa-calendar-days"></i> 4 Apr 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 15 Min Read</span>
-        </div>
-        <h4>10 Best Ways To Earn Money Online in India 2026</h4>
-        <p>2026 me ghar baithe paise kamane ke sabse best 10 tareeke. Step by step full guide...</p>
-        <a class="blog-read-more" href="#blog-article-3">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-        <div class="blog-post-card">
-    <div class="blog-dummy-img"><i class="fa-solid fa-robot"></i></div>
-    <div class="blog-body">
-        <div class="blog-meta">
-            <span><i class="fa-regular fa-calendar-days"></i> 4 Apr 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 18 Min Read</span>
-        </div>
-        <h4>AI Se Paise Kaise Kamaye 2026 - 7 Secret Methods</h4>
-        <p>ChatGPT, AI tools se ghar baithe mahine ke 1 Lakh kaise kamaye. Beginner to Advanced full guide...</p>
-        <a class="blog-read-more" href="#blog-article-4">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
-    </div>   
-                </div>
-                <h4>The Role of Anti-Cheat Algorithms in Step Validation</h4>
-                <p>An in-depth technical analysis on how Earnly India ensures 100% network compliance by detecting hardware emulator loops.</p>
-                <a class="blog-read-more" href="#blog-article-2">Read Full Article (500+ Words) <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-                <div id="blog-article-3" class="full-blog-article">
-    <h2>10 Best Ways To Earn Money Online in India 2026 - Complete Guide</h2>
-    <p class="blog-date">Published on: 4 April 2026</p>
-    
-    <p>2026 me internet se paise kamana pehle se bhi aasan ho gaya hai. Agar aap ghar baithe extra income chahte hain to ye 10 tareeke aapke liye best hain. Har method ko maine step by step explain kiya hai.</p>
-    
-    <h3>1. Freelancing - Apne Skill Becho</h3>
-    <p>Freelancing 2026 ki sabse badi earning method hai. Aap writing, designing, coding, video editing kuch bhi kar sakte hain. Top Websites: Upwork, Fiverr, Freelancer, Toptal. Shuru me 500-1000 rs per project milenge, 6 mahine baad 50k+ per month tak ja sakte ho.</p>
-    
-    <h3>2. Content Creation - YouTube + Instagram</h3>
-    <p>Video banake lakhon kamao. Shorts aur Reels se ab jaldi growth milti hai. 1000 subscribers + 4000 hours ke baad YouTube se paise aane lagte hain. Instagram pe 10k followers ke baad brand deals milti hain.</p>
-    
-    <h3>3. Affiliate Marketing</h3>
-    <p>Amazon, Flipkart, Hostinger ke products promote karo aur har sale pe 5% se 40% tak commission lo. Mahine ke 20k-1 Lakh tak kama sakte ho.</p>
-    
-    <h3>4. Blogging + Google Ads</h3>
-    <p>WordPress pe free blog banao. SEO seekho aur ache keywords pe article likho. 6 mahine me traffic aane lagega. Phir Google AdSense lagao. 10k visitors per month = 5k-10k rs per month.</p>
-    
-    <h3>5. Online Courses Becho</h3>
-    <p>Jo skill aati hai uska course banao. Cooking, Coding, Design, English kuch bhi. Udemy, Teachable, Gumroad pe becho. 1 course se 50k-2 Lakh tak kama sakte ho.</p>
-    
-    <h3>6. Stock Market + Crypto Trading</h3>
-    <p>Risk hai but knowledge se profit bhi hai. Sirf extra paise invest karo. Pehle 6 mahine demo account pe practice karo.</p>
-    
-    <h3>7. Dropshipping Business</h3>
-    <p>Bina inventory ke shop chalao. Shopify + Instagram se start karo. Product India se mangwao aur customer ko becho.</p>
-    
-    <h3>8. App Testing aur Reviews</h3>
-    <p>Companies apps test karne ke 500-2000 rs per test deti hain. Websites: UserTesting, Trymata, Test IO.</p>
-    
-    <h3>9. Sell Digital Products</h3>
-    <p>Ebook, Canva Templates, Resume Templates banao aur Gumroad, Etsy pe becho. 1 baar banaya aur 100 baar becha.</p>
-    
-    <h3>10. Remote Jobs</h3>
-    <p>LinkedIn, Naukri, Internshala pe remote jobs dhundo. Customer support, Virtual Assistant jobs bahut hain. Salary 15k se 60k per month tak.</p>
-    
-    <h3>Conclusion - Kya Karna Hai?</h3>
-    <p>2026 me skill + consistency = paise. 10 me se 1 method chuno aur 90 din lagatar kaam karo. Result jarur milega.</p>
-    
-    <a href="#blog" class="back-btn">← Back to All Articles</a>
-                </div>
-                <div id="blog-article-4" class="full-blog-article">
-    <h2>AI Se Paise Kaise Kamaye 2026 - 7 Secret Methods Using ChatGPT</h2>
-    <p class="blog-date">Published on: 4 April 2026</p>
-    
-    <p>2026 me AI ne sabki job khatre me nahi, balki earning ka sabse bada source bana diya hai. Agar aapko ChatGPT use karna aata hai to aap mahine ke 50k-2 Lakh tak kama sakte hain...</p>
-    
-    <h3>1. AI Content Writing Service</h3>
-    <p>Companies ko blog, product description, ad copy chahiye. ChatGPT se 10 min me 1000 word article likho aur 500-2000 rs charge karo. Fiverr, Upwork pe "AI Content Writer" ke naam se gig banao.</p>
-    
-    <h3>2. AI Thumbnail + Image Creation</h3>
-    <p>Midjourney, Leonardo AI se YouTube thumbnails banao. 1 thumbnail ke 300-800 rs milte hain. YouTubers ko roz chahiye hote hain.</p>
-    
-    <h3>3. AI Resume + LinkedIn Profile</h3>
-    <p>ChatGPT se professional resume aur LinkedIn bio banao. Naukri dhoondne walo se 999-2999 rs lo. 1 din me 5 client easily mil jayenge.</p>
-    
-    <h3>4. AI Course Becho</h3>
-    <p>"ChatGPT se business kaise kare" naam ka course banao aur Udemy pe 799 me becho. Video banane ki zarurat nahi, PPT + Voice over se kaam chal jayega.</p>
-    
-    <h3>5. AI Social Media Manager</h3>
-    <p>Chote business ke liye ChatGPT se 30 din ka content calendar banao. Mahine ke 10k-20k per client charge karo.</p>
-    
-    <h3>6. AI Ebook Writing</h3>
-    <p>ChatGPT se 50 page ki ebook 2 ghante me likhwao. "AI se Weight Loss", "AI se Stock Market" jaise topic. Amazon Kindle pe 99 rs me becho.</p>
-    
-    <h3>7. AI Chatbot Banake Becho</h3>
-    <p>Dukan walo ke liye WhatsApp chatbot banao jo customer ke sawal ka jawab de. 1 chatbot 5k-15k me banta hai.</p>
-    
-    <h3>Conclusion</h3>
-    <p>AI aapka competitor nahi hai, ye aapka employee hai. Isse kaam karwao aur paise kamao. 2026 me jo AI seekh gaya wo sabse aage rahega.</p>
-    
-    <a href="#blog" class="back-btn">← Back to All Articles</a>
-                </div>
-            <div id="blog-article-3" class="full-blog-article">
-    <h2>10 Best Ways To Earn Money Online in India 2026 - Complete Guide</h2>
-    <p class="blog-date">Published on: 4 April 2026</p>
-    
-    <p>2026 me internet se paise kamana pehle se bhi aasan ho gaya hai. Agar aap ghar baithe extra income chahte hain to ye 10 tareeke aapke liye best hain. Har method ko maine step by step explain kiya hai.</p>
-    
-    <h3>1. Freelancing - Apne Skill Becho</h3>
-    <p>Freelancing 2026 ki sabse badi earning method hai. Aap writing, designing, coding, video editing kuch bhi kar sakte hain. Top Websites: Upwork, Fiverr, Freelancer, Toptal. Shuru me 500-1000 rs per project milenge, 6 mahine baad 50k+ per month tak ja sakte ho. Profile achhi banao aur regular apply karo.</p>
-    
-    <h3>2. Content Creation - YouTube + Instagram</h3>
-    <p>Video banake lakhon kamao. Shorts aur Reels se ab jaldi growth milti hai. 1000 subscribers + 4000 hours ke baad YouTube se paise aane lagte hain. Instagram pe 10k followers ke baad brand deals milti hain. Niche chuno: Finance, Tech, Comedy, Fitness. Consistency sabse zaruri hai.</p>
-    
-    <h3>3. Affiliate Marketing</h3>
-    <p>Amazon, Flipkart, Hostinger ke products promote karo aur har sale pe 5% se 40% tak commission lo. Apna blog, YouTube channel ya Instagram page banao. Product ka honest review do. Link description me dalo. Mahine ke 20k-1 Lakh tak kama sakte ho.</p>
-    
-    <h3>4. Blogging + Google Ads</h3>
-    <p>WordPress pe free blog banao. SEO seekho aur ache keywords pe article likho. 6 mahine me traffic aane lagega. Phir Google AdSense lagao. 10k visitors per month = 5k-10k rs per month. Finance, Health, Tech niche sabse zyada paisa dete hain.</p>
-    
-    <h3>5. Online Courses Becho</h3>
-    <p>Jo skill aati hai uska course banao. Cooking, Coding, Design, English kuch bhi. Udemy, Teachable, Gumroad pe becho. 1 course bana ke lifetime earning. 1 course se 50k-2 Lakh tak kama sakte ho.</p>
-    
-    <h3>6. Stock Market + Crypto Trading</h3>
-    <p>Risk hai but knowledge se profit bhi hai. Sirf extra paise invest karo jo doob bhi jaye to problem na ho. Pehle 6 mahine demo account pe practice karo. Long term investment sabse safe hai 2026 me.</p>
-    
-    <h3>7. Dropshipping Business</h3>
-    <p>Bina inventory ke shop chalao. Shopify + Instagram se start karo. Product India se mangwao aur customer ko becho. Profit margin 30-50% rakho. Marketing Facebook Ads se karo.</p>
-    
-    <h3>8. App Testing aur Reviews</h3>
-    <p>Companies apps test karne ke 500-2000 rs per test deti hain. Websites: UserTesting, Trymata, Test IO. Hafte me 2-3 test mil jate hain. Extra 5k-10k per month ho jata hai.</p>
-    
-    <h3>9. Sell Digital Products</h3>
-    <p>Ebook, Canva Templates, Resume Templates, Presets banao aur Gumroad, Etsy pe becho. 1 baar banaya aur 100 baar becha. Passive income ka best tareeka hai.</p>
-    
-    <h3>10. Remote Jobs</h3>
-    <p>LinkedIn, Naukri, Internshala pe remote jobs dhundo. Customer support, Virtual Assistant, Data Entry jobs bahut hain. Salary 15k se 60k per month tak. English aur computer aana chahiye.</p>
-    
-    <h3>Conclusion - Kya Karna Hai?</h3>
-    <p>2026 me skill + consistency = paise. 10 me se 1 method chuno aur 90 din lagatar kaam karo. Result jarur milega. Sabse best hai Freelancing + Content Creation se start karna.</p>
-    <p>Agar ye article helpful laga to share karna aur comment me batana kaunsa method try kar rahe ho 👇</p>
-    
-    <a href="#blog" class="back-btn">← Back to All Articles</a>
+        <div class="social-matrix-container">
+            <p style="color: var(--text-muted); font-size: 14px;">Connect with the Earnify India community and stay updated with Earn Steps AI announcements.</p>
+            <div class="social-circle-grid">
+                <a href="#" class="social-circle-node node-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="social-circle-node node-telegram" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="social-circle-node node-youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="social-circle-node node-twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-    </section> <!-- FULL BLOG ARTICLE 1 -->
-<div id="blog-article-1" class="full-blog-article" style="scroll-margin-top: 120px; padding: 40px 20px; max-width: 900px; margin: 0 auto;">
-    <h2>How Daily Step Targets Improve Metabolic Efficiency</h2>
-    <p class="blog-date"><i class="fa-regular fa-calendar-days"></i> Published: July 17, 2026 • Detailed Technical Report (500+ Words)</p>
-    
-    <p>Walking regularly serves as a primary driver for increasing systemic human metabolic metrics. When a person maintains an active baseline movement habit, muscle cell engines increase oxygen usage, optimizing how glucose molecules are split across active muscle zones.</p>
-    
-    <p>Modern mobile phones track this progression clearly by interpreting data streams from micro-electromechanical systems (MEMs) accelerometers. These chips record acceleration along three spatial directions, converting physical movement into clean numerical records.</p>
-    
-    <p>Furthermore, maintaining persistent step goals helps control baseline energy use, helping managing steady caloric deficits easily. The regular rhythm of walking coordinates human breathing, circulation, and muscle deployment into a balanced pattern.</p>
-    
-    <a href="#blog" class="back-btn" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#00aaff; color:white; border-radius:8px; text-decoration:none;">← Back to All Articles</a>
-</div>
+        </div>
+    </section>
 
-<!-- FULL BLOG ARTICLE 2 -->
-<div id="blog-article-2" class="full-blog-article" style="scroll-margin-top: 120px; padding: 40px 20px; max-width: 900px; margin: 0 auto;">
-    <h2>The Role of Anti-Cheat Algorithms in Step Validation</h2>
-    <p class="blog-date"><i class="fa-regular fa-calendar-days"></i> Published: July 15, 2026 • Detailed Security Review (500+ Words)</p>
-    
-    <p>To establish true, trusted value within digital wellness networks, platforms must use strong programmatic verification methods. Earnly India deploys complex anomaly filters that carefully analyze step intervals, natural acceleration shifts, and physical rotation patterns.</p>
-    
-    <p>Natural human walking has structural variation; no one takes steps with perfectly identical microsecond precision over a long period. Our system uses this basic biological fact to separate genuine steps from artificial macro loops.</p>
-    
-    <p>This anti-cheat layer is crucial for maintaining top-tier ad safety ratings required by premium publishing networks like Google AdSense. By ensuring every tracked event corresponds to real physical movement, Earnly India builds a trusted, secure ecosystem.</p>
-    
-    <a href="#blog" class="back-btn" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#00aaff; color:white; border-radius:8px; text-decoration:none;">← Back to All Articles</a>
-</div>
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="section-title">
+            <span>Insights</span>
+            <h2>Latest Articles</h2>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-post-card">
+                <div class="blog-dummy-img"><i class="fa-solid fa-person-walking"></i></div>
+                <div class="blog-body">
+                    <div class="blog-meta"><span>July 20, 2026</span><span>Fitness AI</span></div>
+                    <h4>Maximizing Daily Steps with Earn Steps AI</h4>
+                    <p>Discover expert tips and routines to boost your step count naturally throughout your work day.</p>
+                    <div class="blog-read-more" onclick="openBlogModal()">Read Article <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="blog-post-card">
+                <div class="blog-dummy-img"><i class="fa-solid fa-shield-check"></i></div>
+                <div class="blog-body">
+                    <div class="blog-meta"><span>July 15, 2026</span><span>Security</span></div>
+                    <h4>Understanding Secure Payouts & Verification</h4>
+                    <p>Learn how our KYC framework ensures smooth and fraud-free reward redemptions.</p>
+                    <div class="blog-read-more" onclick="openBlogModal()">Read Article <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- FAQ Accordion Stack Section -->
+    <!-- FAQ Section -->
     <section id="faq">
-    <div class="section-title">
-        <span>COMMON CONFIRMATIONS</span>
-        <h2>Frequently Answered Guidelines</h2>
-    </div>
-    <div class="faq-stack-box">
-        <div class="faq-element" onclick="toggleFaqAccordion(this)">
-            <h4>How does UPI Steps track my steps accurately? <i class="fa-solid fa-chevron-down"></i></h4>
-            <div class="faq-answer-view">UPI Steps utilizes your smartphone’s built-in hardware pedometer sensor arrays and accelerometer logs. The system samples biological motion distribution algorithms locally, ensuring high-fidelity data matching that isolates valid physical human movement from static device vibration patterns.</div>
+        <div class="section-title">
+            <span>Support</span>
+            <h2>Frequently Asked Questions</h2>
         </div>
-        <div class="faq-element" onclick="toggleFaqAccordion(this)">
-            <h4>Is there any location or active GPS tracking involved? <i class="fa-solid fa-chevron-down"></i></h4>
-            <div class="faq-answer-view">Absolutely not. Our core system data policy enforces a strict zero-location collection mandate. Distance matrices are processed solely on localized biometric estimations based on standard stride loops, preserving absolute user data privacy across cellular nodes.</div>
+        <div class="faq-stack-box">
+            <div class="faq-element" onclick="toggleFaq(this)">
+                <h4>What is Earn Steps AI? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
+                <div class="faq-answer-view">Earn Steps AI is our website and app feature framework designed to track walking activity and convert steps into digital rewards.</div>
+            </div>
+            <div class="faq-element" onclick="toggleFaq(this)">
+                <h4>How do I withdraw my earnings on Earnify India? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
+                <div class="faq-answer-view">Once you complete the minimum threshold and verify your account via our KYC process, you can request transfers directly through the app interface.</div>
+            </div>
+            <div class="faq-element" onclick="toggleFaq(this)">
+                <h4>Is Earnify India affiliated with NPCI? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
+                <div class="faq-answer-view">No, we are an independent rewards platform. Please refer to our website disclaimer for full details.</div>
+            </div>
         </div>
-    </div>
     </section>
 
-    <!-- Contact Support Section Mapping Business Email -->
-    <section id="contact">
-    <div class="section-title">
-        <span>COMMUNICATION DISPATCH</span>
-        <h2>Submit Customer Inquiries</h2>
-    </div>
-    <form class="contact-form" onsubmit="event.preventDefault(); handleContactSubmit();">
-        <input type="text" placeholder="Your Official Full Name" id="contactName" required>
-        <input type="email" placeholder="Verified Email Address" id="contactEmail" required>
-        <textarea rows="5" placeholder="Detailed query message regarding dashboard compliance panels..." id="contactMessage" required></textarea>
-        <button class="primary" type="submit" style="background:#1e3a8a; border-radius:8px; align-self:center; display:flex; align-items:center; gap:8px;">
-            <i class="fa-solid fa-paper-plane"></i> Dispatch Secure Transmission
-        </button>
-    </form>
-    </section>
-
-</div>
-
-<!-- ================= DEDICATED FULL DYNAMIC VIEW CONTAINER ================= -->
-<div id="dedicatedLegalPageContainer" class="dedicated-legal-page">
-    <button class="back-home-btn" onclick="returnToMainView()"><i class="fa-solid fa-chevron-left"></i> Return to Main Website</button>
-    <div id="dynamicLegalContentInject" class="legal-document-layout"></div>
-</div>
-
-<!-- ================= UNIFIED COMPLIANT FOOTER ARCHITECTURE ================= -->
-<footer class="footer">
-<div class="footer-container">
-    <div class="footer-logo">
-        <h2 style="font-weight:800; color:white;">Earnly India</h2>
-        <p style="color:#718096; font-size:13.5px; margin-top:10px; line-height:1.6;">Advancing structural mobility tracking protocols under pristine compliance frameworks.</p>
-        <div style="margin-top: 15px; font-size: 14px; color: #00d4ff;">
-            <i class="fa-solid fa-envelope"></i> <a href="mailto:support@upisteps.in" style="color:#00d4ff; text-decoration:none;">support@upisteps.in</a>
+    <!-- Footer Structure -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Earnify India</h3>
+                <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Empowering healthy lifestyles through advanced step tracking and rewards technology.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Navigation</h3>
+                <a onclick="scrollToMainSection('features')">Features</a>
+                <a onclick="scrollToMainSection('kyc-section')">KYC Verification</a>
+                <a onclick="scrollToMainSection('leaderboard')">Leaderboard</a>
+                <a onclick="scrollToMainSection('blog')">Blog</a>
+            </div>
+            <div class="footer-links">
+                <h3>Legal & Compliance</h3>
+                <a onclick="showLegalPage('terms')">Terms & Conditions</a>
+                <a onclick="showLegalPage('privacy')">Privacy Policy</a>
+                <a onclick="showLegalPage('disclaimer')">Disclaimer</a>
+            </div>
         </div>
-    </div>
-    <div class="footer-links">
-        <h3 style="font-weight:700;">Structural Maps</h3>
-        <a onclick="scrollToMainSection('home')">Home Base</a>
-        <a onclick="scrollToMainSection('features')">Capabilities</a>
-        <a onclick="scrollToMainSection('kyc-section')">Secure KYC</a>
-        <a onclick="scrollToMainSection('social-networks')">Official Channels</a>
-    </div>
-    <div class="footer-links">
-        <h3 style="font-weight:700;">Privacy Compliance & Help</h3>
-        <a onclick="renderLegalOrBlogPage('privacy')">Privacy Policy Docs</a>
-        <a onclick="renderLegalOrBlogPage('terms')">Terms & Conditions</a>
-        <a href="mailto:earnly.india.app@gmail.com">Customer Care Support Desk</a>
-    </div>
+        <div class="copyright">
+            <p>&copy; 2026 Earnify India Foundation. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 12px; color: var(--text-muted);">
+                Disclaimer: "Earn Steps AI" is the name of our website. We are not affiliated with or endorsed by NPCI or the official UPI payment system.
+            </p>
+        </div>
+    </footer>
 </div>
-<div class="copyright">
-    © 2026 Earnly India Foundation. All Rights Reserved. Structural Build Version 8.0.0 (Premium Floating Coins Configured).
-</div>
-</footer>
 
-<!-- Unified Modal Architecture -->
-<div id="popup" class="popup">
-<div class="popup-box">
-    <h2 id="modalTitle">🚀 Notice</h2>
-    <div id="modalBody" style="line-height:1.7; color:#b4c2e0; font-size:14px;"></div>
-    <button onclick="closePopup()">Acknowledge & Close</button>
+<!-- Dedicated Legal Pages Container -->
+<div class="dedicated-legal-page" id="legalPageView">
+    <button class="back-home-btn" onclick="returnToMainView()"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
+    <div class="legal-document-layout" id="legalContentArea">
+        <!-- Content injected dynamically -->
+    </div>
 </div>
+
+<!-- Popup Modal Architecture -->
+<div class="popup" id="supportPopup">
+    <div class="popup-box">
+        <h2 id="popupTitle">Notice</h2>
+        <p id="popupText" style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Download the Earn Steps AI app via Earnify India to start earning today!</p>
+        <button onclick="closeSupportModal()">Close</button>
+    </div>
 </div>
 
 <script>
-// Theme Switching Architecture Engine
+// Theme Toggle Engine
 function toggleThemeEngine() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', targetTheme);
-}
-
-function toggleSupportDropdown(event) {
-    event.stopPropagation();
-    document.getElementById("topCornerDropdown").classList.toggle("active");
-}
-
-window.onclick = function() {
-    document.getElementById("topCornerDropdown").classList.remove("active");
-}
-
-function scrollToMainSection(id) {
-    returnToMainView();
-    setTimeout(() => {
-        let element = document.getElementById(id);
-        if(element) element.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-}
-
-// Single Page View Dynamic Router Engine
-function renderLegalOrBlogPage(targetKey) {
-    window.scrollTo(0,0);
-    document.getElementById("mainAppViewContainer").classList.add("hidden");
-    const legalPage = document.getElementById("dedicatedLegalPageContainer");
-    legalPage.classList.add("active");
-    
-    let injectedHTML = "";
-    
-    if(targetKey === 'privacy') {
-        injectedHTML = `
-            <h1>Official Privacy Policy Disclosure</h1>
-            <p><strong>Last Updated: July 17, 2026</strong></p>
-            <p>Welcome to Earnly India Foundation ("we," "our," "us"). We operate the verified web infrastructure platform located at <strong>upisteps.in</strong> and its associated digital utility tools, including the UPI Steps fitness tracking middleware application setup. Your data privacy is critically integrated into our technical operations layout. This comprehensive Privacy Policy defines our structural data transparency rules, tracking parameters, network nodes handling, and legal compliance workflows with external advertising networks like Google AdSense.</p>
-            <h2>1. Dynamic Information Gathering Ecosystem</h2>
-            <p>Our platform handles user metrics exclusively focused on fitness execution parameters. When you connect your device architecture or download our optimization packages, we log standard motion telemetry metrics: step counters, accelerometer distributions, distance approximations, and relative velocity records. We do not gather deeply sensitive personal tracking logs or private messaging histories. Any digital registration information provided, including basic verification mail signatures or profile names, is locked inside our secure core ledgers.</p>
-            <h2>2. Cookie Protocols and Ad Networks Data Controls</h2>
-            <p>This network node uses industry-standard background digital cookies and structural tracking files to measure traffic efficiency, map platform load speeds, and verify secure sessions. Third-party advertising networks, specifically including Google AdSense, leverage verified DART cookies to serve native algorithmic advertisements across our network interface based on your general internet browsing trajectories. Users hold full autonomy to opt-out or clean these behavioral tracking cookies by toggling standard security filters located inside their device browser settings panel.</p>
-            <h2>3. Structural Data Vault Security and Integrity</h2>
-            <p>We deploy strict, enterprise-grade physical, network, and electronic security frameworks. Every metric processed by our UPI Steps verification module is immediate channeled via 256-bit Secure Sockets Layer (SSL) encryption networks into high-security offline databases. We aggressively block arbitrary database injection attempts, false hardware simulation inputs, or malicious parameter modifications. However, no digital transmission mechanism across the worldwide web infrastructure can claim absolute zero-risk vulnerability; thus, we urge optimal local system safety habits.</p>
-            <h2>4. Regulatory Compliance and Fair Distribution</h2>
-            <p>Earnly India Foundation operates under the absolute framework of regional digital communication guidelines and fair internet user data management laws. We categorically declare that your aggregated biological data streams, metric charts, or interface records are never sold, rented, leased, or shifted to unauthorized third-party commercial marketing frameworks. Data compliance parameters are shared only under mandatory national judicial directives or strictly to maintain our reward ledger anti-cheat system validation protocols.</p>
-            <h2>5. Updates to This Digital Policy Structure</h2>
-            <p>We reserve absolute technical rights to update, patch, alter, or rewrite individual nodes within this global Privacy Policy framework at any micro-moment without manual notification to single device nodes. We advise checking the timestamp at the top of this document regularly to keep track of active data safety architectures.</p>
-        `;
-    } else if(targetKey === 'terms') {
-        injectedHTML = `
-            <h1>Terms of Service & Platform Layout Niyams</h1>
-            <p><strong>Last Updated: July 17, 2026</strong></p>
-            <p>By browsing, accessing, or downloading structural elements from upisteps.in, you legally sign an immutable operational compliance layout with Earnly India Foundation. If you do not accept these core operating constraints, you must discontinue any interactions with our step counter trackers and user interface platforms immediately.</p>
-            <h2>1. Permitted Platform Use and Device Integrity</h2>
-            <p>Every user is granted a single, non-transferable digital node access parameters license to utilize UPI Steps for real personal physical fitness tracking. Running automated digital macros, macro emulator packages, script injection files, or mechanical hardware swings to falsify step logs is an express breach of this system architecture agreement and will lead to instant account termination.</p>
-            <h2>2. Reward Claims and Payout Ledger Distributions</h2>
-            <p>All virtual points, levels, or performance indicators tracked across our digital dashboards are part of a fitness motivation system architecture. They do not represent fixed legal currency until they are cleared under our active platform payout regulations, tier structures, and verified campaign budgets. Earnly India Foundation maintains final system audit rights to hold, clear, modify, or block any premium gift distribution requests if analytical parameters show anomalies.</p>
-            <h2>3. Copyright, Branding, and Intellectual Assets</h2>
-            <p>All graphical assets, high-fidelity ranking tables, color structures, brand names (Earnly India, UPI Steps), and text articles added within this website are exclusive properties protected under digital asset copyright standards. Scraping code blocks or deploying duplicate mirroring of our GitHub layout files for unauthorized application builds is strictly prohibited.</p>
-        `;
-    } else if(targetKey === 'blog1') {
-        injectedHTML = `
-            <h1>How Daily Step Targets Improve Metabolic Efficiency</h1>
-            <p><strong>Published: July 17, 2026 • Detailed Technical Report (500+ Words)</strong></p>
-            <p>Walking regularly serves as a primary driver for increasing systemic human metabolic metrics. When a person maintains an active baseline movement habit, muscle cell engines increase oxygen usage, optimizing how glucose molecules are split across active muscle zones. This biological transformation changes abstract walking steps into concrete metabolic benefits, significantly lowering long-term cardiovascular risk profiles.</p>
-            <p>Modern mobile phones track this progression cleanly by interpreting data streams generated from micro-electromechanical systems (MEMS) accelerometers. These chips record acceleration along three spatial directions, converting physical movement into clean numerical records. By aiming for a standard daily goal of 10,000 steps, individuals can effectively prevent modern sedentary wellness issues while helping keep their metabolic systems performing at peak levels.</p>
-            <p>Furthermore, maintaining persistent step goals helps control baseline energy use, helping managing steady caloric deficits easily. The regular rhythm of walking coordinates human breathing, circulation, and muscle deployment into a balanced pattern, showing that simple, daily consistent movements remain a highly effective way to protect long-term personal health across all age categories structural distribution networks safely.</p>
-            <p>Additionally, walking serves as a low-impact workout form, meaning it does not impose critical shear stresses on knee matrices or lower ankle joints. This accessibility parameter allows users from all age brackets to continuously utilize our frameworks without triggering sports-related injuries. Every incremental session builds durable vascular infrastructure, boosting stamina curves steadily over subsequent observation cycles.</p>
-        `;
-    } else if(targetKey === 'blog2') {
-        injectedHTML = `
-            <h1>The Role of Anti-Cheat Algorithms in Modern Step Validation Layers</h1>
-            <p><strong>Published: July 15, 2026 • Detailed Security Review (500+ Words)</strong></p>
-            <p>To establish true, trusted value within digital wellness networks, platforms must use strong programmatic verification methods. Earnly India deploys complex anomaly filters that carefully analyze step intervals, natural acceleration shifts, and physical rotation patterns. If a user deploys a hardware shaking machine or attempts to simulate steps via automated emulators, the system flags the suspicious activity signature instantly.</p>
-            <p>Natural human walking has structural variation; no one takes steps with perfectly identical microsecond precision over a long period. Our system uses this basic biological fact to separate genuine steps from artificial macro loops. By cross-checking sensor data streams, the tracking platform safely protects honest users while keeping the rewards pool fair and secure for the entire community.</p>
-            <p>This anti-cheat layer is crucial for maintaining top-tier ad safety ratings required by premium publishing networks like Google AdSense. By ensuring every tracked event corresponds to real physical movement, Earnly India builds a trusted, secure ecosystem that corporate partners and users can rely on completely without mathematical variance loops processing anomalies.</p>
-        `;
+    const htmlTag = document.documentElement;
+    if(htmlTag.getAttribute('data-theme') === 'dark') {
+        htmlTag.setAttribute('data-theme', 'light');
+    } else {
+        htmlTag.setAttribute('data-theme', 'dark');
     }
+}
+
+// Hamburger Dropdown Toggle
+function toggleSupportDropdown(e) {
+    e.stopPropagation();
+    const dropdown = document.getElementById('topCornerDropdown');
+    dropdown.classList.toggle('active');
+}
+
+window.addEventListener('click', () => {
+    const dropdown = document.getElementById('topCornerDropdown');
+    if(dropdown && dropdown.classList.contains('active')) {
+        dropdown.classList.remove('active');
+    }
+});
+
+// Scroll Helper
+function scrollToMainSection(sectionId) {
+    const view = document.getElementById('mainAppView');
+    if(view.classList.contains('hidden')) {
+        returnToMainView();
+        setTimeout(() => {
+            document.getElementById(sectionId)?.scrollIntoView({behavior: 'smooth'});
+        }, 100);
+    } else {
+        document.getElementById(sectionId)?.scrollIntoView({behavior: 'smooth'});
+    }
+}
+
+// FAQ Accordion
+function faqToggle(el) {
+    el.classList.toggle('active');
+}
+function toggleFaq(el) {
+    el.classList.toggle('active');
+}
+
+// Modal Handlers
+function openSupportModal(type) {
+    const popup = document.getElementById('supportPopup');
+    const title = document.getElementById('popupTitle');
+    const text = document.getElementById('popupText');
     
-    document.getElementById("dynamicLegalContentInject").innerHTML = injectedHTML;
+    if(type === 'download') {
+        title.innerText = "Download Earn Steps AI";
+        text.innerText = "The official Earnify India Android & iOS app package is ready. Click below to begin installation.";
+    } else if(type === 'claim') {
+        title.innerText = "Sync & Claim Rewards";
+        text.innerText = "Please open the Earn Steps AI mobile application to sync your live sensor data and claim your daily rewards securely.";
+    } else if(type === 'kyc') {
+        title.innerText = "KYC Verification Portal";
+        text.innerText = "KYC verification is handled securely inside the mobile app environment for enhanced data security.";
+    }
+    popup.style.display = 'flex';
+}
+
+function closeSupportModal() {
+    document.getElementById('supportPopup').style.display = 'none';
+}
+
+// Legal Page View Router
+const legalDocs = {
+    terms: `
+        <h1>Terms & Conditions</h1>
+        <p>Welcome to Earnify India. By accessing our website and utilizing Earn Steps AI features, you agree to comply with and be bound by the following terms.</p>
+        <h2>1. Acceptance of Terms</h2>
+        <p>Your use of our platform constitutes agreement to these terms and conditions. If you disagree with any part, please discontinue use immediately.</p>
+        <h2>2. Account Registration & User Conduct</h2>
+        <p>Users must provide accurate information when registering. Any fraudulent activity or automated bot usage for step inflation will result in immediate termination.</p>
+    `,
+    privacy: `
+        <h1>Privacy Policy</h1>
+        <p>At Earnify India, we respect your privacy regarding any information we may collect across our website and application ecosystem, Earn Steps AI.</p>
+        <h2>1. Information Collection</h2>
+        <p>We collect motion data and step counts solely for the purpose of calculating fitness rewards. Data encryption practices are implemented to protect user privacy.</p>
+        <h2>2. Data Usage</h2>
+        <p>Your information is never sold to third parties and is used exclusively to maintain your profile and process rewards.</p>
+    `,
+    disclaimer: `
+        <h1>Disclaimer</h1>
+        <p>Disclaimer: "Earn Steps AI" is the name of our website. We are not affiliated with or endorsed by NPCI or the official UPI payment system.</p>
+        <h2>1. Independent Operation</h2>
+        <p>Earnify India is an independent entity providing fitness and activity tracking reward solutions. All trademarks belong to their respective owners.</p>
+    `
+};
+
+function showLegalPage(docKey) {
+    document.getElementById('mainAppView').classList.add('hidden');
+    const legalView = document.getElementById('legalPageView');
+    const contentArea = document.getElementById('legalContentArea');
+    contentArea.innerHTML = legalDocs[docKey] || legalDocs.terms;
+    legalView.classList.add('active');
+    window.scrollTo(0, 0);
 }
 
 function returnToMainView() {
-    document.getElementById("dedicatedLegalPageContainer").classList.remove("active");
-    document.getElementById("mainAppViewContainer").classList.remove("hidden");
+    document.getElementById('legalPageView').classList.remove('active');
+    document.getElementById('mainAppView').classList.remove('hidden');
+    window.scrollTo(0, 0);
 }
 
-function toggleFaqAccordion(box) { box.classList.toggle("active"); }
-
-function copyReferralLink() {
-    document.getElementById("modalTitle").innerText = "📋 Referral Link Active";
-    document.getElementById("modalBody").innerHTML = "<p>Your professional invitation signature tracking token has been dynamically parsed onto your phone clipboard. Share to earn <b>500 EC (₹5)</b> per referral loop entry.</p>";
-    document.getElementById("popup").style.display = "flex";
+function openBlogModal() {
+    showLegalPage('terms');
 }
-
-function handleContactSubmit() {
-    let name = document.getElementById("contactName").value;
-    document.getElementById("modalTitle").innerText = "✉️ Matrix Dispatch";
-    document.getElementById("modalBody").innerHTML = "<p>Thank you, <b>" + name + "</b>. Your details have been parsed securely. Direct coordination is active at <b>earnly.india.app@gmail.com</b>.</p>";
-    document.getElementById("popup").style.display = "flex";
-}
-
-function closePopup() { document.getElementById("popup").style.display = "none"; }
-
-function openSupportModal(type) {
-    let title = "🚀 Platform Notice";
-    let body = "System optimization task loops are processing structural updates. For direct execution queues, query logs are verified at <b>earnly.india.app@gmail.com</b>.";
-    
-    if(type === 'kyc') {
-        title = "🔒 100% Secure Encrypted KYC Gateway";
-        body = "Our bank-grade localized identity validation checks are fully active. Your personal documentation matrices are automatically encrypted under SHA-256 local networks. No user data leaves your system node layout unauthorized. Ping custom tickets via <b>earnly.india.app@gmail.com</b> for swift authorization.";
-    }
-    
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalBody").innerHTML = `<p>${body}</p>`;
-    document.getElementById("popup").style.display = "flex";
-}
-
-function changeLanguage(lang) {
-    if(lang === 'hi') {
-        document.getElementById("heroTag").innerText = "🚀 भारत का सबसे विश्वसनीय सत्यापित स्टेप रिवॉर्ड हब";
-    } else {
-        document.getElementById("heroTag").innerText = "🚀 INDIA'S MOST TRUSTED VERIFIED STEP REWARDS HUB";
-    }
-}
-
-// --- HIGH FIDELITY REAL GOLDEN 3D COIN BACKGROUND VECTOR DRAW SYSTEM ---
-const canvas = document.getElementById('coinCanvas');
-const ctx = canvas.getContext('2d');
-function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-const coins = [];
-class RealisticCoin {
-    constructor() { 
-        this.reset(); 
-        this.y = Math.random() * canvas.height; 
-    }
-    reset() { 
-        this.x = Math.random() * canvas.width; 
-        this.y = -40; 
-        this.size = Math.random() * 12 + 14; // Bigger premium layout
-        this.speedY = Math.random() * 0.5 + 0.3; 
-        this.angle = Math.random() * Math.PI; 
-        this.spinSpeed = Math.random() * 0.02 + 0.01;
-        this.opacity = Math.random() * 0.4 + 0.3; // Visible shiny scale
-    }
-    update() { 
-        this.y += this.speedY; 
-        this.angle += this.spinSpeed; 
-        if (this.y > canvas.height + 40) this.reset(); 
-    }
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.scale(Math.sin(this.angle), 1); // 3D Spin Calculation
-        ctx.globalAlpha = this.opacity;
-
-        // Outer Realistic Coin Rim (Dark Gold Blend)
-        ctx.beginPath();
-        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-        let goldGrad = ctx.createLinearGradient(-this.size, -this.size, this.size, this.size);
-        goldGrad.addColorStop(0, '#FFF3A8');
-        goldGrad.addColorStop(0.2, '#D4AF37'); // Metallic Gold
-        goldGrad.addColorStop(0.5, '#AA7C11');
-        goldGrad.addColorStop(0.8, '#D4AF37');
-        goldGrad.addColorStop(1, '#5B4006');
-        ctx.fillStyle = goldGrad;
-        ctx.fill();
-
-        // Inner Ridge Line Border Layer
-        ctx.beginPath();
-        ctx.arc(0, 0, this.size * 0.82, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-
-        // Core Dynamic "EC" Brand Typography Graphic
-        ctx.fillStyle = '#4A3200';
-        ctx.font = `bold ${this.size * 0.7}px Poppins`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('EC', 0, 1);
-
-        // Highlight Glow Layer Reflection
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
-        ctx.font = `bold ${this.size * 0.7}px Poppins`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('EC', -0.5, -0.5);
-
-        ctx.restore();
-    }
-}
-for (let i = 0; i < 22; i++) coins.push(new RealisticCoin());
-
-let stepsCounter = 9840;
-setInterval(() => {
-    stepsCounter += Math.floor(Math.random() * 4);
-    if(document.getElementById("liveStepsDisplay")) {
-        document.getElementById("liveStepsDisplay").innerText = stepsCounter.toLocaleString();
-    }
-}, 2500);
-
-function animateCoins() { 
-    ctx.clearRect(0, 0, canvas.width, canvas.height); 
-    coins.forEach(c => { c.update(); c.draw(); }); 
-    requestAnimationFrame(animateCoins); 
-}
-animateCoins();
 </script>
-
 </body>
 </html>
