@@ -761,7 +761,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                     <div class="blog-meta"><span>July 20, 2026</span><span>Fitness AI</span></div>
                     <h4>Maximizing Daily Steps with Earn Steps AI</h4>
                     <p>Discover expert tips and routines to boost your step count naturally throughout your work day.</p>
-                    <div class="blog-read-more" onclick="openBlogModal()">Read Article <i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="blog-read-more" onclick="openFullBlog('blog1')">Read Article <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
             <div class="blog-post-card">
@@ -770,7 +770,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                     <div class="blog-meta"><span>July 15, 2026</span><span>Security</span></div>
                     <h4>Understanding Secure Payouts & Verification</h4>
                     <p>Learn how our KYC framework ensures smooth and fraud-free reward redemptions.</p>
-                    <div class="blog-read-more" onclick="openBlogModal()">Read Article <i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="blog-read-more" onclick="openFullBlog('blog2')">Read Article <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
         </div>
@@ -828,7 +828,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
     </footer>
 </div>
 
-<!-- Dedicated Legal Pages Container -->
+<!-- Dedicated Legal Pages & Blog Articles Container -->
 <div class="dedicated-legal-page" id="legalPageView">
     <button class="back-home-btn" onclick="returnToMainView()"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
     <div class="legal-document-layout" id="legalContentArea">
@@ -846,6 +846,65 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 </div>
 
 <script>
+// --- Canvas Background Vector Coin Matrix Animation ---
+const canvas = document.getElementById('coinCanvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+const coins = [];
+const numCoins = 35;
+
+for(let i=0; i<numCoins; i++) {
+    coins.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 3 + 1,
+        speedY: (Math.random() * 0.8 + 0.2) * (Math.random() < 0.5 ? 1 : -1),
+        speedX: (Math.random() * 0.4 - 0.2),
+        opacity: Math.random() * 0.5 + 0.1
+    });
+}
+
+function animateCoins() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    ctx.fillStyle = isDark ? 'rgba(0, 212, 255, 0.4)' : 'rgba(0, 102, 255, 0.3)';
+
+    coins.forEach(c => {
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+        ctx.fillStyle = isDark ? `rgba(0, 212, 255, ${c.opacity})` : `rgba(0, 102, 255, ${c.opacity})`;
+        ctx.fill();
+
+        c.y += c.speedY;
+        c.x += c.speedX;
+
+        if(c.y < 0) c.y = canvas.height;
+        if(c.y > canvas.height) c.y = 0;
+        if(c.x < 0) c.x = canvas.width;
+        if(c.x > canvas.width) c.x = 0;
+    });
+
+    requestAnimationFrame(animateCoins);
+}
+animateCoins();
+
+// Live Clock Simulator
+setInterval(() => {
+    const d = new Date();
+    const hours = String(d.getHours()).padStart(2, '0');
+    const mins = String(d.getMinutes()).padStart(2, '0');
+    const clockEl = document.getElementById('liveClock');
+    if(clockEl) clockEl.innerText = `${hours}:${mins}`;
+}, 1000);
+
 // Theme Toggle Engine
 function toggleThemeEngine() {
     const htmlTag = document.documentElement;
@@ -884,9 +943,6 @@ function scrollToMainSection(sectionId) {
 }
 
 // FAQ Accordion
-function faqToggle(el) {
-    el.classList.toggle('active');
-}
 function toggleFaq(el) {
     el.classList.toggle('active');
 }
@@ -914,7 +970,7 @@ function closeSupportModal() {
     document.getElementById('supportPopup').style.display = 'none';
 }
 
-// Legal Page View Router
+// Legal Page View Router & Full Blogs
 const legalDocs = {
     terms: `
         <h1>Terms & Conditions</h1>
@@ -937,6 +993,145 @@ const legalDocs = {
         <p>Disclaimer: "Earn Steps AI" is the name of our website. We are not affiliated with or endorsed by NPCI or the official UPI payment system.</p>
         <h2>1. Independent Operation</h2>
         <p>Earnify India is an independent entity providing fitness and activity tracking reward solutions. All trademarks belong to their respective owners.</p>
+  `,
+    blog1: `
+        <h1>How Earn Steps AI is Revolutionizing Daily Fitness Motivations</h1>
+        <div class="blog-date">July 20, 2026 | Fitness AI Insights</div>
+        <p>In today's fast-paced digital era, maintaining a consistent physical fitness routine has become increasingly difficult for urban populations. Sedentary lifestyles driven by desk jobs, prolonged screen times, and vehicle commutes have significantly lowered average daily movement metrics across India. Recognizing this growing societal hurdle, Earnify India developed Earn Steps AI—an innovative technology platform designed to seamlessly merge physical health tracking with tangible digital reward incentives. By leveraging cutting-edge machine learning and mobile motion sensors, Earn Steps AI transforms mundane walking into an engaging, gamified experience that encourages users to stay active.</p>
+        <h2>The Psychology Behind Gamified Health Tracking</h2>
+        <p>Human psychology responds remarkably well to immediate positive reinforcement. Traditional fitness tracking apps provide raw data graphs such as step counts or calorie burn numbers, but often fail to provide emotional or material incentives to keep users going after the initial enthusiasm wears off. Earn Steps AI bridges this critical psychological gap. When users realize that every single step they take during their morning jog or office commute contributes directly toward accumulating redeemable digital rewards, motivation multiplies exponentially. This intrinsic reward mechanism rewires daily habits, turning what once felt like a tiresome workout chore into an anticipated daily ritual.</p>
+        <h2>Advanced AI Algorithms for Precision Motion Analysis</h2>
+        <p>One of the primary technical hurdles in step-counting applications is false positive detection—such as hand gestures, vehicle vibrations, or random device movements being miscalculated as walking steps. Earn Steps AI solves this problem through sophisticated neural network algorithms. The app analyzes acceleration frequency, rhythm consistency, and gait patterns to isolate genuine walking motion from external noise. As a result, users receive hyper-accurate step metrics while enjoying optimized battery consumption. As Earnify India continues to expand its ecosystem, Earn Steps AI remains committed to delivering state-of-the-art reliability, ensuring that every user's fitness journey is both accurate and genuinely rewarding.</p>
+    `,
+    blog2: `
+        <h1>Top 5 Habits to Increase Your Daily Step Count Effortlessly</h1>
+        <div class="blog-date">July 18, 2026 | Lifestyle & Wellness</div>
+        <p>Achieving the recommended 10,000 daily steps can often feel like an overwhelming target, especially when working long hours at a desk. However, by introducing minor, sustainable lifestyle adjustments throughout your day, hitting this milestone becomes surprisingly effortless. Through the guidance of Earnify India and motion analytics from Earn Steps AI, thousands of active users have successfully restructured their daily routines to maximize movement without disrupting their professional responsibilities. Let us explore the top five proven habits that can radically elevate your daily step count organically.</p>
+        <h2>1. Embrace the Power of Post-Meal Walking Breaks</h2>
+        <p>One of the easiest ways to accumulate extra steps is by taking a brisk 10 to 15-minute walk immediately after major meals—breakfast, lunch, and dinner. Not only does this simple habit add up to 3,000 steps daily, but clinical studies also indicate that post-meal walking significantly improves blood glucose regulation, enhances digestion, and prevents post-lunch lethargy at work.</p>
+        <h2>2. Redefine Your Commute and Errands</h2>
+        <p>If you rely on public transport or personal vehicles, try parking your vehicle a few blocks further away or getting off one transit stop earlier. Walking the remaining distance introduces structured aerobic movement into your morning commute. Similarly, for nearby grocery shopping or quick errands, leave the vehicle behind and walk with a reusable bag. These micro-walks accumulate substantial step totals over a single week while promoting sustainable urban mobility.</p>
+    `,
+    blog3: `
+        <h1>Understanding the Technology Behind AI-Powered Step Trackers</h1>
+        <div class="blog-date">July 16, 2026 | Technology & Engineering</div>
+        <p>The evolution of mobile health technology has transitioned from basic mechanical pedometers to sophisticated artificial intelligence models capable of interpreting complex human motion in real-time. Within the Earnify India ecosystem, Earn Steps AI represents the pinnacle of modern fitness engineering. By combining hardware gyroscope data with machine learning classification models, the platform delivers unprecedented accuracy in activity quantification. Understanding how this technology works under the hood provides users with deeper confidence in their daily tracking metrics.</p>
+        <h2>Tri-Axial Accelerometry and Sensor Fusion</h2>
+        <p>Modern smartphones and wearable fitness trackers contain micro-electromechanical systems (MEMS) sensors known as tri-axial accelerometers. These sensors measure linear acceleration across three distinct spatial axes (X, Y, and Z). When a user walks, their center of gravity shifts rhythmically, producing distinct waveform spikes in acceleration data. Earn Steps AI processes these continuous waveform streams using proprietary filtering algorithms to eliminate gravitational bias and high-frequency noise caused by vehicular travel.</p>
+    `,
+    blog4: `
+        <h1>Why Walking is the Best Low-Impact Exercise for Everyone</h1>
+        <div class="blog-date">July 14, 2026 | Fitness & Health</div>
+        <p>In the pursuit of health and longevity, high-intensity workouts such as sprinting, heavy weightlifting, or CrossFit often receive the most media attention. However, for the vast majority of the population, these intense regimens can lead to joint stress, chronic fatigue, or burnout. Conversely, walking stands out globally as the ultimate low-impact exercise suitable for individuals of all age groups. Backed by Earn Steps AI tracking on Earnify India, walking provides comprehensive cardiovascular benefits without imposing destructive mechanical stress on knees, ankles, and spinal joints.</p>
+        <h2>Cardiovascular Conditioning Without Joint Trauma</h2>
+        <p>When you walk at a brisk pace, your heart rate elevates into the optimal fat-burning and aerobic zone, strengthening cardiac muscles and improving overall circulatory efficiency. Unlike running, where both feet leave the ground simultaneously resulting in high-impact collision forces upon landing, walking ensures that at least one foot remains in contact with the ground at all times. This biomechanical advantage drastically reduces joint reaction forces, making walking an ideal physical activity for seniors, individuals recovering from injuries, or those managing weight.</p>
+    `,
+    blog5: `
+        <h1>How Earnify India Ensures Safe and Transparent Reward Systems</h1>
+        <div class="blog-date">July 12, 2026 | Security & Compliance</div>
+        <p>In the digital rewards landscape, user trust and financial transparency are paramount. As Earnify India continues to grow as a leading rewards platform powered by Earn Steps AI, maintaining absolute integrity in payout distribution and user data protection remains our top operational priority. Building a transparent reward ecosystem requires robust technological architecture, stringent anti-fraud verification protocols, and unwavering adherence to compliance standards.</p>
+        <h2>Anti-Fraud Protocols and Integrity Checks</h2>
+        <p>To ensure that all distributed rewards reflect genuine human physical activity, Earnify India employs multi-layered verification mechanisms. Automated anomaly detection systems monitor platform activity for unnatural step inflation patterns, such as mechanical shakers or automated bot scripts. By filtering out fraudulent data points, we protect the interests of genuine, hard-working users who dedicate their time and energy to achieving daily fitness goals.</p>
+    `,
+    blog6: `
+        <h1>The Science of Walking: How Movement Boosts Mental Health</h1>
+        <div class="blog-date">July 10, 2026 | Mental Wellness</div>
+        <p>Physical exercise is frequently prescribed for bodily health, but its profound impact on neurological and psychological well-being is equally remarkable. Engaging in regular walking sessions—tracked and rewarded through Earn Steps AI on Earnify India—triggers complex biochemical cascades within the brain that alleviate stress, elevate mood, and enhance cognitive function. Understanding these neurobiological mechanisms sheds light on why a simple walk can completely transform your state of mind.</p>
+        <h2>Endorphin Release and Stress Reduction</h2>
+        <p>When you walk outdoors, especially in natural environments or green parks, your body stimulates the release of endorphins and neurotransmitters such as serotonin and dopamine. These chemicals act as natural mood stabilizers and pain relievers. Furthermore, physical movement helps lower systemic levels of cortisol, the primary stress hormone responsible for anxiety and tension, leaving you feeling calm and focused.</p>
+    `,
+    blog7: `
+        <h1>Common Mistakes to Avoid While Tracking Your Daily Steps</h1>
+        <div class="blog-date">July 08, 2026 | Fitness Tips</div>
+        <p>Accurate activity tracking is essential for maximizing your rewards and monitoring true fitness progress on Earnify India. However, many users unintentionally make simple tracking errors that distort their daily metrics. By identifying and correcting these common pitfalls, you can ensure that your Earn Steps AI app captures every authentic step with maximum precision.</p>
+        <h2>Pocket Placement and Device Sensitivity</h2>
+        <p>One of the most frequent tracking errors involves storing mobile devices in loose jacket pockets or carrying them loosely in hands where erratic swinging movements can confuse sensor calibration. For optimal accuracy, keep your smartphone securely snug in a trouser pocket, waist pouch, or armband so that the device's internal accelerometer moves in direct synchronization with your body's natural center of mass.</p>
+    `,
+    blog8: `
+        <h1>Maximizing Your Earnings with Smart Activity Milestones</h1>
+        <div class="blog-date">July 06, 2026 | Rewards & Strategy</div>
+        <p>Consistency is the ultimate secret to unlocking maximum financial and health benefits on Earnify India. While hitting your daily step targets is commendable, structuring your movement around strategic milestone challenges unlocks bonus reward multipliers through Earn Steps AI. Developing a tactical approach to your daily walking routine allows you to optimize your earning potential effortlessly.</p>
+        <h2>Structuring Morning and Evening Walking Quotas</h2>
+        <p>Instead of attempting to complete all 10,000 steps during a single grueling afternoon session, divide your target into structured quotas: 3,000 steps in the morning, 4,000 steps during work intervals, and 3,000 steps in the evening. This balanced distribution prevents physical burnout, maintains steady metabolic activity all day long, and consistently hits platform milestone criteria.</p>
+    `,
+    blog9: `
+        <h1>How to Stay Consistent with Your Fitness Goals During Busy Workdays</h1>
+        <div class="blog-date">July 04, 2026 | Productivity & Habits</div>
+        <p>A demanding professional career often serves as the primary excuse for neglecting personal health and fitness. Between endless meetings, urgent client deadlines, and administrative tasks, finding dedicated workout hours can feel impossible. However, Earnify India and Earn Steps AI prove that fitness does not require hours at a traditional gym. By integrating micro-movements into your workday schedule, you can maintain peak consistency regardless of workload intensity.</p>
+        <h2>Desk Stretching and Walking Meetings</h2>
+        <p>Whenever you participate in audio-only conference calls or internal catch-ups, adopt the habit of pacing around your room or office corridor rather than remaining seated at your desk. Over a 30-minute conference call, pacing can easily contribute 2,000 steps toward your daily goal without interfering with your attention or professional communication.</p>
+    `,
+    blog10: `
+        <h1>The Role of Hydration and Walking in Daily Wellness</h1>
+        <div class="blog-date">July 02, 2026 | Nutrition & Health</div>
+        <p>Physical movement and cellular hydration share a symbiotic relationship that directly dictates your daily energy levels and athletic endurance. When tracking your daily walks through Earn Steps AI on Earnify India, maintaining optimal fluid intake is crucial for preventing muscle cramps, joint stiffness, and premature fatigue. Let us examine how proper hydration supercharges your walking routine.</p>
+        <h2>Joint Lubrication and Cellular Recovery</h2>
+        <p>Synovial fluid, the natural lubricant cushioning your knee and hip joints, relies heavily on adequate bodily water content to reduce friction during repetitive walking strides. Dehydration thickens this fluid, leading to joint discomfort. Drinking water consistently before, during, and after your walks ensures optimal biomechanical performance and rapid muscular recovery.</p>
+    `,
+    blog11: `
+        <h1>Why Digital Fitness Rewards Are Gaining Popularity in India</h1>
+        <div class="blog-date">June 30, 2026 | Market Trends</div>
+        <p>India is currently experiencing a massive digital revolution characterized by widespread smartphone adoption, affordable high-speed internet, and a growing cultural consciousness regarding health and preventative wellness. Amidst this sweeping transformation, platforms like Earnify India are pioneering a new paradigm where physical health yields direct financial rewards via Earn Steps AI. This innovative synergy between wellness and digital rewards resonates deeply with India's ambitious youth and health-conscious workforce.</p>
+        <h2>Bridging Health Awareness with Economic Incentives</h2>
+        <p>Preventative healthcare has historically struggled with public engagement due to a lack of immediate tangible benefits. People often find it difficult to prioritize long-term health outcomes over immediate daily comforts. By introducing instant digital rewards for simple walking activity, Earnify India bridges this motivation gap, successfully encouraging millions of Indians to adopt active, health-positive lifestyles.</p>
+    `,
+    blog12: `
+        <h1>Building a Healthy Lifestyle One Step at a Time</h1>
+        <div class="blog-date">June 28, 2026 | Habit Formation</div>
+        <p>Lasting lifestyle transformations are rarely achieved through radical overnight changes; rather, they are built upon the foundation of consistent, micro-habits compounded over months and years. Earnify India and Earn Steps AI are designed around this very principle of incremental progress. By focusing on small, achievable daily step goals rather than intimidating fitness milestones, users build lifelong healthy habits with sustainable ease.</p>
+        <h2>The Compound Effect of Daily Walking</h2>
+        <p>If you increase your daily step count by just 1,000 steps each week, within two months you will have transformed your basal metabolic output and cardiovascular endurance completely. Celebrate small milestones along your journey, and let the Earn Steps AI app track your continuous growth as you build a stronger, healthier version of yourself.</p>
+    `,
+    blog13: `
+        <h1>How Security and Verification Protect Your Reward Accounts</h1>
+        <div class="blog-date">June 26, 2026 | Security & Compliance</div>
+        <p>In an era where digital platforms face constant cybersecurity challenges, safeguarding user accounts, personal data, and accumulated earnings is of utmost importance. Earnify India implements bank-grade encryption frameworks and robust verification procedures to ensure that your Earn Steps AI account remains impenetrable to unauthorized access or fraudulent interference.</p>
+        <h2>The Role of Secure KYC and Device Binding</h2>
+        <p>Our verification suite utilizes secure device binding and compliance checks to confirm user identity during major reward redemptions. This multi-layered defense shields the community against malicious actors, ensuring a fair, transparent, and completely secure financial reward ecosystem for every genuine participant.</p>
+    `,
+    blog14: `
+        <h1>Morning Walks vs. Evening Walks: Which is Better for You?</h1>
+        <div class="blog-date">June 24, 2026 | Fitness Science</div>
+        <p>One of the most common debates among fitness enthusiasts revolves around the optimal timing for daily walking routines: Is it better to exercise in the crisp morning hours or unwind with a stroll in the evening? Both options offer unique physiological advantages when tracked via Earn Steps AI on Earnify India. Evaluating your personal circadian rhythm and lifestyle schedule will help you determine the ideal choice.</p>
+        <h2>The Physiological Benefits of Morning Movement</h2>
+        <p>Morning walks expose your eyes to natural sunlight, which helps regulate your circadian rhythm, suppresses melatonin production, and boosts morning alertness. Furthermore, working out on an empty stomach can enhance fat oxidation rates, giving your metabolism an energetic jump-start for the day ahead.</p>
+    `,
+    blog15: `
+        <h1>The Future of Health Tech: Combining Fitness with AI</h1>
+        <div class="blog-date">June 22, 2026 | Future Tech</div>
+        <p>The intersection of artificial intelligence and digital healthcare is unlocking unprecedented possibilities for personalized wellness monitoring. Earn Steps AI stands at the forefront of this technological wave in India, utilizing adaptive algorithms to study user habits, predict optimal activity windows, and customize reward structures dynamically based on individual fitness levels.</p>
+        <h2>Personalized Coaching and Predictive Analytics</h2>
+        <p>Future iterations of our AI engine will offer customized walking regimens tailored to your biometric feedback, sleep quality, and daily schedule. By merging artificial intelligence with community rewards on Earnify India, we are empowering individuals to take proactive control of their long-term health and wellness.</p>
+    `,
+    blog16: `
+        <h1>How to Prevent Foot Fatigue When Walking Long Distances</h1>
+        <div class="blog-date">June 20, 2026 | Foot Health & Care</div>
+        <p>As you increase your daily step targets to climb the global leaderboard on Earnify India, your feet bear the brunt of the mechanical impact. Ensuring proper foot care and selecting supportive footwear is essential for preventing blisters, arch strain, and muscular fatigue while using Earn Steps AI.</p>
+        <h2>Choosing the Right Footwear and Ergonomic Socks</h2>
+        <p>Invest in athletic walking shoes equipped with adequate arch support, cushioned midsoles, and breathable mesh uppers. Pairing these shoes with moisture-wicking athletic socks prevents friction blisters, allowing you to walk long distances comfortably day after day.</p>
+    `,
+    blog17: `
+        <h1>Step Tracking Accuracy: How Earn Steps AI Delivers Precision</h1>
+        <div class="blog-date">June 18, 2026 | Engineering Insights</div>
+        <p>Accuracy is the cornerstone of any credible activity tracking application. Users invest time and physical effort into their daily walks, and they expect exact recognition for their exertion. Earn S
+    `,
+    blog18: `
+        <h1>Maximizing Daily Steps with Earn Steps AI</h1>
+        <div class="blog-date">July 20, 2026 | Fitness AI Insights</div>
+        <p>Staying active in a sedentary work environment can be challenging. With Earn Steps AI integrated into your daily routine, tracking your movement becomes both motivating and rewarding.</p>
+        <h2>1. Set Realistic Milestone Goals</h2>
+        <p>Start with manageable targets, such as 5,000 steps per day, and progressively scale up to 10,000 steps as your stamina improves.</p>
+        <h2>2. Incorporate Walking Breaks</h2>
+        <p>Take short 10-minute walks after every meal to enhance digestion, boost your energy levels, and increase your daily reward accumulation on Earnify India.</p>
+    `,
+    blog19: `
+        <h1>Understanding Secure Payouts & Verification</h1>
+        <div class="blog-date">July 15, 2026 | Security & Compliance</div>
+        <p>Security is a cornerstone of the Earnify India platform. Our verification and compliance structures ensure safe and reliable reward redemptions for all active users.</p>
+        <h2>1. The Importance of Identity Verification</h2>
+        <p>KYC checks protect genuine users from fraudulent accounts, ensuring that all distributed rewards reach their rightful owners safely.</p>
+        <h2>2. Safe Redemptions</h2>
+        <p>Always complete your verification steps inside the official Earn Steps AI app environment to ensure seamless processing.</p>
     `
 };
 
@@ -949,14 +1144,14 @@ function showLegalPage(docKey) {
     window.scrollTo(0, 0);
 }
 
+function openFullBlog(blogKey) {
+    showLegalPage(blogKey);
+}
+
 function returnToMainView() {
     document.getElementById('legalPageView').classList.remove('active');
     document.getElementById('mainAppView').classList.remove('hidden');
     window.scrollTo(0, 0);
-}
-
-function openBlogModal() {
-    showLegalPage('terms');
 }
 </script>
 </body>
