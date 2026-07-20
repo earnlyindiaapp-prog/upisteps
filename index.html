@@ -1019,5 +1019,100 @@ function returnToMainView() {
     window.scrollTo(0, 0);
 }
 </script>
+    <!-- Submit Customer Inquiries Section (Connected with Formspree for direct email to support@upisteps.in) -->
+<section id="contact-inquiries">
+    <div class="section-title">
+        <span>COMMUNICATION DISPATCH</span>
+        <h2>Submit Customer Inquiries</h2>
+    </div>
+    <div class="inquiry-form-wrapper">
+        <!-- Formspree action link updated to send emails directly to support@upisteps.in -->
+        <form class="inquiry-form-box" action="https://formspree.io/f/support@upisteps.in" method="POST">
+            <input type="text" name="name" placeholder="Your Official Full Name" required class="inquiry-input">
+            <input type="email" name="email" placeholder="Verified Email Address" required class="inquiry-input">
+            <textarea name="message" placeholder="Detailed query message regarding dashboard compliance panels..." rows="5" required class="inquiry-textarea"></textarea>
+            
+            <!-- Hidden input to redirect or customize submission handling if needed -->
+            <input type="hidden" name="_subject" value="New Customer Inquiry from Earn Steps AI Website">
+            
+            <button type="submit" class="inquiry-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Dispatch Secure Transmission
+            </button>
+        </form>
+    </div>
+</section>
+
+<style>
+#contact-inquiries {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 6%;
+    position: relative;
+    z-index: 3;
+}
+
+.inquiry-form-wrapper {
+    background: var(--bg-secondary);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.inquiry-form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inquiry-input, .inquiry-textarea {
+    width: 100%;
+    background: rgba(3, 6, 18, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px 20px;
+    color: var(--text-main);
+    font-size: 14.5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.inquiry-input:focus, .inquiry-textarea:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+}
+
+.inquiry-textarea {
+    resize: vertical;
+}
+
+.inquiry-submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #00d4ff, #0066ff);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.25);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inquiry-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+}
+</style>
+
+    <footer style="text-align:center; padding:20px; margin-top:40px;">
+    <p>For Support: <a href="mailto:support@upisteps.in">support@upisteps.in</a></p>
+    </footer>
 </body>
 </html>
