@@ -2,19 +2,17 @@
 <html lang="en" data-theme="dark">
 
 <head>
-<link rel="icon" type="image/png" href="./favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Earnify India Foundation | Earn Steps AI - Professional Exercise & KYC Reward Framework</title>
-<!-- Premium Favicon - Website ka Logo -->
-<!-- High-Fidelity Professional Icon Packs & Google Fonts -->
+<title>Earnify India Foundation | Earn Steps AI - Fitness & Rewards Framework</title>
+<!-- Google Fonts & FontAwesome Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 :root {
     --bg-primary: #030612;
-    --bg-secondary: rgba(10, 14, 38, 0.7);
+    --bg-secondary: rgba(10, 14, 38, 0.75);
     --bg-panel: linear-gradient(145deg, #070c24 0%, #040817 100%);
     --bg-header: rgba(3, 6, 18, 0.95);
     --text-main: #ffffff;
@@ -41,34 +39,7 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
-/* BLOG ARTICLE STYLES */
-.full-blog-article {
-    margin-top: 80px;
-    padding: 50px 30px;
-    border-top: 2px solid #00aaff;
-    background: var(--bg-panel);
-    border-radius: 16px;
-    margin-bottom: 60px;
-}
-.back-btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 24px;
-    background: #00aaff;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.back-btn:hover {
-    background: #0088cc;
-}
-.blog-date {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin-bottom: 20px;
-}
+
 body {
     background: var(--bg-primary);
     color: var(--text-main);
@@ -77,7 +48,7 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* --- High Performance Vector Matrix Canvas Background --- */
+/* --- Golden & Blue EI Coins Canvas Background Animation --- */
 #coinCanvas {
     position: fixed;
     top: 0;
@@ -88,7 +59,6 @@ body {
     z-index: 1;
 }
 
-/* --- Premium Optimized Header Flow Layout --- */
 header {
     position: fixed;
     top: 0;
@@ -104,10 +74,7 @@ header {
     z-index: 9999;
 }
 
-.left-nav-cluster {
-    display: flex;
-    align-items: center;
-}
+.left-nav-cluster { display: flex; align-items: center; }
 
 .logo {
     font-size: 22px;
@@ -116,16 +83,9 @@ header {
     letter-spacing: 0.5px;
     text-decoration: none;
 }
+.logo span { color: #00d4ff; }
 
-.logo span {
-    color: #00d4ff;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+.header-right { display: flex; align-items: center; gap: 15px; }
 
 .download-btn {
     padding: 10px 20px;
@@ -142,22 +102,13 @@ header {
     gap: 8px;
     font-size: 13px;
 }
+.download-btn:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
 
-.download-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-}
-
-/* --- Clean Chota 3-Line Hamburger Menu Setup --- */
-.support-menu-anchor {
-    position: relative;
-}
-
+.support-menu-anchor { position: relative; }
 .hamburger-trigger-icon {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
-    width: 42px;
-    height: 42px;
+    width: 42px; height: 42px;
     border-radius: 50%;
     color: var(--text-main);
     font-size: 18px;
@@ -167,202 +118,101 @@ header {
     justify-content: center;
     transition: 0.2s ease-in-out;
 }
-
-.hamburger-trigger-icon:hover {
-    background: rgba(0, 212, 255, 0.1);
-    border-color: #00d4ff;
-}
+.hamburger-trigger-icon:hover { background: rgba(0, 212, 255, 0.1); border-color: #00d4ff; }
 
 .dropdown-panel-wrapper {
     display: none;
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 50px; right: 0;
     background: var(--bg-secondary);
     backdrop-filter: blur(25px);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    width: 260px;
-    padding: 15px;
+    width: 260px; padding: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: column; gap: 8px;
     z-index: 100000;
 }
+.dropdown-panel-wrapper.active { display: flex; }
 
-.dropdown-panel-wrapper.active {
-    display: flex;
-}
-
-/* Inside Dropdown Theme Button Styling */
 .menu-theme-toggle-pill {
     background: linear-gradient(90deg, #f59e0b, #d97706);
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    width: 100%;
+    border: none; padding: 10px; border-radius: 10px;
+    color: white; font-size: 13px; font-weight: 700; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; width: 100%;
 }
 
 .dropdown-link-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 13.5px;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s;
+    display: flex; align-items: center; gap: 12px;
+    color: var(--text-muted); text-decoration: none; font-size: 13.5px;
+    padding: 10px; border-radius: 8px; cursor: pointer; transition: 0.2s;
 }
+.dropdown-link-item:hover { background: rgba(0, 212, 255, 0.08); color: #00d4ff; }
 
-.dropdown-link-item:hover {
-    background: rgba(0, 212, 255, 0.08);
-    color: #00d4ff;
-}
-
-/* --- Main Layout Grid Configurations --- */
 .app-view-container { display: block; }
 .app-view-container.hidden { display: none; }
 
 .dedicated-legal-page {
     display: none;
     padding: 140px 6% 80px;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     min-height: 100vh;
+    z-index: 5;
+    position: relative;
 }
 .dedicated-legal-page.active { display: block; }
 
 .back-home-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid #00d4ff;
-    color: #00d4ff;
-    padding: 10px 24px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-bottom: 30px;
-    transition: 0.3s;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(0, 212, 255, 0.1); border: 1px solid #00d4ff;
+    color: #00d4ff; padding: 10px 24px; border-radius: 30px;
+    cursor: pointer; font-weight: 600; margin-bottom: 30px; transition: 0.3s;
 }
 
-/* --- Hero Element Spaces --- */
 .hero {
-    position: relative;
-    z-index: 2;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 150px 6% 60px 6%;
-    gap: 40px;
-    max-width: 1600px;
-    margin: 0 auto;
+    position: relative; z-index: 2; min-height: 100vh;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 150px 6% 60px 6%; gap: 40px; max-width: 1600px; margin: 0 auto;
 }
-
 .left { flex: 1.2; }
 .right { flex: 0.8; display: flex; justify-content: center; }
 
 .tag {
-    display: inline-block;
-    padding: 8px 18px;
-    background: rgba(0, 212, 255, 0.06);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    border-radius: 30px;
-    margin-bottom: 25px;
-    color: #00d4ff;
-    font-weight: 600;
-    font-size: 13px;
+    display: inline-block; padding: 8px 18px;
+    background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 30px; margin-bottom: 25px; color: #00d4ff; font-weight: 600; font-size: 13px;
 }
-
-.left h1 {
-    font-size: 48px;
-    line-height: 1.25;
-    margin-bottom: 25px;
-    font-weight: 800;
-}
-
-.left p {
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--text-muted);
-    margin-bottom: 40px;
-}
-
+.left h1 { font-size: 48px; line-height: 1.25; margin-bottom: 25px; font-weight: 800; }
+.left p { font-size: 15px; line-height: 1.75; color: var(--text-muted); margin-bottom: 40px; }
 .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
 
 .primary {
-    padding: 14px 30px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(90deg, #00d4ff, #0066ff);
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.25);
-    transition: .3s;
+    padding: 14px 30px; border: none; border-radius: 50px;
+    background: linear-gradient(90deg, #00d4ff, #0066ff); color: white;
+    font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 212, 255, 0.25); transition: .3s;
 }
-
 .secondary {
-    padding: 14px 30px;
-    border: 2px solid rgba(0, 212, 255, 0.4);
-    background: transparent;
-    color: var(--text-main);
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: .3s;
+    padding: 14px 30px; border: 2px solid rgba(0, 212, 255, 0.4);
+    background: transparent; color: var(--text-main); font-size: 14px; font-weight: 600; border-radius: 50px; cursor: pointer; transition: .3s;
 }
 
-/* --- Smart Phone Simulation Layout --- */
 .phone {
-    width: 310px;
-    height: 610px;
-    border-radius: 40px;
-    background: #090d22;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 50px rgba(0, 212, 255, 0.15);
-    overflow: hidden;
-    padding: 20px 16px;
-    position: relative;
-    color: #fff;
+    width: 310px; height: 610px; border-radius: 40px; background: #090d22;
+    border: 4px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column;
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.15); overflow: hidden; padding: 20px 16px; position: relative; color: #fff;
 }
-
 .app-header { display: flex; justify-content: space-between; font-size: 11px; color: #718096; margin-bottom: 25px; }
 .app-screen-content { display: flex; flex-direction: column; align-items: center; flex: 1; }
 
 .step-circle-container {
-    position: relative;
-    width: 170px;
-    height: 170px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+    position: relative; width: 170px; height: 170px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px;
 }
-
 .circle-bg { position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 6px solid rgba(255,255,255,0.02); }
 .circle-progress {
     position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 6px solid transparent;
     border-top-color: #00d4ff; border-right-color: #0066ff; transform: rotate(45deg);
 }
-
 .step-data h3 { font-size: 30px; font-weight: 800; text-align: center; }
 .step-data p { font-size: 11px; color: #718096; text-align: center; text-transform: uppercase; }
 
@@ -378,7 +228,6 @@ header {
     display: flex; align-items: center; justify-content: center; gap: 6px;
 }
 
-/* --- Section Formatting General Rules --- */
 section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; margin: 0 auto; }
 .section-title { text-align: center; margin-bottom: 50px; }
 .section-title span { color: #00d4ff; font-weight: 600; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; }
@@ -387,85 +236,22 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .card { background: var(--bg-secondary); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 20px; padding: 35px; }
 
-/* --- TRUSTED SECURE KYC VERIFICATION SUITE --- */
-.kyc-verification-box {
-    max-width: 900px;
-    margin: 30px auto 0;
-    background: var(--bg-panel);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 40px;
-}
-
-.kyc-layout-split {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.kyc-info-side { flex: 1.2; min-width: 280px; }
-.kyc-action-side { flex: 0.8; min-width: 250px; background: rgba(0, 212, 255, 0.02); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; text-align: center; }
-
-.kyc-status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(0, 176, 116, 0.1);
-    border: 1px solid #00b074;
-    color: #00b074;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-/* --- PROFESSIONALIZED REFERRAL MECHANICS SYSTEM --- */
-.upgraded-referral-matrix-box {
-    max-width: 1000px; 
-    margin: 50px auto 0; 
-    background: var(--bg-panel);
-    border: 2px solid var(--border-color); 
-    border-radius: 24px; 
-    padding: 40px 30px; 
-    text-align: center;
-}
-
-.referral-reward-badge {
-    display: inline-block;
-    padding: 10px 24px;
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid #00d4ff;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 800;
-    color: #00d4ff;
-    margin-bottom: 20px;
-}
-
-/* --- High Definition Premium Leaderboard --- */
 .premium-leaderboard-panel {
-    max-width: 1000px; margin: 0 auto; background: var(--bg-panel);
-    border: 1px solid var(--border-color); border-radius: 24px; padding: 35px;
+    max-width: 1000px; margin: 0 auto; background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: 24px; padding: 35px;
 }
 .leaderboard-meta-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 25px; }
 .premium-rank-grid { display: flex; flex-direction: column; gap: 15px; }
 .premium-rank-row { display: flex; align-items: center; justify-content: space-between; padding: 18px 25px; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--card-border); border-radius: 16px; }
-
 .rank-left-cluster { display: flex; align-items: center; gap: 20px; }
 .premium-badge-slot { width: 36px; height: 36px; border-radius: 50%; font-weight: 900; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); }
-
 .premium-rank-row:nth-child(1) .premium-badge-slot { background: linear-gradient(135deg, #ffe066 0%, #f5b041 100%); color: #030612; }
 .premium-rank-row:nth-child(2) .premium-badge-slot { background: linear-gradient(135deg, #e5e8e8 0%, #bdc3c7 100%); color: #030612; }
 .premium-rank-row:nth-child(3) .premium-badge-slot { background: linear-gradient(135deg, #dc7633 0%, #ba4a00 100%); color: #fff; }
-
 .metrics-value { font-size: 18px; font-weight: 800; color: #00d4ff; }
 
-/* --- High Density Insights Blog Matrix --- */
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
-.blog-post-card { background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; }
-.blog-dummy-img { height: 180px; background: var(--bg-panel); display: flex; align-items: center; justify-content: center; }
+.blog-post-card { background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; max-width: 500px; margin: 0 auto; width: 100%; }
+.blog-dummy-img { height: 160px; background: var(--bg-panel); display: flex; align-items: center; justify-content: center; }
 .blog-dummy-img i { font-size: 45px; color: rgba(0, 212, 255, 0.15); }
 .blog-body { padding: 25px; }
 .blog-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; display: flex; gap: 15px; }
@@ -473,64 +259,27 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 .blog-body p { color: var(--text-muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 20px; }
 .blog-read-more { color: #00d4ff; font-weight: 600; font-size: 13.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 
-/* --- General FAQ Grid Blocks --- */
 .faq-stack-box { max-width: 900px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 15px; }
 .faq-element { background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; cursor: pointer; transition: 0.3s; }
 .faq-element h4 { font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
 .faq-answer-view { display: none; margin-top: 12px; color: var(--text-muted); font-size: 14px; line-height: 1.7; }
 .faq-element.active .faq-answer-view { display: block; }
 
-/* --- DYNAMIC BRAND ALIGNED SOCIAL MEDIA CHANNELS MATRIX --- */
-.social-matrix-container {
-    max-width: 900px;
-    margin: 40px auto 0;
-    text-align: center;
-}
-
-.social-circle-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-}
-
+.social-matrix-container { max-width: 900px; margin: 40px auto 0; text-align: center; }
+.social-circle-grid { display: flex; justify-content: center; align-items: center; gap: 25px; flex-wrap: wrap; margin-top: 25px; }
 .social-circle-node {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 26px;
-    color: white;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px; color: white; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease;
 }
+.social-circle-node:hover { transform: translateY(-5px) scale(1.05); }
+.node-whatsapp { background: #25D366; }
+.node-telegram { background: #0088cc; }
+.node-youtube { background: #ff0000; }
+.node-twitter { background: #000000; border: 1px solid rgba(255, 255, 255, 0.15); }
 
-.social-circle-node:hover {
-    transform: translateY(-5px) scale(1.05);
-}
-
-/* Authentic Application Brand Custom Colors */
-.node-whatsapp { background: #25D366; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-.node-telegram { background: #0088cc; box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4); }
-.node-youtube { background: #ff0000; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4); }
-.node-twitter { background: #000000; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); }
-
-/* --- Input Form Dispatchers --- */
-.contact-form { max-width: 650px; margin: auto; display: flex; flex-direction: column; gap: 18px; }
-.contact-form input, .contact-form textarea { background: var(--bg-secondary); border: 1px solid var(--card-border); padding: 16px; border-radius: 12px; color: var(--text-main); outline: none; }
-.contact-form input:focus, .contact-form textarea:focus { border-color: #00d4ff; }
-
-/* --- High Compliance Legal Structure Sheets --- */
 .legal-document-layout h1 { font-size: 2.2rem; font-weight: 800; color: var(--text-main); border-bottom: 3px solid #00d4ff; padding-bottom: 12px; margin-bottom: 20px; }
 .legal-document-layout h2 { font-size: 1.4rem; color: #00d4ff; margin-top: 35px; margin-bottom: 12px; }
-.legal-document-layout p, .legal-document-layout li { font-size: 14.5px; line-height: 1.8; color: var(--text-muted); text-align: justify; margin-bottom: 16px; }
+.legal-document-layout p, .legal-document-layout li { font-size: 15px; line-height: 1.9; color: var(--text-muted); text-align: justify; margin-bottom: 18px; }
 
-/* --- Structural Footer Layout --- */
 .footer { padding: 80px 6% 40px; background: #02040d; border-top: 1px solid var(--border-color); color: #fff; }
 .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; max-width: 1600px; margin: 0 auto; }
 .footer-links { display: flex; flex-direction: column; gap: 12px; }
@@ -539,13 +288,11 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 .footer-links a:hover { color: #00d4ff; }
 .copyright { margin-top: 50px; text-align: center; color: #718096; font-size: 13px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 25px; }
 
-/* --- Dynamic Popup Architecture --- */
 .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); justify-content: center; align-items: center; z-index: 99999; padding: 20px; }
 .popup-box { background: #070b1e; padding: 35px; border-radius: 24px; max-width: 500px; width: 100%; border: 1px solid rgba(0, 212, 255, 0.25); color: #fff; }
 .popup-box h2 { color: #00d4ff; font-size: 22px; margin-bottom: 15px; }
 .popup-box button { width: 100%; padding: 12px; border: none; border-radius: 30px; background: linear-gradient(90deg, #00d4ff, #0066ff); color: white; font-weight: 700; cursor: pointer; margin-top: 15px; }
 
-/* --- Responsive Engine Rules --- */
 @media (max-width: 900px) {
     header { padding: 10px 4%; }
     .hero { flex-direction: column; text-align: center; padding-top: 140px; }
@@ -557,9 +304,10 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 
 <body>
 
+<!-- Golden & Blue EI Coins Canvas Background Animation -->
 <canvas id="coinCanvas"></canvas>
 
-<!-- Top Premium Navigation Panel Wrapper -->
+<!-- Top Premium Navigation Panel -->
 <header>
 <div class="left-nav-cluster">
     <a href="#" class="logo" onclick="returnToMainView()">Earnify <span>India</span></a>
@@ -570,18 +318,15 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         <i class="fa-solid fa-download"></i> Download App
     </button>
     
-    <!-- Left/Right Corner Positioned Chota 3-Line Hamburger Trigger Button -->
     <div class="support-menu-anchor">
         <button class="hamburger-trigger-icon" onclick="toggleSupportDropdown(event)">
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="dropdown-panel-wrapper" id="topCornerDropdown">
-            <!-- Dynamic Mode Switch Trigger Added INSIDE Menu Panel -->
             <button class="menu-theme-toggle-pill" onclick="toggleThemeEngine()">
                 <i class="fa-solid fa-circle-half-stroke"></i> Switch Theme Mode
             </button>
             <div class="dropdown-link-item" onclick="scrollToMainSection('features')"><i class="fa-solid fa-bolt"></i> App Features</div>
-            <div class="dropdown-link-item" onclick="scrollToMainSection('kyc-section')"><i class="fa-solid fa-id-card"></i> Trusted KYC Verify</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('leaderboard')"><i class="fa-solid fa-trophy"></i> Global Standings</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('social-networks')"><i class="fa-solid fa-share-nodes"></i> Official Channels</div>
             <div class="dropdown-link-item" onclick="scrollToMainSection('blog')"><i class="fa-solid fa-book"></i> Blog</div>
@@ -598,7 +343,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         <div class="left">
             <span class="tag">🚀 Powered by Earn Steps AI</span>
             <h1>Transform Your Daily Fitness & Activity Into Rewards with Earn Steps AI</h1>
-            <p>Welcome to Earnify India. Track your steps, complete smart activity steps, and convert your everyday movement into secure verified payouts using our advanced AI-driven platform.</p>
+            <p>Welcome to Earnify India. Track your steps, complete smart activity steps, and convert your everyday movement into exciting digital rewards using our advanced fitness and gamification framework.</p>
             <div class="hero-buttons">
                 <button class="primary" onclick="openSupportModal('download')">Get Started Now</button>
                 <button class="secondary" onclick="scrollToMainSection('features')">Explore Features</button>
@@ -627,8 +372,8 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                         </div>
                         <div class="metric-box">
                             <i class="fa-solid fa-coins"></i>
-                            <h4>₹125.50</h4>
-                            <p>Earned</p>
+                            <h4>500 EI</h4>
+                            <p>Coins</p>
                         </div>
                     </div>
                     <button class="app-btn" onclick="openSupportModal('claim')"><i class="fa-solid fa-bolt"></i> Sync & Claim</button>
@@ -652,35 +397,12 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
             <div class="card">
                 <i class="fa-solid fa-shield-halved" style="font-size: 28px; color: #00d4ff; margin-bottom: 20px;"></i>
                 <h3 style="font-size: 20px; margin-bottom: 12px;">Secure Ledger System</h3>
-                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Advanced security protocols and encrypted transaction ledgers ensure your earned reward history remains completely safe. (Coming Soon)</p>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Advanced security protocols and encrypted activity ledgers ensure your earned reward history remains completely safe and synced.</p>
             </div>
             <div class="card">
-                <i class="fa-solid fa-user-check" style="font-size: 28px; color: #00d4ff; margin-bottom: 20px;"></i>
-                <h3 style="font-size: 20px; margin-bottom: 12px;">KYC Verification</h3>
-                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Streamlined verification framework built for secure payout compliance and anti-fraud protection.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- KYC Section -->
-    <section id="kyc-section">
-        <div class="section-title">
-            <span>Security & Trust</span>
-            <h2>Trusted KYC Verification Suite</h2>
-        </div>
-        <div class="kyc-verification-box">
-            <div class="kyc-layout-split">
-                <div class="kyc-info-side">
-                    <div class="kyc-status-badge"><i class="fa-solid fa-circle-check"></i> Compliant Protocol</div>
-                    <h3 style="font-size: 22px; margin-bottom: 12px;">Fast & Secure Verification</h3>
-                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">To protect our users and maintain an honest reward framework, Earnify India implements standard verification checks before major reward withdrawals are processed.</p>
-                </div>
-                <div class="kyc-action-side">
-                    <i class="fa-solid fa-id-card-clip" style="font-size: 36px; color: #00d4ff; margin-bottom: 15px;"></i>
-                    <h4 style="font-size: 16px; margin-bottom: 10px;">Verify Identity</h4>
-                    <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Complete quick verification inside the Earn Steps AI app.</p>
-                    <button class="primary" style="width: 100%; padding: 10px; font-size: 12px;" onclick="openSupportModal('kyc')">Start KYC</button>
-                </div>
+                <i class="fa-solid fa-medal" style="font-size: 28px; color: #00d4ff; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 20px; margin-bottom: 12px;">Gamified Rewards</h3>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Convert everyday walking milestones into exciting achievement badges and digital wellness points effortlessly.</p>
             </div>
         </div>
     </section>
@@ -705,7 +427,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                             <p style="font-size: 12px; color: var(--text-muted);">24,500 Steps</p>
                         </div>
                     </div>
-                    <div class="metrics-value">₹450</div>
+                    <div class="metrics-value">2,450 EI</div>
                 </div>
                 <div class="premium-rank-row">
                     <div class="rank-left-cluster">
@@ -715,7 +437,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                             <p style="font-size: 12px; color: var(--text-muted);">21,800 Steps</p>
                         </div>
                     </div>
-                    <div class="metrics-value">₹380</div>
+                    <div class="metrics-value">2,180 EI</div>
                 </div>
                 <div class="premium-rank-row">
                     <div class="rank-left-cluster">
@@ -725,7 +447,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
                             <p style="font-size: 12px; color: var(--text-muted);">19,200 Steps</p>
                         </div>
                     </div>
-                    <div class="metrics-value">₹310</div>
+                    <div class="metrics-value">1,920 EI</div>
                 </div>
             </div>
         </div>
@@ -740,39 +462,22 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         <div class="social-matrix-container">
             <p style="color: var(--text-muted); font-size: 14px;">Connect with the Earnify India community and stay updated with Earn Steps AI announcements.</p>
             <div class="social-circle-grid">
-                <a href="#" class="social-circle-node node-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" class="social-circle-node node-telegram" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                <a href="#" class="social-circle-node node-youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="social-circle-node node-twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://whatsapp.com" target="_blank" class="social-circle-node node-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://telegram.org" target="_blank" class="social-circle-node node-telegram" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://youtube.com" target="_blank" class="social-circle-node node-youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-circle-node node-twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- Blog Section (1 Featured Blog) -->
     <section id="blog">
         <div class="section-title">
             <span>Insights</span>
-            <h2>Latest Articles</h2>
+            <h2>Latest Expert Guide</h2>
         </div>
-        <div class="blog-grid">
-            <div class="blog-post-card">
-                <div class="blog-dummy-img"><i class="fa-solid fa-person-walking"></i></div>
-                <div class="blog-body">
-                    <div class="blog-meta"><span>July 20, 2026</span><span>Fitness AI</span></div>
-                    <h4>Maximizing Daily Steps with Earn Steps AI</h4>
-                    <p>Discover expert tips and routines to boost your step count naturally throughout your work day.</p>
-                    <div class="blog-read-more" onclick="openFullBlog('blog1')">Read Article <i class="fa-solid fa-arrow-right"></i></div>
-                </div>
-            </div>
-            <div class="blog-post-card">
-                <div class="blog-dummy-img"><i class="fa-solid fa-shield-check"></i></div>
-                <div class="blog-body">
-                    <div class="blog-meta"><span>July 15, 2026</span><span>Security</span></div>
-                    <h4>Understanding Secure Payouts & Verification</h4>
-                    <p>Learn how our KYC framework ensures smooth and fraud-free reward redemptions.</p>
-                    <div class="blog-read-more" onclick="openFullBlog('blog2')">Read Article <i class="fa-solid fa-arrow-right"></i></div>
-                </div>
-            </div>
+        <div class="blog-grid" id="blogGridContainer">
+            <!-- Dynamic 1 Blog Rendered -->
         </div>
     </section>
 
@@ -785,15 +490,15 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         <div class="faq-stack-box">
             <div class="faq-element" onclick="toggleFaq(this)">
                 <h4>What is Earn Steps AI? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
-                <div class="faq-answer-view">Earn Steps AI is our website and app feature framework designed to track walking activity and convert steps into digital rewards.</div>
+                <div class="faq-answer-view">Earn Steps AI is our website and app feature framework designed to track walking activity and convert steps into virtual fitness rewards and EI coins.</div>
             </div>
             <div class="faq-element" onclick="toggleFaq(this)">
-                <h4>How do I withdraw my earnings on Earnify India? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
-                <div class="faq-answer-view">Once you complete the minimum threshold and verify your account via our KYC process, you can request transfers directly through the app interface.</div>
+                <h4>Is Earn Steps AI a payment platform? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
+                <div class="faq-answer-view">No! "Earn Steps AI" is purely the name of our website and fitness reward gamification platform. We are not a payment gateway, banking provider, or financial institution.</div>
             </div>
             <div class="faq-element" onclick="toggleFaq(this)">
-                <h4>Is Earnify India affiliated with NPCI? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
-                <div class="faq-answer-view">No, we are an independent rewards platform. Please refer to our website disclaimer for full details.</div>
+                <h4>How do I track my daily progress? <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></h4>
+                <div class="faq-answer-view">Simply download our app or use the mobile web interface to sync your daily steps and claim your milestone badges.</div>
             </div>
         </div>
     </section>
@@ -808,9 +513,9 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
             <div class="footer-links">
                 <h3>Quick Navigation</h3>
                 <a onclick="scrollToMainSection('features')">Features</a>
-                <a onclick="scrollToMainSection('kyc-section')">KYC Verification</a>
                 <a onclick="scrollToMainSection('leaderboard')">Leaderboard</a>
                 <a onclick="scrollToMainSection('blog')">Blog</a>
+                <a onclick="scrollToMainSection('faq')">Help & FAQ</a>
             </div>
             <div class="footer-links">
                 <h3>Legal & Compliance</h3>
@@ -822,13 +527,13 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
         <div class="copyright">
             <p>&copy; 2026 Earnify India Foundation. All rights reserved.</p>
             <p style="margin-top: 10px; font-size: 12px; color: var(--text-muted);">
-                Disclaimer: "Earn Steps AI" is the name of our website. We are not affiliated with or endorsed by NPCI or the official UPI payment system.
+                Disclaimer: "Earn Steps AI" is the name of our website and fitness rewards application. We are an independent health tracking initiative and are not affiliated with any banking or payment network.
             </p>
         </div>
     </footer>
 </div>
 
-<!-- Dedicated Legal Pages & Blog Articles Container -->
+<!-- Dedicated Legal Pages & Blog Article Container -->
 <div class="dedicated-legal-page" id="legalPageView">
     <button class="back-home-btn" onclick="returnToMainView()"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
     <div class="legal-document-layout" id="legalContentArea">
@@ -846,7 +551,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 </div>
 
 <script>
-// --- Canvas Background Vector Coin Matrix Animation ---
+// --- Canvas Background Vector Golden & Blue EI Coins Matrix Animation ---
 const canvas = document.getElementById('coinCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -858,29 +563,33 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 const coins = [];
-const numCoins = 35;
+const numCoins = 45;
 
 for(let i=0; i<numCoins; i++) {
     coins.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 3 + 1,
-        speedY: (Math.random() * 0.8 + 0.2) * (Math.random() < 0.5 ? 1 : -1),
+        radius: Math.random() * 4 + 1.5,
+        speedY: (Math.random() * 0.7 + 0.2) * (Math.random() < 0.5 ? 1 : -1),
         speedX: (Math.random() * 0.4 - 0.2),
-        opacity: Math.random() * 0.5 + 0.1
+        opacity: Math.random() * 0.7 + 0.2,
+        isGold: Math.random() > 0.5
     });
 }
 
 function animateCoins() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    ctx.fillStyle = isDark ? 'rgba(0, 212, 255, 0.4)' : 'rgba(0, 102, 255, 0.3)';
 
     coins.forEach(c => {
         ctx.beginPath();
         ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
-        ctx.fillStyle = isDark ? `rgba(0, 212, 255, ${c.opacity})` : `rgba(0, 102, 255, ${c.opacity})`;
+        
+        if (c.isGold) {
+            ctx.fillStyle = isDark ? `rgba(255, 215, 0, ${c.opacity})` : `rgba(218, 165, 32, ${c.opacity})`;
+        } else {
+            ctx.fillStyle = isDark ? `rgba(0, 212, 255, ${c.opacity})` : `rgba(0, 102, 255, ${c.opacity})`;
+        }
         ctx.fill();
 
         c.y += c.speedY;
@@ -958,10 +667,7 @@ function openSupportModal(type) {
         text.innerText = "The official Earnify India Android & iOS app package is ready. Click below to begin installation.";
     } else if(type === 'claim') {
         title.innerText = "Sync & Claim Rewards";
-        text.innerText = "Please open the Earn Steps AI mobile application to sync your live sensor data and claim your daily rewards securely.";
-    } else if(type === 'kyc') {
-        title.innerText = "KYC Verification Portal";
-        text.innerText = "KYC verification is handled securely inside the mobile app environment for enhanced data security.";
+        text.innerText = "Please open the Earn Steps AI mobile application to sync your live sensor data and claim your daily EI coins securely.";
     }
     popup.style.display = 'flex';
 }
@@ -970,30 +676,38 @@ function closeSupportModal() {
     document.getElementById('supportPopup').style.display = 'none';
 }
 
-// Legal Page View Router & Full Blogs
+// --- Professional Legal Documents & 1 Featured Blog ---
 const legalDocs = {
     terms: `
         <h1>Terms & Conditions</h1>
-        <p>Welcome to Earnify India. By accessing our website and utilizing Earn Steps AI features, you agree to comply with and be bound by the following terms.</p>
-        <h2>1. Acceptance of Terms</h2>
-        <p>Your use of our platform constitutes agreement to these terms and conditions. If you disagree with any part, please discontinue use immediately.</p>
-        <h2>2. Account Registration & User Conduct</h2>
-        <p>Users must provide accurate information when registering. Any fraudulent activity or automated bot usage for step inflation will result in immediate termination.</p>
+        <p>Welcome to Earnify India. By accessing our website, interacting with our fitness content, or using the "Earn Steps AI" platform, you agree to comply with and be bound by the following comprehensive terms and conditions.</p>
+        
+        <h2>1. Platform Nature & Scope</h2>
+        <p>"Earn Steps AI" is strictly the brand name of our website and fitness gamification framework. We operate entirely as an independent health tracking and lifestyle rewards initiative. We are NOT a payment gateway, banking entity, digital wallet, or financial transaction provider. All rewards, points, or EI coins distributed within the platform hold virtual value for gamification and wellness encouragement only.</p>
+        
+        <h2>2. User Accounts & Fair Play</h2>
+        <p>Users must provide accurate profile details when registering. Any attempt to use automated scripts, device shakers, or artificial bot activity to manipulate step counts will result in immediate suspension of account privileges and forfeiture of accumulated virtual rewards.</p>
+        
+        <h2>3. Intellectual Property</h2>
+        <p>All graphical layouts, branding elements, software code, and textual articles provided under Earnify India are protected under intellectual property laws. Unauthorized duplication or commercial scraping is strictly prohibited.</p>
     `,
     privacy: `
         <h1>Privacy Policy</h1>
-        <p>At Earnify India, we respect your privacy regarding any information we may collect across our website and application ecosystem, Earn Steps AI.</p>
-        <h2>1. Information Collection</h2>
-        <p>We collect motion data and step counts solely for the purpose of calculating fitness rewards. Data encryption practices are implemented to protect user privacy.</p>
-        <h2>2. Data Usage</h2>
-        <p>Your information is never sold to third parties and is used exclusively to maintain your profile and process rewards.</p>
+        <p>At Earnify India, we respect your privacy regarding any data we collect across our website and the Earn Steps AI fitness ecosystem.</p>
+        
+        <h2>1. Information We Collect</h2>
+        <p>We collect basic device motion statistics, step counts, and activity metrics solely for the purpose of calculating physical fitness milestones and awarding virtual EI coins. We do not collect sensitive financial records, banking passwords, or government identification documents.</p>
+        
+        <h2>2. Data Security & Confidentiality</h2>
+        <p>Your activity data is encrypted and securely stored. We never sell, trade, or rent user personal data to external commercial third parties. Your information is used strictly to enhance your personal fitness tracking experience.</p>
     `,
     disclaimer: `
         <h1>Disclaimer</h1>
-        <p>Disclaimer: "Earn Steps AI" is the name of our website. We are not affiliated with or endorsed by NPCI or the official UPI payment system.</p>
-        <h2>1. Independent Operation</h2>
-        <p>Earnify India is an independent entity providing fitness and activity tracking reward solutions. All trademarks belong to their respective owners.</p>
-  `,
+        <p><strong>Important Clarification:</strong> "Earn Steps AI" is exclusively the name of our website and fitness application framework. We are an independent health-tech initiative and have no association, affiliation, endorsement, or partnership with NPCI (National Payments Corporation of India), UPI systems, or any banking institution.</p>
+        
+        <h2>1. Health & Wellness Notice</h2>
+        <p>The fitness tips, step tracking metrics, and wellness guides provided on Earnify India are intended solely for general motivational and educational purposes. Always consult a qualified medical professional before undertaking any strenuous physical exercise routine.</p>
+    `,
     blog1: `
         <h1>How Earn Steps AI is Revolutionizing Daily Fitness Motivations</h1>
         <div class="blog-date">July 20, 2026 | Fitness AI Insights</div>
@@ -1002,138 +716,30 @@ const legalDocs = {
         <p>Human psychology responds remarkably well to immediate positive reinforcement. Traditional fitness tracking apps provide raw data graphs such as step counts or calorie burn numbers, but often fail to provide emotional or material incentives to keep users going after the initial enthusiasm wears off. Earn Steps AI bridges this critical psychological gap. When users realize that every single step they take during their morning jog or office commute contributes directly toward accumulating redeemable digital rewards, motivation multiplies exponentially. This intrinsic reward mechanism rewires daily habits, turning what once felt like a tiresome workout chore into an anticipated daily ritual.</p>
         <h2>Advanced AI Algorithms for Precision Motion Analysis</h2>
         <p>One of the primary technical hurdles in step-counting applications is false positive detection—such as hand gestures, vehicle vibrations, or random device movements being miscalculated as walking steps. Earn Steps AI solves this problem through sophisticated neural network algorithms. The app analyzes acceleration frequency, rhythm consistency, and gait patterns to isolate genuine walking motion from external noise. As a result, users receive hyper-accurate step metrics while enjoying optimized battery consumption. As Earnify India continues to expand its ecosystem, Earn Steps AI remains committed to delivering state-of-the-art reliability, ensuring that every user's fitness journey is both accurate and genuinely rewarding.</p>
-    `,
-    blog2: `
-        <h1>Top 5 Habits to Increase Your Daily Step Count Effortlessly</h1>
-        <div class="blog-date">July 18, 2026 | Lifestyle & Wellness</div>
-        <p>Achieving the recommended 10,000 daily steps can often feel like an overwhelming target, especially when working long hours at a desk. However, by introducing minor, sustainable lifestyle adjustments throughout your day, hitting this milestone becomes surprisingly effortless. Through the guidance of Earnify India and motion analytics from Earn Steps AI, thousands of active users have successfully restructured their daily routines to maximize movement without disrupting their professional responsibilities. Let us explore the top five proven habits that can radically elevate your daily step count organically.</p>
-        <h2>1. Embrace the Power of Post-Meal Walking Breaks</h2>
-        <p>One of the easiest ways to accumulate extra steps is by taking a brisk 10 to 15-minute walk immediately after major meals—breakfast, lunch, and dinner. Not only does this simple habit add up to 3,000 steps daily, but clinical studies also indicate that post-meal walking significantly improves blood glucose regulation, enhances digestion, and prevents post-lunch lethargy at work.</p>
-        <h2>2. Redefine Your Commute and Errands</h2>
-        <p>If you rely on public transport or personal vehicles, try parking your vehicle a few blocks further away or getting off one transit stop earlier. Walking the remaining distance introduces structured aerobic movement into your morning commute. Similarly, for nearby grocery shopping or quick errands, leave the vehicle behind and walk with a reusable bag. These micro-walks accumulate substantial step totals over a single week while promoting sustainable urban mobility.</p>
-    `,
-    blog3: `
-        <h1>Understanding the Technology Behind AI-Powered Step Trackers</h1>
-        <div class="blog-date">July 16, 2026 | Technology & Engineering</div>
-        <p>The evolution of mobile health technology has transitioned from basic mechanical pedometers to sophisticated artificial intelligence models capable of interpreting complex human motion in real-time. Within the Earnify India ecosystem, Earn Steps AI represents the pinnacle of modern fitness engineering. By combining hardware gyroscope data with machine learning classification models, the platform delivers unprecedented accuracy in activity quantification. Understanding how this technology works under the hood provides users with deeper confidence in their daily tracking metrics.</p>
-        <h2>Tri-Axial Accelerometry and Sensor Fusion</h2>
-        <p>Modern smartphones and wearable fitness trackers contain micro-electromechanical systems (MEMS) sensors known as tri-axial accelerometers. These sensors measure linear acceleration across three distinct spatial axes (X, Y, and Z). When a user walks, their center of gravity shifts rhythmically, producing distinct waveform spikes in acceleration data. Earn Steps AI processes these continuous waveform streams using proprietary filtering algorithms to eliminate gravitational bias and high-frequency noise caused by vehicular travel.</p>
-    `,
-    blog4: `
-        <h1>Why Walking is the Best Low-Impact Exercise for Everyone</h1>
-        <div class="blog-date">July 14, 2026 | Fitness & Health</div>
-        <p>In the pursuit of health and longevity, high-intensity workouts such as sprinting, heavy weightlifting, or CrossFit often receive the most media attention. However, for the vast majority of the population, these intense regimens can lead to joint stress, chronic fatigue, or burnout. Conversely, walking stands out globally as the ultimate low-impact exercise suitable for individuals of all age groups. Backed by Earn Steps AI tracking on Earnify India, walking provides comprehensive cardiovascular benefits without imposing destructive mechanical stress on knees, ankles, and spinal joints.</p>
-        <h2>Cardiovascular Conditioning Without Joint Trauma</h2>
-        <p>When you walk at a brisk pace, your heart rate elevates into the optimal fat-burning and aerobic zone, strengthening cardiac muscles and improving overall circulatory efficiency. Unlike running, where both feet leave the ground simultaneously resulting in high-impact collision forces upon landing, walking ensures that at least one foot remains in contact with the ground at all times. This biomechanical advantage drastically reduces joint reaction forces, making walking an ideal physical activity for seniors, individuals recovering from injuries, or those managing weight.</p>
-    `,
-    blog5: `
-        <h1>How Earnify India Ensures Safe and Transparent Reward Systems</h1>
-        <div class="blog-date">July 12, 2026 | Security & Compliance</div>
-        <p>In the digital rewards landscape, user trust and financial transparency are paramount. As Earnify India continues to grow as a leading rewards platform powered by Earn Steps AI, maintaining absolute integrity in payout distribution and user data protection remains our top operational priority. Building a transparent reward ecosystem requires robust technological architecture, stringent anti-fraud verification protocols, and unwavering adherence to compliance standards.</p>
-        <h2>Anti-Fraud Protocols and Integrity Checks</h2>
-        <p>To ensure that all distributed rewards reflect genuine human physical activity, Earnify India employs multi-layered verification mechanisms. Automated anomaly detection systems monitor platform activity for unnatural step inflation patterns, such as mechanical shakers or automated bot scripts. By filtering out fraudulent data points, we protect the interests of genuine, hard-working users who dedicate their time and energy to achieving daily fitness goals.</p>
-    `,
-    blog6: `
-        <h1>The Science of Walking: How Movement Boosts Mental Health</h1>
-        <div class="blog-date">July 10, 2026 | Mental Wellness</div>
-        <p>Physical exercise is frequently prescribed for bodily health, but its profound impact on neurological and psychological well-being is equally remarkable. Engaging in regular walking sessions—tracked and rewarded through Earn Steps AI on Earnify India—triggers complex biochemical cascades within the brain that alleviate stress, elevate mood, and enhance cognitive function. Understanding these neurobiological mechanisms sheds light on why a simple walk can completely transform your state of mind.</p>
-        <h2>Endorphin Release and Stress Reduction</h2>
-        <p>When you walk outdoors, especially in natural environments or green parks, your body stimulates the release of endorphins and neurotransmitters such as serotonin and dopamine. These chemicals act as natural mood stabilizers and pain relievers. Furthermore, physical movement helps lower systemic levels of cortisol, the primary stress hormone responsible for anxiety and tension, leaving you feeling calm and focused.</p>
-    `,
-    blog7: `
-        <h1>Common Mistakes to Avoid While Tracking Your Daily Steps</h1>
-        <div class="blog-date">July 08, 2026 | Fitness Tips</div>
-        <p>Accurate activity tracking is essential for maximizing your rewards and monitoring true fitness progress on Earnify India. However, many users unintentionally make simple tracking errors that distort their daily metrics. By identifying and correcting these common pitfalls, you can ensure that your Earn Steps AI app captures every authentic step with maximum precision.</p>
-        <h2>Pocket Placement and Device Sensitivity</h2>
-        <p>One of the most frequent tracking errors involves storing mobile devices in loose jacket pockets or carrying them loosely in hands where erratic swinging movements can confuse sensor calibration. For optimal accuracy, keep your smartphone securely snug in a trouser pocket, waist pouch, or armband so that the device's internal accelerometer moves in direct synchronization with your body's natural center of mass.</p>
-    `,
-    blog8: `
-        <h1>Maximizing Your Earnings with Smart Activity Milestones</h1>
-        <div class="blog-date">July 06, 2026 | Rewards & Strategy</div>
-        <p>Consistency is the ultimate secret to unlocking maximum financial and health benefits on Earnify India. While hitting your daily step targets is commendable, structuring your movement around strategic milestone challenges unlocks bonus reward multipliers through Earn Steps AI. Developing a tactical approach to your daily walking routine allows you to optimize your earning potential effortlessly.</p>
-        <h2>Structuring Morning and Evening Walking Quotas</h2>
-        <p>Instead of attempting to complete all 10,000 steps during a single grueling afternoon session, divide your target into structured quotas: 3,000 steps in the morning, 4,000 steps during work intervals, and 3,000 steps in the evening. This balanced distribution prevents physical burnout, maintains steady metabolic activity all day long, and consistently hits platform milestone criteria.</p>
-    `,
-    blog9: `
-        <h1>How to Stay Consistent with Your Fitness Goals During Busy Workdays</h1>
-        <div class="blog-date">July 04, 2026 | Productivity & Habits</div>
-        <p>A demanding professional career often serves as the primary excuse for neglecting personal health and fitness. Between endless meetings, urgent client deadlines, and administrative tasks, finding dedicated workout hours can feel impossible. However, Earnify India and Earn Steps AI prove that fitness does not require hours at a traditional gym. By integrating micro-movements into your workday schedule, you can maintain peak consistency regardless of workload intensity.</p>
-        <h2>Desk Stretching and Walking Meetings</h2>
-        <p>Whenever you participate in audio-only conference calls or internal catch-ups, adopt the habit of pacing around your room or office corridor rather than remaining seated at your desk. Over a 30-minute conference call, pacing can easily contribute 2,000 steps toward your daily goal without interfering with your attention or professional communication.</p>
-    `,
-    blog10: `
-        <h1>The Role of Hydration and Walking in Daily Wellness</h1>
-        <div class="blog-date">July 02, 2026 | Nutrition & Health</div>
-        <p>Physical movement and cellular hydration share a symbiotic relationship that directly dictates your daily energy levels and athletic endurance. When tracking your daily walks through Earn Steps AI on Earnify India, maintaining optimal fluid intake is crucial for preventing muscle cramps, joint stiffness, and premature fatigue. Let us examine how proper hydration supercharges your walking routine.</p>
-        <h2>Joint Lubrication and Cellular Recovery</h2>
-        <p>Synovial fluid, the natural lubricant cushioning your knee and hip joints, relies heavily on adequate bodily water content to reduce friction during repetitive walking strides. Dehydration thickens this fluid, leading to joint discomfort. Drinking water consistently before, during, and after your walks ensures optimal biomechanical performance and rapid muscular recovery.</p>
-    `,
-    blog11: `
-        <h1>Why Digital Fitness Rewards Are Gaining Popularity in India</h1>
-        <div class="blog-date">June 30, 2026 | Market Trends</div>
-        <p>India is currently experiencing a massive digital revolution characterized by widespread smartphone adoption, affordable high-speed internet, and a growing cultural consciousness regarding health and preventative wellness. Amidst this sweeping transformation, platforms like Earnify India are pioneering a new paradigm where physical health yields direct financial rewards via Earn Steps AI. This innovative synergy between wellness and digital rewards resonates deeply with India's ambitious youth and health-conscious workforce.</p>
-        <h2>Bridging Health Awareness with Economic Incentives</h2>
-        <p>Preventative healthcare has historically struggled with public engagement due to a lack of immediate tangible benefits. People often find it difficult to prioritize long-term health outcomes over immediate daily comforts. By introducing instant digital rewards for simple walking activity, Earnify India bridges this motivation gap, successfully encouraging millions of Indians to adopt active, health-positive lifestyles.</p>
-    `,
-    blog12: `
-        <h1>Building a Healthy Lifestyle One Step at a Time</h1>
-        <div class="blog-date">June 28, 2026 | Habit Formation</div>
-        <p>Lasting lifestyle transformations are rarely achieved through radical overnight changes; rather, they are built upon the foundation of consistent, micro-habits compounded over months and years. Earnify India and Earn Steps AI are designed around this very principle of incremental progress. By focusing on small, achievable daily step goals rather than intimidating fitness milestones, users build lifelong healthy habits with sustainable ease.</p>
-        <h2>The Compound Effect of Daily Walking</h2>
-        <p>If you increase your daily step count by just 1,000 steps each week, within two months you will have transformed your basal metabolic output and cardiovascular endurance completely. Celebrate small milestones along your journey, and let the Earn Steps AI app track your continuous growth as you build a stronger, healthier version of yourself.</p>
-    `,
-    blog13: `
-        <h1>How Security and Verification Protect Your Reward Accounts</h1>
-        <div class="blog-date">June 26, 2026 | Security & Compliance</div>
-        <p>In an era where digital platforms face constant cybersecurity challenges, safeguarding user accounts, personal data, and accumulated earnings is of utmost importance. Earnify India implements bank-grade encryption frameworks and robust verification procedures to ensure that your Earn Steps AI account remains impenetrable to unauthorized access or fraudulent interference.</p>
-        <h2>The Role of Secure KYC and Device Binding</h2>
-        <p>Our verification suite utilizes secure device binding and compliance checks to confirm user identity during major reward redemptions. This multi-layered defense shields the community against malicious actors, ensuring a fair, transparent, and completely secure financial reward ecosystem for every genuine participant.</p>
-    `,
-    blog14: `
-        <h1>Morning Walks vs. Evening Walks: Which is Better for You?</h1>
-        <div class="blog-date">June 24, 2026 | Fitness Science</div>
-        <p>One of the most common debates among fitness enthusiasts revolves around the optimal timing for daily walking routines: Is it better to exercise in the crisp morning hours or unwind with a stroll in the evening? Both options offer unique physiological advantages when tracked via Earn Steps AI on Earnify India. Evaluating your personal circadian rhythm and lifestyle schedule will help you determine the ideal choice.</p>
-        <h2>The Physiological Benefits of Morning Movement</h2>
-        <p>Morning walks expose your eyes to natural sunlight, which helps regulate your circadian rhythm, suppresses melatonin production, and boosts morning alertness. Furthermore, working out on an empty stomach can enhance fat oxidation rates, giving your metabolism an energetic jump-start for the day ahead.</p>
-    `,
-    blog15: `
-        <h1>The Future of Health Tech: Combining Fitness with AI</h1>
-        <div class="blog-date">June 22, 2026 | Future Tech</div>
-        <p>The intersection of artificial intelligence and digital healthcare is unlocking unprecedented possibilities for personalized wellness monitoring. Earn Steps AI stands at the forefront of this technological wave in India, utilizing adaptive algorithms to study user habits, predict optimal activity windows, and customize reward structures dynamically based on individual fitness levels.</p>
-        <h2>Personalized Coaching and Predictive Analytics</h2>
-        <p>Future iterations of our AI engine will offer customized walking regimens tailored to your biometric feedback, sleep quality, and daily schedule. By merging artificial intelligence with community rewards on Earnify India, we are empowering individuals to take proactive control of their long-term health and wellness.</p>
-    `,
-    blog16: `
-        <h1>How to Prevent Foot Fatigue When Walking Long Distances</h1>
-        <div class="blog-date">June 20, 2026 | Foot Health & Care</div>
-        <p>As you increase your daily step targets to climb the global leaderboard on Earnify India, your feet bear the brunt of the mechanical impact. Ensuring proper foot care and selecting supportive footwear is essential for preventing blisters, arch strain, and muscular fatigue while using Earn Steps AI.</p>
-        <h2>Choosing the Right Footwear and Ergonomic Socks</h2>
-        <p>Invest in athletic walking shoes equipped with adequate arch support, cushioned midsoles, and breathable mesh uppers. Pairing these shoes with moisture-wicking athletic socks prevents friction blisters, allowing you to walk long distances comfortably day after day.</p>
-    `,
-    blog17: `
-        <h1>Step Tracking Accuracy: How Earn Steps AI Delivers Precision</h1>
-        <div class="blog-date">June 18, 2026 | Engineering Insights</div>
-        <p>Accuracy is the cornerstone of any credible activity tracking application. Users invest time and physical effort into their daily walks, and they expect exact recognition for their exertion. Earn S
-    `,
-    blog18: `
-        <h1>Maximizing Daily Steps with Earn Steps AI</h1>
-        <div class="blog-date">July 20, 2026 | Fitness AI Insights</div>
-        <p>Staying active in a sedentary work environment can be challenging. With Earn Steps AI integrated into your daily routine, tracking your movement becomes both motivating and rewarding.</p>
-        <h2>1. Set Realistic Milestone Goals</h2>
-        <p>Start with manageable targets, such as 5,000 steps per day, and progressively scale up to 10,000 steps as your stamina improves.</p>
-        <h2>2. Incorporate Walking Breaks</h2>
-        <p>Take short 10-minute walks after every meal to enhance digestion, boost your energy levels, and increase your daily reward accumulation on Earnify India.</p>
-    `,
-    blog19: `
-        <h1>Understanding Secure Payouts & Verification</h1>
-        <div class="blog-date">July 15, 2026 | Security & Compliance</div>
-        <p>Security is a cornerstone of the Earnify India platform. Our verification and compliance structures ensure safe and reliable reward redemptions for all active users.</p>
-        <h2>1. The Importance of Identity Verification</h2>
-        <p>KYC checks protect genuine users from fraudulent accounts, ensuring that all distributed rewards reach their rightful owners safely.</p>
-        <h2>2. Safe Redemptions</h2>
-        <p>Always complete your verification steps inside the official Earn Steps AI app environment to ensure seamless processing.</p>
     `
 };
+
+// Render 1 Featured Blog on Homepage
+function renderBlogGrid() {
+    const container = document.getElementById('blogGridContainer');
+    if(!container) return;
+    
+    container.innerHTML = `
+        <div class="blog-post-card">
+            <div class="blog-dummy-img"><i class="fa-solid fa-person-walking"></i></div>
+            <div class="blog-body">
+                <div class="blog-meta"><span>Featured Guide</span><span>Earn Steps AI</span></div>
+                <h4>How Earn Steps AI is Revolutionizing Daily Fitness Motivations</h4>
+                <p>Read our comprehensive expert guide on transforming your daily walking routine into an engaging wellness habit with Earnify India.</p>
+                <div class="blog-read-more" onclick="showLegalPage('blog1')">Read Full Article <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+        </div>
+    `;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    renderBlogGrid();
+});
 
 function showLegalPage(docKey) {
     document.getElementById('mainAppView').classList.add('hidden');
@@ -1142,10 +748,6 @@ function showLegalPage(docKey) {
     contentArea.innerHTML = legalDocs[docKey] || legalDocs.terms;
     legalView.classList.add('active');
     window.scrollTo(0, 0);
-}
-
-function openFullBlog(blogKey) {
-    showLegalPage(blogKey);
 }
 
 function returnToMainView() {
