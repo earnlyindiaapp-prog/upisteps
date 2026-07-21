@@ -347,14 +347,18 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 
 <body>
 <!-- UPI Disclaimer Banner -->
-<div class="upi-disclaimer">
-  <div class="upi-badge">ℹ️</div>
-  <div class="upi-text">
-    <strong>Note:</strong> UPI stands for <span class="upi-highlight">Unique Piece India</span>. 
+<div style="width:100%; background:linear-gradient(90deg, #00E5C0 0%, #0066FF 100%); color:#000; padding:12px 20px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:14px; font-weight:500; position:sticky; top:0; z-index:9999; box-shadow:0 2px 10px rgba(0, 229, 192, 0.3);">
+  
+  <div style="font-size:18px; background:rgba(0,0,0,0.1); padding:4px 8px; border-radius:8px;">ℹ️</div>
+  
+  <div style="flex:1; text-align:center;">
+    <strong>Note:</strong> UPI stands for <span style="background:rgba(0,0,0,0.15); padding:2px 8px; border-radius:6px; font-weight:800;">Unique Piece India</span>. 
     We are NOT affiliated with UPI Payments by NPCI. This is an AI tools & rewards platform.
   </div>
-  <button class="upi-close" onclick="this.parentElement.style.display='none'">✕</button>
-</div>
+  
+  <button style="background:rgba(0,0,0,0.2); border:none; color:#000; font-size:18px; cursor:pointer; padding:4px 10px; border-radius:6px;" onclick="this.parentElement.style.display='none'">✕</button>
+</div> 
+    
 <!-- Real EI Golden Coins Canvas Background Animation -->
 <canvas id="coinCanvas"></canvas>
 
