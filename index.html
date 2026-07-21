@@ -13,7 +13,7 @@
 <!-- Google Fonts & FontAwesome Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+<link rel="stylesheet" href="/style.css">
 <style>
 :root {
     --bg-primary: #030612;
@@ -346,7 +346,15 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 </head>
 
 <body>
-
+<!-- UPI Disclaimer Banner -->
+<div class="upi-disclaimer">
+  <div class="upi-badge">ℹ️</div>
+  <div class="upi-text">
+    <strong>Note:</strong> UPI stands for <span class="upi-highlight">Unique Piece India</span>. 
+    We are NOT affiliated with UPI Payments by NPCI. This is an AI tools & rewards platform.
+  </div>
+  <button class="upi-close" onclick="this.parentElement.style.display='none'">✕</button>
+</div>
 <!-- Real EI Golden Coins Canvas Background Animation -->
 <canvas id="coinCanvas"></canvas>
 
