@@ -1081,82 +1081,74 @@ function returnToMainView() {
       requestAnimationFrame(drawParticles);
     }
     drawParticles();
-  }
 </script>
-    <script>
-  // Falling Gold Coins Engine - Disabled
-  const canvas = document.getElementById('coin-canvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.style.display = 'none';
-  }
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // 1. HAMBURGER MENU TOGGLE ENGINE 
+    const btn = document.querySelector('.hamburger-trigger-icon');
+    const dropdown = document.getElementById('topCornerDropdown');
 
-  <script>
-    // Force Open Hamburger Menu
-    document.addEventListener('DOMContentLoaded', function() {
-      const btn = document.querySelector('.hamburger-trigger-icon');
-      const menu = document.getElementById('topCornerDropdown');
-
-      if (btn && menu) {
-        btn.onclick = function(e) {
-          e.stopPropagation();
-          if (menu.style.display === 'flex' || menu.classList.contains('active')) {
-            menu.style.display = 'none';
-            menu.classList.remove('active');
-          } else {
-            menu.style.display = 'flex';
-            menu.classList.add('active');
-          }
-        };
-
-        // Outside click handler to close menu
-        document.addEventListener('click', function(e) {
-          if (!menu.contains(e.target) && !btn.contains(e.target)) {
-            menu.style.display = 'none';
-            menu.classList.remove('active');
-          }
-        });
-
-    // Falling Gold Coins Engine
-    const canvas = document.getElementById('coin-canvas');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      let width = canvas.width = window.innerWidth;
-      let height = canvas.height = window.innerHeight;
-
-      window.addEventListener('resize', () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
+    if (btn && dropdown) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (dropdown.style.display === 'flex' || dropdown.classList.contains('show-menu')) {
+          dropdown.style.display = 'none';
+          dropdown.classList.remove('show-menu');
+        } else {
+          dropdown.style.display = 'flex';
+          dropdown.classList.add('show-menu');
+        }
       });
 
-      const coins = Array.from({ length: 25 }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height - height,
-        speed: 2 + Math.random() * 3,
-        radius: 6 + Math.random() * 6
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+          dropdown.style.display = 'none';
+          dropdown.classList.remove('show-menu');
+        }
+      });
+    }
+
+    // 2. LIVE GOLDEN COINS ENGINE
+    const canvas = document.getElementById('coin-canvas');
+    if (canvas) {
+      canvas.style.display = 'block';
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      const coins = Array.from({ length: 30 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        size: Math.random() * 5 + 4,
+        speed: Math.random() * 2 + 1.5
       }));
 
-      function drawCoins() {
-        ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = '#ffd700';
+      function render() {
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#FFD700';
         
-        coins.forEach(coin => {
+        coins.forEach(c => {
           ctx.beginPath();
-          ctx.arc(coin.x, coin.y, coin.radius, 0, Math.PI * 2);
+          ctx.arc(c.x, c.y, c.size, 0, Math.PI * 2);
           ctx.fill();
           
-          coin.y += coin.speed;
-          if (coin.y > height) {
-            coin.y = -20;
-            coin.x = Math.random() * width;
+          c.y += c.speed;
+          if (c.y > h) {
+            c.y = -10;
+            c.x = Math.random() * w;
           }
         });
-        requestAnimationFrame(drawCoins);
+        requestAnimationFrame(render);
       }
-      drawCoins();
+      render();
     }
-  </script>
-      
+  });
+</script>
 </body>
-    </html>
+</html>
+      
