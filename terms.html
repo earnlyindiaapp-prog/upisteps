@@ -5,211 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Terms & Conditions - Unique Piece India</title>
-    
     <style>
-        /* Coin Canvas */
-        #coin-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body {
-            background: #0a0a15;
-            margin: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            color: #fff;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px;
-            background: #0a0a15;
-            border-bottom: 1px solid #1a1a2e;
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 24px;
-            font-weight: 800;
-            margin: 0;
-        }
-
-        .btn-download {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            border: none;
-        }
-
-        nav {
-            text-align: center;
-            padding: 15px;
-            background: #111122;
-            position: relative;
-            z-index: 1;
-            border-bottom: 1px solid #1a1a2e;
-        }
-
-        nav a {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        #terms {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
-            text-align: left;
-            position: relative;
-            z-index: 1;
-        }
-
-        #terms h2 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 36px;
-            margin-bottom: 10px;
-            text-align: center;
-            font-weight: 800;
-        }
-
-        #terms .date {
-            text-align: center;
-            color: #aaa;
-            margin-bottom: 40px;
-            font-size: 14px;
-        }
-
-        #terms h3 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 22px;
-            margin-top: 35px;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        #terms p, #terms li {
-            font-size: 16px;
-            line-height: 1.9;
-            margin-bottom: 15px;
-            color: #ccc;
-        }
-
-        #terms b {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-        }
-
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            background: #111122;
-            border-top: 1px solid #1a1a2e;
-            position: relative;
-            z-index: 1;
-        }
-
-        footer p {
-            color: #aaa;
-            margin: 0;
-        }
+        body { background: #050510; margin: 0; font-family: 'Poppins', Arial, sans-serif; color: #fff; }
+        header { padding: 24px 40px; background: #050510; border-bottom: 1px solid #1a1a2e; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 26px; font-weight: 800; margin: 0; color: #fff; letter-spacing: 0.5px; }
+        header h1 span { background: linear-gradient(90deg, #00d4ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-download { background: linear-gradient(90deg, #00d4ff, #0077ff); color: #fff; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; }
+        nav { text-align: center; padding: 16px; background: #0a0a15; border-bottom: 1px solid #1a1a2e; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-weight: 600; font-size: 16px; }
+        nav a:hover { text-shadow: 0 0 10px #00d4ff; }
+        #terms { padding: 80px 40px; max-width: 1000px; margin: auto; }
+        #terms h2 { background: linear-gradient(90deg, #00d4ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 46px; text-align: center; font-weight: 800; margin-bottom: 12px; }
+        #terms .date { text-align: center; color: #999; margin-bottom: 50px; font-size: 15px; }
+        #terms h3 { color: #00d4ff; font-size: 26px; margin-top: 45px; margin-bottom: 16px; font-weight: 700; }
+        #terms p, #terms li { font-size: 18px; line-height: 2; color: #d0d0d0; margin-bottom: 18px; }
+        #terms b { color: #00d4ff; font-weight: 700; }
+        footer { padding: 50px 20px; text-align: center; background: #0a0a15; border-top: 1px solid #1a1a2e; color: #999; font-size: 15px; }
     </style>
 </head>
 <body>
-    <canvas id="coin-canvas"></canvas>
-
     <header>
-        <h1>Unique Piece India</h1>
+        <h1>Unique <span>Piece</span> India</h1>
         <a href="#" class="btn-download">Download App</a>
     </header>
-
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
     </nav>
-
     <section id="terms">
         <h2>Terms & Conditions</h2>
         <p class="date">Last Updated: 24 July 2026</p>
-        
-        <p>
-            Unique Piece India <b>upisteps.in</b> par aapka swagat hai. Is website ko use karke aap in Terms & Conditions se agree karte hain.
-        </p>
-
-        <h3>1. Website Ka Use</h3>
-        <p>
-            Is website par di gayi sabhi jankari sirf <b>educational aur informational purpose</b> ke liye hai. 
-            Hum 100% accuracy ki guarantee nahi dete. Koi bhi financial decision lene se pehle khud research karein.
-        </p>
-
+        <p>Welcome to <b>Unique Piece India</b> - upisteps.in. By using this website, you agree to these Terms & Conditions.</p>
+        <h3>1. Use of Website</h3>
+        <p>All information on this website is for <b>educational and informational purposes only</b>. Do your own research before making any financial decisions.</p>
         <h3>2. Earning Disclaimer</h3>
-        <p>
-            Hum jo earning methods aur apps batate hain wo genuine hain. Lekin result har vyakti ki mehnat, time aur skill par depend karta hai. 
-            <b>Unique Piece India kisi bhi profit ya loss ke liye responsible nahi hai.</b>
-        </p>
-
+        <p>The earning methods and apps we share are genuine. However, results depend on individual effort, time, and skill. <b>Unique Piece India is not responsible for any profit or loss.</b></p>
         <h3>3. Intellectual Property Rights</h3>
-        <p>
-            Is website ki saari content, logo, design, text aur images <b>Unique Piece India</b> ki property hain. 
-            Bina written permission ke copy, distribute ya use karna strictly mana hai.
-        </p>
-
-        <h3>4. Third Party Links</h3>
-        <p>
-            Humare articles me dusri apps, websites ya services ke links ho sakte hain. Unke terms, privacy policy aur content ke liye 
-            hum zimmedar nahi hain.
-        </p>
-
-        <h3>5. User Responsibility</h3>
-        <p>
-            Aap is baat se agree karte hain ki aap website ka use legal tareeke se karenge. 
-            Koi spam, fraud, hacking ya galat activity nahi karenge.
-        </p>
-
-        <h3>6. Changes in Terms</h3>
-        <p>
-            Hum kabhi bhi bina notice ke in Terms & Conditions ko update kar sakte hain. 
-            Updated version hamesha isi page par available hoga.
-        </p>
-
-        <h3>7. Contact Information</h3>
-        <p>
-            Agar in Terms ko lekar koi sawal hai to aap <b>Contact</b> page ke through humse contact kar sakte hain.
-        </p>
-
-        <p><b>By using this website, you agree to these Terms & Conditions.</b></p>
+        <p>All content, logos, designs, text and images on this website are the property of <b>Unique Piece India</b>. Copying without written permission is strictly prohibited.</p>
+        <h3>4. Changes to Terms</h3>
+        <p>We may update these Terms & Conditions at any time without notice. The latest version will always be available on this page.</p>
     </section>
-
-    <footer>
-        <p>© 2026 Unique Piece India. All Rights Reserved.</p>
-    </footer>
-
+    <footer><p>© 2026 Unique Piece India. All Rights Reserved.</p></footer>
 </body>
 </html>
