@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<title>Unique Piece India</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unique Piece India</title>
 
-<!-- 3D COINS CSS START -->
-<style>
-#coin-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0; /* Background ke liye 0 rakein */
-}
-  
-  body {
-    background-color: #0d0d11;
-    margin: 0;
-  font-family: Arial, sans-serif;
-}
+  <style>
+    /* Coin Canvas Styling */
+    #coin-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-/* FOOTER + ABOUT + CONTACT THEEK KARNE KE LIYE */
-footer, #contact-inquiries, #about {
-  padding: 40px 20px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
+    body {
+      background-color: #0d0d11;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-</style>
+    footer, #contact-inquiries, #about {
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+
 <!-- Yeh advanced links browser ko force karenge naya logo dikhane ke liye -->
 <link rel="icon" type="image/png" href="/favicon.png?v=6">
 <link rel="apple-touch-icon" href="/favicon.png?v=6">
@@ -399,10 +401,9 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 <div class="header-right">
     <button class="download-btn" onclick="openSupportModal('download')">
         <i class="fa-solid fa-download"></i> Download App
-    </button>
-    
-    <div class="support-menu-anchor">
-        <button class="hamburger-trigger-icon" onclick="toggleSupportDropdown(event)">
+    <button class="hamburger-trigger-icon" onclick="toggleSupportDropdown(event)">
+  <i class="fa-solid fa-bars"></i>
+</button>
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="dropdown-panel-wrapper" id="topCornerDropdown">
@@ -758,18 +759,25 @@ function toggleThemeEngine() {
     }
 }
 
-// Hamburger Dropdown Toggle
+// Hamburger Dropdown Toggle Engine
 function toggleSupportDropdown(e) {
-    e.stopPropagation();
-    const dropdown = document.getElementById('topCornerDropdown');
+  if (e) e.stopPropagation();
+  const dropdown = document.getElementById('topCornerDropdown');
+  if (dropdown) {
     dropdown.classList.toggle('active');
+  }
 }
 
-window.addEventListener('click', () => {
-    const dropdown = document.getElementById('topCornerDropdown');
-    if(dropdown && dropdown.classList.contains('active')) {
-        dropdown.classList.remove('active');
+// Close dropdown when clicking outside
+window.addEventListener('click', function(e) {
+  const dropdown = document.getElementById('topCornerDropdown');
+  const button = document.querySelector('.hamburger-trigger-icon');
+  
+  if (dropdown && dropdown.classList.contains('active')) {
+    if (!dropdown.contains(e.target) && !button.contains(e.target)) {
+      dropdown.classList.remove('active');
     }
+  }
 });
 
 // Scroll Helper
