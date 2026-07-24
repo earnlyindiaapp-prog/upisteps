@@ -389,24 +389,25 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 </div> 
     
 <!-- Real EI Golden Coins Canvas Background Animation -->
-<canvas id="coinCanvas"></canvas>
+<canvas id="coin-canvas"></canvas>
 
 <!-- Top Premium Navigation Panel -->
 <header>
-<div class="left-nav-cluster">
-    <a href="#" class="logo" onclick="returnToMainView()">Unique<span> Piece</span> 
-        India</span></a>
-</div>
+  <div class="left-nav-cluster">
+    <a href="#" class="logo" onclick="returnToMainView()">Unique <span>Piece</span> India<span></span></a>
+  </div>
 
-<div class="header-right">
+  <div class="header-right">
     <button class="download-btn" onclick="openSupportModal('download')">
-        <i class="fa-solid fa-download"></i> Download App
-    <button class="hamburger-trigger-icon" onclick="toggleSupportDropdown(event)">
-  <i class="fa-solid fa-bars"></i>
-</button>
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <div class="dropdown-panel-wrapper" id="topCornerDropdown">
+      <i class="fa-solid fa-download"></i> Download App
+    </button>
+
+    <div class="support-menu-anchor">
+      <button class="hamburger-trigger-icon" onclick="toggleSupportDropdown(event)">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="dropdown-panel-wrapper" id="topCornerDropdown">
             <button class="menu-theme-toggle-pill" onclick="toggleThemeEngine()">
                 <i class="fa-solid fa-circle-half-stroke"></i> Switch Theme Mode
         </button>
