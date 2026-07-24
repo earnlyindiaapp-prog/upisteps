@@ -1,28 +1,181 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy - Unique Piece India</title>
-<style>
-body{font-family:Arial; padding:20px; line-height:1.8; max-width:900px; margin:auto; background:#f9f9f9}
-h1{color:#4CAF50; text-align:center}
-.container{background:white; padding:30px; border-radius:10px}
-a{display:inline-block; margin-top:20px; color:#4CAF50; text-decoration:none}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Privacy Policy - Unique Piece India</title>
+
+    <style>
+        /* Coin Canvas Styling */
+        #coin-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body {
+            background-color: #0d0d11;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            color: #00f5ff;
+            text-shadow: 0 0 10px #00f5ff;
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px;
+            background: #1a1a24;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #00f5ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 5px #00f5ff;
+        }
+
+        #privacy {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        #privacy h2 {
+            color: #00f5ff;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 8px #00f5ff;
+        }
+
+        #privacy h3 {
+            color: #00f5ff;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        #privacy p, #privacy li {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #ccc;
+        }
+
+        #privacy b {
+            color: #00f5ff;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: #1a1a24;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<h1>Privacy Policy</h1>
-<p>Last Updated: 24 July 2026</p>
-<p>unique piece india aapki privacy ka samman karta hai. Hum aapka data safe rakhte hain.</p>
-<h3>1. Hum kya data lete hain?</h3>
-<p>Email, Name, aur website use ki info sirf service dene ke liye.</p>
-<h3>2. Cookies</h3>
-<p>Hum user experience behtar banane ke liye cookies use karte hain.</p>
-<h3>3. Data share nahi hoga</h3>
-<p>Hum aapka data kisi teesri company ko nahi bechte.</p>
-<a href="index.html">← Home pe wapas jao</a>
-</div>
+    <canvas id="coin-canvas"></canvas>
+
+    <header>
+        <h1>Unique Piece India</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section id="privacy">
+        <h2>Privacy Policy</h2>
+        <p>Last Updated: 24 July 2026</p>
+        
+        <p>
+            Unique Piece India <b>upisteps.in</b> par aapki privacy humare liye bahut important hai. 
+            Ye Privacy Policy batati hai ki hum aapka data kaise collect karte hain aur use kaise karte hain.
+        </p>
+
+        <h3>1. Hum Kaun Sa Data Collect Karte Hain</h3>
+        <p>
+            Jab aap hamari website visit karte hain to hum automatically ye information collect kar sakte hain:
+        </p>
+        <ul>
+            <li><b>IP Address</b> aur Location</li>
+            <li><b>Browser Type</b> aur Device Information</li>
+            <li><b>Pages Visited</b> aur Time Spent</li>
+            <li><b>Cookies</b> for better user experience</li>
+        </ul>
+
+        <h3>2. Data Ka Use Kaise Hota Hai</h3>
+        <p>
+            Hum aapka data use karte hain:
+        </p>
+        <ul>
+            <li>Website ko improve karne ke liye</li>
+            <li>Aapko relevant content dikhane ke liye</li>
+            <li>Security aur fraud prevention ke liye</li>
+            <li>Analytics ke liye jaise Google Analytics</li>
+        </ul>
+
+        <h3>3. Cookies</h3>
+        <p>
+            Humari website cookies use karti hai. Cookies choti files hoti hain jo aapke browser me store hoti hain. 
+            Aap chahe to browser settings se cookies ko disable kar sakte hain.
+        </p>
+
+        <h3>4. Third Party Links</h3>
+        <p>
+            Hamari website me dusri websites ke links ho sakte hain. Un websites ki privacy policy ke liye 
+            hum responsible nahi hain.
+        </p>
+
+        <h3>5. Data Security</h3>
+        <p>
+            Hum aapke data ko safe rakhne ke liye proper security measures use karte hain. 
+            Lekin 100% security ki guarantee nahi di ja sakti.
+        </p>
+
+        <h3>6. Contact Us</h3>
+        <p>
+            Agar aapke paas Privacy Policy ko lekar koi sawal hai to aap humse <b>Contact</b> page ke through 
+            contact kar sakte hain.
+        </p>
+
+        <p><b>Note:</b> Hum kabhi bhi bina bataye is Privacy Policy ko update kar sakte hain.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Unique Piece India. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
