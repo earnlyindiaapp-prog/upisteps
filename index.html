@@ -1041,11 +1041,8 @@ function returnToMainView() {
           menu.classList.remove('active');
         }
       });
-    }
-  });
-</script>
 <script>
-  // Falling Gold Coins Engine
+  // Subtle Glow Particles (Clean & Modern)
   const canvas = document.getElementById('coin-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -1057,33 +1054,36 @@ function returnToMainView() {
       height = canvas.height = window.innerHeight;
     });
 
-    const coins = Array.from({ length: 25 }, () => ({
+    // Halfe opacity wale subtle blue/cyan glowing particles
+    const particles = Array.from({ length: 30 }, () => ({
       x: Math.random() * width,
-      y: Math.random() * height - height,
-      speed: 2 + Math.random() * 3,
-      radius: 6 + Math.random() * 6
+      y: Math.random() * height,
+      speed: 0.2 + Math.random() * 0.5,
+      radius: 1 + Math.random() * 2,
+      alpha: Math.random() * 0.5
     }));
 
-    function drawCoins() {
+    function drawParticles() {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = '#ffd700';
       
-      coins.forEach(coin => {
+      particles.forEach(p => {
         ctx.beginPath();
-        ctx.arc(coin.x, coin.y, coin.radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 210, 255, ${p.alpha})`;
         ctx.fill();
         
-        coin.y += coin.speed;
-        if (coin.y > height) {
-          coin.y = -20;
-          coin.x = Math.random() * width;
+        p.y -= p.speed;
+        if (p.y < 0) {
+          p.y = height;
+          p.x = Math.random() * width;
         }
       });
-      requestAnimationFrame(drawCoins);
+      requestAnimationFrame(drawParticles);
     }
-    drawCoins();
+    drawParticles();
   }
 </script>
+      
       
     </body>
     </html>
