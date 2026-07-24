@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>About Us - Unique Piece India</title>
-
+    
     <style>
-        /* Coin Canvas Styling */
+        /* Coin Canvas */
         #coin-canvas {
             position: fixed;
             top: 0;
@@ -19,46 +19,64 @@
         }
 
         body {
-            background-color: #0d0d11;
+            background: #0a0a15;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             color: #fff;
         }
 
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
+            background: #0a0a15;
+            border-bottom: 1px solid #1a1a2e;
             position: relative;
             z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         header h1 {
-            color: #00f5ff;
-            text-shadow: 0 0 10px #00f5ff;
+            background: linear-gradient(90deg, #00d4ff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            font-weight: 800;
             margin: 0;
+        }
+
+        .btn-download {
+            background: linear-gradient(90deg, #00d4ff, #0077ff);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
         }
 
         nav {
             text-align: center;
             padding: 15px;
-            background: #1a1a24;
+            background: #111122;
             position: relative;
             z-index: 1;
+            border-bottom: 1px solid #1a1a2e;
         }
 
         nav a {
-            color: #00f5ff;
+            background: linear-gradient(90deg, #00d4ff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-decoration: none;
             margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-shadow: 0 0 5px #00f5ff;
+            font-weight: 700;
+            font-size: 15px;
         }
 
         #about {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 800px;
             margin: auto;
             text-align: center;
@@ -67,29 +85,40 @@
         }
 
         #about h2 {
-            color: #00f5ff;
-            font-size: 32px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 8px #00f5ff;
+            background: linear-gradient(90deg, #00d4ff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            margin-bottom: 30px;
+            font-weight: 800;
         }
 
         #about p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 20px;
             color: #ccc;
         }
 
         #about b {
-            color: #00f5ff;
+            background: linear-gradient(90deg, #00d4ff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
         }
 
         footer {
             padding: 40px 20px;
             text-align: center;
-            background: #1a1a24;
+            background: #111122;
+            border-top: 1px solid #1a1a2e;
             position: relative;
             z-index: 1;
+        }
+
+        footer p {
+            color: #aaa;
+            margin: 0;
         }
     </style>
 </head>
@@ -98,6 +127,7 @@
 
     <header>
         <h1>Unique Piece India</h1>
+        <a href="#" class="btn-download">Download App</a>
     </header>
 
     <nav>
@@ -108,28 +138,38 @@
     </nav>
 
     <section id="about">
-        <h2>About Unique Piece India</h2>
+        <h2>About Us</h2>
+        
         <p>
-            Unique Piece India ek aisa platform hai jahan hum aapko laate hain <b>asli earning methods</b>, 
-            <b>digital tips</b> aur <b>online business ke raaz</b>.
+            Welcome to <b>Unique Piece India</b> - India ka sabse trusted platform jahan aapko milti hain 
+            <b>asli earning methods</b> aur <b>100% genuine guides</b>.
         </p>
+
         <p>
-            Hamara mission hai har student, freelancer aur ghar baithe kam karne wale ko sikhana 
-            ki internet se paise kaise kamaye bina kisi fraud ya scam ke.
+            Humara mission bahut simple hai: Logo ko online paise kamane ke sahi tareeke batana. 
+            Bina kisi jhoothe waade aur bina kisi scam ke.
         </p>
+
         <p>
-            Yahan aapko milenge <b>100% genuine guides</b>, <b>step-by-step tutorials</b> aur 
-            <b>latest earning apps</b> ke reviews. Humara goal simple hai - <b>Aapko financially free banana</b>.
+            Yahan aapko milegi har tarah ki jankari - <b>App reviews, Earning tricks, Investment tips</b> 
+            aur wo sab kuch jo aapko financially independent banane me help karega.
         </p>
+
         <p>
-            2024 me shuru hua ye safar aaj hazaron logon tak pahunch chuka hai. 
-            Hum har din naye content ke saath aate hain taaki aap kisi se piche na raho.
+            Hum research karke, khud test karke tabhi koi app ya method recommend karte hain. 
+            Isliye aap hum par bharosa kar sakte hain.
+        </p>
+
+        <p>
+            <b>Unique Piece India</b> ke saath judiye aur apne sapno ko sach kijiye. 
+            Kyunki yahan har piece unique hai, aur har earning real hai.
         </p>
     </section>
 
     <footer>
         <p>© 2026 Unique Piece India. All Rights Reserved.</p>
     </footer>
+    </script>
 
 </body>
 </html>
