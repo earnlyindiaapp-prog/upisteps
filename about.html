@@ -5,171 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>About Us - Unique Piece India</title>
-    
     <style>
-        /* Coin Canvas */
-        #coin-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body {
-            background: #0a0a15;
-            margin: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            color: #fff;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px;
-            background: #0a0a15;
-            border-bottom: 1px solid #1a1a2e;
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 24px;
-            font-weight: 800;
-            margin: 0;
-        }
-
-        .btn-download {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            border: none;
-        }
-
-        nav {
-            text-align: center;
-            padding: 15px;
-            background: #111122;
-            position: relative;
-            z-index: 1;
-            border-bottom: 1px solid #1a1a2e;
-        }
-
-        nav a {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        #about {
-            padding: 80px 20px;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        #about h2 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 40px;
-            margin-bottom: 30px;
-            font-weight: 800;
-        }
-
-        #about p {
-            font-size: 17px;
-            line-height: 1.9;
-            margin-bottom: 20px;
-            color: #ccc;
-        }
-
-        #about b {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-        }
-
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            background: #111122;
-            border-top: 1px solid #1a1a2e;
-            position: relative;
-            z-index: 1;
-        }
-
-        footer p {
-            color: #aaa;
-            margin: 0;
-        }
+        body { background: #050510; margin: 0; font-family: 'Poppins', Arial, sans-serif; color: #fff; }
+        header { padding: 24px 40px; background: #050510; border-bottom: 1px solid #1a1a2e; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 26px; font-weight: 800; margin: 0; color: #fff; letter-spacing: 0.5px; }
+        header h1 span { background: linear-gradient(90deg, #00d4ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-download { background: linear-gradient(90deg, #00d4ff, #0077ff); color: #fff; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; }
+        nav { text-align: center; padding: 16px; background: #0a0a15; border-bottom: 1px solid #1a1a2e; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-weight: 600; font-size: 16px; }
+        nav a:hover { text-shadow: 0 0 10px #00d4ff; }
+        #about { padding: 100px 40px; max-width: 900px; margin: auto; text-align: center; }
+        #about h2 { background: linear-gradient(90deg, #00d4ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 48px; margin-bottom: 35px; font-weight: 800; }
+        #about p { font-size: 19px; line-height: 2; color: #d0d0d0; margin-bottom: 24px; }
+        #about b { color: #00d4ff; font-weight: 700; }
+        footer { padding: 50px 20px; text-align: center; background: #0a0a15; border-top: 1px solid #1a1a2e; color: #999; font-size: 15px; }
     </style>
 </head>
 <body>
-    <canvas id="coin-canvas"></canvas>
-
     <header>
-        <h1>Unique Piece India</h1>
+        <h1>Unique <span>Piece</span> India</h1>
         <a href="#" class="btn-download">Download App</a>
     </header>
-
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
     </nav>
-
     <section id="about">
         <h2>About Us</h2>
-        
-        <p>
-            Welcome to <b>Unique Piece India</b> - India ka sabse trusted platform jahan aapko milti hain 
-            <b>asli earning methods</b> aur <b>100% genuine guides</b>.
-        </p>
-
-        <p>
-            Humara mission bahut simple hai: Logo ko online paise kamane ke sahi tareeke batana. 
-            Bina kisi jhoothe waade aur bina kisi scam ke.
-        </p>
-
-        <p>
-            Yahan aapko milegi har tarah ki jankari - <b>App reviews, Earning tricks, Investment tips</b> 
-            aur wo sab kuch jo aapko financially independent banane me help karega.
-        </p>
-
-        <p>
-            Hum research karke, khud test karke tabhi koi app ya method recommend karte hain. 
-            Isliye aap hum par bharosa kar sakte hain.
-        </p>
-
-        <p>
-            <b>Unique Piece India</b> ke saath judiye aur apne sapno ko sach kijiye. 
-            Kyunki yahan har piece unique hai, aur har earning real hai.
-        </p>
+        <p>Welcome to <b>Unique Piece India</b> - India's most trusted platform for real earning methods and 100% genuine guides.</p>
+        <p>Our mission is simple: To provide people with the right ways to earn money online. Without false promises and without any scams.</p>
+        <p>Here you will find everything - <b>App Reviews, Earning Tricks, Investment Tips</b> and all the resources to help you become financially independent.</p>
+        <p>We research and test every app and method ourselves before recommending it. That's why you can trust us.</p>
+        <p>Join <b>Unique Piece India</b> and turn your dreams into reality. Because every piece is unique, and every earning is real.</p>
     </section>
-
-    <footer>
-        <p>© 2026 Unique Piece India. All Rights Reserved.</p>
-    </footer>
-    </script>
-
+    <footer><p>© 2026 Unique Piece India. All Rights Reserved.</p></footer>
 </body>
 </html>
