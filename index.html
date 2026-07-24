@@ -4,16 +4,16 @@
 
 <!-- 3D COINS CSS START -->
 <style>
-#coin-canvas
-  #coin-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-  }
+#coin-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0; /* Background ke liye 0 rakein */
+}
+  
   body {
     background-color: #0d0d11;
     margin: 0;
@@ -372,13 +372,7 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
 <style>body{padding-top:60px;}</style>
 </head>
 
-<body>
-    <nav style="background:#4CAF50; padding:15px; text-align:center">
-  <a href="index.html" style="color:white; margin:0 15px; text-decoration:none">Home</a>
-  <a href="about.html" style="color:white; margin:0 15px; text-decoration:none">About</a>
-  <a href="privacy.html" style="color:white; margin:0 15px; text-decoration:none">Privacy</a>
-  <a href="terms.html" style="color:white; margin:0 15px; text-decoration:none">Terms</a>
-  <a href="blog.html" style="color:white; margin:0 15px; text-decoration:none">Blog</a>
+
 </nav>
 <!-- UPI Disclaimer Banner -->
 <div style="width:100%; background:linear-gradient(90deg, #00E5C0 0%, #0066FF 100%); color:#000; padding:12px 20px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:14px; font-weight:600; position:fixed; top:0; left:0; z-index:10001; box-shadow:0 2px 10px rgba(0, 229, 192, 0.3); flex-wrap:wrap; text-align:center;">
@@ -650,33 +644,92 @@ for(let i=0; i<numCoins; i++) {
         rotation: Math.random() * Math.PI * 2,
         rotSpeed: (Math.random() * 0.02 - 0.01)
     });
+// Gold Coins Background Animation
+const canvas = document.getElementById('coin-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+const coins = [];
+const numCoins = 35;
+
+for (let i = 0; i < numCoins; i++) {
+  coins.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 6 + 8,
+    speedY: Math.random() * 1.5 + 0.8,
+    speedX: (Math.random() - 0.5) * 0.5,
+    opacity: Math.random() * 0.7 + 0.3
+  });
+// Gold Coins Background Animation
+const canvas = document.getElementById('coin-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+// Gold Coins Background Animation Engine
+const canvas = document.getElementById('coin-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+const coins = [];
+const numCoins = 35;
+
+for (let i = 0; i < numCoins; i++) {
+  coins.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 6 + 8,
+    speedY: Math.random() * 1.5 + 0.8,
+    speedX: (Math.random() - 0.5) * 0.5,
+    opacity: Math.random() * 0.7 + 0.3
+  });
 }
 
 function animateCoins() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  coins.forEach(c => {
+    ctx.beginPath();
+    ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 215, 0, ${c.opacity})`;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#FFD700";
+    ctx.fill();
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = "#FFA500";
+    ctx.stroke();
 
-    coins.forEach(c => {
-        ctx.save();
-        ctx.globalAlpha = c.opacity;
-        ctx.translate(c.x, c.y);
-        ctx.rotate(c.rotation);
-        ctx.drawImage(coinCanvasPattern, -c.radius, -c.radius, c.radius * 2, c.radius * 2);
-        ctx.restore();
+    c.y += c.speedY;
+    c.x += c.speedX;
 
-        c.y += c.speedY;
-        c.x += c.speedX;
-        c.rotation += c.rotSpeed;
+    if (c.y > canvas.height + 20) {
+      c.y = -10;
+      c.x = Math.random() * canvas.width;
+    }
+  });
 
-        if(c.y < -30) c.y = canvas.height + 30;
-        if(c.y > canvas.height + 30) c.y = -30;
-        if(c.x < -30) c.x = canvas.width + 30;
-        if(c.x > canvas.width + 30) c.x = -30;
-    });
-
-    requestAnimationFrame(animateCoins);
+  requestAnimationFrame(animateCoins);
 }
-animateCoins();
 
+animateCoins();
+  
+  
 // Live Clock Simulator
 setInterval(() => {
     const d = new Date();
@@ -809,75 +862,7 @@ const legalDocs = {
   </article>
 
 </section>
-<!-- BLOG SECTION END -->
-    <!-- BLOG SECTION END -->
-
 <!-- COIN CANVAS -->
-<canvas id="coin-canvas"></canvas>
-
-<!-- THREE.JS LIBRARY -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-<!-- 3D COINS JS START -->
-<script>
-const canvas = document.getElementById('coin-canvas');
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-scene.add(ambientLight);
-const dirLight = new THREE.DirectionalLight(0xffd700, 2);
-dirLight.position.set(5, 10, 7);
-scene.add(dirLight);
-const pointLight = new THREE.PointLight(0xffa500, 2, 50);
-pointLight.position.set(-5, -5, 5);
-scene.add(pointLight);
-
-const coinGeometry = new THREE.CylinderGeometry(0.8, 0.8, 0.15, 32);
-const coinMaterial = new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.9, roughness: 0.2 });
-
-const coins = [];
-const coinCount = 40;
-
-for (let i = 0; i < coinCount; i++) {
-  const coin = new THREE.Mesh(coinGeometry, coinMaterial);
-  coin.position.x = (Math.random() - 0.5) * 20;
-  coin.position.y = Math.random() * 20 - 10;
-  coin.position.z = (Math.random() - 0.5) * 10;
-  coin.rotation.x = Math.random() * Math.PI;
-  coin.rotation.z = Math.random() * Math.PI;
-  coin.userData = { fallSpeed: Math.random() * 0.05 + 0.02, rotSpeedX: (Math.random() - 0.5) * 0.04, rotSpeedY: (Math.random() - 0.5) * 0.04 };
-  coins.push(coin);
-  scene.add(coin);
-}
-
-camera.position.z = 12;
-
-function animate() {
-  requestAnimationFrame(animate);
-  coins.forEach(coin => {
-    coin.position.y -= coin.userData.fallSpeed;
-    coin.rotation.x += coin.userData.rotSpeedX;
-    coin.rotation.y += coin.userData.rotSpeedY;
-    if (coin.position.y < -10) {
-      coin.position.y = 10;
-      coin.position.x = (Math.random() - 0.5) * 20;
-    }
-  });
-  renderer.render(scene, camera);
-}
-animate();
-
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
-
 window.addEventListener('DOMContentLoaded', () => {
     renderBlogGrid();
 });
