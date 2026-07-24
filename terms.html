@@ -1,28 +1,176 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms & Conditions - unique piece India</title>
-<style>
-body{font-family:Arial; padding:20px; line-height:1.8; max-width:900px; margin:auto; background:#f9f9f9}
-h1{color:#4CAF50; text-align:center}
-.container{background:white; padding:30px; border-radius:10px}
-a{display:inline-block; margin-top:20px; color:#4CAF50; text-decoration:none}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Terms & Conditions - Unique Piece India</title>
+
+    <style>
+        /* Coin Canvas Styling */
+        #coin-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body {
+            background-color: #0d0d11;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            color: #00f5ff;
+            text-shadow: 0 0 10px #00f5ff;
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px;
+            background: #1a1a24;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #00f5ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 5px #00f5ff;
+        }
+
+        #terms {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        #terms h2 {
+            color: #00f5ff;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 8px #00f5ff;
+        }
+
+        #terms h3 {
+            color: #00f5ff;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        #terms p, #terms li {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #ccc;
+        }
+
+        #terms b {
+            color: #00f5ff;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: #1a1a24;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<h1>Terms & Conditions</h1>
-<p>Last Updated: 24 July 2026</p>
-<p>unique piece india website use karke aap in sharton se sahmat hote hain.</p>
-<h3>1. Content</h3>
-<p>Website par di gayi sabhi jankari sirf knowledge ke liye hai.</p>
-<h3>2. Copyright</h3>
-<p>Website ka content copy karna mana hai.</p>
-<h3>3. Changes</h3>
-<p>Hum kabhi bhi in terms ko update kar sakte hain.</p>
-<a href="index.html">← Home pe wapas jao</a>
-</div>
+    <canvas id="coin-canvas"></canvas>
+
+    <header>
+        <h1>Unique Piece India</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section id="terms">
+        <h2>Terms & Conditions</h2>
+        <p>Last Updated: 24 July 2026</p>
+        
+        <p>
+            Unique Piece India <b>upisteps.in</b> ko use karke aap in Terms & Conditions se agree karte hain. 
+            Kripya dhyan se padhein.
+        </p>
+
+        <h3>1. Website Ka Use</h3>
+        <p>
+            Is website par di gayi sabhi jankari <b>educational purpose</b> ke liye hai. 
+            Hum 100% accurate hone ki guarantee nahi dete. Koi bhi decision lene se pehle khud research karein.
+        </p>
+
+        <h3>2. Earning Disclaimer</h3>
+        <p>
+            Hum jo earning methods batate hain wo genuine hain, lekin result har vyakti ke mehnat aur skill par depend karta hai. 
+            <b>Hum kisi bhi tarah ke profit ya loss ke liye responsible nahi hain.</b>
+        </p>
+
+        <h3>3. Intellectual Property</h3>
+        <p>
+            Is website ki saari content, logo, design aur images <b>Unique Piece India</b> ki property hain. 
+            Bina permission copy karna mana hai.
+        </p>
+
+        <h3>4. Third Party Links</h3>
+        <p>
+            Humare articles me dusri apps ya websites ke links ho sakte hain. Unke terms aur policies ke liye 
+            hum zimmedar nahi hain.
+        </p>
+
+        <h3>5. User Responsibility</h3>
+        <p>
+            Aap is baat ke liye agree karte hain ki aap website ka use kanoon ke anusaar karenge. 
+            Koi spam, fraud ya galat activity nahi karenge.
+        </p>
+
+        <h3>6. Changes in Terms</h3>
+        <p>
+            Hum kabhi bhi bina notice ke in Terms & Conditions ko change kar sakte hain. 
+            Updated version hamesha isi page par milega.
+        </p>
+
+        <h3>7. Contact</h3>
+        <p>
+            Kisi bhi sawal ke liye aap <b>Contact</b> page ke through humse baat kar sakte hain.
+        </p>
+
+        <p><b>By using this website, you agree to these Terms & Conditions.</b></p>
+    </section>
+
+    <footer>
+        <p>© 2026 Unique Piece India. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
