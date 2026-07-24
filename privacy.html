@@ -5,225 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Privacy Policy - Unique Piece India</title>
-    
     <style>
-        /* Coin Canvas */
-        #coin-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body {
-            background: #0a0a15;
-            margin: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            color: #fff;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px;
-            background: #0a0a15;
-            border-bottom: 1px solid #1a1a2e;
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 24px;
-            font-weight: 800;
-            margin: 0;
-        }
-
-        .btn-download {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            border: none;
-        }
-
-        nav {
-            text-align: center;
-            padding: 15px;
-            background: #111122;
-            position: relative;
-            z-index: 1;
-            border-bottom: 1px solid #1a1a2e;
-        }
-
-        nav a {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        #privacy {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
-            text-align: left;
-            position: relative;
-            z-index: 1;
-        }
-
-        #privacy h2 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 36px;
-            margin-bottom: 10px;
-            text-align: center;
-            font-weight: 800;
-        }
-
-        #privacy .date {
-            text-align: center;
-            color: #aaa;
-            margin-bottom: 40px;
-            font-size: 14px;
-        }
-
-        #privacy h3 {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 22px;
-            margin-top: 35px;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        #privacy p, #privacy li {
-            font-size: 16px;
-            line-height: 1.9;
-            margin-bottom: 15px;
-            color: #ccc;
-        }
-
-        #privacy ul {
-            padding-left: 20px;
-        }
-
-        #privacy b {
-            background: linear-gradient(90deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-        }
-
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            background: #111122;
-            border-top: 1px solid #1a1a2e;
-            position: relative;
-            z-index: 1;
-        }
-
-        footer p {
-            color: #aaa;
-            margin: 0;
-        }
+        body { background: #050510; margin: 0; font-family: 'Poppins', Arial, sans-serif; color: #fff; }
+        header { padding: 24px 40px; background: #050510; border-bottom: 1px solid #1a1a2e; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 26px; font-weight: 800; margin: 0; color: #fff; letter-spacing: 0.5px; }
+        header h1 span { background: linear-gradient(90deg, #00d4ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-download { background: linear-gradient(90deg, #00d4ff, #0077ff); color: #fff; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; }
+        nav { text-align: center; padding: 16px; background: #0a0a15; border-bottom: 1px solid #1a1a2e; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-weight: 600; font-size: 16px; }
+        nav a:hover { text-shadow: 0 0 10px #00d4ff; }
+        #privacy { padding: 80px 40px; max-width: 1000px; margin: auto; }
+        #privacy h2 { background: linear-gradient(90deg, #00d4ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 46px; text-align: center; font-weight: 800; margin-bottom: 12px; }
+        #privacy .date { text-align: center; color: #999; margin-bottom: 50px; font-size: 15px; }
+        #privacy h3 { color: #00d4ff; font-size: 26px; margin-top: 45px; margin-bottom: 16px; font-weight: 700; }
+        #privacy p, #privacy li { font-size: 18px; line-height: 2; color: #d0d0d0; margin-bottom: 18px; }
+        #privacy ul { padding-left: 25px; }
+        #privacy b { color: #00d4ff; font-weight: 700; }
+        footer { padding: 50px 20px; text-align: center; background: #0a0a15; border-top: 1px solid #1a1a2e; color: #999; font-size: 15px; }
     </style>
 </head>
 <body>
-    <canvas id="coin-canvas"></canvas>
-
     <header>
-        <h1>Unique Piece India</h1>
+        <h1>Unique <span>Piece</span> India</h1>
         <a href="#" class="btn-download">Download App</a>
     </header>
-
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
     </nav>
-
     <section id="privacy">
         <h2>Privacy Policy</h2>
         <p class="date">Last Updated: 24 July 2026</p>
-        
-        <p>
-            Unique Piece India <b>upisteps.in</b> par aapki privacy humare liye sabse important hai. 
-            Ye Privacy Policy batati hai ki hum aapka data kaise collect aur use karte hain.
-        </p>
-
-        <h3>1. Hum Kaun Sa Data Collect Karte Hain</h3>
-        <p>Jab aap hamari website visit karte hain to hum ye information collect kar sakte hain:</p>
+        <p>At <b>Unique Piece India</b> - upisteps.in, your privacy is our top priority. This Privacy Policy explains how we collect and use your data.</p>
+        <h3>1. Information We Collect</h3>
         <ul>
-            <li><b>IP Address</b> aur Approximate Location</li>
-            <li><b>Browser Type</b>, Device aur Operating System</li>
-            <li><b>Pages Visited</b>, Time Spent aur Clicks</li>
-            <li><b>Cookies</b> for better user experience aur analytics</li>
+            <li><b>IP Address</b> and Approximate Location</li>
+            <li><b>Browser Type</b>, Device and Operating System</li>
+            <li><b>Pages Visited</b>, Time Spent and Clicks</li>
+            <li><b>Cookies</b> for better user experience and analytics</li>
         </ul>
-
-        <h3>2. Data Ka Use Kaise Hota Hai</h3>
-        <p>Hum aapka data in kaamo ke liye use karte hain:</p>
-        <ul>
-            <li>Website ko fast aur better banane ke liye</li>
-            <li>Aapko relevant content aur ads dikhane ke liye</li>
-            <li>Website traffic analyze karne ke liye jaise Google Analytics</li>
-            <li>Security aur fraud ko rokne ke liye</li>
-        </ul>
-
+        <h3>2. How We Use Your Data</h3>
+        <p>We use your data to improve our website, show relevant content and ads, analyze traffic, and maintain security.</p>
         <h3>3. Cookies Policy</h3>
-        <p>
-            Humari website cookies use karti hai. Cookies choti text files hoti hain jo aapke browser me store hoti hain. 
-            Ye humein yaad rakhne me help karti hain. Aap chahe to browser settings se cookies ko block kar sakte hain.
-        </p>
-
-        <h3>4. Third Party Services</h3>
-        <p>
-            Hum Google Analytics, Ads aur dusri third party services use kar sakte hain. 
-            Unki apni privacy policy hoti hai. Unke liye hum responsible nahi hain.
-        </p>
-
-        <h3>5. Data Security</h3>
-        <p>
-            Hum aapke data ko safe rakhne ke liye industry standard security use karte hain. 
-            Lekin internet 100% secure nahi hota, isliye puri guarantee nahi de sakte.
-        </p>
-
-        <h3>6. Children's Privacy</h3>
-        <p>
-            Ye website 13 saal se kam umra ke bachcho ke liye nahi hai. Hum jaanbujhkar unka data collect nahi karte.
-        </p>
-
-        <h3>7. Policy Me Changes</h3>
-        <p>
-            Hum kabhi bhi bina notice ke is Privacy Policy ko update kar sakte hain. 
-            Latest version hamesha isi page par milega.
-        </p>
-
-        <h3>8. Contact Us</h3>
-        <p>
-            Privacy se related koi sawal ho to aap <b>Contact</b> page ke through humse baat kar sakte hain.
-        </p>
+        <p>We use cookies to enhance your experience. You can disable cookies in your browser settings.</p>
+        <h3>4. Contact Us</h3>
+        <p>For any questions regarding privacy, please contact us through the <b>Contact</b> page.</p>
     </section>
-
-    <footer>
-        <p>© 2026 Unique Piece India. All Rights Reserved.</p>
-    </footer>
-    
+    <footer><p>© 2026 Unique Piece India. All Rights Reserved.</p></footer>
 </body>
 </html>
