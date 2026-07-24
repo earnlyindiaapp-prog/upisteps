@@ -1,24 +1,135 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - Unique Piece India</title>
-<style>
-body{font-family:Arial; padding:20px; line-height:1.8; max-width:900px; margin:auto; background:#f9f9f9}
-h1{color:#4CAF50; text-align:center}
-.container{background:white; padding:30px; border-radius:10px}
-a{display:inline-block; margin-top:20px; color:#4CAF50; text-decoration:none}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>About Us - Unique Piece India</title>
+
+    <style>
+        /* Coin Canvas Styling */
+        #coin-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body {
+            background-color: #0d0d11;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            color: #00f5ff;
+            text-shadow: 0 0 10px #00f5ff;
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px;
+            background: #1a1a24;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #00f5ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 5px #00f5ff;
+        }
+
+        #about {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        #about h2 {
+            color: #00f5ff;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px #00f5ff;
+        }
+
+        #about p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        #about b {
+            color: #00f5ff;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: #1a1a24;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<h1>About Us</h1>
-<p><b>Unique Piece India</b> ka mission hai logon ko sehatmand rakhna aur saath me ghar baithe earning ka mauka dena.</p>
-<p>Humara app steps count karke, daily tasks karke aur dosto ko refer karke paise kamane me madad karta hai. 100% safe, free aur fast payout.</p>
-<p>Humara vishwas: Chote steps = Badi kamai</p>
-<p>Email: support@upisteps.in</p>
-<a href="index.html">← Home pe wapas jao</a>
-</div>
+    <canvas id="coin-canvas"></canvas>
+
+    <header>
+        <h1>Unique Piece India</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Unique Piece India</h2>
+        <p>
+            Unique Piece India ek aisa platform hai jahan hum aapko laate hain <b>asli earning methods</b>, 
+            <b>digital tips</b> aur <b>online business ke raaz</b>.
+        </p>
+        <p>
+            Hamara mission hai har student, freelancer aur ghar baithe kam karne wale ko sikhana 
+            ki internet se paise kaise kamaye bina kisi fraud ya scam ke.
+        </p>
+        <p>
+            Yahan aapko milenge <b>100% genuine guides</b>, <b>step-by-step tutorials</b> aur 
+            <b>latest earning apps</b> ke reviews. Humara goal simple hai - <b>Aapko financially free banana</b>.
+        </p>
+        <p>
+            2024 me shuru hua ye safar aaj hazaron logon tak pahunch chuka hai. 
+            Hum har din naye content ke saath aate hain taaki aap kisi se piche na raho.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Unique Piece India. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
