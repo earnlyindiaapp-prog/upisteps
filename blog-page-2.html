@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Page 2 | UniquePiece</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background:#050510; 
+    color:#e0e0e0; 
+    line-height:1.7; 
+}
+header { 
+    text-align:center; 
+    padding:60px 20px; 
+    background:#0a0a15; 
+    border-bottom:1px solid #00d4ff; 
+}
+header h1 { 
+    font-size:42px; 
+    margin:0 0 10px 0; 
+    font-weight:800;
+}
+header h1 span:first-child { color:#ffffff; }
+header h1 span:last-child { 
+    background:linear-gradient(90deg, #00d4ff, #0077ff); 
+    -webkit-background-clip:text; 
+    -webkit-text-fill-color:transparent; 
+    background-clip:text;
+}
+header p { color:#aaa; font-size:16px; }
+.container { 
+    max-width:900px; 
+    margin:50px auto; 
+    padding:0 20px; 
+}
+.blog-card { 
+    background:#0a0a15; 
+    border:1px solid #1a1a2e; 
+    border-radius:15px; 
+    padding:35px; 
+    margin-bottom:35px; 
+    transition:0.3s;
+}
+.blog-card:hover { border-color:#00d4ff; }
+.blog-card h3 { 
+    color:#00d4ff; 
+    font-size:24px; 
+    margin-top:0; 
+    margin-bottom:15px; 
+    font-weight:700;
+}
+.blog-card p { 
+    font-size:18px; 
+    color:#cccccc; 
+    margin-bottom:20px; 
+}
+.btn-download { 
+    background:linear-gradient(90deg, #00d4ff, #0077ff); 
+    color:#000; 
+    padding:14px 32px; 
+    border-radius:18px; 
+    text-decoration:none; 
+    font-weight:800; 
+    font-size:16px; 
+    display:inline-block; 
+    box-shadow:0 0 15px rgba(0, 212, 255, 0.3);
+    transition:0.3s;
+}
+.btn-download:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(0, 212, 255, 0.5); }
+.pagination { 
+    text-align:center; 
+    margin:60px 0 40px 0; 
+}
+.pagination a { 
+    padding:12px 20px; 
+    background:#0a0a15; 
+    color:#00d4ff; 
+    border:1px solid #00d4ff; 
+    border-radius:8px; 
+    text-decoration:none; 
+    margin:0 5px; 
+    font-weight:600; 
+    display:inline-block;
+    transition:0.3s;
+}
+.pagination a:hover { background:#1a1a2e; }
+.pagination a.active { 
+    background:linear-gradient(90deg, #00d4ff, #0077ff); 
+    color:#000; 
+    border:none; 
+    font-weight:800;
+}
+.subscribe-box { 
+    text-align:center; 
+    background:#0a0a15; 
+    border:1px solid #1a1a2e; 
+    border-radius:15px; 
+    padding:40px 30px; 
+    margin:50px 0;
+}
+.subscribe-box h3 { color:#00d4ff; font-size:26px; margin-bottom:10px; }
+.subscribe-box p { color:#aaa; margin-bottom:20px; }
+.subscribe-box input { 
+    padding:14px; 
+    width:60%; 
+    max-width:350px;
+    background:#1a1a2e; 
+    border:1px solid #00d4ff; 
+    color:#fff; 
+    border-radius:8px; 
+    outline:none;
+}
+.subscribe-box button { 
+    padding:14px 24px; 
+    background:linear-gradient(90deg, #00d4ff, #0077ff); 
+    color:#000; 
+    border:none; 
+    border-radius:8px; 
+    font-weight:700; 
+    margin-left:10px; 
+    cursor:pointer;
+}
+.back-btn { 
+    color:#00d4ff; 
+    text-decoration:none; 
+    font-weight:600; 
+    display:inline-block; 
+    margin-top:20px; 
+    font-size:16px;
+}
+.back-btn:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
 
+<header>
+    <h1><span>Unique</span><span>Piece</span></h1>
+    <p>Blog - Page 2</p>
+</header>
+
+<div class="container">
+
+    <!-- BLOG 11 -->
+    <div class="blog-card">
+        <h3>Blog 11: Best Earning App 2026</h3>
+        <p>Ye app se daily $50-$100 kama sakte ho. 100% working trick ke sath step by step guide...</p>
+        <a href="blog-post-11.html" class="btn-download">Read More</a>
+    </div>
+
+    <!-- BLOG 12 -->
+    <div class="blog-card">
+        <h3>Blog 12: How To Earn $100 Daily</h3>
+        <p>Without investment paise kaise kamaye. 5 secret method jo koi nahi batayega...</p>
+        <a href="blog-post-12.html" class="btn-download">Read More</a>
+    </div>
+
+    <!-- BLOG 13 se 20 tak aise hi copy kar lena. Title aur link change karte rehna -->
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+        <a href="blog.html">← Previous</a>
+        <a href="blog.html">1</a>
+        <a href="blog-page-2.html" class="active">2</a>
+        <a href="blog-page-3.html">3</a>
+        <a href="blog-page-3.html">Next →</a>
+    </div>
+
+    <!-- SUBSCRIBE BOX -->
+    <div class="subscribe-box">
+        <h3>Get More Brutal Truths</h3>
+        <p>Join 1000+ people getting weekly no-BS lessons</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+
+</div>
+</body>
+</html>
