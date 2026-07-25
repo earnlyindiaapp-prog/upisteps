@@ -525,9 +525,22 @@ section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; m
             <span>Insights</span>
             <h2>Latest Expert Guides & Articles</h2>
         </div>
-        <div class="blog-grid" id="blogGridContainer">
-            <!-- Dynamic 22 Blogs Rendered -->
+        <div class="blog-grid" id="blogGridContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 10px 0;">
+    <!-- Card 1 -->
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <h3 style="color: #fff; font-size: 18px; margin-bottom: 10px;">20 Brutal Truths Nobody Will Tell You</h3>
+        <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Real life lessons about money, success, and personal growth.</p>
+        <a href="blog.html" style="color: #00d4ff; text-decoration: none; font-weight: bold;">Read Guide &rarr;</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <h3 style="color: #fff; font-size: 18px; margin-bottom: 10px;">Mastering Daily Fitness Habits</h3>
+        <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Simple ways to stay active and achieve daily fitness milestones.</p>
+        <a href="blog.html" style="color: #00d4ff; text-decoration: none; font-weight: bold;">Read Guide &rarr;</a>
+    </div>
         </div>
+      
     </section>
 
     <!-- FAQ Section -->
@@ -823,10 +836,10 @@ function closeSupportModal() {
 const legalDocs = {
     terms: `
         <h1>Terms & Conditions</h1>
-        <p>Welcome to Earnify India. By accessing our website, interacting with our fitness content, or using the "Earn Steps AI" platform, you agree to comply with and be bound by the following comprehensive terms and conditions.</p>
+        <p>Welcome to Unique Piece India. By accessing our website, interacting with our fitness content, or using the "Earn Steps " platform, you agree to comply with and be bound by the following comprehensive terms and conditions.</p>
         
         <h2>1. Platform Nature & Scope</h2>
-        <p>"Earn Steps AI" is strictly the brand name of our website and fitness gamification framework. We operate entirely as an independent health tracking and lifestyle rewards initiative. We are NOT a payment gateway, banking entity, digital wallet, or financial transaction provider. All rewards, points, or EI coins distributed within the platform hold virtual value for gamification and wellness encouragement only.</p>
+        <p>"Earn Steps " is strictly the brand name of our website and fitness gamification framework. We operate entirely as an independent health tracking and lifestyle rewards initiative. We are NOT a payment gateway, banking entity, digital wallet, or financial transaction provider. All rewards, points, or EI coins distributed within the platform hold virtual value for gamification and wellness encouragement only.</p>
         
         <h2>2. User Accounts & Fair Play</h2>
         <p>Users must provide accurate profile details when registering. Any attempt to use automated scripts, device shakers, or artificial bot activity to manipulate step counts will result in immediate suspension of account privileges and forfeiture of accumulated virtual rewards.</p>
@@ -836,7 +849,7 @@ const legalDocs = {
     `,
     privacy: `
         <h1>Privacy Policy</h1>
-        <p>At Earnify India, we respect your privacy regarding any data we collect across our website and the Earn Steps AI fitness ecosystem.</p>
+        <p>At Unique Piece India, we respect your privacy regarding any data we collect across our website and the Earn Steps  fitness ecosystem.</p>
         
         <h2>1. Information We Collect</h2>
         <p>We collect basic device motion statistics, step counts, and activity metrics solely for the purpose of calculating physical fitness milestones and awarding virtual EI coins. We do not collect sensitive financial records, banking passwords, or government identification documents.</p>
@@ -846,10 +859,10 @@ const legalDocs = {
     `,
     disclaimer: `
         <h1>Disclaimer</h1>
-        <p><strong>Important Clarification:</strong> "Earn Steps AI" is exclusively the name of our website and fitness application framework. We are an independent health-tech initiative and have no association, affiliation, endorsement, or partnership with NPCI (National Payments Corporation of India), UPI systems, or any banking institution.</p>
+        <p><strong>Important Clarification:</strong> "Earn Steps " is exclusively the name of our website and fitness application framework. We are an independent health-tech initiative and have no association, affiliation, endorsement, or partnership with NPCI (National Payments Corporation of India), UPI systems, or any banking institution.</p>
         
         <h2>1. Health & Wellness Notice</h2>
-        <p>The fitness tips, step tracking metrics, and wellness guides provided on Earnify India are intended solely for general motivational and educational purposes. Always consult a qualified medical professional before undertaking any strenuous physical exercise routine.</p>
+        <p>The fitness tips, step tracking metrics, and wellness guides provided on Unique Piece India are intended solely for general motivational and educational purposes. Always consult a qualified medical professional before undertaking any strenuous physical exercise routine.</p>
  
 
         <h2>Conclusion – Kya Karna Hai?</h2>
@@ -872,7 +885,7 @@ const legalDocs = {
 
   <!-- BLOG 2 -->
   <article style="margin:50px 0; padding:30px; background:#111; border-radius:12px; border:1px solid #222">
-    <h2 style="color:#4CAF50">How Earn Steps AI is Revolutionizing Daily Fitness</h2>
+    <h2 style="color:#4CAF50">How Earn Steps is Revolutionizing Daily Fitness</h2>
     <p style="color:#aaa; font-size:14px">Published on: 20 July 2026</p>
     <p>Track your steps, complete smart activity steps, and convert your everyday movement into exciting digital rewards using our advanced fitness and gamification framework...
     <br><br><b>The Psychology Behind Gamified Health Tracking:</b> Human psychology responds remarkably well to small achievements.
@@ -1148,6 +1161,47 @@ function returnToMainView() {
       render();
     }
   });
+  function toggleFaq(element) {
+    const answer = element.querySelector('.faq-answer-view');
+    if (answer) {
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+        } else {
+            answer.style.display = "block";
+        }
+    }
+  }
+  
 </script>
+
+<script>
+// FAQ Accordion Function
+function toggleFaq(el) {
+    el.classList.toggle("active");
+}
+
+// Modal Popup Function
+function openSupportModal(type) {
+    const popup = document.getElementById("supportPopup");
+    const title = document.getElementById("popupTitle");
+    const text = document.getElementById("popupText");
+
+    if (type === 'download') {
+        if (title) title.innerText = "Download Earn Steps AI";
+        if (text) text.innerText = "The official Unique Piece India Android & iOS app package is ready. Coming Soon on Play Store!";
+    } else if (type === 'sync') {
+        if (title) title.innerText = "Sync & Claim Rewards";
+        if (text) text.innerText = "Please open the Earn Steps AI mobile application to sync your live sensor data.";
+    }
+    if (popup) popup.style.display = "flex";
+}
+
+function closeSupportModal() {
+    const popup = document.getElementById("supportPopup");
+    if (popup) popup.style.display = "none";
+}
+</script>
+
 </body>
 </html>
+  
