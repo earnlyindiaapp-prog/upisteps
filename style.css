@@ -1283,3 +1283,9 @@ body {
 .carousel-header-box .section-desc {
     color: #94a3b8 !important;
 }
+
+/* --- COMPLETE TRANSPARENT CARD FIX --- */
+.scroll-card {
+    background: transparent !important;
+    box-shadow: none !important;
+}
