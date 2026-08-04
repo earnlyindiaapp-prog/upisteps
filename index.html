@@ -646,16 +646,8 @@
             </div>
         </div>
     </footer>
-<script>
-    function toggleMobileMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        const menuBtn = document.getElementById('menuToggle');
-        navLinks.classList.toggle('active');
-        menuBtn.classList.toggle('open');
-    }
- </script>
-           <script>
-        // Existing Mobile Menu Function
+    <script>
+        // 1. Mobile Menu Toggle
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
             const menuBtn = document.getElementById('menuToggle');
@@ -663,28 +655,35 @@
             menuBtn.classList.toggle('open');
         }
 
-        // AUTO SCROLL CAROUSEL LOGIC
+        // 2. Ultra-Smooth Infinite Auto Scroll
         const carousel = document.getElementById('autoCarousel');
-        let scrollAmount = 0;
-        let isHovered = false;
-
-        carousel.addEventListener('mouseenter', () => isHovered = true);
-        carousel.addEventListener('mouseleave', () => isHovered = false);
-        carousel.addEventListener('touchstart', () => isHovered = true);
-        carousel.addEventListener('touchend', () => isHovered = false);
-
-        function autoScroll() {
-            if (!isHovered && carousel) {
-                carousel.scrollLeft += 1.2; // Smooth Speed
-                if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 5)) {
-                    carousel.scrollLeft = 0; // Loop back to start smoothly
+        
+        function startAutoScroll() {
+            if (!carousel) return;
+            
+            let scrollSpeed = 1; // Smooth scrolling speed
+            
+            function scrollLoop() {
+                carousel.scrollLeft += scrollSpeed;
+                
+                // Loop back to start smoothly when reaching the end
+                if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 2)) {
+                    carousel.scrollLeft = 0;
                 }
+                
+                requestAnimationFrame(scrollLoop);
             }
+            
+            requestAnimationFrame(scrollLoop);
         }
 
-        setInterval(autoScroll, 20); // 50fps Smooth Scroll
+        // Start auto scroll on page load
+        window.addEventListener('load', () => {
+            startAutoScroll();
+        });
     </script>
-
+    
+    
 </body>
 </html>
 
