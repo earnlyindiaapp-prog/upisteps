@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - UPI Steps</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-content {
+            padding: 60px 0;
+            background: #ffffff;
+            color: #1e293b;
+        }
+        .page-content h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+        .page-content p.subtitle {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .contact-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 25px;
+        }
+        .contact-card h3 {
+            font-size: 18px;
+            color: #184e49;
+            margin-bottom: 10px;
+        }
+        .contact-card p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+        }
+        .contact-form {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #184e49;
+        }
+        .btn-submit {
+            background: #184e49;
+            color: #ffffff;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #0d9488;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" style="background: #184e49; padding: 20px 0;">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">UPI<span class="logo-accent" style="color: #2dd4bf;">STEPS</span></a>
+            <div class="nav-right">
+                <a href="index.html" class="btn-glass-pill">← Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="page-content">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p class="subtitle">Have a question or feedback? We’d love to hear from you.</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Get in Touch</h3>
+                    <p>We are available to answer queries related to our tutorials, technical guides, or potential collaboration opportunities.</p>
+                    <br>
+                    <p><strong>Company:</strong> Unique Piece Studio Private Limited</p>
+                    <p><strong>Email:</strong> support@upisteps.in</p>
+                    <p><strong>Website:</strong> upisteps.in</p>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Unique Piece Studio Private Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
