@@ -1624,21 +1624,313 @@ body {
     }
 }
 
-/* --- PROFESSIONAL HERO & PHONE MOCKUP STYLES --- */
+/* --- PROFESSIONAL HANDHELD PHONE MOCKUP CSS --- */
 .hero-section-pro {
-    background: linear-gradient(180deg, #070a12 0%, #0d1b2a 100%) !important;
-    position: relative !important;
-    overflow: hidden !important;
-    padding-top: 40px !important;
+    background: linear-gradient(180deg, #070f1a 0%, #0c1c2e 100%);
+    padding: 50px 20px 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-main-title {
-    font-family: inherit !important;
+.hero-container-main {
+    max-width: 850px;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .phone-mockup-wrapper {
-        max-width: 100% !important;
-        padding: 0 10px !important;
+.hero-title-main {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.hero-desc-main {
+    color: #94a3b8;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 580px;
+    margin: 0 auto 30px auto;
+}
+
+.hero-main-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 12px 30px rgba(15, 118, 110, 0.4);
+}
+
+.hero-btn-sub {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Stage & Phone Sizing */
+.handheld-stage {
+    position: relative;
+    max-width: 380px;
+    margin: 40px auto 0 auto;
+}
+
+.real-phone-frame {
+    background: #1e293b;
+    border-radius: 50px;
+    padding: 14px;
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.65), inset 0 0 15px rgba(255, 255, 255, 0.1);
+    border: 3px solid #334155;
+    position: relative;
+    z-index: 2;
+}
+
+.real-phone-screen {
+    background: #070d19;
+    border-radius: 38px;
+    overflow: hidden;
+    text-align: left;
+    color: #ffffff;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Phone Internal Layout */
+.phone-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 16px;
+}
+
+.phone-notch {
+    width: 70px;
+    height: 14px;
+    background: #000000;
+    border-radius: 10px;
+}
+
+.app-inner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.app-brand-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-logo-circle {
+    width: 32px;
+    height: 32px;
+    background: #14b8a6;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 11px;
+}
+
+.app-name-tag {
+    font-size: 9px;
+    color: #14b8a6;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.app-user-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.app-live-badge {
+    background: rgba(20, 184, 166, 0.15);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    color: #2dd4bf;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+/* Step Ring inside phone */
+.step-ring-box {
+    background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, rgba(7,13,25,1) 75%);
+    border: 1px solid rgba(20, 184, 166, 0.25);
+    border-radius: 24px;
+    padding: 22px;
+    text-align: center;
+    margin-bottom: 14px;
+    box-shadow: inset 0 0 20px rgba(20, 184, 166, 0.1);
+}
+
+.step-ring-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sr-number {
+    font-size: 34px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+.sr-label {
+    font-size: 11px;
+    color: #14b8a6;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* Stats Grid */
+.app-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.app-stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px;
+    border-radius: 14px;
+}
+
+.as-label {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.as-val {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.as-unit {
+    font-size: 11px;
+    color: #34d399;
+    font-weight: 600;
+}
+
+/* Insight Strip */
+.app-insight-strip {
+    background: rgba(15, 118, 110, 0.12);
+    border: 1px solid rgba(15, 118, 110, 0.25);
+    border-radius: 14px;
+    padding: 12px;
+}
+
+.ais-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: #2dd4bf;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
+}
+
+.ais-text {
+    font-size: 11px;
+    color: #cbd5e1;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Floating Glass Cards Outside Phone */
+.floating-card {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 16px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    text-align: left;
+}
+
+.float-left {
+    top: 30px;
+    left: -35px;
+}
+
+.fc-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: #14b8a6;
+    margin-bottom: 2px;
+}
+
+.fc-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.fc-sub {
+    font-size: 10px;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.fc-desc {
+    font-size: 9px;
+    color: #34d399;
+    margin-top: 2px;
+}
+
+.float-right {
+    top: 160px;
+    right: -35px;
+}
+
+.fc-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fc-icon {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.fc-val-sm {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.fc-desc-sm {
+    font-size: 9px;
+    color: #94a3b8;
+}
+
+@media (max-width: 480px) {
+    .floating-card {
+        display: none; /* Mobile screens par clean rakhne ke liye floating cards hide kiye hain taaki phone bada aur saaf dikhe */
     }
 }
