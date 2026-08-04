@@ -1687,3 +1687,91 @@ footer {
     box-sizing: border-box !important;
 }
 
+/* CLEAN & STABLE CAROUSEL FIX */
+.health-carousel-section {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #090D16;
+    overflow: hidden;
+    clear: both;
+}
+
+.infinite-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.infinite-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+}
+
+.scroll-card {
+    width: 260px !important;
+    height: 380px !important;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #000;
+}
+
+.card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-glass-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, transparent, rgba(12, 20, 33, 0.95));
+    backdrop-filter: blur(10px);
+}
+
+.card-content {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    margin-top: 220px;
+}
+
+.card-content h3 {
+    color: #fff !important;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.card-content p {
+    color: #cbd5e1 !important;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.plus-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* FOOTER SAFETY */
+footer {
+    position: relative;
+    clear: both;
+    width: 100%;
+    z-index: 10;
+}
+    
