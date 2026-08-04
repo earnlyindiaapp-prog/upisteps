@@ -14,69 +14,73 @@
 </head>
 <body>
 
-        <!-- STICKY NAVBAR -->
-    <header class="navbar-sticky" style="background: #070f1a; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 12px 0; position: sticky; top: 0; z-index: 1000;">
-        <div class="container nav-container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;">
+            <!-- STICKY GLASSMORPHISM NAVBAR -->
+    <header class="navbar-sticky" style="background: rgba(7, 15, 26, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 14px 20px; position: sticky; top: 0; z-index: 1000;">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; position: relative;">
             
             <!-- Logo -->
-            <a href="#" class="logo" style="text-decoration: none; font-size: 20px; font-weight: 800; color: #fff;">
-                UPI <span class="logo-accent" style="color: #14b8a6;">STEPS</span>
+            <a href="#" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.5px;">
+                UPI <span style="color: #14b8a6;">STEPS</span>
             </a>
 
             <!-- Desktop Links -->
-            <nav class="nav-links" style="display: none; gap: 24px;">
-                <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px;">How It Works</a>
-                <a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Features</a>
-                <a href="#blogs" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Blogs</a>
-                <a href="#reviews" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Reviews</a>
-                <a href="#faq" style="color: #94a3b8; text-decoration: none; font-size: 14px;">FAQ</a>
+            <nav style="display: none; gap: 24px;" id="desktopNav">
+                <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">How It Works</a>
+                <a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Features</a>
+                <a href="#blogs" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Blogs</a>
+                <a href="#reviews" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Reviews</a>
+                <a href="#faq" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">FAQ</a>
             </nav>
 
-            <!-- Right Side: Hamburger Menu & Sign Up Together -->
-            <div class="nav-right" style="display: flex; align-items: center; gap: 12px;">
-                
-                <!-- 3-Line Mobile Hamburger Button (Ab Sign Up ke paas hai) -->
-                <button class="mobile-menu-toggle" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 8px 10px; border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 4px;">
-                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
-                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
-                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
-                </button>
+            <!-- Right Area: Sign Up & Menu Button -->
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <a href="#app" style="background: #0f766e; color: #fff; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 600;">Sign Up</a>
 
-                <!-- Sign Up Button -->
-                <a href="#app" class="btn-primary-pill" style="background: #0f766e; color: #fff; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 600;">Sign Up</a>
+                <!-- 3-Line to X Toggle Button -->
+                <button id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); width: 40px; height: 40px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; position: relative;">
+                    <span class="bar1" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
+                    <span class="bar2" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
+                    <span class="bar3" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
+                </button>
             </div>
 
         </div>
+
+        <!-- Mobile Dropdown Menu (Glass Effect) -->
+        <div id="mobileMenu" style="position: absolute; top: 100%; left: 0; width: 100%; background: rgba(11, 19, 32, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out, padding 0.3s ease;">
+            <div style="display: flex; flex-direction: column; padding: 0 20px;">
+                <a href="#how-it-works" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">How It Works</a>
+                <a href="#features" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Features</a>
+                <a href="#blogs" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Blogs</a>
+                <a href="#reviews" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Reviews</a>
+                <a href="#faq" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0;">FAQ</a>
+            </div>
+        </div>
     </header>
 
-        <!-- SECTION: CLEAN & FIXED EARN STEP AI HERO -->
-    <section style="background: #070f1a; padding: 60px 20px 80px 20px; text-align: center; position: relative; overflow: hidden;">
+    <!-- GLASSMORPHISM HERO SECTION WITH BIG PHONE -->
+    <section style="background: radial-gradient(circle at top, #0f233c 0%, #070f1a 70%); padding: 50px 16px 80px 16px; text-align: center; position: relative; overflow: hidden;">
         <div style="max-width: 800px; margin: 0 auto;">
             
-            <!-- Main Title -->
             <h1 style="color: #ffffff; font-size: 38px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px;">
                 Track Every Step, <br>Transform Your Health
             </h1>
             
-            <!-- Subtitle -->
             <p style="color: #94a3b8; font-size: 16px; line-height: 1.6; max-width: 580px; margin: 0 auto 30px auto;">
                 Earn Step AI monitors your daily movement with absolute precision, helping you build better fitness habits effortlessly.
             </p>
 
-            <!-- CTA Button -->
             <div style="margin-bottom: 40px;">
                 <a href="#download" style="display: inline-block; background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%); color: #ffffff; font-weight: 700; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-size: 16px; box-shadow: 0 12px 30px rgba(15, 118, 110, 0.4);">Download the App</a>
                 <div style="color: #64748b; font-size: 12px; margin-top: 10px;">*No Credit Card Required</div>
             </div>
 
-            <!-- Big Real Phone Mockup Container -->
+            <!-- Big Glassmorphism Phone Mockup Container -->
             <div style="position: relative; max-width: 360px; margin: 0 auto;">
                 
-                <!-- Phone Frame Outer -->
-                <div style="background: #1e293b; border-radius: 48px; padding: 14px; box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7); border: 3px solid #334155; position: relative; z-index: 2;">
+                <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); border-radius: 48px; padding: 14px; box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7); border: 1px solid rgba(255, 255, 255, 0.15); position: relative; z-index: 2;">
                     
-                    <!-- Phone Screen Inner -->
-                    <div style="background: #070d19; border-radius: 36px; overflow: hidden; text-align: left; color: #ffffff; padding: 18px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="background: rgba(7, 13, 25, 0.9); border-radius: 36px; overflow: hidden; text-align: left; color: #ffffff; padding: 18px; border: 1px solid rgba(255, 255, 255, 0.08);">
                         
                         <!-- Status Bar -->
                         <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #64748b; margin-bottom: 16px;">
@@ -90,7 +94,7 @@
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <div style="width: 32px; height: 32px; background: #14b8a6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px;">ES</div>
                                 <div>
-                                    <div style="font-size: 9px; color: #14b8a6; font-weight: 700; letter-spacing: 0.5px;">EARN STEP AI</div>
+                                    <div style="font-size: 9px; color: #14b8a6; font-weight: 700;">EARN STEP AI</div>
                                     <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Daily Fitness</div>
                                 </div>
                             </div>
@@ -109,17 +113,17 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
                             <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); padding: 12px; border-radius: 14px;">
                                 <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
-                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399; font-weight: 600;">kcal</span></div>
+                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399;">kcal</span></div>
                             </div>
                             <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); padding: 12px; border-radius: 14px;">
                                 <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
-                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399; font-weight: 600;">km</span></div>
+                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399;">km</span></div>
                             </div>
                         </div>
 
                         <!-- Bottom Insight Strip -->
                         <div style="background: rgba(15, 118, 110, 0.12); border: 1px solid rgba(15, 118, 110, 0.25); border-radius: 14px; padding: 12px;">
-                            <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px; letter-spacing: 0.5px;">AI FITNESS INSIGHT</div>
+                            <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px;">AI FITNESS INSIGHT</div>
                             <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
                         </div>
 
@@ -130,7 +134,6 @@
 
         </div>
     </section>
-    
     
     <!-- PHONE JS -->
     <script>
@@ -795,45 +798,27 @@
         </div>
     </footer>
     
-    <!-- INFINITE CAROUSEL & MENU SCRIPT -->
+    <!-- JavaScript for Mobile Menu & X Animation -->
     <script>
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const menuBtn = document.getElementById('menuToggle');
-            if(navLinks) navLinks.classList.toggle('active');
-            if(menuBtn) menuBtn.classList.toggle('open');
-        }
+            const mobileMenu = document.getElementById('mobileMenu');
+            const bar1 = document.querySelector('.bar1');
+            const bar2 = document.querySelector('.bar2');
+            const bar3 = document.querySelector('.bar3');
 
-        // Seamless Infinite Auto-Scroll Loop for Cards
-        const track = document.getElementById('infiniteTrack');
-        if (track) {
-            const cards = Array.from(track.children);
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                track.appendChild(clone);
-            });
-
-            let scrollPos = 0;
-            const speed = 0.8;
-            let isPaused = false;
-
-            track.addEventListener('mouseenter', () => isPaused = true);
-            track.addEventListener('mouseleave', () => isPaused = false);
-            track.addEventListener('touchstart', () => isPaused = true);
-            track.addEventListener('touchend', () => isPaused = false);
-
-            function autoScrollStep() {
-                if (!isPaused) {
-                    scrollPos += speed;
-                    if (scrollPos >= track.scrollWidth / 2) {
-                        scrollPos = 0;
-                    }
-                    track.style.transform = `translateX(-${scrollPos}px)`;
-                }
-                requestAnimationFrame(autoScrollStep);
+            if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
+                mobileMenu.style.maxHeight = '0px';
+                mobileMenu.style.padding = '0 20px';
+                bar1.style.transform = 'none';
+                bar2.style.opacity = '1';
+                bar3.style.transform = 'none';
+            } else {
+                mobileMenu.style.maxHeight = '300px';
+                mobileMenu.style.padding = '20px';
+                bar1.style.transform = 'translateY(8px) rotate(45deg)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
             }
-            requestAnimationFrame(autoScrollStep);
         }
     </script>
 </body>
