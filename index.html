@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- NAVBAR (Pehle Jaisa Clean Look) -->
+
+        <!-- NAVBAR CODE -->
     <header style="background: #070f1a; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 14px 20px; position: sticky; top: 0; z-index: 1000;">
         <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
             
@@ -23,7 +24,7 @@
             </a>
 
             <!-- Desktop Links -->
-            <nav style="display: none; gap: 24px;" id="desktopNav">
+            <nav style="display: none; gap: 24px;">
                 <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px;">How It Works</a>
                 <a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Features</a>
                 <a href="#blogs" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Blogs</a>
@@ -36,7 +37,7 @@
                 <a href="#app" style="background: #0f766e; color: #fff; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 600;">Sign Up</a>
 
                 <!-- 3-Line Menu Button -->
-                <button type="button" onclick="toggleMobileMenu()" aria-label="Menu" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); width: 38px; height: 38px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer;">
+                <button type="button" onclick="toggleMobileMenu()" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); width: 38px; height: 38px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer;">
                     <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
                     <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
                     <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
@@ -55,7 +56,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH WORKING PHONE SCREEN -->
+        <!-- HERO SECTION & PHONE SCREEN CODE -->
     <section style="background: #070f1a; padding: 40px 16px 60px 16px; text-align: center;">
         <div style="max-width: 800px; margin: 0 auto;">
             
@@ -72,7 +73,7 @@
                 <div style="color: #64748b; font-size: 11px; margin-top: 8px;">*No Credit Card Required</div>
             </div>
 
-            <!-- Working Phone Screen Container -->
+            <!-- Phone Screen Container -->
             <div style="position: relative; max-width: 340px; margin: 0 auto; background: #1e293b; border-radius: 40px; padding: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.6); border: 2px solid #334155;">
                 <div style="background: #070d19; border-radius: 30px; overflow: hidden; text-align: left; color: #ffffff; padding: 16px; border: 1px solid rgba(255,255,255,0.06);">
                     
@@ -811,8 +812,7 @@
                 bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
             }
         }
-    
-    <!-- Simple & Guaranteed Working Menu Script -->
+        <!-- JAVASCRIPT CODE -->
     <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -823,5 +823,6 @@
             }
         }
     </script>
+    
 </body>
 </html>
