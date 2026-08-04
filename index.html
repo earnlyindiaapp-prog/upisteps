@@ -20,15 +20,25 @@
             <a href="#" class="logo">
                 UPI<span class="logo-accent">STEPS</span>
             </a>
-            <nav class="nav-links">
+                        <nav class="nav-links">
                 <a href="#how-it-works">How It Works</a>
                 <a href="#features">Features</a>
+                <a href="#blogs">Blogs</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#faq">FAQ</a>
             </nav>
+
+            <!-- ⬇️ 3-LINE MOBILE HAMBURGER BUTTON (यहाँ ऐड करें) ⬇️ -->
+            <button class="mobile-menu-toggle" id="menuToggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <div class="nav-right">
                 <a href="#app" class="btn-primary-pill">Sign Up</a>
             </div>
+            
         </div>
     </header>
 
@@ -520,10 +530,15 @@
             </div>
         </div>
     </footer>
-
-</body>
-</html>
-
+<script>
+    function toggleMobileMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        const menuBtn = document.getElementById('menuToggle');
+        navLinks.classList.toggle('active');
+        menuBtn.classList.toggle('open');
+    }
+</script>
+    
 </body>
 </html>
 
