@@ -1380,29 +1380,32 @@ body {
 /* GUARANTEED HORIZONTAL CAROUSEL FIX */
 .health-carousel-section {
     padding: 80px 0;
-    background-color: #F8FAFC;
+
+/* =========================================================
+   PERFECT iOS GLASSMORPHISM & FULL IMAGE CAROUSEL
+   ========================================================= */
+
+.health-carousel-section {
+    padding: 80px 0;
+    background-color: #090D16; /* Dark Premium BG for Glass contrast */
+    overflow: hidden;
     width: 100%;
-    box-sizing: border-box;
 }
 
-.carousel-header-box {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
+.health-carousel-section .main-heading {
+    color: #FFFFFF !important;
+}
+
+.health-carousel-section .section-desc {
+    color: #94A3B8 !important;
 }
 
 .horizontal-scroll-wrapper {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 20px !important;
-    overflow-x: scroll !important;
-    overflow-y: hidden !important;
-    width: 100% !important;
-    padding: 10px 24px 30px 24px !important;
-    box-sizing: border-box !important;
-    scroll-snap-type: x mandatory;
+    gap: 24px !important;
+    overflow-x: auto !important;
+    padding: 20px 24px 40px 24px !important;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -1410,106 +1413,106 @@ body {
     display: none;
 }
 
+/* CARD CONTAINER */
 .scroll-card {
-    flex: 0 0 280px !important; /* Force fixed width, strictly no squishing */
+    flex: 0 0 280px !important;
     width: 280px !important;
-    height: 400px !important;
-    border-radius: 28px;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    scroll-snap-align: start;
+    height: 420px !important;
+    border-radius: 32px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-end !important;
-    padding: 24px !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    box-sizing: border-box !important;
-    position: relative;
+    padding: 0 !important; /* Padding handled inside content */
+    background: #000000;
 }
 
-/* Background Images directly assigned via CSS class */
-.card-bg-1 { background-image: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80') !important; }
-.card-bg-2 { background-image: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80') !important; }
-.card-bg-3 { background-image: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80') !important; }
-.card-bg-4 { background-image: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80') !important; }
-.card-bg-5 { background-image: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80') !important; }
-.card-bg-6 { background-image: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80') !important; }
+/* FULL IMAGE COVERING WHOLE BOX WITH CORNERS SHOWN */
+.card-bg-img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important; /* Managed by parent .scroll-card */
+}
+
+/* iOS FROSTED MIRROR GLASS OVERLAY AT BOTTOM */
+.card-glass-overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 55% !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(12, 20, 33, 0.75) 40%, rgba(12, 20, 33, 0.95) 100%) !important;
+    backdrop-filter: blur(12px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
+    z-index: 2 !important;
+}
+
+/* CRISP & CLEAR TEXT (NO BLUR, NO DIRTY SHADOW) */
+.card-content {
+    position: relative !important;
+    z-index: 3 !important;
+    padding: 24px !important;
+    text-align: left !important;
+}
 
 .card-content h3 {
     color: #FFFFFF !important;
     font-size: 22px !important;
     font-weight: 800 !important;
-    margin-bottom: 6px !important;
+    margin: 0 0 6px 0 !important;
+    letter-spacing: -0.3px !important;
+    text-shadow: none !important; /* Clean crisp font */
+    filter: none !important;
 }
 
 .card-content p {
-    color: #E2E8F0 !important;
+    color: #CBD5E1 !important;
     font-size: 13px !important;
-    margin-bottom: 16px !important;
+    font-weight: 500 !important;
+    margin: 0 0 16px 0 !important;
     line-height: 1.4 !important;
+    text-shadow: none !important;
+    filter: none !important;
 }
 
+/* PLUS BUTTON WITH iOS GLASS EFFECT */
 .plus-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #FFFFFF;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #FFFFFF !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background 0.3s ease !important;
+}
+
+.plus-btn:hover {
+    background: rgba(255, 255, 255, 0.4) !important;
 }
 
 @media (max-width: 768px) {
     .scroll-card {
         flex: 0 0 250px !important;
         width: 250px !important;
-        height: 370px !important;
+        height: 380px !important;
     }
 }
-
-/* CARD IMAGE & GRADIENT OVERLAY FIX */
-.scroll-card {
-    position: relative !important;
-    overflow: hidden !important;
-    background-color: #0C3832 !important; /* Fallback dark color */
-}
-
-.card-bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(9, 13, 22, 0.95) 15%, rgba(0,0,0,0.2) 100%);
-    z-index: 2;
-}
-
-.card-content {
-    position: relative;
-    z-index: 3 !important;
-}
-
-/* Fallback Vibrant Gradients if image loads slowly */
-.card-gradient-1 { background: linear-gradient(135deg, #1e3c72, #2a5298) !important; }
-.card-gradient-2 { background: linear-gradient(135deg, #0d9488, #115e59) !important; }
-.card-gradient-3 { background: linear-gradient(135deg, #134e4a, #064e3b) !important; }
-.card-gradient-4 { background: linear-gradient(135deg, #312e81, #1e1b4b) !important; }
-.card-gradient-5 { background: linear-gradient(135deg, #831843, #500724) !important; }
-.card-gradient-6 { background: linear-gradient(135deg, #065f46, #022c22) !important; }
+    
