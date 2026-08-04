@@ -14,120 +14,113 @@
 </head>
 <body>
 
-    <!-- STICKY NAVBAR -->
-    <header class="navbar-sticky">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                UPI<span class="logo-accent">STEPS</span>
+        <!-- STICKY NAVBAR -->
+    <header class="navbar-sticky" style="background: #070f1a; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 12px 0; position: sticky; top: 0; z-index: 1000;">
+        <div class="container nav-container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;">
+            
+            <!-- Logo -->
+            <a href="#" class="logo" style="text-decoration: none; font-size: 20px; font-weight: 800; color: #fff;">
+                UPI <span class="logo-accent" style="color: #14b8a6;">STEPS</span>
             </a>
-                        <nav class="nav-links">
-                <a href="#how-it-works">How It Works</a>
-                <a href="#features">Features</a>
-                <a href="#blogs">Blogs</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#faq">FAQ</a>
+
+            <!-- Desktop Links -->
+            <nav class="nav-links" style="display: none; gap: 24px;">
+                <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px;">How It Works</a>
+                <a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Features</a>
+                <a href="#blogs" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Blogs</a>
+                <a href="#reviews" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Reviews</a>
+                <a href="#faq" style="color: #94a3b8; text-decoration: none; font-size: 14px;">FAQ</a>
             </nav>
 
-            <!-- ⬇️ 3-LINE MOBILE HAMBURGER BUTTON (यहाँ ऐड करें) ⬇️ -->
-            <button class="mobile-menu-toggle" id="menuToggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- Right Side: Hamburger Menu & Sign Up Together -->
+            <div class="nav-right" style="display: flex; align-items: center; gap: 12px;">
+                
+                <!-- 3-Line Mobile Hamburger Button (Ab Sign Up ke paas hai) -->
+                <button class="mobile-menu-toggle" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 8px 10px; border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 4px;">
+                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
+                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
+                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
+                </button>
 
-            <div class="nav-right">
-                <a href="#app" class="btn-primary-pill">Sign Up</a>
+                <!-- Sign Up Button -->
+                <a href="#app" class="btn-primary-pill" style="background: #0f766e; color: #fff; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 600;">Sign Up</a>
             </div>
-            
+
         </div>
     </header>
 
-      <!-- SECTION: REALISTIC HANDHELD PHONE MOCKUP HERO -->
-    <section class="hero-section-pro">
-        <div class="container hero-container-main">
+        <!-- SECTION: CLEAN & FIXED EARN STEP AI HERO -->
+    <section style="background: #070f1a; padding: 60px 20px 80px 20px; text-align: center; position: relative; overflow: hidden;">
+        <div style="max-width: 800px; margin: 0 auto;">
             
-            <!-- Headings -->
-            <h1 class="hero-title-main">
+            <!-- Main Title -->
+            <h1 style="color: #ffffff; font-size: 38px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px;">
                 Track Every Step, <br>Transform Your Health
             </h1>
-            <p class="hero-desc-main">
+            
+            <!-- Subtitle -->
+            <p style="color: #94a3b8; font-size: 16px; line-height: 1.6; max-width: 580px; margin: 0 auto 30px auto;">
                 Earn Step AI monitors your daily movement with absolute precision, helping you build better fitness habits effortlessly.
             </p>
 
             <!-- CTA Button -->
-            <div class="hero-btn-wrap">
-                <a href="#download" class="hero-main-btn">Download the App</a>
-                <p class="hero-btn-sub">*No Credit Card Required</p>
+            <div style="margin-bottom: 40px;">
+                <a href="#download" style="display: inline-block; background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%); color: #ffffff; font-weight: 700; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-size: 16px; box-shadow: 0 12px 30px rgba(15, 118, 110, 0.4);">Download the App</a>
+                <div style="color: #64748b; font-size: 12px; margin-top: 10px;">*No Credit Card Required</div>
             </div>
 
-            <!-- Big Handheld Phone Mockup Stage -->
-            <div class="handheld-stage">
+            <!-- Big Real Phone Mockup Container -->
+            <div style="position: relative; max-width: 360px; margin: 0 auto;">
                 
-                <!-- Left Floating Card: Steps Goal -->
-                <div class="floating-card float-left">
-                    <div class="fc-title">🎯 DAILY TARGET</div>
-                    <div class="fc-value">10,000 <span class="fc-sub">steps</span></div>
-                    <div class="fc-desc">Status: On Track</div>
-                </div>
-
-                <!-- Right Floating Card: Live Heart/Pulse -->
-                <div class="floating-card float-right">
-                    <div class="fc-row">
-                        <div class="fc-icon">❤️</div>
-                        <div>
-                            <div class="fc-val-sm">72 bpm</div>
-                            <div class="fc-desc-sm">Live Pulse</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Real Phone Frame Container -->
-                <div class="real-phone-frame">
-                    <div class="real-phone-screen">
+                <!-- Phone Frame Outer -->
+                <div style="background: #1e293b; border-radius: 48px; padding: 14px; box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7); border: 3px solid #334155; position: relative; z-index: 2;">
+                    
+                    <!-- Phone Screen Inner -->
+                    <div style="background: #070d19; border-radius: 36px; overflow: hidden; text-align: left; color: #ffffff; padding: 18px; border: 1px solid rgba(255, 255, 255, 0.08);">
                         
                         <!-- Status Bar -->
-                        <div class="phone-status-bar">
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #64748b; margin-bottom: 16px;">
                             <span>9:41</span>
-                            <div class="phone-notch"></div>
+                            <div style="width: 70px; height: 14px; background: #000000; border-radius: 10px;"></div>
                             <span>5G</span>
                         </div>
 
                         <!-- App Header inside phone -->
-                        <div class="app-inner-header">
-                            <div class="app-brand-box">
-                                <div class="app-logo-circle">ES</div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 32px; height: 32px; background: #14b8a6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px;">ES</div>
                                 <div>
-                                    <div class="app-name-tag">EARN STEP AI</div>
-                                    <div class="app-user-name">Daily Fitness</div>
+                                    <div style="font-size: 9px; color: #14b8a6; font-weight: 700; letter-spacing: 0.5px;">EARN STEP AI</div>
+                                    <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Daily Fitness</div>
                                 </div>
                             </div>
-                            <div class="app-live-badge">ACTIVE</div>
+                            <div style="background: rgba(20, 184, 166, 0.15); border: 1px solid rgba(20, 184, 166, 0.3); color: #2dd4bf; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 12px;">ACTIVE</div>
                         </div>
 
-                        <!-- Central Clean Step Ring View -->
-                        <div class="step-ring-box">
-                            <div class="step-ring-inner">
-                                <span class="sr-number">8,450</span>
-                                <span class="sr-label">Steps Today</span>
+                        <!-- Central Step Ring View -->
+                        <div style="background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, rgba(7,13,25,1) 75%); border: 1px solid rgba(20, 184, 166, 0.25); border-radius: 24px; padding: 22px; text-align: center; margin-bottom: 14px;">
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <span style="font-size: 34px; font-weight: 900; color: #ffffff; letter-spacing: -1px;">8,450</span>
+                                <span style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</span>
                             </div>
                         </div>
 
                         <!-- Mini Stats Grid -->
-                        <div class="app-stats-grid">
-                            <div class="app-stat-card">
-                                <div class="as-label">Calories</div>
-                                <div class="as-val">420 <span class="as-unit">kcal</span></div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); padding: 12px; border-radius: 14px;">
+                                <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
+                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399; font-weight: 600;">kcal</span></div>
                             </div>
-                            <div class="app-stat-card">
-                                <div class="as-label">Distance</div>
-                                <div class="as-val">6.2 <span class="as-unit">km</span></div>
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); padding: 12px; border-radius: 14px;">
+                                <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
+                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399; font-weight: 600;">km</span></div>
                             </div>
                         </div>
 
                         <!-- Bottom Insight Strip -->
-                        <div class="app-insight-strip">
-                            <div class="ais-title">AI FITNESS INSIGHT</div>
-                            <p class="ais-text">Your walking speed increased by 12% today. Keep it up!</p>
+                        <div style="background: rgba(15, 118, 110, 0.12); border: 1px solid rgba(15, 118, 110, 0.25); border-radius: 14px; padding: 12px;">
+                            <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px; letter-spacing: 0.5px;">AI FITNESS INSIGHT</div>
+                            <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
                         </div>
 
                     </div>
@@ -137,6 +130,7 @@
 
         </div>
     </section>
+    
     
     <!-- PHONE JS -->
     <script>
