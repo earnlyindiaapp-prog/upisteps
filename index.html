@@ -790,17 +790,16 @@
         </div>
     </footer>
     
-    <!-- JAVASCRIPT CODE -->
-    <script>
+        <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
-            if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-            } else {
+            // Agar menu abhi hidden hai, toh khol do; nahi toh chupakar band kar do
+            if (menu.style.display === 'none' || menu.style.display === '') {
                 menu.style.setProperty('display', 'flex', 'important');
+            } else {
+                menu.style.setProperty('display', 'none', 'important');
             }
         }
-    </script>
-    
+        </script>  
 </body>
 </html>
