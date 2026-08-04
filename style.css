@@ -1087,6 +1087,8 @@ body {
     will-change: transform !important;
 }
 
+/* --- FULL TRANSPARENT CARDS WITH NO BLUR & NO BLACK SHADE --- */
+
 .scroll-card {
     flex: 0 0 260px !important;
     width: 260px !important;
@@ -1095,9 +1097,8 @@ body {
     border-radius: 24px !important;
     position: relative !important;
     overflow: hidden !important;
-    background: #111827 !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    display: inline-block !important;
+    background: transparent !important; /* कोई ब्लैक या वाइट डिब्बा नहीं, एकदम ट्रांसपेरेंट */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
 .card-bg-img {
@@ -1110,18 +1111,12 @@ body {
     z-index: 1 !important;
 }
 
+/* ब्लर और काला शेड पूरी तरह से हटाने के लिए इसे गायब कर दिया है */
 .card-glass-overlay {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 55% !important;
-    background: linear-gradient(180deg, transparent 0%, rgba(12, 20, 33, 0.85) 50%, rgba(12, 20, 33, 0.98) 100%) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    z-index: 2 !important;
+    display: none !important; 
 }
 
+/* टेक्स्ट अब सीधे इमेज के ऊपर साफ़ दिखेगा बिना किसी ब्लर के */
 .card-content {
     position: absolute !important;
     bottom: 0 !important;
@@ -1130,6 +1125,7 @@ body {
     z-index: 3 !important;
     padding: 20px !important;
     box-sizing: border-box !important;
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.75) 100%) !important; /* सिर्फ टेक्स्ट के पीछे हल्का सा शेड ताकि लिखा हुआ पढ़ा जा सके, इमेज बिल्कुल साफ़ दिखेगी */
 }
 
 .card-content h3 {
@@ -1140,7 +1136,7 @@ body {
 }
 
 .card-content p {
-    color: #cbd5e1 !important;
+    color: #e2e8f0 !important;
     font-size: 12px !important;
     margin: 0 0 12px 0 !important;
 }
@@ -1149,8 +1145,8 @@ body {
     width: 36px !important;
     height: 36px !important;
     border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
     color: #fff !important;
     font-size: 18px !important;
     cursor: pointer !important;
@@ -1158,6 +1154,7 @@ body {
     align-items: center !important;
     justify-content: center !important;
 }
+
 
 /* Responsive for mobile */
 @media (max-width: 768px) {
