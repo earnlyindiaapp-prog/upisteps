@@ -166,13 +166,134 @@
 
         </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- SECTION 3: LATEST ARTICLES (AdSense Primary Content) -->
+    <section class="blogs-section" id="blogs">
         <div class="container">
+            <div class="section-header">
+                <span class="section-tag uppercase">INSIGHTS & GUIDES</span>
+                <h2>Latest Tech & <br><span class="highlight-teal">Gaming Articles</span></h2>
+                <p>Explore verified tutorials, AI tool evaluations, and safe online earning strategies.</p>
+            </div>
+
+            <div class="blogs-grid">
+                <!-- Blog Card 1 -->
+                <article class="blog-card">
+                    <div class="blog-category">AI & Productivity</div>
+                    <h3>Top 5 AI Tools For Content Creators in 2026</h3>
+                    <p>Learn how to utilize cutting-edge AI tools to speed up workflow, automate tasks, and maximize output safely.</p>
+                    <a href="blogs/ai-tools-2026.html" class="blog-link">Read Full Guide →</a>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card">
+                    <div class="blog-category">Gaming Strategy</div>
+                    <h3>Smart Gaming Guide: Safe Execution & Tips</h3>
+                    <p>Essential security rules and performance strategies to protect your data while gaming online.</p>
+                    <a href="blogs/gaming-guide.html" class="blog-link">Read Full Guide →</a>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card">
+                    <div class="blog-category">Earning Insights</div>
+                    <h3>How to Verify Authentic Online Earning Apps</h3>
+                    <p>A step-by-step checklist to evaluate digital earning platforms before spending your time or energy.</p>
+                    <a href="blogs/earning-app-verification.html" class="blog-link">Read Full Guide →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag uppercase">SUPPORT</span>
+                <h2>Frequently Asked, <br><span class="highlight-teal">Clearly Answered</span></h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does UPI Steps work?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>UPI Steps provides tested guides covering AI productivity tools, gaming strategies, and verified online earning concepts in simplified English.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is the platform completely free?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! All resources, articles, and educational guides on UPI Steps are 100% free to read.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Who operates UPI Steps?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>UPI Steps is developed and managed by Unique Piece Studio Private Limited.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">UPI<span class="logo-accent">STEPS</span></a>
+                <p>The definitive AI companion for tech, gaming, and earning guides. Operated by <strong>Unique Piece Studio Private Limited</strong>.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="#features">Features</a>
+                <a href="#blogs">Articles</a>
+                <a href="#faq">FAQ</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal Policies</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <p class="footer-email">support@upisteps.in</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <p>© 2026 Unique Piece Studio Private Limited. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // FAQ Accordion Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    
 
 </body>
 </html>
