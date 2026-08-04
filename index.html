@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Steps - AI Health & Walking Tracker</title>
+    <title>UPI Steps - AI Health & Performance Tracker</title>
     
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -26,18 +27,18 @@
 
         /* STICKY GLASSMORPHISM NAVBAR */
         .navbar-sticky {
-            background: rgba(7, 15, 26, 0.75);
+            background: rgba(7, 15, 26, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 20px;
+            padding: 16px 24px;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -47,7 +48,7 @@
 
         .logo {
             text-decoration: none;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
             color: #fff;
             letter-spacing: -0.5px;
@@ -57,16 +58,15 @@
             color: #14b8a6;
         }
 
-        /* Desktop Links */
         .nav-links-desktop {
             display: none;
-            gap: 24px;
+            gap: 28px;
         }
 
         .nav-links-desktop a {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
             transition: color 0.2s;
         }
@@ -78,66 +78,66 @@
         .nav-right-area {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
         .btn-signup-pill {
             background: #0f766e;
             color: #fff;
-            padding: 8px 20px;
-            border-radius: 20px;
+            padding: 10px 22px;
+            border-radius: 24px;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
+            transition: background 0.2s;
         }
 
-        /* Interactive 3-Line to X Menu Button */
+        .btn-signup-pill:hover {
+            background: #14b8a6;
+        }
+
+        /* Mobile Toggle Button */
         .menu-toggle-btn {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 6px;
             cursor: pointer;
-            position: relative;
         }
 
         .menu-toggle-btn span {
             display: block;
-            width: 20px;
+            width: 22px;
             height: 2px;
             background: #ffffff;
             border-radius: 2px;
             transition: all 0.3s ease;
         }
 
-        /* Animation when menu is active (Turns into X) */
         .menu-toggle-btn.active span:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
         }
-
         .menu-toggle-btn.active span:nth-child(2) {
             opacity: 0;
         }
-
         .menu-toggle-btn.active span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* Mobile Dropdown Menu Drawer with Glass Effect */
+        /* Mobile Dropdown */
         .mobile-dropdown-menu {
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
-            background: rgba(11, 19, 32, 0.95);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(11, 19, 32, 0.98);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
@@ -147,7 +147,7 @@
         }
 
         .mobile-dropdown-menu.open {
-            max-height: 350px;
+            max-height: 400px;
             padding: 20px;
         }
 
@@ -156,55 +156,38 @@
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .mobile-dropdown-menu a:hover {
-            color: #14b8a6;
-        }
-
         @media (min-width: 768px) {
-            .nav-links-desktop {
-                display: flex;
-            }
-            .menu-toggle-btn {
-                display: none;
-            }
-            .mobile-dropdown-menu {
-                display: none !important;
-            }
+            .nav-links-desktop { display: flex; }
+            .menu-toggle-btn { display: none; }
+            .mobile-dropdown-menu { display: none !important; }
         }
 
-        /* GLASSMORPHISM HERO SECTION WITH BIG PHONE */
+        /* HERO SECTION */
         .hero-section {
             background: radial-gradient(circle at top, #0f233c 0%, #070f1a 70%);
-            padding: 50px 16px 80px 16px;
+            padding: 60px 20px 100px 20px;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .hero-title {
-            color: #ffffff;
-            font-size: 38px;
+            font-size: clamp(36px, 5vw, 56px);
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
         .hero-desc {
             color: #94a3b8;
-            font-size: 16px;
+            font-size: clamp(16px, 2vw, 18px);
+            max-width: 640px;
+            margin: 0 auto 35px auto;
             line-height: 1.6;
-            max-width: 580px;
-            margin: 0 auto 30px auto;
         }
 
         .hero-btn {
@@ -212,455 +195,307 @@
             background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
             color: #ffffff;
             font-weight: 700;
-            padding: 16px 40px;
+            padding: 16px 42px;
             border-radius: 40px;
             text-decoration: none;
             font-size: 16px;
             box-shadow: 0 12px 30px rgba(15, 118, 110, 0.4);
+            transition: transform 0.2s;
         }
 
-        .hero-subtext {
-            color: #64748b;
-            font-size: 12px;
-            margin-top: 10px;
+        .hero-btn:hover {
+            transform: translateY(-2px);
         }
 
-        /* Big Phone Mockup Container */
+        /* PHONE MOCKUP */
         .phone-mockup-wrapper {
             position: relative;
-            max-width: 360px;
-            margin: 40px auto 0 auto;
+            max-width: 340px;
+            margin: 50px auto 0 auto;
         }
 
         .phone-frame {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border-radius: 48px;
             padding: 14px;
-            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            position: relative;
-            z-index: 2;
         }
 
         .phone-screen {
-            background: rgba(7, 13, 25, 0.9);
+            background: rgba(7, 13, 25, 0.95);
             border-radius: 36px;
             overflow: hidden;
             text-align: left;
-            color: #ffffff;
-            padding: 18px;
+            padding: 20px;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .phone-status {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 11px;
-            color: #64748b;
-            margin-bottom: 16px;
+        /* SECTION STYLES */
+        .section-padding {
+            padding: 90px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .phone-notch {
-            width: 70px;
-            height: 14px;
-            background: #000000;
-            border-radius: 10px;
-        }
-
-        .app-header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .app-logo-badge {
-            width: 32px;
-            height: 32px;
-            background: #14b8a6;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 11px;
-        }
-
-        .step-ring-box {
-            background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, rgba(7,13,25,1) 75%);
-            border: 1px solid rgba(20, 184, 166, 0.25);
-            border-radius: 24px;
-            padding: 22px;
+        .section-header {
             text-align: center;
-            margin-bottom: 14px;
+            margin-bottom: 60px;
         }
 
-        .stats-grid {
+        .section-tag {
+            color: #14b8a6;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        /* HOW IT WORKS / CARDS GRID */
+        .grid-2 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 14px;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
-        .stat-card {
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 35px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(20, 184, 166, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .dark-card {
+            background: #061525;
+            border-color: rgba(20, 184, 166, 0.2);
+        }
+
+        /* GLASMORPHIC FLOATING CARD / WIDGETS */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        /* TESTIMONIALS & BLOGS */
+        .testimonials-grid, .blogs-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .testimonials-grid, .blogs-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .card-item {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 12px;
-            border-radius: 14px;
-        }
-
-        .insight-box {
-            background: rgba(15, 118, 110, 0.12);
-            border: 1px solid rgba(15, 118, 110, 0.25);
-            border-radius: 14px;
-            padding: 12px;
-        }
-
-        /* Phone Tab Navigation */
-        .phone-nav-tabs {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 16px;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 4px;
-            border-radius: 12px;
-        }
-
-        .p-nav-btn {
-            flex: 1;
-            background: transparent;
-            border: none;
-            color: #94a3b8;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 8px 4px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
-
-        .p-nav-btn.active {
-            background: #0f766e;
-            color: #fff;
-        }
-
-        /* Additional Section Styles */
-        .section-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .blogs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 30px;
-        }
-
-        .blog-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            padding: 24px;
-            transition: transform 0.2s;
+            padding: 28px;
         }
 
-        .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(20, 184, 166, 0.4);
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-                                
-    <!-- STICKY GLASSMORPHISM NAVBAR -->
+
+    <!-- NAVBAR -->
     <header class="navbar-sticky">
         <div class="nav-container">
-            <!-- Logo -->
-            <a href="#" class="logo">
-                UPI <span class="logo-accent">STEPS</span>
-            </a>
+            <a href="#" class="logo">UPI <span class="logo-accent">STEPS</span></a>
 
-            <!-- Desktop Links -->
-            <nav class="nav-links-desktop" id="desktopNav">
+            <nav class="nav-links-desktop">
                 <a href="#how-it-works">How It Works</a>
                 <a href="#features">Features</a>
+                <a href="#analytics">Analytics</a>
                 <a href="#blogs">Blogs</a>
                 <a href="#reviews">Reviews</a>
-                <a href="#faq">FAQ</a>
             </nav>
 
-            <!-- Right Area: Sign Up & Menu Button -->
             <div class="nav-right-area">
-                <a href="#app" class="btn-signup-pill">Sign Up</a>
-
-                <!-- 3-Line to X Toggle Button -->
-                <button id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="menu-toggle-btn">
-                    <span class="bar1"></span>
-                    <span class="bar2"></span>
-                    <span class="bar3"></span>
+                <a href="#signup" class="btn-signup-pill">Sign Up</a>
+                <button class="menu-toggle-btn" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Dropdown Menu (Glass Effect) -->
-        <div id="mobileMenu" class="mobile-dropdown-menu">
+        <div class="mobile-dropdown-menu" id="mobileMenu">
             <a href="#how-it-works" onclick="toggleMobileMenu()">How It Works</a>
             <a href="#features" onclick="toggleMobileMenu()">Features</a>
+            <a href="#analytics" onclick="toggleMobileMenu()">Analytics</a>
             <a href="#blogs" onclick="toggleMobileMenu()">Blogs</a>
             <a href="#reviews" onclick="toggleMobileMenu()">Reviews</a>
-            <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
         </div>
     </header>
 
-    <!-- GLASSMORPHISM HERO SECTION WITH BIG PHONE -->
+    <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="hero-content">
-            
-            <h1 class="hero-title">
-                Track Every Step, <br>Transform Your Health
-            </h1>
-            
-            <p class="hero-desc">
-                Earn Step AI monitors your daily movement with absolute precision, helping you build better fitness habits effortlessly.
-            </p>
-
-            <div style="margin-bottom: 30px;">
-                <a href="#download" class="hero-btn">Download the App</a>
-                <div class="hero-subtext">*No Credit Card Required</div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 class="hero-title">Track Every Step, <br><span class="logo-accent">Transform Your Health</span></h1>
+            <p class="hero-desc">Earn Step AI monitors your daily movement, sleep recovery, and performance metrics with absolute precision, helping you build better wellness habits.</p>
+            <div>
+                <a href="#download" class="hero-btn">Start For Free</a>
+                <div style="color: #64748b; font-size: 13px; margin-top: 12px;">*No Credit Card Required</div>
             </div>
 
-            <!-- Big Glassmorphism Phone Mockup Container -->
+            <!-- Phone Mockup with Glitch/Glass Effect -->
             <div class="phone-mockup-wrapper">
                 <div class="phone-frame">
                     <div class="phone-screen">
-                        
-                        <!-- Status Bar -->
-                        <div class="phone-status">
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #64748b; margin-bottom: 16px;">
                             <span>9:41</span>
-                            <div class="phone-notch"></div>
+                            <div style="width: 60px; height: 12px; background: #000; border-radius: 8px;"></div>
                             <span>5G</span>
                         </div>
-
-                        <!-- App Header inside phone -->
-                        <div class="app-header-inner">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div class="app-logo-badge">ES</div>
-                                <div>
-                                    <div style="font-size: 9px; color: #14b8a6; font-weight: 700;">EARN STEP AI</div>
-                                    <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Daily Fitness</div>
-                                </div>
-                            </div>
-                            <div style="background: rgba(20, 184, 166, 0.15); border: 1px solid rgba(20, 184, 166, 0.3); color: #2dd4bf; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 12px;">ACTIVE</div>
+                        <div style="background: radial-gradient(circle, rgba(20,184,166,0.2) 0%, rgba(7,13,25,1) 75%); border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 20px; padding: 20px; text-align: center; margin-bottom: 15px;">
+                            <span style="font-size: 32px; font-weight: 900; color: #fff;">8,450</span>
+                            <div style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</div>
                         </div>
-
-                        <!-- Interactive Phone Tabs -->
-                        <div class="phone-nav-tabs">
-                            <button class="p-nav-btn active" onclick="switchPhoneTab(this, 'steps')">Steps</button>
-                            <button class="p-nav-btn" onclick="switchPhoneTab(this, 'score')">Score</button>
-                            <button class="p-nav-btn" onclick="switchPhoneTab(this, 'ai')">AI Insights</button>
+                        <div class="glass-box" style="padding: 12px;">
+                            <div style="font-size: 10px; color: #2dd4bf; font-weight: 700;">AI INSIGHT</div>
+                            <p style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">Walking consistency is up by 14% this week.</p>
                         </div>
-
-                        <!-- Dynamic Content Box inside Phone -->
-                        <div id="phone-dynamic-content">
-                            <!-- Default Tab: Steps -->
-                            <div class="step-ring-box">
-                                <span style="font-size: 34px; font-weight: 900; color: #ffffff; letter-spacing: -1px;">8,450</span>
-                                <div style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</div>
-                            </div>
-
-                            <div class="stats-grid">
-                                <div class="stat-card">
-                                    <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
-                                    <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399;">kcal</span></div>
-                                </div>
-                                <div class="stat-card">
-                                    <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
-                                    <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399;">km</span></div>
-                                </div>
-                            </div>
-
-                            <div class="insight-box">
-                                <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px;">AI FITNESS INSIGHT</div>
-                                <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- BLOGS SECTION EXAMPLE -->
-    <section id="blogs" class="section-container">
-        <div style="text-align: center;">
-            <span style="color: #14b8a6; font-size: 12px; font-weight: 700; text-transform: uppercase;">KNOWLEDGE HUB</span>
-            <h2 style="font-size: 30px; font-weight: 800; margin-top: 8px;">Latest Blogs & Guides</h2>
-            <p style="color: #94a3b8; font-size: 15px; margin-top: 6px;">Explore deep dives into gaming ping reduction, AI prompt optimization, and safe app monetization.</p>
+    <!-- HOW IT WORKS SECTION -->
+    <section class="section-padding" id="how-it-works">
+        <div class="section-header">
+            <span class="section-tag">How It Works</span>
+            <h2 class="section-title">Turning Complexity Into <span class="logo-accent">Clarity</span></h2>
         </div>
+        <div class="grid-2">
+            <div class="feature-card">
+                <h3 style="font-size: 22px; margin-bottom: 12px;">1. Drop Your Reports</h3>
+                <p style="color: #94a3b8; line-height: 1.6;">Upload health reports, fitness trackers or connect wearables seamlessly and let our AI engine handle the raw analysis.</p>
+            </div>
+            <div class="feature-card dark-card">
+                <h3 style="font-size: 22px; margin-bottom: 12px;">2. Real-Time Deep Analysis</h3>
+                <p style="color: #94a3b8; line-height: 1.6;">Our algorithms break down complex biological patterns to highlight bottlenecks, health risks, and daily improvements.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- FEATURES SECTION -->
+    <section class="section-padding" id="features" style="background: rgba(255,255,255,0.01);">
+        <div class="section-header">
+            <span class="section-tag">Features</span>
+            <h2 class="section-title">Built for Peak <span class="logo-accent">Performance</span></h2>
+        </div>
+        <div class="grid-2">
+            <div class="feature-card">
+                <h3>Sleep & Recovery Tracking</h3>
+                <p style="color: #94a3b8; margin-top: 10px;">Monitor sleep stages, resting heart rate, and recovery scores to wake up with maximum energy.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Smart Habit Optimization</h3>
+                <p style="color: #94a3b8; margin-top: 10px;">Receive hyper-personalized daily action items tailored strictly to your biological data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section-padding" id="reviews">
+        <div class="section-header">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title">Trusted by <span class="logo-accent">Creators & Gamers</span></h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="card-item">
+                <p style="font-style: italic; color: #cbd5e1; margin-bottom: 16px;">"The daily step metrics and recovery scores optimized my energy levels completely."</p>
+                <h4 style="font-size: 15px; color: #fff;">Rohit Sharma</h4>
+                <span style="font-size: 12px; color: #14b8a6;">Software Engineer</span>
+            </div>
+            <div class="card-item">
+                <p style="font-style: italic; color: #cbd5e1; margin-bottom: 16px;">"Clean interface, highly accurate latency tracking, and zero system lag. Incredible work!"</p>
+                <h4 style="font-size: 15px; color: #fff;">Aman Kumar</h4>
+                <span style="font-size: 12px; color: #14b8a6;">Esports Creator</span>
+            </div>
+            <div class="card-item">
+                <p style="font-style: italic; color: #cbd5e1; margin-bottom: 16px;">"A must-have tool for anyone looking to bridge the gap between fitness and tech lifestyle."</p>
+                <h4 style="font-size: 15px; color: #fff;">Neha Verma</h4>
+                <span style="font-size: 12px; color: #14b8a6;">AI Researcher</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOGS SECTION -->
+    <section class="section-padding" id="blogs" style="background: rgba(255,255,255,0.01);">
+        <div class="section-header">
+            <span class="section-tag">Knowledge Hub</span>
+            <h2 class="section-title">Latest Blogs & <span class="logo-accent">Guides</span></h2>
+        </div>
         <div class="blogs-grid">
-            <div class="blog-card">
-                <span style="color: #14b8a6; font-size: 11px; font-weight: 700;">GAMING TECH</span>
-                <h3 style="font-size: 18px; font-weight: 700; margin: 8px 0;">How to Reduce Input Lag in BGMI & PC Esports</h3>
-                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5;">A step-by-step audit on packet loss, frame time consistency, and background RAM management.</p>
+            <div class="card-item">
+                <span style="font-size: 11px; color: #14b8a6; font-weight: 700;">GAMING TECH</span>
+                <h3 style="font-size: 18px; margin: 10px 0;">How to Reduce Input Lag in Competitive Play</h3>
+                <p style="color: #94a3b8; font-size: 14px;">A step-by-step optimization manual for packet loss and memory management.</p>
             </div>
-            <div class="blog-card">
-                <span style="color: #14b8a6; font-size: 11px; font-weight: 700;">AI WORKFLOWS</span>
-                <h3 style="font-size: 18px; font-weight: 700; margin: 8px 0;">Maximizing Token Efficiency in LLM Models</h3>
-                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5;">Learn how to structure complex prompts to cut latency in half while improving accuracy.</p>
+            <div class="card-item">
+                <span style="font-size: 11px; color: #14b8a6; font-weight: 700;">AI WORKFLOWS</span>
+                <h3 style="font-size: 18px; margin: 10px 0;">Maximizing Token Efficiency in LLM Models</h3>
+                <p style="color: #94a3b8; font-size: 14px;">Learn how to format prompts to cut response latency in half.</p>
             </div>
-            <div class="blog-card">
-                <span style="color: #14b8a6; font-size: 11px; font-weight: 700;">EARNING SAFETY</span>
-                <h3 style="font-size: 18px; font-weight: 700; margin: 8px 0;">5 Red Flags of Scam Earning Platforms (2026 Audit)</h3>
-                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5;">Protect your payout setup by recognizing dubious app mechanics before spending hours.</p>
+            <div class="card-item">
+                <span style="font-size: 11px; color: #14b8a6; font-weight: 700;">HEALTH SECURITY</span>
+                <h3 style="font-size: 18px; margin: 10px 0;">5 Red Flags of Scam Earning Platforms</h3>
+                <p style="color: #94a3b8; font-size: 14px;">Protect your digital wallet by recognizing dubious withdrawal loops.</p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer style="background-color: #000000; color: #64748b; padding: 50px 20px 30px 20px; font-family: inherit; border-top: 1px solid rgba(255,255,255,0.06);">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div style="margin-bottom: 40px;">
-                <h2 style="color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: 2px; margin-bottom: 12px;">UPI STEPS</h2>
-                <p style="font-size: 14px; line-height: 1.5; color: #94a3b8; max-width: 400px;">Empowering creators and gamers with advanced performance optimization, transparency, and digital insights.</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; margin-bottom: 40px;">
-                <div>
-                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;">Platform</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Home</a></li>
-                        <li><a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Features</a></li>
-                        <li><a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px;">How It Works</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;">Support</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Help Center</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Safety Guide</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;">Legal</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Terms of Service</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Medical Disclaimer</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 25px;">
-                <div style="display: flex; gap: 16px; align-items: center;">
-                    <a href="https://whatsapp.com" target="_blank" style="color: #fff;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
-                    <a href="https://instagram.com" target="_blank" style="color: #fff;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                </div>
-                <div style="text-align: center; font-size: 12px; color: #64748b;">
-                    <p style="margin-bottom: 4px;">&copy; 2026 UPI Steps Inc. All rights reserved.</p>
-                    <p>Designed with purpose. Optimized for performance.</p>
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 UPI Steps Studio. All rights reserved.</p>
     </footer>
 
-    <!-- JAVASCRIPT FOR MOBILE MENU & PHONE TABS -->
+    <!-- JAVASCRIPT -->
     <script>
         function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuToggle = document.getElementById('menuToggle');
-            const bar1 = document.querySelector('.bar1');
-            const bar2 = document.querySelector('.bar2');
-            const bar3 = document.querySelector('.bar3');
-
-            if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
-                mobileMenu.style.maxHeight = '0px';
-                menuToggle.classList.remove('active');
-                if(bar1) bar1.style.transform = 'none';
-                if(bar2) bar2.style.opacity = '1';
-                if(bar3) bar3.style.transform = 'none';
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('menuToggle');
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                btn.classList.remove('active');
             } else {
-                mobileMenu.style.maxHeight = '350px';
-                menuToggle.classList.add('active');
-                if(bar1) bar1.style.transform = 'translateY(8px) rotate(45deg)';
-                if(bar2) bar2.style.opacity = '0';
-                if(bar3) bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
-            }
-        }
-
-        function switchPhoneTab(btnElement, tabName) {
-            document.querySelectorAll('.p-nav-btn').forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
-
-            const container = document.getElementById('phone-dynamic-content');
-
-            if(tabName === 'steps') {
-                container.innerHTML = `
-                    <div class="step-ring-box">
-                        <span style="font-size: 34px; font-weight: 900; color: #ffffff; letter-spacing: -1px;">8,450</span>
-                        <div style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</div>
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
-                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399;">kcal</span></div>
-                        </div>
-                        <div class="stat-card">
-                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
-                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399;">km</span></div>
-                        </div>
-                    </div>
-                    <div class="insight-box">
-                        <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px;">AI FITNESS INSIGHT</div>
-                        <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
-                    </div>
-                `;
-            } else if(tabName === 'score') {
-                container.innerHTML = `
-                    <div class="step-ring-box">
-                        <span style="font-size: 34px; font-weight: 900; color: #38bdf8; letter-spacing: -1px;">94%</span>
-                        <div style="font-size: 11px; color: #38bdf8; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Health Score</div>
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Sleep Sync</div>
-                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">8.5 <span style="font-size: 11px; color: #38bdf8;">hrs</span></div>
-                        </div>
-                        <div class="stat-card">
-                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Recovery</div>
-                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">Optimal</div>
-                        </div>
-                    </div>
-                    <div class="insight-box" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.25);">
-                        <div style="font-size: 9px; font-weight: 700; color: #38bdf8; margin-bottom: 3px;">INTELLIGENCE REPORT</div>
-                        <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your circadian rhythm is well aligned with your physical output.</p>
-                    </div>
-                `;
-            } else if(tabName === 'ai') {
-                container.innerHTML = `
-                    <div class="step-ring-box" style="border-color: rgba(168, 85, 247, 0.3); background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(7,13,25,1) 75%);">
-                        <span style="font-size: 24px; font-weight: 900; color: #c084fc; letter-spacing: -1px;">AI Coach Active</span>
-                        <div style="font-size: 11px; color: #c084fc; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Real-time Analysis</div>
-                    </div>
-                    <div class="stat-card" style="margin-bottom: 14px;">
-                        <div style="font-size: 10px; color: #c084fc; font-weight: 600; margin-bottom: 2px;">Recommended Action</div>
-                        <div style="font-size: 13px; font-weight: 700; color: #ffffff;">Walk 15 mins after lunch for glucose regulation.</div>
-                    </div>
-                    <div class="insight-box" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.25);">
-                        <div style="font-size: 9px; font-weight: 700; color: #c084fc; margin-bottom: 3px;">VO2 MAX ESTIMATE</div>
-                        <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Cardiorespiratory fitness is tracking above average for your age group.</p>
-                    </div>
-                `;
+                menu.classList.add('open');
+                btn.classList.add('active');
             }
         }
     </script>
