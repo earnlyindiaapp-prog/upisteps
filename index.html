@@ -790,36 +790,14 @@
         </div>
     </footer>
     
-    <!-- JavaScript for Mobile Menu & X Animation -->
-    <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const bar1 = document.querySelector('.bar1');
-            const bar2 = document.querySelector('.bar2');
-            const bar3 = document.querySelector('.bar3');
-
-            if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
-                mobileMenu.style.maxHeight = '0px';
-                mobileMenu.style.padding = '0 20px';
-                bar1.style.transform = 'none';
-                bar2.style.opacity = '1';
-                bar3.style.transform = 'none';
-            } else {
-                mobileMenu.style.maxHeight = '300px';
-                mobileMenu.style.padding = '20px';
-                bar1.style.transform = 'translateY(8px) rotate(45deg)';
-                bar2.style.opacity = '0';
-                bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
-            }
-        }
-        <!-- JAVASCRIPT CODE -->
+    <!-- JAVASCRIPT CODE -->
     <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             if (menu.style.display === 'flex') {
                 menu.style.display = 'none';
             } else {
-                menu.style.display = 'flex';
+                menu.style.setProperty('display', 'flex', 'important');
             }
         }
     </script>
