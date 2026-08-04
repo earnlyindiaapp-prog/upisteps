@@ -3,205 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Steps - AI & Smart Gaming Platform</title>
+    <title>UPI Steps - AI, Gaming & Smart Earning</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <span class="logo-accent">UPI</span>Steps
-            </a>
-            <nav class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#blogs">Articles</a>
-                <a href="#faq">FAQ</a>
-                <a href="#about">About</a>
-            </nav>
-            <a href="#blogs" class="btn-primary">Explore Now</a>
-        </div>
-    </header>
-
-    <!-- HERO SECTION (Light Theme + Mobile View Card) -->
-    <section class="hero-section">
-        <div class="container hero-container">
-            <div class="rating-badge">
-                ★ ★ ★ ★ ★ &nbsp; 4.9/5 Verified by Unique Piece Studio
-            </div>
-            
-            <h1>Everything Your AI & Gaming <br><span class="highlight">Has To Say</span></h1>
-            
-            <p>UPI Steps brings verified AI tools, gaming strategies, and earning trends into one clear platform. Learn what works and how to get started safely.</p>
-            
-            <div class="hero-buttons">
-                <a href="#blogs" class="btn-primary-large">Start Reading For Free</a>
-            </div>
-            <span class="sub-text">*100% Free Educational Guides • No Subscription Required</span>
-
-            <!-- App Mockup Card (Like the Health Image) -->
-            <div class="mockup-card">
-                <div class="mockup-header">
-                    <span class="mockup-tag">Active Insights</span>
-                    <span class="mockup-time">Today</span>
-                </div>
-                <h2>Smart Earnings Score</h2>
-                <div class="score-display">
-                    <div class="score-circle">86</div>
-                    <div class="score-details">
-                        <p class="score-status">+14% vs last week</p>
-                        <p class="score-desc">AI Tools Optimization Active</p>
-                    </div>
-                </div>
-                <div class="mockup-grid">
-                    <div class="mini-stat">
-                        <span class="stat-num">28</span>
-                        <span class="stat-label">Verified Guides</span>
-                    </div>
-                    <div class="mini-stat">
-                        <span class="stat-num">100%</span>
-                        <span class="stat-label">Safe Methods</span>
-                    </div>
+    <!-- HERO & NAVBAR WRAPPER (Deep Teal Backdrop) -->
+    <div class="hero-wrapper">
+        
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <div class="container nav-container">
+                <a href="#" class="logo">UPI<span class="logo-accent">STEPS</span></a>
+                <div class="nav-right">
+                    <a href="#blogs" class="btn-glass-pill">Sign Up</a>
+                    <button class="hamburger-menu" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- FEATURES SECTION -->
-    <section class="features-section" id="features">
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="container hero-container">
+                
+                <!-- Glassmorphism Rating Badge -->
+                <div class="rating-badge-glass">
+                    ★ ★ ★ ★ ★ &nbsp; 4.9/5 from 1k reviews
+                </div>
+
+                <h1>Everything Your AI & Gaming <br>Has to Say</h1>
+
+                <p>UPI Steps brings your AI tools, gaming strategies, and earning trends into one place, and explains what they actually mean — so you always know what to do next.</p>
+
+                <div class="hero-action">
+                    <a href="#blogs" class="btn-solid-teal">Start for Free</a>
+                    <span class="sub-credit">*No Credit Card Required</span>
+                </div>
+
+                <!-- PHONE MOCKUP WITH FLOATING GLASS CARDS -->
+                <div class="phone-mockup-container">
+                    
+                    <!-- Top Left Floating Glass Card -->
+                    <div class="floating-glass-card card-top-left">
+                        <div class="card-icon-sparkle">✦</div>
+                        <div>
+                            <span class="label">AI Insight Score</span>
+                            <div class="big-val">98 <span class="unit">pts</span></div>
+                            <span class="sub-val">Actual: Top 1%</span>
+                        </div>
+                    </div>
+
+                    <!-- Top Right Floating Glass Card -->
+                    <div class="floating-glass-card card-top-right">
+                        <span class="paperclip-icon">🔗</span>
+                    </div>
+
+                    <!-- Bottom Right Floating Glass Card -->
+                    <div class="floating-glass-card card-bottom-right">
+                        <div class="pulse-icon">📊</div>
+                        <div>
+                            <div class="mini-bar-chart"></div>
+                            <span class="bpm-text">72 bpm</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Phone UI Screen -->
+                    <div class="phone-screen">
+                        <div class="phone-header">
+                            <span class="time">9:41</span>
+                            <span class="user-id">SIDE REVENUE <br><strong>Unique Piece</strong></span>
+                        </div>
+
+                        <div class="health-circle-container">
+                            <div class="circle-outer">
+                                <div class="circle-inner">
+                                    <span class="circle-title">Earning Score</span>
+                                    <span class="circle-number">86</span>
+                                    <span class="circle-badge">▲ 14 this week</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Row Inside Phone -->
+                        <div class="phone-stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-title">86 <span class="stat-up">+6</span></div>
+                                <div class="stat-desc">Tool Efficiency</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-title">1.9L <span class="stat-up">+0.3L</span></div>
+                                <div class="stat-desc">Growth Trend</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- HOW IT WORKS (Clean White Background) -->
+    <section class="how-it-works-section" id="features">
         <div class="container">
-            <div class="section-title">
-                <span class="uppercase-tag">HOW IT WORKS</span>
-                <h2>Turning Complexity Into <span class="highlight">Clarity</span></h2>
-                <p>See how UPI Steps analyzes web trends, evaluates AI tools, and guides you toward smart earning.</p>
+            <div class="section-header">
+                <span class="section-tag uppercase">HOW IT WORKS</span>
+                <h2>Turning Complexity <br>Into <span class="highlight-teal">Clarity</span></h2>
+                <p>See how UPI Steps analyzes your data, explains what it means, and guides you toward better strategies.</p>
             </div>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="step-num">1</div>
-                    <h3>Curated Research</h3>
-                    <p>We test and verify AI tools, games, and earning apps before recommending them.</p>
+            <!-- Card 1 -->
+            <div class="step-card">
+                <div class="step-badge">1</div>
+                <div class="step-image-box">
+                    <div class="glass-overlay-box">
+                        <div class="file-icon">📄</div>
+                        <div class="file-info">
+                            <strong>AI_Strategy_Report.pdf</strong>
+                            <span>Upload complete</span>
+                        </div>
+                        <span class="check-icon">✓</span>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="step-num">2</div>
-                    <h3>Step-By-Step Guides</h3>
-                    <p>Clear, simplified English tutorials tailored for beginners and enthusiasts alike.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="step-num">3</div>
-                    <h3>Progress Tracking</h3>
-                    <p>Stay updated with regular news, strategy updates, and daily insights.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="faq-section" id="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked, <br><span class="highlight">Clearly Answered</span></h2>
+                <h3>Drop Your Reports</h3>
+                <p>Upload your requirements or data seamlessly and let us do the rest.</p>
             </div>
 
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How does UPI Steps work?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>UPI Steps provides tested guides and articles covering AI productivity tools, gaming strategies, and verified online earning concepts in simple English.</p>
+            <!-- Card 2 -->
+            <div class="step-card teal-card-bg">
+                <div class="step-badge dark">2</div>
+                <div class="inner-app-result">
+                    <span class="result-time">9:41</span>
+                    <h4>Analysis Result</h4>
+                    <div class="result-row">
+                        <span>AI Integration Level</span>
+                        <span class="tag-optimal">Optimal</span>
+                    </div>
+                    <div class="result-row">
+                        <span>Gaming ROI Index</span>
+                        <span class="tag-deficient">Deficient</span>
+                    </div>
+                    <div class="result-row">
+                        <span>Monetization Safety</span>
+                        <span class="tag-normal">Normal</span>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Is the platform completely free to use?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! All resources, articles, and guides available on UPI Steps are 100% free with no hidden charges.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Who manages UPI Steps?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>UPI Steps is developed and operated by Unique Piece Studio Private Limited, focusing on tech, gaming, and AI innovation.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do I need prior technical knowledge?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No prior technical knowledge is required. All our articles are structured to be easy to understand and execute.</p>
-                    </div>
+                <div class="card-caption">
+                    <h3>We Analyze It for You</h3>
+                    <p>Our AI reviews your data for key performance insights.</p>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <a href="#" class="logo-footer"><span class="logo-accent">UPI</span>Steps</a>
-                <p>The definitive AI companion for tech, gaming, and earning guides. Powered by <strong>Unique Piece Studio Private Limited</strong>.</p>
-            </div>
-
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="#features">Features</a>
-                <a href="#blogs">Articles</a>
-                <a href="#faq">FAQ</a>
-            </div>
-
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="disclaimer.html">Disclaimer</a>
-            </div>
-
-            <div class="footer-col">
-                <h4>Support</h4>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <p class="footer-email">support@upisteps.in</p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
+        <div class="container">
             <p>© 2026 Unique Piece Studio Private Limited. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- FAQ Toggle Script -->
-    <script>
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) otherItem.classList.remove('active');
-                });
-                item.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>
