@@ -1473,3 +1473,43 @@ body {
         height: 370px !important;
     }
 }
+
+/* CARD IMAGE & GRADIENT OVERLAY FIX */
+.scroll-card {
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: #0C3832 !important; /* Fallback dark color */
+}
+
+.card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(9, 13, 22, 0.95) 15%, rgba(0,0,0,0.2) 100%);
+    z-index: 2;
+}
+
+.card-content {
+    position: relative;
+    z-index: 3 !important;
+}
+
+/* Fallback Vibrant Gradients if image loads slowly */
+.card-gradient-1 { background: linear-gradient(135deg, #1e3c72, #2a5298) !important; }
+.card-gradient-2 { background: linear-gradient(135deg, #0d9488, #115e59) !important; }
+.card-gradient-3 { background: linear-gradient(135deg, #134e4a, #064e3b) !important; }
+.card-gradient-4 { background: linear-gradient(135deg, #312e81, #1e1b4b) !important; }
+.card-gradient-5 { background: linear-gradient(135deg, #831843, #500724) !important; }
+.card-gradient-6 { background: linear-gradient(135deg, #065f46, #022c22) !important; }
