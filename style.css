@@ -1405,9 +1405,11 @@ body {
     gap: 24px !important;
     overflow-x: auto !important;
     padding: 20px 24px 40px 24px !important;
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important; /* Smooth scroll ko auto karein taaki JS conflict na kare */
     -webkit-overflow-scrolling: touch;
+    /* scroll-snap-type yahan se hata diya gaya hai taaki atke nahi */
 }
+
 
 .horizontal-scroll-wrapper::-webkit-scrollbar {
     display: none;
