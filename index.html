@@ -653,8 +653,38 @@
         navLinks.classList.toggle('active');
         menuBtn.classList.toggle('open');
     }
-</script>
-    
+ </script>
+           <script>
+        // Existing Mobile Menu Function
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuBtn = document.getElementById('menuToggle');
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        }
+
+        // AUTO SCROLL CAROUSEL LOGIC
+        const carousel = document.getElementById('autoCarousel');
+        let scrollAmount = 0;
+        let isHovered = false;
+
+        carousel.addEventListener('mouseenter', () => isHovered = true);
+        carousel.addEventListener('mouseleave', () => isHovered = false);
+        carousel.addEventListener('touchstart', () => isHovered = true);
+        carousel.addEventListener('touchend', () => isHovered = false);
+
+        function autoScroll() {
+            if (!isHovered && carousel) {
+                carousel.scrollLeft += 1.2; // Smooth Speed
+                if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 5)) {
+                    carousel.scrollLeft = 0; // Loop back to start smoothly
+                }
+            }
+        }
+
+        setInterval(autoScroll, 20); // 50fps Smooth Scroll
+    </script>
+
 </body>
 </html>
 
