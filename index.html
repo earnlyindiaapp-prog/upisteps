@@ -319,89 +319,139 @@
             border-radius: 14px;
             padding: 12px;
         }
+
+        /* Phone Tab Navigation */
+        .phone-nav-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px;
+            border-radius: 12px;
+        }
+
+        .p-nav-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 8px 4px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .p-nav-btn.active {
+            background: #0f766e;
+            color: #fff;
+        }
+
+        /* Additional Section Styles */
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px;
+            transition: transform 0.2s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(20, 184, 166, 0.4);
+        }
     </style>
 </head>
 <body>
                                 
     <!-- STICKY GLASSMORPHISM NAVBAR -->
-    <header style="background: rgba(7, 15, 26, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 14px 20px; position: sticky; top: 0; z-index: 1000;">
-        <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; position: relative;">
-            
+    <header class="navbar-sticky">
+        <div class="nav-container">
             <!-- Logo -->
-            <a href="#" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.5px;">
-                UPI <span style="color: #14b8a6;">STEPS</span>
+            <a href="#" class="logo">
+                UPI <span class="logo-accent">STEPS</span>
             </a>
 
             <!-- Desktop Links -->
-            <nav style="display: none; gap: 24px;" id="desktopNav">
-                <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">How It Works</a>
-                <a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Features</a>
-                <a href="#blogs" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Blogs</a>
-                <a href="#reviews" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Reviews</a>
-                <a href="#faq" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">FAQ</a>
+            <nav class="nav-links-desktop" id="desktopNav">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
             </nav>
 
             <!-- Right Area: Sign Up & Menu Button -->
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <a href="#app" style="background: #0f766e; color: #fff; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 600;">Sign Up</a>
+            <div class="nav-right-area">
+                <a href="#app" class="btn-signup-pill">Sign Up</a>
 
                 <!-- 3-Line to X Toggle Button -->
-                <button id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); width: 40px; height: 40px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; position: relative;">
-                    <span class="bar1" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
-                    <span class="bar2" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
-                    <span class="bar3" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
+                <button id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="menu-toggle-btn">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
                 </button>
             </div>
-
         </div>
 
         <!-- Mobile Dropdown Menu (Glass Effect) -->
-        <div id="mobileMenu" style="position: absolute; top: 100%; left: 0; width: 100%; background: rgba(11, 19, 32, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out, padding 0.3s ease;">
-            <div style="display: flex; flex-direction: column; padding: 0 20px;">
-                <a href="#how-it-works" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">How It Works</a>
-                <a href="#features" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Features</a>
-                <a href="#blogs" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Blogs</a>
-                <a href="#reviews" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Reviews</a>
-                <a href="#faq" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0;">FAQ</a>
-            </div>
+        <div id="mobileMenu" class="mobile-dropdown-menu">
+            <a href="#how-it-works" onclick="toggleMobileMenu()">How It Works</a>
+            <a href="#features" onclick="toggleMobileMenu()">Features</a>
+            <a href="#blogs" onclick="toggleMobileMenu()">Blogs</a>
+            <a href="#reviews" onclick="toggleMobileMenu()">Reviews</a>
+            <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
         </div>
     </header>
 
     <!-- GLASSMORPHISM HERO SECTION WITH BIG PHONE -->
-    <section style="background: radial-gradient(circle at top, #0f233c 0%, #070f1a 70%); padding: 50px 16px 80px 16px; text-align: center; position: relative; overflow: hidden;">
-        <div style="max-width: 800px; margin: 0 auto;">
+    <section class="hero-section">
+        <div class="hero-content">
             
-            <h1 style="color: #ffffff; font-size: 38px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px;">
+            <h1 class="hero-title">
                 Track Every Step, <br>Transform Your Health
             </h1>
             
-            <p style="color: #94a3b8; font-size: 16px; line-height: 1.6; max-width: 580px; margin: 0 auto 30px auto;">
+            <p class="hero-desc">
                 Earn Step AI monitors your daily movement with absolute precision, helping you build better fitness habits effortlessly.
             </p>
 
-            <div style="margin-bottom: 40px;">
-                <a href="#download" style="display: inline-block; background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%); color: #ffffff; font-weight: 700; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-size: 16px; box-shadow: 0 12px 30px rgba(15, 118, 110, 0.4);">Download the App</a>
-                <div style="color: #64748b; font-size: 12px; margin-top: 10px;">*No Credit Card Required</div>
+            <div style="margin-bottom: 30px;">
+                <a href="#download" class="hero-btn">Download the App</a>
+                <div class="hero-subtext">*No Credit Card Required</div>
             </div>
 
             <!-- Big Glassmorphism Phone Mockup Container -->
-            <div style="position: relative; max-width: 360px; margin: 0 auto;">
-                
-                <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); border-radius: 48px; padding: 14px; box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7); border: 1px solid rgba(255, 255, 255, 0.15); position: relative; z-index: 2;">
-                    
-                    <div style="background: rgba(7, 13, 25, 0.9); border-radius: 36px; overflow: hidden; text-align: left; color: #ffffff; padding: 18px; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="phone-mockup-wrapper">
+                <div class="phone-frame">
+                    <div class="phone-screen">
                         
                         <!-- Status Bar -->
-                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #64748b; margin-bottom: 16px;">
+                        <div class="phone-status">
                             <span>9:41</span>
-                            <div style="width: 70px; height: 14px; background: #000000; border-radius: 10px;"></div>
+                            <div class="phone-notch"></div>
                             <span>5G</span>
                         </div>
 
                         <!-- App Header inside phone -->
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                        <div class="app-header-inner">
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="width: 32px; height: 32px; background: #14b8a6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px;">ES</div>
+                                <div class="app-logo-badge">ES</div>
                                 <div>
                                     <div style="font-size: 9px; color: #14b8a6; font-weight: 700;">EARN STEP AI</div>
                                     <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Daily Fitness</div>
@@ -410,725 +460,209 @@
                             <div style="background: rgba(20, 184, 166, 0.15); border: 1px solid rgba(20, 184, 166, 0.3); color: #2dd4bf; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 12px;">ACTIVE</div>
                         </div>
 
-                        <!-- Central Step Ring View -->
-                        <div style="background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, rgba(7,13,25,1) 75%); border: 1px solid rgba(20, 184, 166, 0.25); border-radius: 24px; padding: 22px; text-align: center; margin-bottom: 14px;">
-                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <!-- Interactive Phone Tabs -->
+                        <div class="phone-nav-tabs">
+                            <button class="p-nav-btn active" onclick="switchPhoneTab(this, 'steps')">Steps</button>
+                            <button class="p-nav-btn" onclick="switchPhoneTab(this, 'score')">Score</button>
+                            <button class="p-nav-btn" onclick="switchPhoneTab(this, 'ai')">AI Insights</button>
+                        </div>
+
+                        <!-- Dynamic Content Box inside Phone -->
+                        <div id="phone-dynamic-content">
+                            <!-- Default Tab: Steps -->
+                            <div class="step-ring-box">
                                 <span style="font-size: 34px; font-weight: 900; color: #ffffff; letter-spacing: -1px;">8,450</span>
-                                <span style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</span>
+                                <div style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</div>
                             </div>
-                        </div>
 
-                        <!-- Mini Stats Grid -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
-                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); padding: 12px; border-radius: 14px;">
-                                <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
-                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399;">kcal</span></div>
-                            </div>
-                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); padding: 12px; border-radius: 14px;">
-                                <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
-                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399;">km</span></div>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Insight Strip -->
-                        <div style="background: rgba(15, 118, 110, 0.12); border: 1px solid rgba(15, 118, 110, 0.25); border-radius: 14px; padding: 12px;">
-                            <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px;">AI FITNESS INSIGHT</div>
-                            <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-                                
-    <!-- PHONE JS -->
-    <script>
-        function switchPhoneTab(btnElement, tabName) {
-            document.querySelectorAll('.p-nav-btn').forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
-
-            const container = document.getElementById('phone-dynamic-content');
-
-            if(tabName === 'score') {
-                container.innerHTML = `
-                    <div class="phone-score-card">
-                        <span class="score-title">Intelligence Score</span>
-                        <div class="radial-ring-container">
-                            <div class="ring-gradient-bg">
-                                <div class="ring-center">
-                                    <span class="big-score">86</span>
-                                    <span class="score-status">▲ 14 this week</span>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
+                                    <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399;">kcal</span></div>
+                                </div>
+                                <div class="stat-card">
+                                    <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
+                                    <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399;">km</span></div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="phone-stats-dual">
-                        <div class="p-stat-box"><span class="p-val">86 <span class="p-up">+6</span></span><span class="p-lbl">AI Quality</span></div>
-                        <div class="p-stat-box"><span class="p-val">1.9L <span class="p-up">+0.3L</span></span><span class="p-lbl">Revenue Index</span></div>
-                    </div>
-                    <div class="phone-action-strip">
-                        <span>See what moved your score</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a0aec0" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                    </div>`;
-            } else if(tabName === 'gaming') {
-                container.innerHTML = `
-                    <div class="phone-score-card">
-                        <span class="score-title">Gaming Ping & Latency</span>
-                        <div style="text-align:center; padding: 15px 0;">
-                            <span style="font-size: 36px; font-weight:800; color:#4ade80;">12 ms</span>
-                            <span style="display:block; font-size:11px; color:#94a3b8; margin-top:5px;">Zero Lag Detected • 144 FPS</span>
-                        </div>
-                    </div>
-                    <div class="phone-stats-dual">
-                        <div class="p-stat-box"><span class="p-val">99.8%</span><span class="p-lbl">Stability</span></div>
-                        <div class="p-stat-box"><span class="p-val">Safe</span><span class="p-lbl">Anti-Cheat</span></div>
-                    </div>`;
-            } else if(tabName === 'ai') {
-                container.innerHTML = `
-                    <div class="phone-score-card">
-                        <span class="score-title">AI Token Efficiency</span>
-                        <div style="text-align:center; padding: 15px 0;">
-                            <span style="font-size: 36px; font-weight:800; color:#38bdf8;">99.4%</span>
-                            <span style="display:block; font-size:11px; color:#94a3b8; margin-top:5px;">Prompt Accuracy Optimal</span>
-                        </div>
-                    </div>
-                    <div class="phone-stats-dual">
-                        <div class="p-stat-box"><span class="p-val">ChatGPT</span><span class="p-lbl">Model v4</span></div>
-                        <div class="p-stat-box"><span class="p-val">Midjourney</span><span class="p-lbl">Active</span></div>
-                    </div>`;
-            } else if(tabName === 'earning') {
-                container.innerHTML = `
-                    <div class="phone-score-card">
-                        <span class="score-title">Monthly Monetization</span>
-                        <div style="text-align:center; padding: 15px 0;">
-                            <span style="font-size: 36px; font-weight:800; color:#c084fc;">₹1,90,000</span>
-                            <span style="display:block; font-size:11px; color:#4ade80; margin-top:5px;">+18% Verified Growth</span>
-                        </div>
-                    </div>
-                    <div class="phone-stats-dual">
-                        <div class="p-stat-box"><span class="p-val">Verified</span><span class="p-lbl">Payout Status</span></div>
-                        <div class="p-stat-box"><span class="p-val">0 Scams</span><span class="p-lbl">Audit Passed</span></div>
-                    </div>`;
-                        <!-- Part 1 का अंत ऐसा दिखेगा -->
-            }
-        }
-    </script>
-    
-    <!-- SECTION: TURNING COMPLEXITY INTO CLARITY (How It Works) -->
-    <section class="complexity-clarity-section">
-        <div class="container">
-            
-            <!-- Section Header -->
-            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
-                <span class="sub-heading">HOW IT WORKS</span>
-                <h2 class="main-heading">Turning Complexity <br>Into <span class="teal-text">Clarity</span></h2>
-                <p class="section-desc">See how UPI Steps analyzes your data, explains what it means, and guides you toward better performance.</p>
-            </div>
 
-            <!-- Feature Block 1: Drop Your Reports -->
-            <div class="feature-showcase-row">
-                <div class="feature-img-card glass-banner-card">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80" alt="Drop Your Reports" class="showcase-bg-img">
-                    <span class="card-number-badge">1</span>
-                    <div class="glass-float-box upload-float-box">
-                        <div class="upload-file-row">
-                            <div class="file-icon-box">📄</div>
-                            <div class="file-info-text">
-                                <h4>Medical_Report.pdf</h4>
-                                <p>Upload complete</p>
+                            <div class="insight-box">
+                                <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px;">AI FITNESS INSIGHT</div>
+                                <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
                             </div>
-                            <div class="check-badge-circle">✓</div>
                         </div>
-                        <!-- Progress Bar -->
-                        <div class="upload-progress-track">
-                            <div class="upload-progress-fill" style="width: 100%;"></div>
-                        </div>
-                        <div class="progress-percentage">100%</div>
-                    </div>
-                </div>
-                <div class="feature-text-content">
-                    <h2 class="main-heading">Drop Your Reports</h2>
-                    <p class="section-desc">Upload your health or performance reports seamlessly and let us do the rest.</p>
-                </div>
-            </div>
 
-            <!-- Feature Block 2: We Analyze It for You -->
-            <div class="feature-showcase-row reverse-row">
-                <div class="feature-img-card mockup-bg-card">
-                    <span class="card-number-badge">2</span>
-                    <div class="mockup-inner-box">
-                        <div class="mockup-header-row">
-                            <span class="mockup-time">9:41</span>
-                            <span class="mockup-dot"></span>
-                        </div>
-                        <div class="mockup-score-title" style="font-weight: 700; color: #0f172a; margin-bottom: 12px;">Analysis Result</div>
-                        
-                        <!-- Analysis Items -->
-                        <div class="analysis-item-row">
-                            <span class="analysis-label">Vitamin D level</span>
-                            <span class="analysis-pill optimal-pill">Optimal</span>
-                        </div>
-                        <div class="analysis-item-row">
-                            <span class="analysis-label">Magnesium Index</span>
-                            <span class="analysis-pill deficient-pill">Deficient</span>
-                        </div>
-                        <div class="analysis-item-row">
-                            <span class="analysis-label">Glucose regulation</span>
-                            <span class="analysis-pill normal-pill">Normal</span>
-                        </div>
                     </div>
-                </div>
-                <div class="feature-text-content">
-                    <h2 class="main-heading">We Analyze It for You</h2>
-                    <p class="section-desc">Our smart engine reviews your data for key performance and health insights.</p>
                 </div>
             </div>
 
         </div>
     </section>
-    
-    <!-- SECTION 2: HOW IT WORKS -->
-    <section id="how-it-works" class="how-it-works-section">
-        <div class="container">
-            
-            <div class="section-header">
-                <span class="sub-heading">HOW IT WORKS</span>
-                <h2 class="main-heading">Turning Complexity <br>Into <span class="teal-text">Clarity</span></h2>
-                <p class="section-desc">
-                    See how UPI Steps analyzes your gaming latency, validates earning platforms, and optimizes AI prompt execution seamlessly.
-                </p>
-            </div>
 
-            <div class="workflow-grid">
-                
-                <!-- Step 1 Card -->
-                <div class="work-card">
-                    <span class="step-num">1</span>
-                    <div class="card-visual-box upload-box">
-                        <div class="upload-inner-card">
-                            <div class="file-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0C3832" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                            </div>
-                            <div class="file-details">
-                                <span class="file-title">Earning_Audit_Report.pdf</span>
-                                <span class="file-status">Verification complete</span>
-                            </div>
-                            <div class="check-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                        </div>
-                        <div class="progress-bar-bg">
-                            <div class="progress-bar-fill"></div>
-                        </div>
-                        <span class="percentage-text">100% Verified</span>
-                    </div>
-                    <h3 class="card-title">Drop Your Platform Links</h3>
-                    <p class="card-text">Upload or link your earning apps & AI workflow details effortlessly for instant safety and payout checks.</p>
-                </div>
-
-                <!-- Step 2 Card -->
-                <div class="work-card dark-green-card">
-                    <span class="step-num step-num-white">2</span>
-                    <div class="card-visual-box inner-analysis-box">
-                        <div class="analysis-header">
-                            <span class="a-time">9:41</span>
-                            <span class="a-badge">Analysis Result</span>
-                        </div>
-                        <div class="analysis-rows">
-                            <div class="a-row">
-                                <span>AI Response Speed</span>
-                                <span class="status-pill status-optimal">Optimal</span>
-                            </div>
-                            <div class="a-row">
-                                <span>Gaming FPS Loss</span>
-                                <span class="status-pill status-low">Low Ping</span>
-                            </div>
-                            <div class="a-row">
-                                <span>App Monetization</span>
-                                <span class="status-pill status-normal">Authentic</span>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="card-title text-white">We Analyze It for You</h3>
-                    <p class="card-text text-light">Our AI algorithms review your stats to highlight bottlenecks and zero-scam opportunities.</p>
-                </div>
-
-            </div>
-
+    <!-- BLOGS SECTION EXAMPLE -->
+    <section id="blogs" class="section-container">
+        <div style="text-align: center;">
+            <span style="color: #14b8a6; font-size: 12px; font-weight: 700; text-transform: uppercase;">KNOWLEDGE HUB</span>
+            <h2 style="font-size: 30px; font-weight: 800; margin-top: 8px;">Latest Blogs & Guides</h2>
+            <p style="color: #94a3b8; font-size: 15px; margin-top: 6px;">Explore deep dives into gaming ping reduction, AI prompt optimization, and safe app monetization.</p>
         </div>
-    </section>
-    
-    <!-- SECTION 3: FEATURES & RECOMMENDATIONS -->
-    <section id="features" class="features-section">
-        <div class="container">
-            
-            <div class="section-header">
-                <span class="sub-heading">TAILORED RECOMMENDATIONS</span>
-                <h2 class="main-heading">Smart Insights Built for <br><span class="teal-text">Gamers & AI Creators</span></h2>
-                <p class="section-desc">
-                    Get real-time feedback on your performance, system stability, and earning options with intelligent AI tracking.
-                </p>
+
+        <div class="blogs-grid">
+            <div class="blog-card">
+                <span style="color: #14b8a6; font-size: 11px; font-weight: 700;">GAMING TECH</span>
+                <h3 style="font-size: 18px; font-weight: 700; margin: 8px 0;">How to Reduce Input Lag in BGMI & PC Esports</h3>
+                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5;">A step-by-step audit on packet loss, frame time consistency, and background RAM management.</p>
             </div>
-
-            <div class="features-grid">
-                
-                <!-- Feature Card 1: Gaming Ping & FPS -->
-                <div class="feature-card">
-                    <div class="feature-card-header">
-                        <span class="feature-tag">GAMING ENGINE</span>
-                        <div class="f-icon-circle">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m-2-2v4"/><circle cx="17" cy="10" r="1"/><circle cx="15" cy="13" r="1"/></svg>
-                        </div>
-                    </div>
-                    <h3>Latency & Frame Rate Guard</h3>
-                    <p>Detect network ping spikes and optimize system RAM usage before launching competitive multiplayer matches.</p>
-                    <div class="metric-preview">
-                        <div class="m-box">
-                            <span class="m-val">12 ms</span>
-                            <span class="m-lbl">Avg. Ping</span>
-                        </div>
-                        <div class="m-box">
-                            <span class="m-val">144 FPS</span>
-                            <span class="m-lbl">Stability</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature Card 2: AI Workflow Speed -->
-                <div class="feature-card">
-                    <div class="feature-card-header">
-                        <span class="feature-tag">AI OPTIMIZATION</span>
-                        <div class="f-icon-circle">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8m-4-4h8"/></svg>
-                        </div>
-                    </div>
-                    <h3>Prompt Execution Radar</h3>
-                    <p>Analyze how effectively your AI tools process prompts and avoid token rate-limits automatically.</p>
-                    <div class="metric-preview">
-                        <div class="m-box">
-                            <span class="m-val">99.4%</span>
-                            <span class="m-lbl">Prompt Accuracy</span>
-                        </div>
-                        <div class="m-box">
-                            <span class="m-val">0.4s</span>
-                            <span class="m-lbl">Response Time</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature Card 3: Monetization & Safety -->
-                <div class="feature-card full-width-card">
-                    <div class="f-full-content">
-                        <div class="f-full-text">
-                            <span class="feature-tag">EARNING AUDIT</span>
-                            <h3>Verified Monetization Insights</h3>
-                            <p>Filter out fake earning platforms. Get direct audit metrics on payout frequencies, withdrawal safety, and real user reviews.</p>
-                        </div>
-                        <div class="f-full-badge">
-                            <div class="badge-status-glow"></div>
-                            <span>100% Scam-Free Verified</span>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="blog-card">
+                <span style="color: #14b8a6; font-size: 11px; font-weight: 700;">AI WORKFLOWS</span>
+                <h3 style="font-size: 18px; font-weight: 700; margin: 8px 0;">Maximizing Token Efficiency in LLM Models</h3>
+                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5;">Learn how to structure complex prompts to cut latency in half while improving accuracy.</p>
             </div>
-
-        </div>
-    </section>
-    
-        <!-- SECTION 4: REVIEWS & COMMUNITY -->
-    <section id="reviews" class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="sub-heading">TESTIMONIALS</span>
-                <h2 class="main-heading">Trusted by <span class="teal-text">Creators & Gamers</span></h2>
-                <p class="section-desc">See how Unique Piece Studio's UPI Steps helps individuals optimize performance and discover legit opportunities.</p>
-            </div>
-
-            <div class="reviews-grid">
-                
-                <!-- Review Card 1 -->
-                <div class="review-card">
-                    <div class="stars">★ ★ ★ ★ ★</div>
-                    <p class="review-text">"Ping tracking during competitive BGMI matches is super accurate. Finally an app that doesn't bloat system RAM."</p>
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">RK</div>
-                        <div>
-                            <span class="reviewer-name">Rohan Kumar</span>
-                            <span class="reviewer-role">Esports Player</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Card 2 -->
-                <div class="review-card">
-                    <div class="stars">★ ★ ★ ★ ★</div>
-                    <p class="review-text">"The earning app audit feature saved me from investing time in 2 fake scam apps. Legit transparency!"</p>
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">AS</div>
-                        <div>
-                            <span class="reviewer-name">Aman Sharma</span>
-                            <span class="reviewer-role">AI Content Creator</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SECTION: TAILORED RECOMMENDATIONS & INSIGHTS -->
-    <section class="tailored-features-section">
-        <div class="container">
-            
-            <!-- Feature Block 1: Tailored Recommendations -->
-            <div class="feature-showcase-row">
-                <div class="feature-img-card glass-banner-card">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Tailored Recommendations" class="showcase-bg-img">
-                    <div class="glass-float-box">
-                        <div class="glass-badge-top">RECOMMENDED ACTIONS</div>
-                        <div class="glass-action-item">
-                            <h4>Walk 15 mins after lunch</h4>
-                            <p>Supports Glucose Regulation</p>
-                        </div>
-                        <div class="glass-divider"></div>
-                        <div class="glass-action-item">
-                            <h4>Magnesium glycinate</h4>
-                            <p>200mg before sleep</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-text-content">
-                    <h2 class="main-heading">Tailored Recommendations</h2>
-                    <p class="section-desc">Turn your medical reports into something you can actually understand and act on.</p>
-                </div>
-            </div>
-
-            <!-- Feature Block 2: Health Progress Insights -->
-            <div class="feature-showcase-row reverse-row">
-                <div class="feature-img-card mockup-bg-card">
-                    <span class="card-number-badge">4</span>
-                    <div class="mockup-inner-box">
-                        <div class="mockup-header-row">
-                            <span class="mockup-time">9:41</span>
-                            <span class="mockup-dot"></span>
-                        </div>
-                        <div class="mockup-score-title">Wellness Score</div>
-                        <div class="mockup-score-value">94%</div>
-                        <!-- Mini Bar Chart Simulation -->
-                        <div class="mockup-chart-bars">
-                            <div class="m-bar" style="height: 40px;"></div>
-                            <div class="m-bar" style="height: 60px;"></div>
-                            <div class="m-bar" style="height: 70px;"></div>
-                            <div class="m-bar" style="height: 35px;"></div>
-                            <div class="m-bar" style="height: 80px;"></div>
-                            <div class="m-bar active-bar" style="height: 100px;"></div>
-                        </div>
-                        <div class="mockup-labels">
-                            <span>Mon</span>
-                            <span>Sun</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-text-content">
-                    <h2 class="main-heading">Health Progress Insights</h2>
-                    <p class="section-desc">Track your health journey with smart progress tracking.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    
-        <!-- SECTION: HEALTH & VITALITY AUTO CAROUSEL (Peak Performance Section - Upar रहेगा) -->
-    <section class="health-carousel-section">
-        <div class="carousel-header-box">
-            <span class="sub-heading">HOLISTIC SYSTEM VITALITY</span>
-            <h2 class="main-heading">Designed for <span class="teal-text">Peak Performance</span></h2>
-            <p class="section-desc">Explore system health, mental focus, and digital wellness.</p>
-        </div>
-        
-        <!-- Infinite Scroll Track Container -->
-        <div class="infinite-scroll-container">
-            <div class="infinite-track" id="infiniteTrack">
-                
-                <!-- Card 1 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Sleep">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Sleep & Recovery</h3>
-                        <p>Sleep Tracking • Recovery Score</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Focus">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Focus & Endurance</h3>
-                        <p>Latency Guard • Stamina Index</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80" alt="Nutrition">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Nutrition & Energy</h3>
-                        <p>Calorie Balance • Vital Insights</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Mental Clarity">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Mental Clarity</h3>
-                        <p>Stress Reduction • AI Rest</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Fitness">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Active Fitness</h3>
-                        <p>Daily Steps • Burn Diagnostics</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="System Vitality">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>System Vitality</h3>
-                        <p>Thermal Guard • Eco Mode</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Cognitive">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Cognitive Speed</h3>
-                        <p>Reaction Time • Reflex Sync</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Neural">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Neural Sync</h3>
-                        <p>Brainwave • Focus Matrix</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 9 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1510519138161-5974d533a325?auto=format&fit=crop&w=800&q=80" alt="Bio Rhythm">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Bio Rhythm</h3>
-                        <p>Circadian Cycle • Energy Peak</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
-                <!-- Card 10 -->
-                <div class="scroll-card">
-                    <img class="card-bg-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Immersion">
-                    <div class="card-glass-overlay"></div>
-                    <div class="card-content">
-                        <h3>Deep Immersion</h3>
-                        <p>Flow State • Zero Distraction</p>
-                        <button class="plus-btn">+</button>
-                    </div>
-                </div>
-
+            <div class="blog-card">
+                <span style="color: #14b8a6; font-size: 11px; font-weight: 700;">EARNING SAFETY</span>
+                <h3 style="font-size: 18px; font-weight: 700; margin: 8px 0;">5 Red Flags of Scam Earning Platforms (2026 Audit)</h3>
+                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5;">Protect your payout setup by recognizing dubious app mechanics before spending hours.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: KNOWLEDGE HUB / LATEST BLOGS & GUIDES (Uske Neeche rahega) -->
-    <section class="blogs-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="sub-heading">KNOWLEDGE HUB</span>
-                <h2 class="main-heading">Latest Blogs & <span class="teal-text">Guides</span></h2>
-                <p class="section-desc">Explore deep-dives into gaming ping reduction, AI prompt optimization, and safe app monetization.</p>
-            </div>
-
-            <div class="blogs-grid">
-                <!-- Blog Card 1 -->
-                <div class="blog-card">
-                    <span class="blog-tag">Gaming Tech</span>
-                    <h3>How to Reduce Input Lag in BGMI & PC Esports</h3>
-                    <p>A step-by-step audit on packet loss, frame time consistency, and background RAM management.</p>
-                    <a href="#" class="blog-link">Read Guide →</a>
-                </div>
-
-                <!-- Blog Card 2 -->
-                <div class="blog-card">
-                    <span class="blog-tag">AI Workflows</span>
-                    <h3>Maximizing Token Efficiency in LLM Models</h3>
-                    <p>Learn how to structure complex prompts to cut latency in half while improving accuracy.</p>
-                    <a href="#" class="blog-link">Read Guide →</a>
-                </div>
-
-                <!-- Blog Card 3 -->
-                <div class="blog-card">
-                    <span class="blog-tag">Earning Safety</span>
-                    <h3>5 Red Flags of Scam Earning Platforms (2026 Audit)</h3>
-                    <p>Protect your payout setup by recognizing dubious app mechanics before spending hours.</p>
-                    <a href="#" class="blog-link">Read Guide →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ULTIMATE PRO FOOTER -->
-    <footer style="background-color: #000000; color: #94a3b8; padding: 70px 20px 30px 20px; font-family: inherit; border-top: 1px solid rgba(255,255,255,0.08);">
+    <!-- FOOTER -->
+    <footer style="background-color: #000000; color: #64748b; padding: 50px 20px 30px 20px; font-family: inherit; border-top: 1px solid rgba(255,255,255,0.06);">
         <div style="max-width: 1100px; margin: 0 auto;">
-            
-            <!-- Brand / Logo Top -->
-            <div style="margin-bottom: 35px;">
+            <div style="margin-bottom: 40px;">
                 <h2 style="color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: 2px; margin-bottom: 12px;">UPI STEPS</h2>
-                <p style="font-size: 14px; line-height: 1.6; color: #94a3b8; max-width: 400px;">
-                    Empowering creators and gamers with advanced performance optimization, transparency, and digital insights.
-                </p>
+                <p style="font-size: 14px; line-height: 1.5; color: #94a3b8; max-width: 400px;">Empowering creators and gamers with advanced performance optimization, transparency, and digital insights.</p>
             </div>
 
-            <!-- Links Grid Layout -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 40px; margin-bottom: 50px;">
-                
-                <!-- Column 1: Platform -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; margin-bottom: 40px;">
                 <div>
-                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Platform</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;">Platform</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
                         <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Home</a></li>
-                        <li><a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px;">About us</a></li>
-                        <li><a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px;">How it works</a></li>
+                        <li><a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Features</a></li>
+                        <li><a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px;">How It Works</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 2: Support -->
                 <div>
-                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Support</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;">Support</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
                         <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Help Center</a></li>
                         <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Safety Guide</a></li>
                         <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 3: Legal -->
                 <div>
-                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Legal</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;">Legal</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
                         <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
                         <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Terms of Service</a></li>
                         <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Medical Disclaimer</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 4: Stay Updated (Newsletter) -->
-                <div>
-                    <h4 style="color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Stay Updated</h4>
-                    <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">Join our newsletter for the latest updates.</p>
-                    <div style="display: flex; gap: 8px;">
-                        <input type="email" placeholder="Enter your email" style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); padding: 10px 12px; border-radius: 8px; color: #fff; font-size: 13px; width: 100%; outline: none;">
-                        <button style="background: #ffffff; color: #000; border: none; padding: 10px 14px; border-radius: 8px; font-weight: 700; font-size: 11px; cursor: pointer; text-transform: uppercase;">Subscribe</button>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Get in touch & Social Icons with your Links -->
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; margin-bottom: 30px;">
-                <div>
-                    <span style="font-size: 12px; color: #64748b; display: block; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px;">Get in Touch</span>
-                    <a href="mailto:support@upisteps.in" style="color: #ffffff; text-decoration: none; font-size: 14px;">support@upisteps.in</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 25px;">
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <a href="https://whatsapp.com" target="_blank" style="color: #fff;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+                    <a href="https://instagram.com" target="_blank" style="color: #fff;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
                 </div>
-
-                                <!-- Real Professional SVG Social Icons -->
-                <div style="display: flex; gap: 12px; align-items: center;">
-                    
-                    <!-- WhatsApp -->
-                    <a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" target="_blank" style="width: 38px; height: 38px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none;" title="WhatsApp">
-                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=jba6dle" target="_blank" style="width: 38px; height: 38px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none;" title="Instagram">
-                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-
-                    <!-- Telegram -->
-                    <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" style="width: 38px; height: 38px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none;" title="Telegram">
-                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.535-.196 1.006.128.832.941z"/></svg>
-                    </a>
-
-                    <!-- X (Twitter) -->
-                    <a href="https://x.com/EarnlyIndia_" target="_blank" style="width: 38px; height: 38px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none;" title="X (Twitter)">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-
-                    <!-- YouTube -->
-                    <a href="https://www.youtube.com/@EarnlyIndiaOfficial" target="_blank" style="width: 38px; height: 38px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none;" title="YouTube">
-                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
-
+                <div style="text-align: center; font-size: 12px; color: #64748b;">
+                    <p style="margin-bottom: 4px;">&copy; 2026 UPI Steps Inc. All rights reserved.</p>
+                    <p>Designed with purpose. Optimized for performance.</p>
                 </div>
-
-
-            <!-- Copyright Bottom Text -->
-            <div style="text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 20px;">
-                <p style="margin-bottom: 6px;">&copy; 2026 UPI Steps Inc. All rights reserved.</p>
-                <p>Designed with purpose. Optimized for performance.</p>
             </div>
-
         </div>
     </footer>
-        <!-- JavaScript for Mobile Menu & X Animation -->
+
+    <!-- JAVASCRIPT FOR MOBILE MENU & PHONE TABS -->
     <script>
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
+            const menuToggle = document.getElementById('menuToggle');
             const bar1 = document.querySelector('.bar1');
             const bar2 = document.querySelector('.bar2');
             const bar3 = document.querySelector('.bar3');
 
             if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
                 mobileMenu.style.maxHeight = '0px';
-                mobileMenu.style.padding = '0 20px';
+                menuToggle.classList.remove('active');
                 if(bar1) bar1.style.transform = 'none';
                 if(bar2) bar2.style.opacity = '1';
                 if(bar3) bar3.style.transform = 'none';
             } else {
-                mobileMenu.style.maxHeight = '300px';
-                mobileMenu.style.padding = '20px';           
-               if(bar1) bar1.style.transform = "translateY(8px) rotate(45deg)";
-               if(bar2) bar2.style.opacity = "0";
-               if(bar3) bar3.style.transform = "translateY(-8px) rotate(-45deg)";
-                
-    </script>
-    
+                mobileMenu.style.maxHeight = '350px';
+                menuToggle.classList.add('active');
+                if(bar1) bar1.style.transform = 'translateY(8px) rotate(45deg)';
+                if(bar2) bar2.style.opacity = '0';
+                if(bar3) bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+            }
+        }
 
+        function switchPhoneTab(btnElement, tabName) {
+            document.querySelectorAll('.p-nav-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const container = document.getElementById('phone-dynamic-content');
+
+            if(tabName === 'steps') {
+                container.innerHTML = `
+                    <div class="step-ring-box">
+                        <span style="font-size: 34px; font-weight: 900; color: #ffffff; letter-spacing: -1px;">8,450</span>
+                        <div style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399;">kcal</span></div>
+                        </div>
+                        <div class="stat-card">
+                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399;">km</span></div>
+                        </div>
+                    </div>
+                    <div class="insight-box">
+                        <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px;">AI FITNESS INSIGHT</div>
+                        <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
+                    </div>
+                `;
+            } else if(tabName === 'score') {
+                container.innerHTML = `
+                    <div class="step-ring-box">
+                        <span style="font-size: 34px; font-weight: 900; color: #38bdf8; letter-spacing: -1px;">94%</span>
+                        <div style="font-size: 11px; color: #38bdf8; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Health Score</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Sleep Sync</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">8.5 <span style="font-size: 11px; color: #38bdf8;">hrs</span></div>
+                        </div>
+                        <div class="stat-card">
+                            <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Recovery</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #ffffff;">Optimal</div>
+                        </div>
+                    </div>
+                    <div class="insight-box" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.25);">
+                        <div style="font-size: 9px; font-weight: 700; color: #38bdf8; margin-bottom: 3px;">INTELLIGENCE REPORT</div>
+                        <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your circadian rhythm is well aligned with your physical output.</p>
+                    </div>
+                `;
+            } else if(tabName === 'ai') {
+                container.innerHTML = `
+                    <div class="step-ring-box" style="border-color: rgba(168, 85, 247, 0.3); background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(7,13,25,1) 75%);">
+                        <span style="font-size: 24px; font-weight: 900; color: #c084fc; letter-spacing: -1px;">AI Coach Active</span>
+                        <div style="font-size: 11px; color: #c084fc; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Real-time Analysis</div>
+                    </div>
+                    <div class="stat-card" style="margin-bottom: 14px;">
+                        <div style="font-size: 10px; color: #c084fc; font-weight: 600; margin-bottom: 2px;">Recommended Action</div>
+                        <div style="font-size: 13px; font-weight: 700; color: #ffffff;">Walk 15 mins after lunch for glucose regulation.</div>
+                    </div>
+                    <div class="insight-box" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.25);">
+                        <div style="font-size: 9px; font-weight: 700; color: #c084fc; margin-bottom: 3px;">VO2 MAX ESTIMATE</div>
+                        <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Cardiorespiratory fitness is tracking above average for your age group.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
 </body>
 </html>
