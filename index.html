@@ -14,8 +14,8 @@
 </head>
 <body>
 
-            <!-- STICKY GLASSMORPHISM NAVBAR -->
-    <header class="navbar-sticky" style="background: rgba(7, 15, 26, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 14px 20px; position: sticky; top: 0; z-index: 1000;">
+               <!-- STICKY GLASSMORPHISM NAVBAR -->
+    <header style="background: rgba(7, 15, 26, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 14px 20px; position: sticky; top: 0; z-index: 1000;">
         <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; position: relative;">
             
             <!-- Logo -->
@@ -24,7 +24,7 @@
             </a>
 
             <!-- Desktop Links -->
-            <nav style="display: none; gap: 24px;" id="desktopNav">
+            <nav style="display: none; gap: 24px;">
                 <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">How It Works</a>
                 <a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Features</a>
                 <a href="#blogs" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Blogs</a>
@@ -36,27 +36,26 @@
             <div style="display: flex; align-items: center; gap: 12px;">
                 <a href="#app" style="background: #0f766e; color: #fff; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 600;">Sign Up</a>
 
-                <!-- 3-Line to X Toggle Button -->
-                <button id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); width: 40px; height: 40px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; position: relative;">
-                    <span class="bar1" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
-                    <span class="bar2" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
-                    <span class="bar3" style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease;"></span>
+                <!-- 3-Line Menu Button -->
+                <button type="button" onclick="toggleMobileMenu()" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); width: 40px; height: 40px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer;">
+                    <span style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px;"></span>
+                    <span style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px;"></span>
+                    <span style="display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px;"></span>
                 </button>
             </div>
 
         </div>
 
-        <!-- Mobile Dropdown Menu (Glass Effect) -->
-        <div id="mobileMenu" style="position: absolute; top: 100%; left: 0; width: 100%; background: rgba(11, 19, 32, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out, padding 0.3s ease;">
-            <div style="display: flex; flex-direction: column; padding: 0 20px;">
-                <a href="#how-it-works" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">How It Works</a>
-                <a href="#features" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Features</a>
-                <a href="#blogs" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Blogs</a>
-                <a href="#reviews" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Reviews</a>
-                <a href="#faq" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 12px 0;">FAQ</a>
-            </div>
+        <!-- Mobile Dropdown Menu (Direct Display Toggle) -->
+        <div id="mobileMenu" style="display: none; width: 100%; background: rgba(11, 19, 32, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 20px; margin-top: 14px; flex-direction: column; gap: 12px;">
+            <a href="#how-it-works" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">How It Works</a>
+            <a href="#features" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Features</a>
+            <a href="#blogs" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Blogs</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">Reviews</a>
+            <a href="#faq" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 0;">FAQ</a>
         </div>
     </header>
+ 
 
     <!-- GLASSMORPHISM HERO SECTION WITH BIG PHONE -->
     <section style="background: radial-gradient(circle at top, #0f233c 0%, #070f1a 70%); padding: 50px 16px 80px 16px; text-align: center; position: relative; overflow: hidden;">
@@ -821,5 +820,16 @@
             }
         }
     </script>
+        <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+        </script>
+    
 </body>
 </html>
