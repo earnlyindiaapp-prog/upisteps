@@ -701,3 +701,107 @@ nav {
         transform: translateX(calc(-50% - 12.5px));
     }
 }
+
+/* Swipe Carousel Section */
+.swipe-carousel-section {
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.swipe-carousel-section .section-header {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 50px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Carousel Track Setup for Dragging */
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    cursor: grab;
+    user-select: none;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.carousel-container:active {
+    cursor: grabbing;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    padding: 20px 7%;
+    width: max-content;
+}
+
+/* Individual Swipe Card */
+.swipe-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 35px;
+    padding: 40px 30px;
+    width: 320px;
+    height: 440px;
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.swipe-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 184, 148, 0.5);
+}
+
+.card-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #00b894;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.swipe-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.swipe-card p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.card-action-btn {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: background 0.3s ease;
+}
+
+.swipe-card:hover .card-action-btn {
+    background: #00b894;
+    border-color: #00b894;
+}
