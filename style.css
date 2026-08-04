@@ -227,3 +227,172 @@ header {
     font-weight: 400;
 }
 
+
+/* How It Works Section Styling */
+.how-it-works-section {
+    background-color: #f9f9f6;
+    color: #111111;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-header {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.sub-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0d3b36;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    color: #111111;
+}
+
+.section-header h2 .highlight {
+    color: #0d3b36;
+}
+
+.section-header p {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Feature Card & Glassmorphism Container */
+.feature-card-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.step-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #0d3b36;
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.base-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Glassmorphism Effect Box */
+.glass-box {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    background: rgba(40, 40, 40, 0.75); /* Dark transparent glass background */
+    backdrop-filter: blur(12px);         /* Glassmorphism blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 16px;
+    color: #ffffff;
+    text-align: left;
+}
+
+.file-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.file-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.file-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.check-icon {
+    color: #4caf50;
+    font-size: 14px;
+    border: 1px solid #4caf50;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #cccccc;
+    margin-bottom: 6px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 2px;
+}
+
+/* Feature Text Block */
+.feature-text-block {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.feature-text-block h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.feature-text-block p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.4;
+}
+
