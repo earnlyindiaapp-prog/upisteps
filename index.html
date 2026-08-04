@@ -3,523 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take Health Clone</title>
+    <title>UPISTEPS - AI Health & Gaming Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Navbar -->
-    <header>
-        <a href="#" class="logo">T A K E</a>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">UPISTEPS</div>
         <div class="nav-right">
-            <a href="#" class="signup-btn">Sign Up</a>
-            <div class="menu-icon" id="menuBtn">
+            <button class="sign-up-btn">Sign Up</button>
+            <div class="menu-icon" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="rating-badge">
-            <span>★ ★ ★ ★ ☆</span> 4.9/5 from 1k reviews
+    <!-- Fullscreen Working Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" id="closeToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </div>
-        <h1>Everything Your Health Has to Say</h1>
-        <p>Take Health brings your lab reports, daily habits and long-term trends into one place, and explains what they actually mean — so you always know what to do next.</p>
-        <button class="cta-btn">Start for Free</button>
-        <div class="sub-text">*No Credit Card Required</div>
+        <ul>
+            <li><a href="#">AI Diagnostics</a></li>
+            <li><a href="#">Health Metrics</a></li>
+            <li><a href="#">Gaming Arena</a></li>
+            <li><a href="#">Trusted Security</a></li>
+        </ul>
+    </div>
 
-        <!-- App Mockup Image -->
-        <div class="mockup-container">
-            <img src="YOUR_PHONE_IMAGE_LINK.png" alt="Take Health App Mockup">
+    <!-- Hero Content -->
+    <section class="hero">
+        <div class="reviews-badge">
+            <div class="stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2v15.77z"/></svg>
+            </div>
+            <span>4.9/5 from 1k reviews</span>
+        </div>
+
+        <h1>Everything Your Health Has to Say</h1>
+        <p>UPISTEPS brings your AI insights, biological metrics, and gaming trends into one place, and explains what they actually mean — so you always know what to do next.</p>
+        
+        <button class="cta-btn">Start for Free</button>
+        <span class="sub-text">*No Credit Card Required</span>
+
+        <!-- Showcase Area -->
+        <div class="showcase-container">
+            <!-- Biological Age Glass Card -->
+            <div class="glass-card card-bio">
+                <div class="title">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Biological Age
+                </div>
+                <div class="value">28 <span style="font-size:12px; font-weight:normal;">years</span></div>
+                <div class="sub-val">Actual: 34</div>
+            </div>
+
+            <!-- Heart Rate Glass Card -->
+            <div class="glass-card card-hr">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <div>
+                    <div style="font-size: 10px; color: #555;">Live Pulse</div>
+                    <div class="hr-text">72 bpm</div>
+                </div>
+            </div>
+
+            <!-- Phone Frame -->
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-header">
+                        <div class="user-profile">
+                            <div class="user-avatar">JD</div>
+                            <div class="user-name">John Doe</div>
+                        </div>
+                    </div>
+                    <div class="score-circle">
+                        <div class="score-label">AI Health Score</div>
+                        <div class="score-number">86</div>
+                        <div style="font-size: 10px; color: #00b894; margin-top: 5px;">+4 this week</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Stats aur Wellness Intelligence Section -->
-<section class="wellness-section">
-    <!-- Hand Mockup Image -->
-    <div class="hand-mockup">
-        <img src="YOUR_HAND_PHONE_IMAGE.png" alt="Hand holding phone app">
-    </div>
 
-    <!-- Stats Counter with SVGs -->
-    <div class="stats-container">
-        <div class="stat-box">
-            <div class="stat-icon">
-                <!-- Hourglass SVG -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
-            </div>
-            <h3>20+ Years</h3>
-            <p>IN LONGEVITY SCIENCE</p>
-        </div>
-        <div class="stat-box">
-            <div class="stat-icon">
-                <!-- Shield Check SVG -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3>NSE & BSE</h3>
-            <p>LISTED COMPANY</p>
-        </div>
-        <div class="stat-box">
-            <div class="stat-icon">
-                <!-- Users SVG -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>5000+</h3>
-            <p>HAPPY USERS</p>
-        </div>
-    </div>
-
-    <!-- Wellness Heading & Description -->
-    <div class="wellness-content">
-        <h2>This is <span class="highlight">Wellness Intelligence</span></h2>
-        <p class="main-desc">Not another tracker. A way to finally know what your body's data has been telling you all along.</p>
-    </div>
-</section>
-    <!-- How It Works - Drop Your Reports Section -->
-<section class="how-it-works-section">
-    <div class="section-header">
-        <span class="sub-tag">HOW IT WORKS</span>
-        <h2>Turning Complexity Into <span class="highlight">Clarity</span></h2>
-        <p>See how Take Health analyzes your data, explains what it means, and guides you toward better health.</p>
-    </div>
-
-    <!-- Card with Glassmorphism Overlay -->
-    <div class="feature-card-container">
-        <div class="image-wrapper">
-            <span class="step-number">1</span>
-            <!-- Background Image (Reports/Hands) -->
-            <img src="YOUR_REPORT_IMAGE.png" alt="Analyzing Medical Report" class="base-img">
-            
-            <!-- Glassmorphism Box Overlay -->
-            <div class="glass-box">
-                <div class="file-info">
-                    <div class="file-icon-text">
-                        <span class="file-doc-icon">📄</span>
-                        <span class="file-name">Medical_Report.pdf</span>
-                    </div>
-                    <span class="check-icon">✔</span>
-                </div>
-                <div class="progress-info">
-                    <span>Upload complete</span>
-                    <span>100%</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Description below card -->
-    <div class="feature-text-block">
-        <h3>Drop Your Reports</h3>
-        <p>Upload your health reports seamlessly and let us do the rest.</p>
-    </div>
-</section>
-    
-    <!-- Step 3: Tailored Recommendations Section -->
-<section class="feature-step-section">
-    <div class="section-header">
-        <h2>We Analyze It for You</h2>
-        <p>Our AI reviews your data for key health insights.</p>
-    </div>
-
-    <div class="feature-card-container">
-        <div class="image-wrapper">
-            <span class="step-number">3</span>
-            <img src="YOUR_RECOMMENDATIONS_IMAGE.png" alt="Tailored Recommendations" class="base-img">
-            
-            <!-- Glassmorphism Overlay Box 2 -->
-            <div class="glass-box recommendations-box">
-                <span class="rec-tag">RECOMMENDED ACTIONS</span>
-                
-                <div class="rec-item">
-                    <h4>Walk 15 mins after lunch</h4>
-                    <p>Supports Glucose Regulation</p>
-                </div>
-                
-                <div class="divider-line"></div>
-                
-                <div class="rec-item">
-                    <h4>Magnesium glycinate</h4>
-                    <p>200mg before sleep</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-text-block">
-        <h3>Tailored Recommendations</h3>
-        <p>Turn your medical reports into something you can actually understand and act on.</p>
-    </div>
-</section>
-
-<!-- Step 4: Health Progress Insights Section -->
-<section class="feature-step-section">
-    <div class="feature-card-container dark-card-bg">
-        <div class="image-wrapper">
-            <span class="step-number">4</span>
-            <img src="YOUR_CHART_IMAGE.png" alt="Health Progress Insights" class="base-img">
-        </div>
-    </div>
-
-    <div class="feature-text-block">
-        <h3>Health Progress Insights</h3>
-        <p>Track your health journey with smart progress tracking.</p>
-    </div>
-</section>
-    
-<!-- Everything You Need For Better Wellness Section -->
-<section class="carousel-section">
-    <div class="section-header">
-        <h2>Everything You Need <br>For Better <span class="highlight">Wellness</span></h2>
-        <p>From AI-powered lab analysis and medical records to nutrition, sleep, activity, and personalized coaching, Take Health brings every part of your wellness journey together in one intelligent platform.</p>
-    </div>
-
-    <!-- Scrolling Cards Container -->
-    <div class="carousel-container">
-        <!-- Card 1 -->
-        <div class="carousel-card">
-            <img src="YOUR_CARD_IMAGE_1.png" alt="Personalized Guidance">
-            <div class="card-overlay-content">
-                <h3>Personalized Guidance</h3>
-                <p>Supplement Guidance & Tracking</p>
-                <div class="card-btn">+</div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="carousel-card">
-            <img src="YOUR_CARD_IMAGE_2.png" alt="Health Intelligence">
-            <div class="card-overlay-content">
-                <h3>Health Intelligence</h3>
-                <p>Lab Report Analysis • Medical Records • Health Alerts</p>
-                <div class="card-btn">+</div>
-            </div>
-        </div>
-
-        <!-- Card 3 (Agar aur cards add karne hon) -->
-        <div class="carousel-card">
-            <img src="YOUR_CARD_IMAGE_3.png" alt="Nutrition & Sleep">
-            <div class="card-overlay-content">
-                <h3>Nutrition & Sleep</h3>
-                <p>Daily Habits & Trend Tracking</p>
-                <div class="card-btn">+</div>
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- CTA Banner & Testimonials Section -->
-<section class="cta-testimonial-section">
-    <!-- Big Rounded Banner with Background Image -->
-    <div class="cta-banner">
-        <div class="cta-content">
-            <h2>Start Seeing The Full Picture.</h2>
-            <p>Grounded in your biology. Built around you.</p>
-            
-            <div class="cta-buttons">
-                <button class="btn-white">Start For Free</button>
-                <button class="btn-dark-outline">Download Android APK</button>
-            </div>
-            
-            <span class="coming-soon">Coming soon on Play Store & App Store</span>
-        </div>
-    </div>
-
-    <!-- Testimonials Section Header -->
-    <div class="testimonial-header">
-        <h2>The Difference<br>You Can Feel</h2>
-    </div>
-
-    <!-- Horizontal Scrolling Testimonial Cards -->
-    <div class="testimonial-scroll-container">
-        <!-- Review Card 1 -->
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="review-text">"Having all my medical records and lab reports explained in plain English has given me complete confidence in managing my health. Couldn't recommend Take Health enough!"</p>
-            <div class="user-info">
-                <img src="USER_IMAGE_1.png" alt="Sneha S." class="user-avatar">
-                <span class="user-name">Sneha S.</span>
-            </div>
-        </div>
-
-        <!-- Review Card 2 -->
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="review-text">"The personalized daily recommendations and sleep tracking have completely changed my lifestyle. Very easy to understand."</p>
-            <div class="user-info">
-                <img src="USER_IMAGE_2.png" alt="Rahul M." class="user-avatar">
-                <span class="user-name">Rahul M.</span>
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- Auto-Scrolling Testimonials Section -->
-<section class="auto-scroll-section">
-    <div class="testimonial-header">
-        <h2>The Difference<br>You Can Feel</h2>
-    </div>
-
-    <!-- Infinite Scrolling Track -->
-    <div class="slider-wrapper">
-        <div class="slide-track">
-            <!-- Review Card 1 -->
-            <div class="testimonial-card">
-                <div class="card-top">
-                    <span class="stars">★★★★★</span>
-                    <span class="quote-icon">❞</span>
-                </div>
-                <p class="review-text">"Having all my medical records and lab reports explained in plain English has given me complete confidence in managing my health. Couldn't recommend Take Health enough!"</p>
-                <div class="user-info">
-                    <img src="USER_IMAGE_1.png" alt="Sneha S." class="user-avatar">
-                    <span class="user-name">Sneha S.</span>
-                </div>
-            </div>
-
-            <!-- Review Card 2 -->
-            <div class="testimonial-card">
-                <div class="card-top">
-                    <span class="stars">★★★★★</span>
-                    <span class="quote-icon">❞</span>
-                </div>
-                <p class="review-text">"The personalized daily recommendations and sleep tracking have completely changed my lifestyle. Very easy to understand and follow."</p>
-                <div class="user-info">
-                    <img src="USER_IMAGE_2.png" alt="Rahul M." class="user-avatar">
-                    <span class="user-name">Rahul M.</span>
-                </div>
-            </div>
-
-            <!-- Review Card 3 -->
-            <div class="testimonial-card">
-                <div class="card-top">
-                    <span class="stars">★★★★★</span>
-                    <span class="quote-icon">❞</span>
-                </div>
-                <p class="review-text">"A game changer for tracking longevity data. It feels like having a personal doctor in your pocket explaining everything clearly."</p>
-                <div class="user-info">
-                    <img src="USER_IMAGE_3.png" alt="Priya K." class="user-avatar">
-                    <span class="user-name">Priya K.</span>
-                </div>
-            </div>
-
-            <!-- Seamless Infinite Loop ke liye cards repeat kiye gaye hain -->
-            <div class="testimonial-card">
-                <div class="card-top">
-                    <span class="stars">★★★★★</span>
-                    <span class="quote-icon">❞</span>
-                </div>
-                <p class="review-text">"Having all my medical records and lab reports explained in plain English has given me complete confidence in managing my health."</p>
-                <div class="user-info">
-                    <img src="USER_IMAGE_1.png" alt="Sneha S." class="user-avatar">
-                    <span class="user-name">Sneha S.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Frequently Asked Questions Section -->
-<section class="faq-section">
-    <div class="faq-header">
-        <h2>Frequently Asked,<br>Clearly <span class="highlight">Answered</span></h2>
-    </div>
-</section>
-    
-    <!-- FAQ Section -->
-<section class="faq-container-section">
-    <div class="faq-list">
-        <!-- FAQ Item 1 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>How does Take Health work?</span>
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-                <p>Take Health aggregates your lab reports, daily wearable metrics, and health habits into a single, intelligent platform. Using advanced AI, it translates complex medical language into clear, actionable insights so you always know what your body needs.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 2 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Can I trust this with my health data?</span>
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-                <p>Yes, absolutely. We prioritize your privacy with enterprise-grade encryption and strict data security protocols, ensuring your sensitive medical information remains completely confidential and secure.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 3 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>What makes these insights feel personal, not one-size-fits-all?</span>
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-                <p>Unlike generic wellness apps, Take Health analyzes your unique biological markers, specific lab results, and personal lifestyle trends to craft custom recommendations tailored specifically to your body's real-time needs.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 4 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Will I finally understand what my reports mean?</span>
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-                <p>Yes! We break down complicated medical jargon, arrows, and technical numbers into plain, everyday English with clear explanations of what is optimal and what needs attention.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 5 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Do I need medical knowledge to use this?</span>
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-                <p>Not at all. The platform is designed for everyone—whether you are a longevity enthusiast or someone just trying to make sense of a routine annual blood test without medical background.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 6 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Is the app free to use?</span>
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-                <p>You can start for free, explore your basic wellness scores, and upload reports to see how the platform transforms your health data overview without requiring any credit card upfront.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer Section -->
-<footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-logo">T A K E</div>
-        <p class="footer-desc">The definitive AI health companion for those who demand more from their bodies. Precision analytics from TAKE Solutions Limited.</p>
-    </div>
-</footer>
-    <!-- Complete Professional Footer -->
-<footer class="main-footer">
-    <div class="footer-inner">
-        
-        <!-- Top Brand Info -->
-        <div class="footer-brand">
-            <div class="footer-logo">T A K E</div>
-            <p class="footer-tagline">The definitive AI health companion for those who demand more from their bodies. Precision analytics from TAKE Solutions Limited.</p>
-        </div>
-
-        <!-- Links Grid Section -->
-        <div class="footer-links-grid">
-            <!-- Platform Column -->
-            <div class="footer-col">
-                <h4>PLATFORM</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About us</a></li>
-                    <li><a href="#how-it-works">How it works</a></li>
-                </ul>
-            </div>
-
-            <!-- Support Column -->
-            <div class="footer-col">
-                <h4>SUPPORT</h4>
-                <ul>
-                    <li><a href="#help">Help Center</a></li>
-                    <li><a href="#safety">Safety Guide</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Legal Column -->
-            <div class="footer-col legal-col">
-                <h4>LEGAL</h4>
-                <ul>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                    <li><a href="#disclaimer">Medical Disclaimer</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Newsletter & Contact Section -->
-        <div class="footer-newsletter-section">
-            <div class="stay-updated">
-                <h4>STAY UPDATED</h4>
-                <p>Join our newsletter for the latest in longevity research.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">SUBSCRIBE</button>
-                </form>
-            </div>
-
-            <div class="get-in-touch">
-                <h4>GET IN TOUCH</h4>
-                <a href="mailto:support@takelimited.com" class="email-link">
-                    <!-- Mail SVG Icon -->
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    support@takelimited.com
-                </a>
-            </div>
-        </div>
-
-        <!-- Social Media Icons (Pure SVGs) -->
-        <div class="footer-socials">
-            <!-- Facebook -->
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <!-- Twitter / X -->
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <!-- YouTube -->
-            <a href="https://youtube.com" target="_blank" aria-label="YouTube">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"/></svg>
-            </a>
-        </div>
-
-        <!-- Bottom Copyright Divider -->
-        <div class="footer-bottom-divider"></div>
-        <div class="footer-bottom-text">
-            <p>© 2026 Take Health Inc. All rights reserved.</p>
-            <p class="designer-text">Designed with purpose. Priced with care.</p>
-        </div>
-
-    </div>
-</footer>
-
+    <!-- JavaScript for Working Menu -->
     <script>
-    const faqItems = document.querySelectorAll('.faq-item');
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeToggle = document.getElementById('closeToggle');
 
-    faqItems.forEach(item => {
-        const questionBtn = item.querySelector('.faq-question');
-        
-        questionBtn.addEventListener('click', () => {
-            // Agar koi aur khula hai toh use band karne ke liye (Optional)
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-
-            // Clicked item ko toggle karna
-            item.classList.toggle('active');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
         });
-    });
+
+        closeToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
     </script>
-    
-    
-    
 </body>
 </html>
