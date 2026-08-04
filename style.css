@@ -144,3 +144,86 @@ header {
     border-top-right-radius: 30px;
     box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
 }
+
+/* Wellness Section Styling */
+.wellness-section {
+    background-color: #f9f9f6; 
+    color: #111111;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hand-mockup {
+    margin-top: -80px; 
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.hand-mockup img {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Stats Styling */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 500px;
+    margin: 0 auto 60px auto;
+}
+
+.stat-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-icon {
+    margin-bottom: 8px;
+    color: #0d3b36; /* SVG icons color */
+}
+
+.stat-box h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.stat-box p {
+    font-size: 11px;
+    font-weight: 700;
+    color: #555555;
+    letter-spacing: 1.5px;
+}
+
+/* Wellness Text Content */
+.wellness-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.wellness-content h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #111111;
+}
+
+.wellness-content h2 .highlight {
+    color: #0d3b36; 
+}
+
+.main-desc {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #333333;
+    font-weight: 400;
+}
+
