@@ -1283,3 +1283,96 @@ body {
         height: 380px;
     }
 }
+
+/* FIXED HEALTH CAROUSEL STYLING */
+.health-carousel-section {
+    padding: 80px 0;
+    background-color: #F8FAFC;
+    width: 100%;
+    overflow: hidden;
+}
+
+.horizontal-scroll-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 20px;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 20px 10px 40px 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Scrollbar hide */
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-card {
+    min-width: 280px !important;
+    max-width: 280px !important;
+    width: 280px !important;
+    height: 400px !important;
+    border-radius: 28px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    flex-shrink: 0 !important; /* कार्ड्स को दबने से रोकता है */
+    scroll-snap-align: start;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.card-content h3 {
+    color: #FFFFFF !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    margin-bottom: 6px !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.card-content p {
+    color: #E2E8F0 !important;
+    font-size: 13px !important;
+    margin-bottom: 16px !important;
+    line-height: 1.4 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.plus-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .scroll-card {
+        min-width: 250px !important;
+        max-width: 250px !important;
+        height: 370px !important;
+    }
+}
