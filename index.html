@@ -716,7 +716,8 @@
                     <p class="footer-company">Unique Piece Studio Private Limited</p>
                     <p class="footer-tagline">Building next-gen AI tools and gaming performance hubs.</p>
                 </div>
-    <!-- SECTION: HEALTH & VITALITY AUTO CAROUSEL -->
+                
+                    <!-- SECTION: HEALTH & VITALITY AUTO CAROUSEL -->
     <section class="health-carousel-section">
         <div class="carousel-header-box">
             <span class="sub-heading">HOLISTIC SYSTEM VITALITY</span>
@@ -724,7 +725,7 @@
             <p class="section-desc">Explore system health, mental focus, and digital wellness.</p>
         </div>
         
-        <!-- Continuous Infinite Scroll Track -->
+        <!-- Infinite Scroll Track -->
         <div class="infinite-scroll-container">
             <div class="infinite-track" id="infiniteTrack">
                 
@@ -843,22 +844,13 @@
     </section>
 
     <!-- FOOTER SECTION -->
-    <footer>
-        <!-- Yahan aapka purana footer ka content rahega jo pehle tha -->
+    <footer class="main-footer">
+        <!-- Aapka footer content -->
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const menuBtn = document.getElementById('menuToggle');
-            navLinks.classList.toggle('active');
-            menuBtn.classList.toggle('open');
-        }
-
-        // SEAMLESS INFINITE AUTO-SCROLL LOOP FOR 10 CARDS
+        // Seamless Infinite Auto-Scroll Loop
         const track = document.getElementById('infiniteTrack');
-        
         if (track) {
             const cards = Array.from(track.children);
             cards.forEach(card => {
@@ -875,7 +867,7 @@
             track.addEventListener('touchstart', () => isPaused = true);
             track.addEventListener('touchend', () => isPaused = false);
 
-            function controlledStep() {
+            function autoScrollStep() {
                 if (!isPaused) {
                     scrollPos += speed;
                     if (scrollPos >= track.scrollWidth / 2) {
@@ -883,12 +875,11 @@
                     }
                     track.style.transform = `translateX(-${scrollPos}px)`;
                 }
-                requestAnimationFrame(controlledStep);
+                requestAnimationFrame(autoScrollStep);
             }
-
-            requestAnimationFrame(controlledStep);
+            requestAnimationFrame(autoScrollStep);
         }
-    </script>
+   </script>
 </body>
-            </html>
+</html> 
                 
