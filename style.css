@@ -1224,7 +1224,8 @@ body {
     border-radius: 24px !important;
     position: relative !important;
     overflow: hidden !important;
-    background: #111827 !important;
+    background: #ffffff !important; /* यहाँ #111827 की जगह #ffffff (White) कर दे */
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .card-bg-img {
