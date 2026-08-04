@@ -1650,3 +1650,40 @@ body {
     }
 }
     
+/* FIX FOOTER JUMPING INTO CAROUSEL */
+footer {
+    position: relative !important;
+    clear: both !important;
+    width: 100% !important;
+    z-index: 10 !important;
+}
+
+/* FIX CAROUSEL CONTAINER & TRACK */
+.health-carousel-section {
+    width: 100% !important;
+    overflow: hidden !important;
+    clear: both !important;
+    display: block !important;
+}
+
+.infinite-scroll-container {
+    width: 100% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+}
+
+.infinite-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 24px !important;
+}
+
+/* ENSURE CARDS DO NOT BREAK */
+.scroll-card {
+    flex: 0 0 270px !important;
+    width: 270px !important;
+    height: 400px !important;
+    box-sizing: border-box !important;
+}
+
