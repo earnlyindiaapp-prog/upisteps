@@ -247,3 +247,140 @@ body {
 .faq-item.active .faq-icon {
     transform: rotate(45deg); /* Turns + into x */
 }
+
+/* Blogs Section */
+.blogs-section {
+    padding: 80px 0;
+    background: #0f1918;
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: #152220;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.blog-tag {
+    align-self: flex-start;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    color: #38bdf8;
+}
+
+/* Footer Section */
+.footer {
+    background: #050b0a;
+    padding-top: 70px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-brand p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.footer-links-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-col a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #10b981;
+}
+
+.support-email {
+    color: #38bdf8;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    background: #030706;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright-text p {
+    color: #64748b;
+    font-size: 13px;
+    text-align: center;
+}
