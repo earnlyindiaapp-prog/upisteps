@@ -1289,3 +1289,212 @@ body {
     background: transparent !important;
     box-shadow: none !important;
 }
+
+/* --- TAILORED RECOMMENDATIONS & INSIGHTS SECTION CSS --- */
+.tailored-features-section {
+    padding: 90px 0 !important;
+    background-color: #ffffff !important;
+}
+
+.feature-showcase-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 60px !important;
+    margin-bottom: 80px !important;
+}
+
+.feature-showcase-row.reverse-row {
+    flex-direction: row-reverse !important;
+}
+
+.feature-img-card {
+    flex: 1 !important;
+    width: 100% !important;
+    height: 380px !important;
+    border-radius: 28px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Glass Card Style (Top Block) */
+.glass-banner-card {
+    background: #0f172a !important;
+}
+
+.showcase-bg-img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 0.65 !important;
+}
+
+.glass-float-box {
+    position: absolute !important;
+    bottom: 24px !important;
+    left: 24px !important;
+    right: 24px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+}
+
+.glass-badge-top {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #38bdf8 !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 8px !important;
+    text-transform: uppercase !important;
+}
+
+.glass-action-item h4 {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin: 0 0 2px 0 !important;
+}
+
+.glass-action-item p {
+    color: #cbd5e1 !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+}
+
+.glass-divider {
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    margin: 12px 0 !important;
+}
+
+/* Mockup Card Style (Bottom Block) */
+.mockup-bg-card {
+    background: #064e3b !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 30px !important;
+}
+
+.card-number-badge {
+    position: absolute !important;
+    top: 20px !important;
+    left: 20px !important;
+    width: 28px !important;
+    height: 28px !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+.mockup-inner-box {
+    background: #ffffff !important;
+    width: 82% !important;
+    max-width: 300px !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.mockup-header-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+}
+
+.mockup-time {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+}
+
+.mockup-dot {
+    width: 12px !important;
+    height: 4px !important;
+    background: #0f172a !important;
+    border-radius: 2px !important;
+}
+
+.mockup-score-title {
+    font-size: 12px !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+}
+
+.mockup-score-value {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #0284c7 !important;
+    margin-bottom: 16px !important;
+}
+
+.mockup-chart-bars {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    height: 80px !important;
+    padding: 0 10px !important;
+    margin-bottom: 8px !important;
+}
+
+.m-bar {
+    width: 14px !important;
+    background: #bae6fd !important;
+    border-radius: 6px 6px 0 0 !important;
+}
+
+.m-bar.active-bar {
+    background: #2563eb !important;
+}
+
+.mockup-labels {
+    display: flex !important;
+    justify-content: space-between !important;
+    font-size: 10px !important;
+    color: #94a3b8 !important;
+    padding: 0 4px !important;
+}
+
+.feature-text-content {
+    flex: 1 !important;
+}
+
+.feature-text-content .main-heading {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 12px !important;
+}
+
+.feature-text-content .section-desc {
+    font-size: 15px !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .feature-showcase-row, 
+    .feature-showcase-row.reverse-row {
+        flex-direction: column !important;
+        gap: 24px !important;
+        margin-bottom: 50px !important;
+    }
+    
+    .feature-img-card {
+        height: 320px !important;
+    }
+}
