@@ -1256,3 +1256,30 @@ body {
     padding: 16px !important;
     box-sizing: border-box !important;
 }
+
+/* --- FIX FOR PEAK PERFORMANCE HEADING BLUR/FADE --- */
+.carousel-header-box h2,
+.carousel-header-box .main-heading,
+.carousel-header-box .sub-heading,
+.carousel-header-box .section-desc {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+}
+
+.carousel-header-box .main-heading {
+    color: #ffffff !important;
+}
+
+.carousel-header-box .main-heading .teal-text {
+    color: #0f766e !important;
+}
+
+.carousel-header-box .sub-heading {
+    color: #0f766e !important;
+    font-weight: 700 !important;
+}
+
+.carousel-header-box .section-desc {
+    color: #94a3b8 !important;
+}
