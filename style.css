@@ -1200,3 +1200,86 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* HEALTH CAROUSEL STYLING (LIKE TAKE.HEALTH) */
+.health-carousel-section {
+    padding: 80px 0;
+    background-color: #F8FAFC;
+    overflow: hidden;
+}
+
+.horizontal-scroll-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0 30px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.scroll-card {
+    min-width: 280px;
+    height: 420px;
+    border-radius: 28px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.scroll-card:hover {
+    transform: translateY(-6px);
+}
+
+.card-content h3 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.card-content p {
+    color: #E2E8F0;
+    font-size: 12px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.plus-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.plus-btn:hover {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 768px) {
+    .scroll-card {
+        min-width: 240px;
+        height: 380px;
+    }
+}
