@@ -3,130 +3,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Steps - AI & Gaming Intelligence Hub</title>
+    <title>UPI Steps - AI Health & Walking Tracker</title>
     
-    <!-- Modern Sans Font -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: #070f1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* STICKY GLASSMORPHISM NAVBAR */
+        .navbar-sticky {
+            background: rgba(7, 15, 26, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .logo {
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-accent {
+            color: #14b8a6;
+        }
+
+        /* Desktop Links */
+        .nav-links-desktop {
+            display: none;
+            gap: 24px;
+        }
+
+        .nav-links-desktop a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links-desktop a:hover {
+            color: #14b8a6;
+        }
+
+        .nav-right-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-signup-pill {
+            background: #0f766e;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Interactive 3-Line to X Menu Button */
+        .menu-toggle-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-toggle-btn span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #ffffff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animation when menu is active (Turns into X) */
+        .menu-toggle-btn.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle-btn.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Dropdown Menu Drawer with Glass Effect */
+        .mobile-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 19, 32, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+        }
+
+        .mobile-dropdown-menu.open {
+            max-height: 350px;
+            padding: 20px;
+        }
+
+        .mobile-dropdown-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .mobile-dropdown-menu a:hover {
+            color: #14b8a6;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links-desktop {
+                display: flex;
+            }
+            .menu-toggle-btn {
+                display: none;
+            }
+            .mobile-dropdown-menu {
+                display: none !important;
+            }
+        }
+
+        /* GLASSMORPHISM HERO SECTION WITH BIG PHONE */
+        .hero-section {
+            background: radial-gradient(circle at top, #0f233c 0%, #070f1a 70%);
+            padding: 50px 16px 80px 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            color: #ffffff;
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-desc {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 580px;
+            margin: 0 auto 30px auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 12px 30px rgba(15, 118, 110, 0.4);
+        }
+
+        .hero-subtext {
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        /* Big Phone Mockup Container */
+        .phone-mockup-wrapper {
+            position: relative;
+            max-width: 360px;
+            margin: 40px auto 0 auto;
+        }
+
+        .phone-frame {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 48px;
+            padding: 14px;
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .phone-screen {
+            background: rgba(7, 13, 25, 0.9);
+            border-radius: 36px;
+            overflow: hidden;
+            text-align: left;
+            color: #ffffff;
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .phone-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+
+        .phone-notch {
+            width: 70px;
+            height: 14px;
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        .app-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .app-logo-badge {
+            width: 32px;
+            height: 32px;
+            background: #14b8a6;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 11px;
+        }
+
+        .step-ring-box {
+            background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, rgba(7,13,25,1) 75%);
+            border: 1px solid rgba(20, 184, 166, 0.25);
+            border-radius: 24px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 12px;
+            border-radius: 14px;
+        }
+
+        .insight-box {
+            background: rgba(15, 118, 110, 0.12);
+            border: 1px solid rgba(15, 118, 110, 0.25);
+            border-radius: 14px;
+            padding: 12px;
+        }
+    </style>
 </head>
 <body>
 
-        <!-- NAVBAR CODE -->
-    <header style="background: #070f1a; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 14px 20px; position: sticky; top: 0; z-index: 1000;">
-        <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+    <!-- STICKY GLASSMORPHISM NAVBAR -->
+    <header class="navbar-sticky">
+        <div class="nav-container">
             
             <!-- Logo -->
-            <a href="#" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #fff;">
-                UPI <span style="color: #14b8a6;">STEPS</span>
-            </a>
+            <a href="#" class="logo">UPI <span class="logo-accent">STEPS</span></a>
 
             <!-- Desktop Links -->
-            <nav style="display: none; gap: 24px;">
-                <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; font-size: 14px;">How It Works</a>
-                <a href="#features" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Features</a>
-                <a href="#blogs" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Blogs</a>
-                <a href="#reviews" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Reviews</a>
-                <a href="#faq" style="color: #94a3b8; text-decoration: none; font-size: 14px;">FAQ</a>
+            <nav class="nav-links-desktop">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
             </nav>
 
-            <!-- Right Area: Sign Up & Menu Button -->
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <a href="#app" style="background: #0f766e; color: #fff; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 600;">Sign Up</a>
+            <!-- Right Area: Toggle Button & Sign Up -->
+            <div class="nav-right-area">
+                <a href="#app" class="btn-signup-pill">Sign Up</a>
 
-                <!-- 3-Line Menu Button -->
-                <button type="button" onclick="toggleMobileMenu()" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); width: 38px; height: 38px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer;">
-                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
-                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
-                    <span style="display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px;"></span>
+                <!-- 3-Line Hamburger Menu Button -->
+                <button class="menu-toggle-btn" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
 
         </div>
 
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobileMenu" style="display: none; width: 100%; background: #0b1320; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 16px 20px; margin-top: 14px; flex-direction: column; gap: 12px;">
-            <a href="#how-it-works" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 600; padding: 6px 0;">How It Works</a>
-            <a href="#features" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 600; padding: 6px 0;">Features</a>
-            <a href="#blogs" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 600; padding: 6px 0;">Blogs</a>
-            <a href="#reviews" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 600; padding: 6px 0;">Reviews</a>
-            <a href="#faq" onclick="toggleMobileMenu()" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 600; padding: 6px 0;">FAQ</a>
+        <!-- Mobile Dropdown Links Container -->
+        <div class="mobile-dropdown-menu" id="mobileMenu">
+            <a href="#how-it-works" onclick="toggleMobileMenu()">How It Works</a>
+            <a href="#features" onclick="toggleMobileMenu()">Features</a>
+            <a href="#blogs" onclick="toggleMobileMenu()">Blogs</a>
+            <a href="#reviews" onclick="toggleMobileMenu()">Reviews</a>
+            <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
         </div>
     </header>
 
-        <!-- HERO SECTION & PHONE SCREEN CODE -->
-    <section style="background: #070f1a; padding: 40px 16px 60px 16px; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
+    <!-- GLASSMORPHISM HERO SECTION WITH BIG PHONE -->
+    <section class="hero-section">
+        <div class="hero-content">
             
-            <h1 style="color: #ffffff; font-size: 34px; font-weight: 800; line-height: 1.2; margin-bottom: 14px;">
+            <h1 class="hero-title">
                 Track Every Step, <br>Transform Your Health
             </h1>
             
-            <p style="color: #94a3b8; font-size: 15px; line-height: 1.5; max-width: 540px; margin: 0 auto 24px auto;">
+            <p class="hero-desc">
                 Earn Step AI monitors your daily movement with absolute precision, helping you build better fitness habits effortlessly.
             </p>
 
-            <div style="margin-bottom: 30px;">
-                <a href="#download" style="display: inline-block; background: #0f766e; color: #ffffff; font-weight: 700; padding: 14px 32px; border-radius: 30px; text-decoration: none; font-size: 15px;">Download the App</a>
-                <div style="color: #64748b; font-size: 11px; margin-top: 8px;">*No Credit Card Required</div>
+            <div style="margin-bottom: 40px;">
+                <a href="#download" class="hero-btn">Download the App</a>
+                <div class="hero-subtext">*No Credit Card Required</div>
             </div>
 
-            <!-- Phone Screen Container -->
-            <div style="position: relative; max-width: 340px; margin: 0 auto; background: #1e293b; border-radius: 40px; padding: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.6); border: 2px solid #334155;">
-                <div style="background: #070d19; border-radius: 30px; overflow: hidden; text-align: left; color: #ffffff; padding: 16px; border: 1px solid rgba(255,255,255,0.06);">
-                    
-                    <!-- Status Bar -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #64748b; margin-bottom: 14px;">
-                        <span>9:41</span>
-                        <div style="width: 60px; height: 12px; background: #000; border-radius: 8px;"></div>
-                        <span>5G</span>
-                    </div>
+            <!-- Big Real Phone Mockup Container -->
+            <div class="phone-mockup-wrapper">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        
+                        <!-- Status Bar -->
+                        <div class="phone-status">
+                            <span>9:41</span>
+                            <div class="phone-notch"></div>
+                            <span>5G</span>
+                        </div>
 
-                    <!-- App Header Inside Phone -->
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <div style="width: 28px; height: 28px; background: #14b8a6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10px;">ES</div>
-                            <div>
-                                <div style="font-size: 8px; color: #14b8a6; font-weight: 700;">EARN STEP AI</div>
-                                <div style="font-size: 12px; font-weight: 700; color: #fff;">Daily Fitness</div>
+                        <!-- App Header inside phone -->
+                        <div class="app-header-inner">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div class="app-logo-badge">ES</div>
+                                <div>
+                                    <div style="font-size: 9px; color: #14b8a6; font-weight: 700;">EARN STEP AI</div>
+                                    <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Daily Fitness</div>
+                                </div>
+                            </div>
+                            <div style="background: rgba(20, 184, 166, 0.15); border: 1px solid rgba(20, 184, 166, 0.3); color: #2dd4bf; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 12px;">ACTIVE</div>
+                        </div>
+
+                        <!-- Central Step Ring View -->
+                        <div class="step-ring-box">
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <span style="font-size: 34px; font-weight: 900; color: #ffffff; letter-spacing: -1px;">8,450</span>
+                                <span style="font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 4px;">Steps Today</span>
                             </div>
                         </div>
-                        <div style="background: rgba(20, 184, 166, 0.15); color: #2dd4bf; font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 10px;">ACTIVE</div>
-                    </div>
 
-                    <!-- Step Ring View -->
-                    <div style="background: rgba(20, 184, 166, 0.08); border: 1px solid rgba(20, 184, 166, 0.2); border-radius: 20px; padding: 18px; text-align: center; margin-bottom: 12px;">
-                        <span style="font-size: 30px; font-weight: 900; color: #fff;">8,450</span>
-                        <div style="font-size: 10px; color: #14b8a6; font-weight: 700; text-transform: uppercase; margin-top: 2px;">Steps Today</div>
-                    </div>
-
-                    <!-- Stats Grid -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
-                        <div style="background: rgba(255,255,255,0.03); padding: 10px; border-radius: 12px;">
-                            <div style="font-size: 9px; color: #64748b;">Calories</div>
-                            <div style="font-size: 14px; font-weight: 800; color: #fff;">420 <span style="font-size: 10px; color: #34d399;">kcal</span></div>
+                        <!-- Mini Stats Grid -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Calories</div>
+                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">420 <span style="font-size: 11px; color: #34d399;">kcal</span></div>
+                            </div>
+                            <div class="stat-card">
+                                <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">Distance</div>
+                                <div style="font-size: 16px; font-weight: 800; color: #ffffff;">6.2 <span style="font-size: 11px; color: #34d399;">km</span></div>
+                            </div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.03); padding: 10px; border-radius: 12px;">
-                            <div style="font-size: 9px; color: #64748b;">Distance</div>
-                            <div style="font-size: 14px; font-weight: 800; color: #fff;">6.2 <span style="font-size: 10px; color: #34d399;">km</span></div>
+
+                        <!-- Bottom Insight Strip -->
+                        <div class="insight-box">
+                            <div style="font-size: 9px; font-weight: 700; color: #2dd4bf; margin-bottom: 3px;">AI FITNESS INSIGHT</div>
+                            <p style="font-size: 11px; color: #cbd5e1; margin: 0; line-height: 1.4;">Your walking speed increased by 12% today. Keep it up!</p>
                         </div>
-                    </div>
 
-                    <!-- Insight -->
-                    <div style="background: rgba(15, 118, 110, 0.1); border: 1px solid rgba(15, 118, 110, 0.2); border-radius: 12px; padding: 10px;">
-                        <div style="font-size: 8px; font-weight: 700; color: #2dd4bf; margin-bottom: 2px;">AI FITNESS INSIGHT</div>
-                        <p style="font-size: 10px; color: #cbd5e1; margin: 0;">Your walking speed increased by 12% today. Keep it up!</p>
                     </div>
-
                 </div>
             </div>
 
         </div>
     </section>
-    
-    
+
     <!-- PHONE JS -->
     <script>
         function switchPhoneTab(btnElement, tabName) {
@@ -790,16 +1100,18 @@
         </div>
     </footer>
     
-        <script>
+        -- JavaScript to Handle Menu Toggle and X Animation -->
+    <script>
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            // Agar menu abhi hidden hai, toh khol do; nahi toh chupakar band kar do
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.setProperty('display', 'flex', 'important');
-            } else {
-                menu.style.setProperty('display', 'none', 'important');
-            }
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
         }
-        </script>  
+    </script>
+</body>
+</html>
+
 </body>
 </html>
