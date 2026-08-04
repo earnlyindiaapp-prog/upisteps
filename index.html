@@ -1,683 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Steps - Wellness Intelligence</title>
-    
-    <!-- Google Fonts -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>UPISteps | Health & Wellness</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #fcfbf7; /* Take Health off-white background style */
-            color: #111827;
-            overflow-x: hidden;
-        }
-
-        /* --- STICKY NAVBAR (Teal Green Theme) --- */
-        .navbar-sticky {
-            background: #0f3833;
-            padding: 16px 24px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        .logo {
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-right-area {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .btn-signup-pill {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 24px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .btn-signup-pill:hover {
-            border-color: #fff;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .menu-toggle-btn {
-            background: transparent;
-            border: none;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 6px;
-            cursor: pointer;
-        }
-
-        .menu-toggle-btn span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #ffffff;
-            border-radius: 2px;
-        }
-
-        /* --- HERO SECTION (Teal Background) --- */
-        .hero-section {
-            background: #0f3833;
-            color: #ffffff;
-            padding: 40px 20px 80px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .reviews-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 13px;
-            margin-bottom: 24px;
-            color: #e2e8f0;
-        }
-
-        .hero-title {
-            font-size: clamp(34px, 5vw, 54px);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-desc {
-            color: #cbd5e1;
-            font-size: clamp(15px, 2vw, 17px);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
-
-        .hero-btn {
-            display: inline-block;
-            background: #092420;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 16px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s;
-        }
-
-        .hero-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .no-credit-text {
-            color: #94a3b8;
-            font-size: 12px;
-            margin-top: 10px;
-        }
-
-        /* --- PHONE MOCKUP WITH GLASS CARD --- */
-        .phone-mockup-container {
-            position: relative;
-            max-width: 320px;
-            margin: 40px auto 0 auto;
-        }
-
-        .floating-glass-card-left {
-            position: absolute;
-            top: 20px;
-            left: -30px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 12px 16px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            text-align: left;
-            z-index: 10;
-            color: #111;
-            width: 140px;
-        }
-
-        .phone-frame-img {
-            background: #000000;
-            border-radius: 40px;
-            padding: 12px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-            border: 4px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .phone-inner-screen {
-            background: #0b0f17;
-            border-radius: 30px;
-            padding: 16px;
-            text-align: left;
-            color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar-sticky">
-        <div class="nav-container">
-            <a href="#" class="logo">UPI STEPS</a>
-            <div class="nav-right-area">
-                <a href="#signup" class="btn-signup-pill">Sign Up</a>
-                <button class="menu-toggle-btn" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <header class="navbar">
+
+        <div class="logo">
+            UPISteps
         </div>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#wellness">Wellness</a>
+            <a href="#games">Games</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+
+        <a href="#download" class="nav-btn">
+            Download APK
+        </a>
+
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="reviews-badge">
-            <span>★★★★★</span> 4.9/5 from 1k reviews
-        </div>
-        
-        <h1 class="hero-title">Everything Your Health<br>Has to Say</h1>
-        <p class="hero-desc">UPI Steps brings your lab reports, daily habits and long-term trends into one place, and explains what they actually mean — so you always know what to do next.</p>
-        
-        <div>
-            <a href="#free" class="hero-btn">Start for Free</a>
-            <div class="no-credit-text">*No Credit Card Required</div>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+    <section class="hero" id="home">
+
+        <div class="hero-badge">
+            Smart Health Tracking Platform
         </div>
 
-        <!-- Phone Mockup Area -->
-        <div class="phone-mockup-container">
-            <div class="floating-glass-card-left">
-                <div style="font-size: 10px; color: #0f3833; font-weight: 700;">BIOLOGICAL AGE</div>
-                <div style="font-size: 20px; font-weight: 800; color: #0f3833;">28 <span style="font-size: 11px; font-weight: 500;">years</span></div>
-                <div style="font-size: 9px; color: #64748b; margin-top: 2px;">Actual: 34</div>
-            </div>
+        <h1>
+            Everything Your Body Needs For Better Health
+        </h1>
 
-            <div class="phone-frame-img">
-                <div class="phone-inner-screen">
-                    <div style="display: flex; justify-content: space-between; font-size: 10px; color: #94a3b8; margin-bottom: 12px;">
-                        <span>9:41</span>
-                        <span>5G</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-                        <div style="width: 28px; height: 28px; background: #334155; border-radius: 50%;"></div>
-                        <span style="font-size: 13px; font-weight: 600;">John Doe</span>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 16px; text-align: center;">
-                        <div style="font-size: 10px; color: #94a3b8; text-transform: uppercase;">Health score</div>
-                        <div style="font-size: 32px; font-weight: 800; color: #fff; margin: 4px 0;">86</div>
-                        <div style="display: inline-block; background: rgba(20,184,166,0.2); color: #2dd4bf; padding: 2px 8px; border-radius: 10px; font-size: 10px;">📈 +4 this week</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
-
-    <!-- HOW IT WORKS SECTION -->
-    <section style="padding: 90px 20px; max-width: 1000px; margin: 0 auto; text-align: center;">
-        <div style="color: #0f3833; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;">How It Works</div>
-        <h2 style="font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: #111827; line-height: 1.2; margin-bottom: 16px;">
-            Turning Complexity Into <span style="color: #0f3833;">Clarity</span>
-        </h2>
-        <p style="color: #4b5563; font-size: 16px; max-width: 600px; margin: 0 auto 50px auto; line-height: 1.6;">
-            See how UPI Steps analyzes your data, explains what it means, and guides you toward better health.
+        <p>
+            UPISteps brings together step tracking, hydration reminders,
+            sleep awareness, wellness insights, and healthy mini games
+            in one clean and modern experience designed for everyday life.
         </p>
 
-        <!-- Step 1 Card: Drop Your Reports -->
-        <div style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 28px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.04); margin-bottom: 40px; text-align: left; display: flex; flex-direction: column; gap: 30px;">
-            
-            <!-- Graphic Mockup inside Step 1 -->
-            <div style="background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%); border-radius: 20px; padding: 30px; position: relative; min-height: 220px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.6); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; border: 1px solid rgba(255,255,255,0.2);">1</div>
-                
-                <!-- Glass Upload Card -->
-                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 16px; padding: 20px; width: 100%; max-width: 380px; color: #fff;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-                        <span style="font-size: 13px; font-weight: 600;">📄 Medical_Report.pdf</span>
-                        <span style="font-size: 12px; color: #34d399; font-weight: 700;">✓ 100%</span>
-                    </div>
-                    <div style="font-size: 11px; color: #94a3b8; margin-bottom: 10px;">Upload complete</div>
-                    <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 100%; height: 100%; background: #34d399;"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-buttons">
 
-            <div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 10px;">Drop Your Reports</h3>
-                <p style="color: #4b5563; font-size: 15px; line-height: 1.6;">Upload your health reports seamlessly and let us do the rest.</p>
-            </div>
+            <a href="#download" class="primary-btn">
+                Start Your Journey
+            </a>
+
+            <a href="#features" class="secondary-btn">
+                Explore Features
+            </a>
+
         </div>
 
-        <!-- Step 2 Card: We Analyze It for You -->
-        <div style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 28px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.04); text-align: left; display: flex; flex-direction: column; gap: 30px;">
-            
-            <!-- Graphic Mockup inside Step 2 -->
-            <div style="background: #0f3833; border-radius: 20px; padding: 30px; position: relative; min-height: 240px; display: flex; align-items: center; justify-content: center;">
-                <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.3); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; border: 1px solid rgba(255,255,255,0.2);">2</div>
-                
-                <!-- White Result Box -->
-                <div style="background: #ffffff; border-radius: 16px; padding: 20px; width: 100%; max-width: 380px; color: #111827; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                    <div style="font-size: 12px; font-weight: 700; color: #64748b; margin-bottom: 12px;">Analysis Result</div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 10px 14px; border-radius: 10px; margin-bottom: 8px;">
-                        <span style="font-size: 13px; font-weight: 600;">Vitamin D level</span>
-                        <span style="background: #d1fae5; color: #065f46; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">Optimal</span>
-                    </div>
 
-                    <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 10px 14px; border-radius: 10px; margin-bottom: 8px;">
-                        <span style="font-size: 13px; font-weight: 600;">Magnesium Index</span>
-                        <span style="background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">Deficient</span>
-                    </div>
+        <!-- PHONE PREVIEW -->
+        <div class="phone-wrapper">
 
-                    <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 10px 14px; border-radius: 10px;">
-                        <span style="font-size: 13px; font-weight: 600;">Glucose regulation</span>
-                        <span style="background: #e0f2fe; color: #0369a1; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">Normal</span>
-                    </div>
+            <div class="phone-card">
+
+                <div class="phone-top">
+                    <span>9:41</span>
+                    <span>UPISteps</span>
                 </div>
+
+                <div class="health-ring">
+
+                    <div class="ring-inner">
+
+                        <h2>86</h2>
+                        <span>Health Score</span>
+
+                    </div>
+
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-box">
+                        <h3>7,842</h3>
+                        <p>Steps Today</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>2.1L</h3>
+                        <p>Water Intake</p>
+                    </div>
+
+                </div>
+
+                <div class="insight-card">
+
+                    <h4>Today's Wellness Insight</h4>
+
+                    <p>
+                        Your activity level is improving steadily.
+                        A 15-minute evening walk can help maintain
+                        better energy and sleep quality.
+                    </p>
+
+                </div>
+
+                <div class="quick-actions">
+
+                    <div class="action-item">Walk</div>
+                    <div class="action-item">Water</div>
+                    <div class="action-item">Sleep</div>
+                    <div class="action-item">Focus</div>
+
+                </div>
+
             </div>
 
-            <div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 10px;">We Analyze It for You</h3>
-                <p style="color: #4b5563; font-size: 15px; line-height: 1.6;">Our AI reviews your data for key health insights.</p>
-            </div>
         </div>
+
     </section>
 
-        <!-- TAILORED RECOMMENDATIONS & INSIGHTS -->
-    <section style="padding: 60px 20px 90px 20px; max-width: 1000px; margin: 0 auto;">
-        
-        <!-- Step 3 Card -->
-        <div style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 28px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.04); margin-bottom: 40px; text-align: left; display: flex; flex-direction: column; gap: 30px;">
-            <div style="background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); border-radius: 20px; padding: 30px; position: relative; min-height: 220px; display: flex; align-items: center; justify-content: center;">
-                <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.6); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; border: 1px solid rgba(255,255,255,0.2);">3</div>
-                
-                <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 16px; padding: 20px; width: 100%; max-width: 380px; color: #fff;">
-                    <div style="font-size: 10px; color: #6ee7b7; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Recommended Actions</div>
-                    <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Walk 15 mins after lunch</div>
-                    <div style="font-size: 11px; color: #cbd5e1; margin-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 10px;">Supports Glucose Regulation</div>
-                    <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">Magnesium glycinate</div>
-                    <div style="font-size: 11px; color: #cbd5e1;">200mg before sleep</div>
-                </div>
-            </div>
 
-            <div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 10px;">Tailored Recommendations</h3>
-                <p style="color: #4b5563; font-size: 15px; line-height: 1.6;">Turn your medical reports into something you can actually understand and act on.</p>
-            </div>
-        </div>
+    <!-- NEXT PARTS HERE -->
 
-        <!-- Step 4 Card: Health Progress Insights -->
-        <div style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 28px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.04); text-align: left; display: flex; flex-direction: column; gap: 30px;">
-            <div style="background: #0f3833; border-radius: 20px; padding: 30px; position: relative; min-height: 240px; display: flex; align-items: center; justify-content: center;">
-                <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.3); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; border: 1px solid rgba(255,255,255,0.2);">4</div>
-                
-                <div style="background: #ffffff; border-radius: 16px; padding: 20px; width: 100%; max-width: 380px; color: #111827; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <span style="font-size: 13px; font-weight: 700;">Wellness Score</span>
-                        <span style="font-size: 16px; font-weight: 800; color: #2563eb;">94%</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-end; height: 90px; padding-top: 10px;">
-                        <div style="width: 28px; height: 45px; background: #7dd3fc; border-radius: 14px;"></div>
-                        <div style="width: 28px; height: 60px; background: #38bdf8; border-radius: 14px;"></div>
-                        <div style="width: 28px; height: 75px; background: #0ea5e9; border-radius: 14px;"></div>
-                        <div style="width: 28px; height: 40px; background: #7dd3fc; border-radius: 14px;"></div>
-                        <div style="width: 28px; height: 85px; background: #0284c7; border-radius: 14px;"></div>
-                        <div style="width: 28px; height: 100%; background: #2563eb; border-radius: 14px;"></div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 10px; color: #94a3b8; margin-top: 8px;">
-                        <span>Mon</span>
-                        <span>Sun</span>
-                    </div>
-                </div>
-            </div>
 
-            <div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 10px;">Health Progress Insights</h3>
-                <p style="color: #4b5563; font-size: 15px; line-height: 1.6;">Track your health journey with smart progress tracking.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section style="background: #fcfbf7; padding: 80px 20px; border-top: 1px solid rgba(0,0,0,0.05);">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: clamp(26px, 4vw, 38px); font-weight: 700; color: #111827; margin-bottom: 40px; text-align: left;">
-                Frequently Asked, <br><span style="color: #0f3833;">Clearly Answered</span>
-            </h2>
-
-            <div style="display: flex; flex-direction: column; gap: 16px;">
-                <details style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
-                    <summary style="font-weight: 600; font-size: 16px; color: #111827; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        How does UPI Steps work? <span style="font-size: 20px; color: #64748b;">+</span>
-                    </summary>
-                    <p style="color: #4b5563; font-size: 14px; margin-top: 12px; line-height: 1.6;">UPI Steps safely processes your records, breaks down parameters using advanced intelligence, and gives precise action steps.</p>
-                </details>
-
-                <details style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
-                    <summary style="font-weight: 600; font-size: 16px; color: #111827; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Can I trust this with my health data? <span style="font-size: 20px; color: #64748b;">+</span>
-                    </summary>
-                    <p style="color: #4b5563; font-size: 14px; margin-top: 12px; line-height: 1.6;">Yes, complete data encryption and strict privacy frameworks protect all your medical files.</p>
-                </details>
-
-                <details style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
-                    <summary style="font-weight: 600; font-size: 16px; color: #111827; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Is the app free to use? <span style="font-size: 20px; color: #64748b;">+</span>
-                    </summary>
-                    <p style="color: #4b5563; font-size: 14px; margin-top: 12px; line-height: 1.6;">Yes, you can start tracking and analyzing basic health metrics completely for free.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER SECTION -->
-    <footer style="background: #0b0f17; color: #ffffff; padding: 50px 20px; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 16px;">UPI STEPS</div>
-            <p style="color: #94a3b8; font-size: 13px; max-width: 400px; margin: 0 auto 24px auto; line-height: 1.5;">The definitive AI health companion for those who demand more from their wellness journey.</p>
-            <div style="font-size: 12px; color: #64748b; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                &copy; 2026 UPI Steps. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-    <!-- PART 4: DASHBOARD PREVIEW & CALL TO ACTION SECTION -->
-    <section style="background: #0f3833; color: #ffffff; padding: 100px 20px; text-align: center; position: relative; overflow: hidden;">
-        <div style="max-width: 900px; margin: 0 auto; position: relative; z-index: 2;">
-            
-            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #2dd4bf; margin-bottom: 16px;">
-                Ready For Complete Control?
-            </div>
-            
-            <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.2; margin-bottom: 24px; letter-spacing: -0.5px;">
-                Transform Your Wellness Journey <br>Starting Today
-            </h2>
-            
-            <p style="color: #cbd5e1; font-size: clamp(16px, 2vw, 18px); max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6;">
-                Join thousands of users who use UPI Steps to decode their lab markers, optimize daily nutrition, and achieve true health longevity.
-            </p>
-
-            <!-- Action Buttons Area -->
-            <div style="display: flex; flex-direction: column; sm-flex-direction: row; justify-content: center; align-items: center; gap: 16px; margin-bottom: 50px;">
-                <a href="#get-started" style="background: #ffffff; color: #0f3833; font-weight: 700; padding: 18px 36px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: transform 0.2s, background 0.2s; display: inline-block;">
-                    Get Started For Free
-                </a>
-                <a href="#demo" style="background: rgba(255, 255, 255, 0.1); color: #ffffff; font-weight: 600; padding: 18px 36px; border-radius: 30px; text-decoration: none; font-size: 16px; border: 1px solid rgba(255, 255, 255, 0.2); transition: background 0.2s; display: inline-block;">
-                    Schedule a Demo
-                </a>
-            </div>
-
-            <!-- Trust Badges Grid / Features List -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 30px; backdrop-filter: blur(10px);">
-                
-                <div style="display: flex; align-items: flex-start; gap: 12px;">
-                    <div style="background: rgba(45, 212, 191, 0.2); color: #2dd4bf; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">✓</div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 700; color: #ffffff; margin-bottom: 2px;">Bank-Grade Security</div>
-                        <div style="font-size: 12px; color: #94a3b8;">Your health files are encrypted and fully private.</div>
-                    </div>
-                </div>
-
-                <div style="display: flex; align-items: flex-start; gap: 12px;">
-                    <div style="background: rgba(45, 212, 191, 0.2); color: #2dd4bf; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">✓</div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 700; color: #ffffff; margin-bottom: 2px;">Instant AI Parsing</div>
-                        <div style="font-size: 12px; color: #94a3b8;">Upload reports and get clear data in seconds.</div>
-                    </div>
-                </div>
-
-                <div style="display: flex; align-items: flex-start; gap: 12px;">
-                    <div style="background: rgba(45, 212, 191, 0.2); color: #2dd4bf; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">✓</div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 700; color: #ffffff; margin-bottom: 2px;">Actionable Steps</div>
-                        <div style="font-size: 12px; color: #94a3b8;">Diet, sleep, and lifestyle recommendations that fit.</div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-        <!-- PART 5: CONTACT & FINAL FOOTER WRAPPER -->
-    <section style="background: #fcfbf7; padding: 80px 20px; border-top: 1px solid rgba(0,0,0,0.05); text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;">
-            
-            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #0f3833; margin-bottom: 10px;">
-                Get in Touch
-            </div>
-            
-            <h3 style="font-size: 28px; font-weight: 700; color: #111827; margin-bottom: 16px;">
-                Have Questions or Feedback?
-            </h3>
-            
-            <p style="color: #4b5563; font-size: 15px; margin-bottom: 30px; line-height: 1.6;">
-                Our support and wellness advisory team is always here to help you navigate your health data safely.
-            </p>
-
-            <!-- Simple Contact Form Box -->
-            <form style="display: flex; flex-direction: column; gap: 14px; text-align: left; background: #ffffff; padding: 30px; border-radius: 24px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #111827; margin-bottom: 6px;">Your Email</label>
-                    <input type="email" placeholder="name@example.com" style="width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid #cbd5e1; font-size: 14px; outline: none; background: #f8fafc;" required>
-                </div>
-
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #111827; margin-bottom: 6px;">Message</label>
-                    <textarea rows="4" placeholder="How can we assist you today?" style="width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid #cbd5e1; font-size: 14px; outline: none; background: #f8fafc; resize: none;" required></textarea>
-                </div>
-
-                <button type="submit" style="background: #0f3833; color: #ffffff; font-weight: 600; padding: 14px; border-radius: 12px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s; margin-top: 6px;">
-                    Send Message
-                </button>
-            </form>
-
-        </div>
-    </section>
-
-    <!-- EXPANDED FOOTER WITH LINKS -->
-    <footer style="background: #0b0f17; color: #ffffff; padding: 60px 20px 30px 20px;">
-        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left;">
-            
-            <div>
-                <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 12px;">UPI STEPS</div>
-                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5; margin-bottom: 16px;">
-                    Bringing clarity, advanced tracking, and actionable insights to your daily wellness journey.
-                </p>
-                <div style="font-size: 12px; color: #6ee7b7; font-weight: 600;">
-                    ✓ HIPAA & Data Privacy Compliant
-                </div>
-            </div>
-
-            <div>
-                <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">Navigation</div>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Home</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">How It Works</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Features</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Pricing</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">Legal & Safety</div>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Privacy Policy</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Terms of Service</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Medical Disclaimer</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div style="max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; flex-direction: column; sm-flex-direction: row; justify-content: space-between; align-items: center; gap: 15px; text-align: center;">
-            <div style="font-size: 12px; color: #64748b;">
-                &copy; 2026 UPI Steps Inc. All rights reserved.
-            </div>
-            <div style="font-size: 12px; color: #64748b;">
-                Designed with precision for better health longevity.
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-    <!-- PART 5: CONTACT & FINAL FOOTER WRAPPER -->
-    <section style="background: #fcfbf7; padding: 80px 20px; border-top: 1px solid rgba(0,0,0,0.05); text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;">
-            
-            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #0f3833; margin-bottom: 10px;">
-                Get in Touch
-            </div>
-            
-            <h3 style="font-size: 28px; font-weight: 700; color: #111827; margin-bottom: 16px;">
-                Have Questions or Feedback?
-            </h3>
-            
-            <p style="color: #4b5563; font-size: 15px; margin-bottom: 30px; line-height: 1.6;">
-                Our support and wellness advisory team is always here to help you navigate your health data safely.
-            </p>
-
-            <!-- Simple Contact Form Box -->
-            <form style="display: flex; flex-direction: column; gap: 14px; text-align: left; background: #ffffff; padding: 30px; border-radius: 24px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #111827; margin-bottom: 6px;">Your Email</label>
-                    <input type="email" placeholder="name@example.com" style="width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid #cbd5e1; font-size: 14px; outline: none; background: #f8fafc;" required>
-                </div>
-
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #111827; margin-bottom: 6px;">Message</label>
-                    <textarea rows="4" placeholder="How can we assist you today?" style="width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid #cbd5e1; font-size: 14px; outline: none; background: #f8fafc; resize: none;" required></textarea>
-                </div>
-
-                <button type="submit" style="background: #0f3833; color: #ffffff; font-weight: 600; padding: 14px; border-radius: 12px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s; margin-top: 6px;">
-                    Send Message
-                </button>
-            </form>
-
-        </div>
-    </section>
-
-    <!-- EXPANDED FOOTER WITH LINKS -->
-    <footer style="background: #0b0f17; color: #ffffff; padding: 60px 20px 30px 20px;">
-        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left;">
-            
-            <div>
-                <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 12px;">UPI STEPS</div>
-                <p style="color: #94a3b8; font-size: 13px; line-height: 1.5; margin-bottom: 16px;">
-                    Bringing clarity, advanced tracking, and actionable insights to your daily wellness journey.
-                </p>
-                <div style="font-size: 12px; color: #6ee7b7; font-weight: 600;">
-                    ✓ HIPAA & Data Privacy Compliant
-                </div>
-            </div>
-
-            <div>
-                <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">Navigation</div>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Home</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">How It Works</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Features</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Pricing</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">Legal & Safety</div>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Privacy Policy</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Terms of Service</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s;">Medical Disclaimer</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div style="max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; flex-direction: column; sm-flex-direction: row; justify-content: space-between; align-items: center; gap: 15px; text-align: center;">
-            <div style="font-size: 12px; color: #64748b;">
-                &copy; 2026 UPI Steps Inc. All rights reserved.
-            </div>
-            <div style="font-size: 12px; color: #64748b;">
-                Designed with precision for better health longevity.
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-    <!-- PART 6: INTERACTIVE JAVASCRIPT & SCRIPTS -->
-    <script>
-        // Mobile Navigation Menu Toggle functionality
-        const menuToggleBtn = document.querySelector('.menu-toggle-btn');
-        
-        if (menuToggleBtn) {
-            menuToggleBtn.addEventListener('click', () => {
-                // Creates a clean toggle action for navigation
-                alert('UPI Steps: Mobile navigation menu activated successfully!');
-            });
-        }
-
-        // Contact Form Submission Handler
-        const contactForm = document.querySelector('form');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you! Your message has been sent successfully to the UPI Steps team.');
-                contactForm.reset();
-            });
-        }
-    </script>
 </body>
 </html>
