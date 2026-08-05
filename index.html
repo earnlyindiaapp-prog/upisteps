@@ -3,768 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPISTEPS - AI Health & Gaming Platform</title>
+    <title>Ai.Now - AI Beyond Your Business Limits</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS link -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">UPISTEPS</div>
-        <div class="nav-right">
-            <button class="sign-up-btn">Sign Up</button>
-            <div class="menu-icon" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <div class="bg-glow"></div>
 
-    <!-- Fullscreen Working Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="close-btn" id="closeToggle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#00ff66"/>
+                <path d="M2 17L12 22L22 17" stroke="#00ff66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#00ff66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Ai<span>.Now</span>
         </div>
-        <ul>
-            <li><a href="#">AI Diagnostics</a></li>
-            <li><a href="#">Health Metrics</a></li>
-            <li><a href="#">Gaming Arena</a></li>
-            <li><a href="#">Trusted Security</a></li>
-        </ul>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#" id="nav-about">About Us</a></li>
+                <li><a href="#" id="nav-services">Services</a></li>
+                <li><a href="#" id="nav-review">Review</a></li>
+                <li><a href="#" id="nav-blog">Blog</a></li>
+                <li><a href="#" id="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Hero Content -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="reviews-badge">
-            <div class="stars">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2v15.77z"/></svg>
-            </div>
-            <span>4.9/5 from 1k reviews</span>
+        <div class="badge">
+            <span>↗</span> Scale Effortlessly with AI-Driven Automation.
         </div>
-
-        <h1>Everything Your Health Has to Say</h1>
-        <p>UPISTEPS brings your AI insights, biological metrics, and gaming trends into one place, and explains what they actually mean — so you always know what to do next.</p>
         
-        <button class="cta-btn">Start for Free</button>
-        <span class="sub-text">*No Credit Card Required</span>
+        <h1>AI Beyond Your Business Limits</h1>
+        
+        <p class="subtitle">
+            Achieve more with less. Unlock smarter automation, drive leaner operations, and scale your business effortlessly with the power of AI. The future starts Now.
+        </p>
 
-        <!-- Showcase Area -->
-        <div class="showcase-container">
-            <!-- Biological Age Glass Card -->
-            <div class="glass-card card-bio">
-                <div class="title">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    Biological Age
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary" id="start-project-btn">Start A Project</a>
+            <a href="#" class="btn btn-secondary" id="explore-solution-btn">Explore Our Solution</a>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-badge">About Us</div>
+        
+        <h2 class="about-title">Driven by Intelligence.<br>Designed for Impact.</h2>
+
+        <div class="about-container">
+            <!-- Left Content Box -->
+            <div class="about-left">
+                <h3>Smart Solutions</h3>
+                <p>
+                    At AI.Now, we believe that the power of artificial intelligence should not be limited to tech giants alone. We are committed to making intelligent solutions accessible, understandable, and transformative for organizations of every size and industry. With us, AI becomes a practical tool that drives real-world impact, empowering businesses to innovate, grow, and lead with confidence.
+                </p>
+                <a href="#" class="btn-learn">Learn More <span>↗</span></a>
+            </div>
+
+            <!-- Right Grid/Floating Cards -->
+            <div class="about-right">
+                <div class="glass-card card-future">
+                    <h4>Future</h4>
+                    <p>Built for what's going to be tomorrow.</p>
                 </div>
-                <div class="value">28 <span style="font-size:12px; font-weight:normal;">years</span></div>
-                <div class="sub-val">Actual: 34</div>
-            </div>
 
-            <!-- Heart Rate Glass Card -->
-            <div class="glass-card card-hr">
-                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                <div>
-                    <div style="font-size: 10px; color: #555;">Live Pulse</div>
-                    <div class="hr-text">72 bpm</div>
+                <div class="glass-card card-strategy">
+                    <h4>Strategy</h4>
+                    <p>AI-driven strategies that fuel innovation.</p>
                 </div>
-            </div>
 
-            <div class="phone-container">
-    <!-- Premium Phone Mockup -->
-    <div class="phone-frame">
-        <div class="phone-screen">
-            <!-- Screen Content/Image inside phone -->
-            <img src="YOUR_IMAGE_LINK_HERE" alt="App Screen" class="screen-img">
-            
-            <!-- Floating Widget 1 (Jaise image mein hai) -->
-            <div class="floating-card top-card">
-                <span>✨ Manicure 3D</span>
-                <p>Mon 12.11</p>
-            </div>
-
-            <!-- Floating Widget 2 -->
-            <div class="floating-card bottom-card">
-                <span>Pay 48.99$</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Stats & Trust Section -->
-<section class="stats-section">
-    <div class="stats-grid">
-        <div class="stat-item">
-            <div class="stat-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div class="stat-number">20+ Years</div>
-            <div class="stat-label">IN LONGEVITY SCIENCE</div>
-        </div>
-
-        <div class="stat-item">
-            <div class="stat-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="stat-number">100% Secure</div>
-            <div class="stat-label">TRUSTED AI PLATFORM</div>
-        </div>
-
-        <div class="stat-item">
-            <div class="stat-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="stat-number">5000+</div>
-            <div class="stat-label">ACTIVE HEALTH GAMERS</div>
-        </div>
-    </div>
-
-    <!-- Wellness Intelligence Heading Box -->
-    <div class="intelligence-box">
-        <h2>This is <span>Wellness Intelligence</span></h2>
-        <p>Not another tracker. A way to finally know what your body and gaming data has been telling you all along.</p>
-    </div>
-</section>
-
-    <!-- How It Works Section -->
-<section class="how-it-works">
-    <div class="section-header">
-        <span class="badge-tag">HOW IT WORKS</span>
-        <h2>Turning Complexity Into <span>Clarity</span></h2>
-        <p>See how UPISTEPS analyzes your data, explains what it means, and guides you toward better health and gaming performance.</p>
-    </div>
-
-    <!-- Step 1: Upload Card -->
-    <div class="step-container">
-        <div class="step-card-bg">
-            <!-- Glassmorphism Upload Box Inside -->
-            <div class="glass-upload-box">
-                <div class="file-info">
-                    <div class="file-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    </div>
-                    <div>
-                        <div class="file-name">Medical_Report.pdf</div>
-                        <div class="file-status">Upload complete</div>
-                    </div>
+                <div class="glass-card card-workflow">
+                    <h4 class="green-text">Workflow</h4>
+                    <p>Optimized skills to boost maximum output.</p>
                 </div>
-                <div class="file-percent">100%</div>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
+
+                <div class="glass-card card-intelligence">
+                    <h4>Intelligence</h4>
+                    <p>Smarter systems, Sharper moves.</p>
+                </div>
+
+                <div class="glass-card card-human">
+                    <h4>Human AI</h4>
+                    <p>AI meets human for better output.</p>
                 </div>
             </div>
         </div>
-        <div class="step-text-content">
-            <span class="step-num">01</span>
-            <h3>Drop Your Reports</h3>
-            <p>Upload your health and performance reports seamlessly and let our AI do the rest.</p>
-        </div>
-    </div>
+    </section>
 
-    <!-- Step 2: Analysis Results Card -->
-    <div class="step-container reverse">
-        <div class="step-card-bg analysis-bg">
-            <div class="analysis-mockup">
-                <div class="analysis-header">Analysis Result</div>
-                <div class="metric-row">
-                    <span>Vitamin D level</span>
-                    <span class="tag-optimal">Optimal</span>
-                </div>
-                <div class="metric-row">
-                    <span>Magnesium Index</span>
-                    <span class="tag-deficient">Deficient</span>
-                </div>
-                <div class="metric-row">
-                    <span>Glucose regulation</span>
-                    <span class="tag-normal">Normal</span>
-                </div>
-            </div>
-        </div>
-        <div class="step-text-content">
-            <span class="step-num">02</span>
-            <h3>Instant AI Breakdown</h3>
-            <p>Get clear, structured insights into your biomarkers and daily habits instantly.</p>
-        </div>
-    </div>
-</section>
+        <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-badge">Services</div>
+        
+        <h2 class="services-title">Empower Your Business<br>with Our AI Services</h2>
 
-    <!-- Auto-Scrolling Glassmorphism Section -->
-<section class="auto-scroll-section">
-    <div class="section-header">
-        <span class="badge-tag">TAILORED RECOMMENDATIONS</span>
-        <h2>Health Progress & <span>Gaming AI Insights</span></h2>
-        <p>Track your health journey and gaming wellness with automated smart progress tracking.</p>
-    </div>
-
-    <!-- Infinite Auto-Scrolling Container -->
-    <div class="marquee-wrapper">
-        <div class="marquee-track">
-            <!-- 10 Premium Glassmorphism Cards -->
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                    <span>AI Wellness</span>
-                </div>
-                <h4>Hydration Boost</h4>
-                <p>Drink 500ml water to match gaming focus peak.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                    <span>Heart Rate</span>
-                </div>
-                <h4>Cardio Recovery</h4>
-                <p>Post-match pulse normalization in progress.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span>Sleep Cycle</span>
-                </div>
-                <h4>Deep Rest Sync</h4>
-                <p>Targeting 8 hours for maximum cognitive output.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
-                    <span>Step Goals</span>
-                </div>
-                <h4>Active Movement</h4>
-                <p>Walk 15 mins after lunch for glucose regulation.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    <span>Longevity</span>
-                </div>
-                <h4>Cellular Reset</h4>
-                <p>Optimizing biological markers via AI analysis.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                    <span>Reflex Sync</span>
-                </div>
-                <h4>Gaming Agility</h4>
-                <p>Hand-eye coordination index at 94 percent.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span>Metabolism</span>
-                </div>
-                <h4>Energy Balance</h4>
-                <p>Magnesium glycinate recommended before sleep.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-                    <span>Posture AI</span>
-                </div>
-                <h4>Ergonomic Check</h4>
-                <p>Spine alignment score improved by 12 percent.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                    <span>Focus Mode</span>
-                </div>
-                <h4>Neural Alpha</h4>
-                <p>Cognitive bandwidth optimized for high-tier gaming.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    <span>Verified AI</span>
-                </div>
-                <h4>Complete Metrics</h4>
-                <p>Biometric data securely synced with live dashboard.</p>
-            </div>
-            
-            <!-- Duplicate set for seamless infinite loop effect -->
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                    <span>AI Wellness</span>
-                </div>
-                <h4>Hydration Boost</h4>
-                <p>Drink 500ml water to match gaming focus peak.</p>
-            </div>
-
-            <div class="marquee-card">
-                <div class="card-top">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                    <span>Heart Rate</span>
-                </div>
-                <h4>Cardio Recovery</h4>
-                <p>Post-match pulse normalization in progress.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Interactive Swipeable Carousel Section -->
-<section class="swipe-carousel-section">
-    <div class="section-header">
-        <span class="badge-tag">INTELLIGENT ECOSYSTEM</span>
-        <h2>Everything You Need <span>For Better Wellness</span></h2>
-        <p>From AI-powered lab analysis and gaming stats to nutrition, sleep, activity, and personalized coaching, UPISTEPS brings every part of your wellness journey together in one intelligent platform.</p>
-    </div>
-
-    <!-- Swipeable Container -->
-    <div class="carousel-container" id="swipeCarousel">
-        <div class="carousel-track" id="carouselTrack">
-            
+        <div class="services-grid">
             <!-- Card 1 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">AI Analysis</div>
-                    <h3>Smart Diagnostics</h3>
-                    <p>Deep data processing for real-time health metrics.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
+            <div class="service-card">
+                <h3>AI Consulting & Strategy</h3>
+                <p>Unlock tailored AI roadmaps to streamline operations, cut costs, and drive smarter business growth.</p>
+                <a href="#" class="btn-see-more">See More <span>↗</span></a>
             </div>
 
             <!-- Card 2 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Gaming Arena</div>
-                    <h3>Reflex Sync</h3>
-                    <p>Tracking hand-eye coordination and cognitive speed.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
+            <div class="service-card">
+                <h3>AI Agent Development</h3>
+                <p>Design and deploy intelligent agents that automate tasks, enhance workflows, and deliver real-time business support.</p>
+                <a href="#" class="btn-see-more">See More <span>↗</span></a>
             </div>
 
             <!-- Card 3 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Longevity</div>
-                    <h3>Biological Age</h3>
-                    <p>Compare your cellular age with your actual calendar age.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
+            <div class="service-card">
+                <h3>Business Process Automation</h3>
+                <p>Transform manual operations into seamless, automated systems that boost productivity and efficiency.</p>
+                <a href="#" class="btn-see-more">See More <span>↗</span></a>
             </div>
 
             <!-- Card 4 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Nutrition</div>
-                    <h3>Diet Intelligence</h3>
-                    <p>Custom meal suggestions based on live biometric needs.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
+            <div class="service-card">
+                <h3>AI Business Tools</h3>
+                <p>Connect AI into your existing software stack — from CRM to ERP — to amplify capabilities and unlock new performance levels.</p>
+                <a href="#" class="btn-see-more">See More <span>↗</span></a>
             </div>
 
             <!-- Card 5 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Sleep Metrics</div>
-                    <h3>Deep Rest Sync</h3>
-                    <p>Optimizing REM cycles for enhanced physical recovery.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
+            <div class="service-card">
+                <h3>AI Training & Education</h3>
+                <p>Empower your teams with the knowledge and skills to confidently leverage AI technologies across your organization.</p>
+                <a href="#" class="btn-see-more">See More <span>↗</span></a>
             </div>
 
             <!-- Card 6 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Activity</div>
-                    <h3>Movement Flow</h3>
-                    <p>Smart step and cardio tracking without manual logs.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
+            <div class="service-card">
+                <h3>Prototype Development</h3>
+                <p>Co-create innovative AI-driven prototypes and test new ideas faster with our agile, hands-on development approach.</p>
+                <a href="#" class="btn-see-more">See More <span>↗</span></a>
             </div>
-
-            <!-- Card 7 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Coaching</div>
-                    <h3>AI Guidance</h3>
-                    <p>Actionable daily insights tailored to your lifestyle.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Security</div>
-                    <h3>Encrypted Vault</h3>
-                    <p>Your health and gaming records secured with top protocols.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
-            </div>
-
-            <!-- Card 9 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Heart Health</div>
-                    <h3>Pulse Tracking</h3>
-                    <p>Real-time cardiovascular monitoring during high intensity.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
-            </div>
-
-            <!-- Card 10 -->
-            <div class="swipe-card">
-                <div class="card-content">
-                    <div class="card-tag">Community</div>
-                    <h3>Wellness Gamers</h3>
-                    <p>Connect and compete with thousands of active health seekers.</p>
-                </div>
-                <div class="card-action-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- CTA Banner Section -->
-<section class="cta-banner-section">
-    <div class="cta-card-container">
-        <!-- Background Overlay / Character Vibe -->
-        <div class="cta-bg-overlay"></div>
+        <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="testimonial-badge">Client Testimonial</div>
         
-        <!-- Content Inside Glassmorphism Card -->
-        <div class="cta-content">
-            <h2>Start Seeing The Full Picture.</h2>
-            <p>Grounded in your biology and gaming metrics. Built around you.</p>
-            
-            <div class="cta-buttons">
-                <a href="#start" class="btn-primary">Start For Free</a>
-                <a href="#download" class="btn-secondary">Download Android APK</a>
+        <h2 class="testimonial-title">What our Clients Says</h2>
+
+        <div class="testimonial-grid">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card">
+                <div class="quote-icon-top">“</div>
+                <h3>Michael T. Carry</h3>
+                <p class="role">Chief Executing Officer</p>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">AI.Now helped us automate over 60% of our manual tasks. Their insights saved us time and money instantly.</p>
+                <div class="quote-icon-bottom">”</div>
             </div>
-            
-            <span class="coming-soon-text">Coming soon on Play Store & App Store</span>
+
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card">
+                <div class="quote-icon-top">“</div>
+                <h3>Calvin Hawk</h3>
+                <p class="role">Accountant Officer</p>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Thanks to AI.Now, over 80% of our manual tasks are now automated, resulting in instant time and cost efficiencies.</p>
+                <div class="quote-icon-bottom">”</div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card">
+                <div class="quote-icon-top">“</div>
+                <h3>Josh Henry</h3>
+                <p class="role">Marketing Expert</p>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">We've automated more than 60% of our manual tasks with AI.Now, and their insights brought us instant savings in both time and money.</p>
+                <div class="quote-icon-bottom">”</div>
+            </div>
         </div>
-    </div>
-</section>
-    <!-- Testimonials Auto-Scrolling Section -->
-<section class="testimonials-section">
-    <div class="section-header">
-        <span class="badge-tag">USER EXPERIENCES</span>
-        <h2>The Difference <span>You Can Feel</span></h2>
-        <p>See how UPISTEPS is transforming health tracking and gaming performance through intelligent AI insights.</p>
-    </div>
 
-    <!-- Infinite Slow Auto-Scrolling Review Cards -->
-    <div class="testimonials-marquee-wrapper">
-        <div class="testimonials-track">
-            
-            <!-- Review 1 (Gaming Focus) -->
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Tracking my reflexes alongside my daily metabolic metrics has genuinely improved my reaction time in competitive esports matches."</p>
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">AR</div>
-                    <div>
-                        <div class="reviewer-name">Aarav Roy</div>
-                        <div class="reviewer-title">Pro Esports Gamer</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 2 (AI Diagnostics) -->
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"The AI breakdown of my blood reports is exceptionally clear. It tells me exactly what adjustments to make without any confusing medical jargon."</p>
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">PS</div>
-                    <div>
-                        <div class="reviewer-name">Priya Sharma</div>
-                        <div class="reviewer-title">AI Researcher & Fitness Enthusiast</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 3 (Health & Longevity) -->
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Combining sleep tracking with customized longevity recommendations has changed my daily energy levels entirely. Absolutely essential tool."</p>
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">KM</div>
-                    <div>
-                        <div class="reviewer-name">Kabir Mehta</div>
-                        <div class="reviewer-title">Marathon Runner</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 4 (Gaming & Wellness) -->
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"As someone who spends 10+ hours gaming daily, the posture AI and hydration reminders have completely eliminated my wrist fatigue and brain fog."</p>
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">NS</div>
-                    <div>
-                        <div class="reviewer-name">Neha Singh</div>
-                        <div class="reviewer-title">Streamer & Content Creator</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 5 (General Wellness AI) -->
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"UPISTEPS brings everything together seamlessly. Knowing my biological metrics and gaming stamina in one dashboard is a game changer."</p>
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">VD</div>
-                    <div>
-                        <div class="reviewer-name">Vikram Das</div>
-                        <div class="reviewer-title">Software Engineer</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Duplicate set for seamless infinite loop effect -->
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Tracking my reflexes alongside my daily metabolic metrics has genuinely improved my reaction time in competitive esports matches."</p>
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">AR</div>
-                    <div>
-                        <div class="reviewer-name">Aarav Roy</div>
-                        <div class="reviewer-title">Pro Esports Gamer</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"The AI breakdown of my blood reports is exceptionally clear. It tells me exactly what adjustments to make without any confusing medical jargon."</p>
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">PS</div>
-                    <div>
-                        <div class="reviewer-name">Priya Sharma</div>
-                        <div class="reviewer-title">AI Researcher & Fitness Enthusiast</div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="testimonial-footer">
+            <a href="#" class="btn-view-more">View More <span>↗</span></a>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- FAQ Section -->
-<section class="faq-section">
-    <div class="section-header">
-        <span class="badge-tag">QUESTIONS & ANSWERS</span>
-        <h2>Frequently Asked, <span>Clearly Answered</span></h2>
-        <p>Everything you need to know about UPISTEPS, AI health diagnostics, gaming tracking, and EarnSteps rewards.</p>
-    </div>
-
-    <div class="faq-container">
+        <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="blog-badge">Our Blogs</div>
         
-        <!-- FAQ Item 1 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>How does UPISTEPS work?</span>
-                <div class="faq-icon">+</div>
-            </button>
-            <div class="faq-answer">
-                <p>UPISTEPS combines advanced AI diagnostics with physical and gaming metrics. It processes your daily movement, biometrics, and reflex performance to give you a complete, easy-to-understand health and wellness ecosystem in one place.</p>
-            </div>
+        <h2 class="blog-title">Real World Strategies That<br>Deliver Results</h2>
+
+        <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <article class="blog-card">
+                <div class="blog-image-wrapper">
+                    <!-- REPLACE WITH YOUR IMAGE PATHS -->
+                    <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=500&auto=format&fit=crop" alt="Business and AI Robot" class="blog-image">
+                </div>
+                <div class="blog-content">
+                    <h3>Where AI Meets Real-World Results</h3>
+                    <p>Smart insights on using AI to solve real business challenges.</p>
+                    <a href="#" class="btn-read-more"><span>↗</span></a>
+                </div>
+            </article>
+
+            <!-- Blog Card 2 -->
+            <article class="blog-card">
+                <div class="blog-image-wrapper">
+                    <!-- REPLACE WITH YOUR IMAGE PATHS -->
+                    <img src="https://images.unsplash.com/photo-1531746790731-6c087fbd65a9?q=80&w=500&auto=format&fit=crop" alt="Woman with drone/robot" class="blog-image">
+                </div>
+                <div class="blog-content">
+                    <h3>Where AI Meets Real-World Results</h3>
+                    <p>Smart insights on using AI to solve real business challenges.</p>
+                    <a href="#" class="btn-read-more"><span>↗</span></a>
+                </div>
+            </article>
+
+            <!-- Blog Card 3 -->
+            <article class="blog-card">
+                <div class="blog-image-wrapper">
+                    <!-- REPLACE WITH YOUR IMAGE PATHS -->
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop" alt="Professional woman pointing" class="blog-image">
+                </div>
+                <div class="blog-content">
+                    <h3>Where AI Meets Real-World Results</h3>
+                    <p>Smart insights on using AI to solve real business challenges.</p>
+                    <a href="#" class="btn-read-more"><span>↗</span></a>
+                </div>
+            </article>
         </div>
 
-        <!-- FAQ Item 2 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Can I trust UPISTEPS with my health data?</span>
-                <div class="faq-icon">+</div>
-            </button>
-            <div class="faq-answer">
-                <p>Yes, absolutely. We use top-tier military-grade encryption to protect your lab reports, health history, and gaming stats. Your data remains strictly private, secure, and fully under your control.</p>
-            </div>
+        <div class="blog-footer">
+            <a href="#" class="btn-view-all">View More <span>↗</span></a>
         </div>
+    </section>
 
-        <!-- FAQ Item 3 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>How does EarnSteps reward me for daily activities?</span>
-                <div class="faq-icon">+</div>
-            </button>
-            <div class="faq-answer">
-                <p>Through our integrated EarnSteps feature, your everyday physical steps, workouts, and active gaming sessions are tracked accurately. You earn exciting wellness points and rewards as you hit your daily health goals.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 4 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Will I understand my health and lab reports clearly?</span>
-                <div class="faq-icon">+</div>
-            </button>
-            <div class="faq-answer">
-                <p>No confusing medical jargon! Our built-in AI breaks down complex blood work, sleep metrics, and biometric scans into plain, actionable insights so you instantly know what steps to take next.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 5 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Do I need prior medical knowledge to use the app?</span>
-                <div class="faq-icon">+</div>
-            </button>
-            <div class="faq-answer">
-                <p>Not at all. UPISTEPS is designed for everyone—from pro gamers and fitness enthusiasts to everyday people looking to optimize their longevity and vitality with zero learning curve.</p>
-            </div>
-        </div>
-
-        <!-- FAQ Item 6 -->
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Is UPISTEPS free to use?</span>
-                <div class="faq-icon">+</div>
-            </button>
-            <div class="faq-answer">
-                <p>Yes! You can start for free with essential health tracking and AI features. Our upcoming Android APK and Play Store releases will also offer advanced modules for power users.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-    <!-- Footer Section -->
-<footer class="footer-section">
-    <div class="footer-container">
+        <!-- Contact Us Section -->
+    <section class="contact-section">
+        <div class="contact-badge">Contact US</div>
         
-        <!-- Top Branding & Bio -->
-        <div class="footer-top">
-            <div class="footer-brand">
-                <h3>UPISTEPS</h3>
-                <p>The definitive AI health and gaming wellness companion for those who demand more from their bodies. Precision analytics and active rewards from UPISTEPS Ecosystem.</p>
+        <h2 class="contact-title">Tell Us Your Goals</h2>
+
+        <div class="contact-container">
+            <!-- Left Side: Glowing Brain Graphic Box -->
+            <div class="contact-left">
+                <div class="brain-graphic">
+                    <!-- REPLACE WITH YOUR BRAIN IMAGE PATH IF YOU HAVE ONE -->
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop" alt="AI Brain Graphic" class="brain-img">
+                </div>
             </div>
-            
-            <!-- Newsletter Subscription -->
-            <div class="footer-newsletter">
-                <h4>STAY UPDATED</h4>
-                <p>Join our newsletter for the latest in AI longevity and gaming health research.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">SUBSCRIBE</button>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-right">
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" class="form-input" required>
+                    <input type="email" placeholder="Your email" class="form-input" required>
+                    <input type="tel" placeholder="Mobile Number" class="form-input" required>
+                    <textarea placeholder="Additional Message" class="form-textarea" rows="4"></textarea>
+                    
+                    <button type="submit" class="btn-submit">
+                        Submit <span>↗</span>
+                    </button>
                 </form>
             </div>
         </div>
 
-        <!-- Links Grid -->
-        <div class="footer-links-grid">
-            <div class="footer-col">
-                <h4>PLATFORM</h4>
+        <!-- Quick Contact Strip -->
+        <div class="quick-contact-bar">
+            <div class="qc-title">Quick Contact:</div>
+            
+            <div class="qc-item">
+                <div class="qc-icon">📞</div>
+                <div class="qc-info">
+                    <span class="qc-label">Phone Number</span>
+                    <span class="qc-value">+1 (555) 123-4567</span>
+                </div>
+            </div>
+
+            <div class="qc-item">
+                <div class="qc-icon">✉</div>
+                <div class="qc-info">
+                    <span class="qc-label">Email Number</span>
+                    <span class="qc-value">contact@ainow.com</span>
+                </div>
+            </div>
+
+            <div class="qc-item">
+                <div class="qc-icon">📍</div>
+                <div class="qc-info">
+                    <span class="qc-label">Location</span>
+                    <span class="qc-value">AI.Now HQ, 123 Innovation Drive, San Francisco, CA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer / Newsletter Section -->
+    <footer class="footer-section">
+        <!-- Newsletter Box -->
+        <div class="newsletter-container">
+            <h2>NEWSLETTER</h2>
+            <p>Subscribe to our newsletter for the latest updates and offers.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email" class="newsletter-input" required>
+                <button type="submit" class="btn-newsletter"><span>↗</span></button>
+            </form>
+        </div>
+
+        <!-- Main Footer Bar -->
+        <div class="footer-card">
+            <!-- Col 1: Logo & Social Links -->
+            <div class="footer-col-1">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#00ff66"/>
+                        <path d="M2 17L12 22L22 17" stroke="#00ff66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="#00ff66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Ai<span>.Now</span>
+                </div>
+                <div class="social-icons">
+                    <!-- Telegram Link -->
+                    <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" title="Telegram" class="social-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.622-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.141.119.098.152.228.163.329.011.101.024.331.007.511z"/></svg>
+                    </a>
+                    <!-- Instagram Link -->
+                    <a href="https://www.instagram.com/uniquepieceoffical?igsh=djFmNGg3ZnE0Y280" target="_blank" title="Instagram" class="social-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <!-- Twitter/X Link -->
+                    <a href="https://x.com/EarnlyIndia_" target="_blank" title="Twitter" class="social-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Col 2: Quick Links -->
+            <div class="footer-col-2">
+                <h3>QUICK LINK</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#features">How It Works</a></li>
-                    <li><a href="#earnsteps">EarnSteps App</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
 
-            <div class="footer-col">
-                <h4>SUPPORT</h4>
-                <ul>
-                    <li><a href="#help">Help Center</a></li>
-                    <li><a href="#safety">Safety Guide</a></li>
-                    <li><a href="#contact">Contact Support</a></li>
-                </ul>
+            <!-- Col 3: Contact Us -->
+            <div class="footer-col-3">
+                <h3>CONTACT US</h3>
+                <p>+5 67-232-33-21</p>
+                <p>contact@ainow.com</p>
             </div>
 
-            <div class="footer-col">
-                <h4>LEGAL</h4>
-                <ul>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                    <li><a href="#medical">Medical Disclaimer</a></li>
-                </ul>
+            <!-- Col 4: Location -->
+            <div class="footer-col-4">
+                <h3>LOCATION</h3>
+                <p>AI.Now HQ, 123 Innovation Drive, San Francisco, CA</p>
             </div>
         </div>
 
-        <!-- Get In Touch & Social Links (Using your exact links) -->
-        <div class="footer-bottom-bar">
-            <div class="footer-contact-info">
-                <span>GET IN TOUCH: <strong>support@upisteps.com</strong></span>
-            </div>
-
-            <div class="footer-social-icons">
-                <!-- WhatsApp Channel -->
-                <a href="https://whatsapp.com/channel/0029VbCf8Nq0wak1WcSuN646" target="_blank" title="WhatsApp Channel">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448c-.633.344-6.28 3.412-6.28 3.412zm6.597-3.807c1.558.928 3.354 1.418 5.187 1.419 5.512 0 10-4.488 10-10s-4.488-10-10-10c-5.513 0-10 4.488-10 10-.001 1.875.511 3.693 1.488 5.289l-.95 3.468 3.475-.934z"/></svg>
-                </a>
-                
-                <!-- YouTube Channel -->
-                <a href="https://www.youtube.com/@EarnlyIndiaOfficial" target="_blank" title="YouTube">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </a>
-
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/uniquepieceoffical?igsh=djFmNGg3ZnE0Y280" target="_blank" title="Instagram">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-
-                <!-- X (Twitter) -->
-                <a href="https://x.com/EarnlyIndia_" target="_blank" title="X (Twitter)">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                </a>
-
-                <!-- Telegram -->
-                <a href="https://t.me/EarnlyIndiaOfficial" target="_blank" title="Telegram">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.534.26l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.535-.195 1.001.132.834 1.033z"/></svg>
-                </a>
+        <!-- Copyright & Bottom Links -->
+        <div class="footer-bottom">
+            <p>© 2026 Ai.Now All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
             </div>
         </div>
+    </footer>
 
-        <!-- Copyright -->
-        <div class="footer-copyright">
-            <p>© 2026 UPISTEPS Inc. All rights reserved. Designed with precision, priced with care.</p>
-        </div>
-
+    <!-- Visual Glow Rings Background Graphic -->
+    <div class="visual-container">
+        <div class="ring"></div>
+        <div class="ring"></div>
     </div>
-</footer>
-    
-    <!-- JavaScript for Working Menu -->
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeToggle = document.getElementById('closeToggle');
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-
-        closeToggle.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-    </script>
+    <!-- External JavaScript link -->
+    <script src="script.js"></script>
 </body>
 </html>
