@@ -1,64 +1,54 @@
-const slider = document.getElementById('carouselTrack');
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.parentElement.scrollLeft;
-});
-
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-});
-
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.parentElement.scrollLeft = scrollLeft - walk;
-});
-
-// Touch support for mobile phones/tablets
-slider.addEventListener('touchstart', (e) => {
-    isDown = true;
-    startX = e.touches[0].pageX - slider.offsetLeft;
-    scrollLeft = slider.parentElement.scrollLeft;
-});
-
-slider.addEventListener('touchend', () => {
-    isDown = false;
-});
-
-slider.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.parentElement.scrollLeft = scrollLeft - walk;
-});
-
-// FAQ Accordion Functionality
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-    const questionBtn = item.querySelector('.faq-question');
+// Interactive Script for Button Clicks and Menu Actions
+document.addEventListener('DOMContentLoaded', () => {
     
-    questionBtn.addEventListener('click', () => {
-        // Close other open accordions
-        faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-                otherItem.classList.remove('active');
-            }
+    // Start Project button interaction
+    const startProjectBtn = document.getElementById('start-project-btn');
+    if (startProjectBtn) {
+        startProjectBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("Start Project clicked!");
+            alert("Redirecting to Project Setup page...");
         });
-        
-        // Toggle current accordion
-        item.classList.toggle('active');
+    }
+
+    // Explore Solution button interaction
+    const exploreSolutionBtn = document.getElementById('explore-solution-btn');
+    if (exploreSolutionBtn) {
+        exploreSolutionBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("Explore Solutions clicked!");
+            alert("Loading AI Solutions overview...");
+        });
+    }
+
+    // Navbar Navigation handling (Ready for multi-page linking)
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Remove active class from all
+            navLinks.forEach(item => item.classList.remove('active'));
+            // Add to clicked one
+            this.classList.add('active');
+        });
     });
+
 });
+
+// About Section Learn More interaction
+const learnMoreBtn = document.querySelector('.btn-learn');
+if (learnMoreBtn) {
+    learnMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert("More details about AI.Now will be displayed here!");
+    });
+}
+
+// Contact Form Submission Handling
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert("Thank you! Your message has been sent successfully.");
+        contactForm.reset();
+    });
+}
