@@ -1,1 +1,384 @@
+/* =================================================================
+   UPISTEPS - AI Health & Wellness Intelligence Platform
+   Design System: Advanced Glassmorphism & High-Performance Dark/Teal UI
+   ================================================================= */
 
+:root {
+    --bg-deep: #031211;
+    --bg-gradient: linear-gradient(135deg, #031211 0%, #072a28 50%, #0c3b38 100%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --primary-teal: #00d2c4;
+    --accent-glow: rgba(0, 210, 196, 0.2);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --danger-red: #f87171;
+    --warning-yellow: #fbbf24;
+    --success-green: #34d399;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-deep);
+    color: var(--text-main);
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 10% 20%, rgba(12, 59, 56, 0.4) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(0, 210, 196, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Glassmorphism Core Class */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 24px;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: rgba(3, 18, 17, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--white);
+    background: linear-gradient(to right, #ffffff, var(--primary-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-teal);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.btn-glass:hover {
+    background: var(--primary-teal);
+    color: var(--bg-deep);
+    box-shadow: 0 0 20px var(--accent-glow);
+    border-color: var(--primary-teal);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 160px 20px 100px 20px;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+    background: rgba(0, 210, 196, 0.1);
+    border: 1px solid rgba(0, 210, 196, 0.3);
+    color: var(--primary-teal);
+}
+
+.hero-section h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.hero-section h1 span {
+    color: var(--primary-teal);
+}
+
+.hero-section p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.hero-cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary-glow {
+    background: var(--primary-teal);
+    color: var(--bg-deep);
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 0 25px var(--accent-glow);
+    transition: 0.3s;
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(0, 210, 196, 0.5);
+}
+
+/* Medical Disclaimer Warning Box */
+.medical-warning-banner {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    border-left: 4px solid var(--warning-yellow);
+    background: rgba(251, 191, 36, 0.05);
+    border-radius: 0 16px 16px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+}
+
+.medical-warning-banner i {
+    font-size: 2rem;
+    color: var(--warning-yellow);
+}
+
+.medical-warning-banner h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--warning-yellow);
+}
+
+.medical-warning-banner p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Sections Layout */
+.section-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header span {
+    color: var(--primary-teal);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-top: 10px;
+}
+
+/* Grid Components */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    padding: 40px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 210, 196, 0.4);
+}
+
+.feature-card i {
+    font-size: 2.2rem;
+    color: var(--primary-teal);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Blog Section (20+ Dynamic/Static Grid Items) */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.blog-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog-img-wrapper {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-tag {
+    font-size: 0.75rem;
+    color: var(--primary-teal);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.blog-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.blog-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background: #010a09;
+    border-top: 1px solid var(--glass-border);
+    padding: 80px 6% 30px 6%;
+    margin-top: 120px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col h5 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-teal);
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+@media(max-width: 768px) {
+    .nav-links { display: none; }
+}
