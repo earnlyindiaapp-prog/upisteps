@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPISTEPS - AI Health & Wellness Intelligence Platform</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>UPISTEPS - AI Health, Gaming & Longevity Intelligence</title>
+    <!-- Google Fonts: Orbitron & Rajdhani for Gaming & Tech Theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- External CSS linked -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,335 +15,558 @@
     <header>
         <div class="logo">UPISTEPS</div>
         <ul class="nav-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#howitworks">How It Works</a></li>
-            <li><a href="#blogs">Health Blog (20+)</a></li>
-            <li><a href="#safety">AI & Safety</a></li>
+            <li><a href="#videos">AI & Gaming Simulations</a></li>
+            <li><a href="#blogs">Health & Longevity Wiki (20+)</a></li>
+            <li><a href="#reviews">Verified Reviews (10+)</a></li>
+            <li><a href="#safety">System Warning</a></li>
         </ul>
-        <div class="nav-actions">
-            <button class="btn-glass">Sign In</button>
-            <button class="btn-primary-glow" style="padding: 8px 20px; font-size:0.9rem;">Get Started</button>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="btn-gaming-glow trigger-modal" style="padding: 10px 24px; font-size:0.9rem;">Launch App</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
+
+    <!-- Mobile Fullscreen Glass Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#videos" class="mobile-link">AI & Gaming Simulations</a>
+        <a href="#blogs" class="mobile-link">Health & Longevity Wiki</a>
+        <a href="#reviews" class="mobile-link">Verified Reviews</a>
+        <a href="#safety" class="mobile-link">System Warning</a>
+        <button class="btn-gaming-glow trigger-modal">Launch App</button>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-badge">
-            <i class="fa-solid fa-microchip"></i> Next-Gen AI Health & Biomarker Intelligence
+            <i class="fa-solid fa-gamepad"></i> Gamified Biomarker & Longevity Intelligence
         </div>
-        <h1>Everything Your Health Has to Say, Decoded by <span>UPISTEPS AI</span></h1>
-        <p>Transform dense, confusing blood reports and biological markers into precise, life-extending daily routines. Built on rigorous longevity science.</p>
+        <h1>Level Up Your Biology With <span>UPISTEPS AI</span></h1>
+        <p>Decode complex medical telemetry reports, bridge cutting-edge longevity science with immersive gaming analytics, and master your body's vital statistics.</p>
         
-        <div class="hero-cta-group">
-            <a href="#signup" class="btn-primary-glow">Analyze My Reports Free</a>
-            <button class="btn-glass">Explore Documentation</button>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <button class="btn-gaming-glow trigger-modal">Analyze Reports Free</button>
+            <button class="glass-panel" style="padding: 14px 36px; font-weight: 700; cursor: pointer; color: var(--primary-teal);" onclick="openModal()">Watch Live Demo</button>
         </div>
 
-        <!-- Medical Warning Notice -->
-        <div class="medical-warning-banner glass-panel">
+        <!-- Interactive Warning Banner -->
+        <div class="warning-box glass-panel trigger-modal">
             <i class="fa-solid fa-triangle-exclamation"></i>
             <div>
-                <h4>Important Medical Disclaimer & AI Business Notice</h4>
-                <p>UPISTEPS is an informational and wellness analytics platform powered by AI. It does not replace professional medical diagnosis, treatment, or clinical prescriptions. Always consult a licensed physician for critical health conditions.</p>
+                <h4>⚠️ Critical Medical & AI System Warning (Click for Details)</h4>
+                <p>UPISTEPS is an AI wellness simulation tool. It is not an FDA-approved diagnostic system. Always consult a certified medical professional for critical clinical decisions.</p>
             </div>
         </div>
     </section>
 
-    <!-- Core Business Features Section -->
-    <section id="features" class="section-container">
+    <!-- AI & Gaming Video / Simulation Cards (10+ Items) -->
+    <section id="videos" class="section-container">
         <div class="section-header">
-            <span>Core Capabilities</span>
-            <h2>The Difference You Can Feel</h2>
+            <span>Interactive Media</span>
+            <h2>AI & Gaming Health Simulations (10+ Modules)</h2>
+            <p>Explore real-time telemetry simulations combining clinical accuracy with gaming mechanics.</p>
         </div>
-        <div class="grid-3">
-            <div class="feature-card glass-panel">
-                <i class="fa-solid fa-file-pdf"></i>
-                <h3>Instant Lab Report Parsing</h3>
-                <p>Drop PDF medical files or scans. Our secure AI parses blood profiles, hormone panels, and metabolic indices in seconds.</p>
+
+        <div class="gaming-video-grid">
+            <!-- Video Card 1 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500" alt="Sim 1">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Neural Bio-HUD Simulation</h4>
+                    <p>Real-time AR overlay mapping for metabolic optimization.</p>
+                </div>
             </div>
-            <div class="feature-card glass-panel">
-                <i class="fa-solid fa-dna"></i>
-                <h3>Biological Age Tracking</h3>
-                <p>Go beyond chronological years. Track your true cellular vitality score using advanced multi-parametric biometric data.</p>
+            <!-- Video Card 2 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500" alt="Sim 2">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Cellular Age Reversal Quest</h4>
+                    <p>Gamifying epigenetic reset protocols through daily micro-habits.</p>
+                </div>
             </div>
-            <div class="feature-card glass-panel">
-                <i class="fa-solid fa-heart-pulse"></i>
-                <h3>Personalized Action Protocols</h3>
-                <p>Receive hyper-specific micro-habits—from targeted post-lunch walks to precise micro-nutrient adjustments.</p>
+            <!-- Video Card 3 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500" alt="Sim 3">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Cardio Zone 2 Boss Battle</h4>
+                    <p>Maintaining mitochondrial output via live heart rate telemetry.</p>
+                </div>
+            </div>
+            <!-- Video Card 4 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500" alt="Sim 4">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Blood Panel Hacker Mode</h4>
+                    <p>Translating dense lab PDFs into interactive skill trees.</p>
+                </div>
+            </div>
+            <!-- Video Card 5 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500" alt="Sim 5">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Sleep Architecture Deep Dive</h4>
+                    <p>Unlocking slow-wave sleep phases for peak cognitive power.</p>
+                </div>
+            </div>
+            <!-- Video Card 6 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=500" alt="Sim 6">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Insulin Spike Deflection</h4>
+                    <p>Tactical post-meal walking metrics for glucose regulation.</p>
+                </div>
+            </div>
+            <!-- Video Card 7 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=500" alt="Sim 7">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Immune System Armor Matrix</h4>
+                    <p>High-sensitivity CRP tracking and defense optimization.</p>
+                </div>
+            </div>
+            <!-- Video Card 8 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500" alt="Sim 8">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Hormonal Equilibrium Quest</h4>
+                    <p>Comprehensive thyroid and adrenal gland synchronization.</p>
+                </div>
+            </div>
+            <!-- Video Card 9 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500" alt="Sim 9">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Cellular Hydration Grid</h4>
+                    <p>Electrolyte balance tracking for optimal muscular performance.</p>
+                </div>
+            </div>
+            <!-- Video Card 10 -->
+            <div class="video-sim-card glass-panel trigger-modal">
+                <div class="video-sim-thumb">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500" alt="Sim 10">
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-sim-content">
+                    <h4>Longevity Sandbox Masterclass</h4>
+                    <p>Simulating 30-year health outcomes based on current habits.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 20+ Health & AI Articles / Blogs Section -->
+    <!-- Health & Longevity Wiki / Blog Section (20+ Items with 30+ Total Images across page) -->
     <section id="blogs" class="section-container">
         <div class="section-header">
-            <span>Knowledge Base</span>
-            <h2>Longevity Science & AI Health Insights (20+ Articles)</h2>
-            <p>Explore our vast collection of clinical insights, biomarker breakdowns, and AI wellness guides.</p>
+            <span>Knowledge Vault</span>
+            <h2>Longevity Science & AI Wiki (20+ Articles)</h2>
+            <p>Peer-reviewed clinical guides translated into clear, actionable intelligence.</p>
         </div>
 
         <div class="blog-grid">
-            <!-- Blog Item 1 -->
+            <!-- Blog 1 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500" alt="Health 1">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500" alt="Blog 1" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Biomarkers</span>
-                    <h4>Decoding Your Lipid Panel: Beyond Just LDL & HDL</h4>
-                    <p>Understand ApoB and particle sizes to accurately evaluate cardiovascular longevity risk profiles.</p>
+                    <h4>Decoding Lipid Panels</h4>
+                    <p>Understanding ApoB and cardiovascular risk profiles.</p>
                 </div>
             </div>
-            <!-- Blog Item 2 -->
+            <!-- Blog 2 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=500" alt="Health 2">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=500" alt="Blog 2" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Metabolism</span>
-                    <h4>Insulin Resistance: The Silent Driver of Accelerated Aging</h4>
-                    <p>How continuous glucose regulation impacts systemic inflammation and cognitive performance.</p>
+                    <h4>Insulin Resistance Risks</h4>
+                    <p>Preventing silent metabolic acceleration.</p>
                 </div>
             </div>
-            <!-- Blog Item 3 -->
+            <!-- Blog 3 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500" alt="Health 3">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500" alt="Blog 3" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">AI Diagnostics</span>
-                    <h4>How Large Language Models are Transforming Preventive Medicine</h4>
-                    <p>Bridging the communication gap between complex medical telemetry and everyday patient comprehension.</p>
+                    <h4>LLMs in Medicine</h4>
+                    <p>Bridging telemetry gaps for patients.</p>
                 </div>
             </div>
-            <!-- Blog Item 4 -->
+            <!-- Blog 4 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500" alt="Health 4">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500" alt="Blog 4" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Sleep Science</span>
-                    <h4>Optimizing Deep Sleep Architecture for Cellular Recovery</h4>
-                    <p>The neuro-glymphatic clearance process and why slow-wave sleep dictates your biological age.</p>
+                    <h4>Deep Sleep Architecture</h4>
+                    <p>Glymphatic brain clearance mechanisms.</p>
                 </div>
             </div>
-            <!-- Blog Item 5 -->
+            <!-- Blog 5 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500" alt="Health 5">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500" alt="Blog 5" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Nutrition</span>
-                    <h4>Micronutrient Deficiencies: Magnesium, Vitamin D & Beyond</h4>
-                    <p>Identifying sub-optimal reference ranges before they manifest into chronic health disorders.</p>
+                    <h4>Magnesium & Vit D</h4>
+                    <p>Addressing sub-optimal nutrient ranges.</p>
                 </div>
             </div>
-            <!-- Blog Item 6 -->
+            <!-- Blog 6 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" alt="Health 6">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" alt="Blog 6" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Longevity</span>
-                    <h4>The Hallmarks of Aging: Can We Programmatically Reverse Them?</h4>
-                    <p>An overview of cellular senescence, telomere dynamics, and epigenetic reprogramming.</p>
+                    <h4>Hallmarks of Aging</h4>
+                    <p>Epigenetic reprogramming potentials.</p>
                 </div>
             </div>
-            <!-- Blog Item 7 -->
+            <!-- Blog 7 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500" alt="Health 7">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500" alt="Blog 7" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Data Security</span>
-                    <h4>HIPAA Compliance & Zero-Knowledge Encryption for Health Records</h4>
-                    <p>How UPISTEPS protects your most sensitive biometric information with military-grade security.</p>
+                    <h4>Zero-Knowledge Privacy</h4>
+                    <p>Protecting sensitive health telemetry.</p>
                 </div>
             </div>
-            <!-- Blog Item 8 -->
+            <!-- Blog 8 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=500" alt="Health 8">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=500" alt="Blog 8" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Hormones</span>
-                    <h4>Thyroid Health: Unlocking the Thyroid Panel Puzzle</h4>
-                    <p>Why checking just TSH is insufficient for total metabolic and energy wellness tracking.</p>
+                    <h4>Thyroid Panel Puzzle</h4>
+                    <p>Why checking only TSH is incomplete.</p>
                 </div>
             </div>
-            <!-- Blog Item 9 -->
+            <!-- Blog 9 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500" alt="Health 9">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500" alt="Blog 9" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Cardio</span>
-                    <h4>Resting Heart Rate & HRV: Metrics That Reveal Your Stress Buffer</h4>
-                    <p>Using wearable telemetry data combined with blood biomarkers for real-time recovery indexing.</p>
+                    <h4>HRV & Recovery</h4>
+                    <p>Real-time stress buffer indexing.</p>
                 </div>
             </div>
-            <!-- Blog Item 10 -->
+            <!-- Blog 10 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500" alt="Health 10">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500" alt="Blog 10" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Gut Health</span>
-                    <h4>The Microbiome-Brain Axis: How Gut Flora Regulates Mood</h4>
-                    <p>Exploring short-chain fatty acids, systemic inflammation, and mucosal barrier integrity.</p>
+                    <h4>Microbiome-Brain Axis</h4>
+                    <p>Short-chain fatty acid regulation.</p>
                 </div>
             </div>
-            <!-- Blog Item 11 -->
+            <!-- Blog 11 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500" alt="Health 11">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500" alt="Blog 11" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Fitness</span>
-                    <h4>Zone 2 Cardio: The Cornerstone of Mitochondrial Health</h4>
-                    <p>Why steady-state aerobic training is indispensable for cellular energy production and fat oxidation.</p>
+                    <h4>Zone 2 Training</h4>
+                    <p>Mitochondrial health cornerstone.</p>
                 </div>
             </div>
-            <!-- Blog Item 12 -->
+            <!-- Blog 12 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500" alt="Health 12">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500" alt="Blog 12" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Mindset</span>
-                    <h4>Chronic Cortisol Overload: Mitigating Stress-Induced Biomarker Drift</h4>
-                    <p>Practical routines to stabilize adrenal function and protect lean muscle tissue.</p>
+                    <h4>Cortisol Management</h4>
+                    <p>Protecting lean muscle from stress.</p>
                 </div>
             </div>
-            <!-- Blog Item 13 -->
+            <!-- Blog 13 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500" alt="Health 13">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500" alt="Blog 13" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Immunology</span>
-                    <h4>Inflammatory Markers: High-Sensitivity CRP and Systemic Risks</h4>
-                    <p>Uncovering hidden sources of chronic low-grade systemic inflammation through routine testing.</p>
+                    <h4>hs-CRP Markers</h4>
+                    <p>Uncovering low-grade inflammation.</p>
                 </div>
             </div>
-            <!-- Blog Item 14 -->
+            <!-- Blog 14 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500" alt="Health 14">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500" alt="Blog 14" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Strength</span>
-                    <h4>Sarcopenia Prevention: Why Muscle Mass is Your Metabolic Armor</h4>
-                    <p>Resistance training protocols designed to preserve bone density and metabolic flexibility in later life.</p>
+                    <h4>Sarcopenia Defense</h4>
+                    <p>Preserving bone density over time.</p>
                 </div>
             </div>
-            <!-- Blog Item 15 -->
+            <!-- Blog 15 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=500" alt="Health 15">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=500" alt="Blog 15" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Renal Health</span>
-                    <h4>Creatinine, eGFR, and Cystatin C: Monitoring Kidney Function</h4>
-                    <p>Advanced renal filtering biomarkers that provide superior accuracy over basic creatinine alone.</p>
+                    <h4>Cystatin C Accuracy</h4>
+                    <p>Advanced kidney filtering metrics.</p>
                 </div>
             </div>
-            <!-- Blog Item 16 -->
+            <!-- Blog 16 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=500" alt="Health 16">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=500" alt="Blog 16" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Liver Panel</span>
-                    <h4>Liver Enzymes Unmasked: ALT, AST, and GGT Insights</h4>
-                    <p>Detecting early stage metabolic dysfunction-associated steatotic liver disease.</p>
+                    <h4>ALT & AST Profiles</h4>
+                    <p>Detecting metabolic liver strain.</p>
                 </div>
             </div>
-            <!-- Blog Item 17 -->
+            <!-- Blog 17 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?w=500" alt="Health 17">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-tag">Future Tech</span>
-                    <h4>Wearable Telemetry + AI: The Dawn of Continuous Health Intelligence</h4>
-                    <p>How real-time data streaming integrates with blood pathology for holistic health forecasting.</p>
+                <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?w=500" alt="Blog 17" class="blog-img">
+                <div class="blog-text">
+                    <span class="blog-tag">Wearables</span>
+                    <h4>Telemetry Fusion</h4>
+                    <p>Merging streams for health forecasting.</p>
                 </div>
             </div>
-            <!-- Blog Item 18 -->
+            <!-- Blog 18 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=500" alt="Health 18">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=500" alt="Blog 18" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Hydration</span>
-                    <h4>Cellular Hydration Dynamics and Electrolyte Homeostasis</h4>
-                    <p>Optimizing intra and extracellular fluid balance for peak athletic and cognitive output.</p>
+                    <h4>Fluid Homeostasis</h4>
+                    <p>Optimizing cellular fluid balance.</p>
                 </div>
             </div>
-            <!-- Blog Item 19 -->
+            <!-- Blog 19 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500" alt="Health 19">
-                </div>
-                <div class="blog-content">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500" alt="Blog 19" class="blog-img">
+                <div class="blog-text">
                     <span class="blog-tag">Pharmacology</span>
-                    <h4>Nutrient Depletions Caused by Common Over-the-Counter Meds</h4>
-                    <p>How everyday pharmaceuticals interact with micronutrient absorption pathways.</p>
+                    <h4>Medication Depletions</h4>
+                    <p>Nutrient absorption interactions.</p>
                 </div>
             </div>
-            <!-- Blog Item 20 -->
+            <!-- Blog 20 -->
             <div class="blog-card glass-panel">
-                <div class="blog-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500" alt="Health 20">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500" alt="Blog 20" class="blog-img">
+                <div class="blog-text">
+                    <span class="blog-tag">Health Span</span>
+                    <h4>Maximizing Vitality</h4>
+                    <p>Frameworks for robust physical independence.</p>
                 </div>
-                <div class="blog-content">
-                    <span class="blog-tag">Longevity Vision</span>
-                    <h4>Building Your Personal Health Span, Not Just Life Span</h4>
-                    <p>Practical frameworks to maintain vigorous physical independence well into your later decades.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Reviews Section (10+ Items) -->
+    <section id="reviews" class="section-container">
+        <div class="section-header">
+            <span>Testimonials</span>
+            <h2>Trusted by 5000+ Biohackers (10+ Reviews)</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"The gamified UI makes tracking my complex blood reports feel like upgrading an RPG character. Absolutely brilliant!"</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="User 1">
+                    <div><h5>Sneha S.</h5><span>Verified Biohacker</span></div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"Translating dense medical jargon into daily actionable routines changed my energy levels completely."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="User 2">
+                    <div><h5>Rahul M.</h5><span>Longevity Enthusiast</span></div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"The glassmorphism design on cream background is stunning, and the AI report parsing is lightning fast."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="User 3">
+                    <div><h5>Ananya P.</h5><span>Data Analyst</span></div>
+                </div>
+            </div>
+            <!-- Review 4 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"Having real-time Zone 2 heart telemetry combined with my metabolic blood tests is a total game changer."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="User 4">
+                    <div><h5>Vikram K.</h5><span>Fitness Coach</span></div>
+                </div>
+            </div>
+            <!-- Review 5 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"Security protocols are top-notch. I trust UPISTEPS with my entire family's historical lab files."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="User 5">
+                    <div><h5>Pooja R.</h5><span>Medical Researcher</span></div>
+                </div>
+            </div>
+            <!-- Review 6 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"The AI warning system keeps safety front and center while giving deep biological insights."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="User 6">
+                    <div><h5>Aditya N.</h5><span>Software Architect</span></div>
+                </div>
+            </div>
+            <!-- Review 7 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"Sarcopenia prevention protocols helped me adjust my resistance training accurately."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100" alt="User 7">
+                    <div><h5>Meera D.</h5><span>Yoga Instructor</span></div>
+                </div>
+            </div>
+            <!-- Review 8 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"Clean, elegant, futuristic yet grounded on a soothing cream interface. Best health app yet."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100" alt="User 8">
+                    <div><h5>Karan S.</h5><span>Product Designer</span></div>
+                </div>
+            </div>
+            <!-- Review 9 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"Continuous sleep tracking feedback loops have dramatically boosted my cognitive output."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100" alt="User 9">
+                    <div><h5>Tanvi G.</h5><span>Entrepreneur</span></div>
+                </div>
+            </div>
+            <!-- Review 10 -->
+            <div class="review-card glass-panel">
+                <div class="stars">★★★★★</div>
+                <p>"An absolute masterpiece of design, data parsing, and gaming-inspired wellness intelligence."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100" alt="User 10">
+                    <div><h5>Rohan T.</h5><span>Tech Investor</span></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="safety">
         <div class="footer-grid">
             <div class="footer-col">
-                <h5>UPISTEPS Platform</h5>
+                <h5>UPISTEPS Core</h5>
                 <ul>
-                    <li><a href="#">AI Report Parser</a></li>
-                    <li><a href="#">Biological Age Calculator</a></li>
-                    <li><a href="#">Longevity Science</a></li>
+                    <li><a href="#" class="trigger-modal">AI Report Parser</a></li>
+                    <li><a href="#" class="trigger-modal">Biological HUD</a></li>
+                    <li><a href="#" class="trigger-modal">Longevity Sim</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h5>Company & Legal</h5>
+                <h5>Compliance & Safety</h5>
                 <ul>
-                    <li><a href="#">About UPISTEPS</a></li>
-                    <li><a href="#">Medical Disclaimer</a></li>
-                    <li><a href="#">Privacy & Compliance</a></li>
+                    <li><a href="#" class="trigger-modal">Medical Warning Policy</a></li>
+                    <li><a href="#" class="trigger-modal">Privacy Guidelines</a></li>
+                    <li><a href="#" class="trigger-modal">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h5>Support & Help</h5>
+                <h5>Support Center</h5>
                 <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Safety Guidelines</a></li>
-                    <li><a href="#">Contact Support</a></li>
+                    <li><a href="#" class="trigger-modal">Helpdesk</a></li>
+                    <li><a href="#" class="trigger-modal">API Documentation</a></li>
+                    <li><a href="#" class="trigger-modal">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h5>Stay Updated</h5>
-                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 12px;">Get research-backed longevity digests.</p>
-                <input type="email" placeholder="Enter your email..." style="width:100%; padding:10px; background:rgba(255,255,255,0.05); border:1px solid var(--glass-border); border-radius:8px; color:white; outline:none;">
+                <h5>Join Newsletter</h5>
+                <p style="font-size:0.85rem; color:#a3b8b6; margin-bottom: 12px;">Get research-backed intelligence digests.</p>
+                <input type="email" placeholder="Enter your email..." class="trigger-modal" style="width:100%; padding:10px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.2); border-radius:8px; color:white; outline:none;" readonly>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 UPISTEPS Health Inc. All rights reserved. Designed with purpose, priced with care.</p>
-            <p style="color: var(--warning-yellow);">⚠️ Warning: Not a substitute for professional medical care.</p>
+            <p>© 2026 UPISTEPS Health Inc. All rights reserved. Built with cream glassmorphism.</p>
+            <p style="color: var(--warning-yellow);">⚠️ Warning: Informational simulation platform only.</p>
         </div>
     </footer>
 
+    <!-- Coming Soon Modal Popup -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <h3>Coming Soon!</h3>
+            <p>This advanced feature or module is currently in high-performance testing and will be unlocked in the upcoming update.</p>
+            <button class="btn-gaming-glow" onclick="closeModal()">Got It</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Hamburger Toggle & Modal Popups -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Modal Logic for Warnings and Coming Soon triggers
+        const modalOverlay = document.getElementById('modalOverlay');
+        const triggerElements = document.querySelectorAll('.trigger-modal');
+
+        function openModal() {
+            modalOverlay.classList.add('active');
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        triggerElements.forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
