@@ -1,762 +1,309 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take Health - Everything Your Health Has to Say</title>
-    <!-- Google Fonts & FontAwesome for icons -->
+    <title>UPISTEPS - AI Health & Wellness Intelligence Platform</title>
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-dark: #072a28;
-            --primary-teal: #0c3b38;
-            --accent-teal: #14534f;
-            --light-bg: #f8f9f7;
-            --white: #ffffff;
-            --text-main: #111827;
-            --text-muted: #4b5563;
-            --border-color: #e5e7eb;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta+ Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        /* Header / Navbar */
-        header {
-            background-color: var(--primary-dark);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .btn-signup {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-signup:hover {
-            background: var(--white);
-            color: var(--primary-dark);
-        }
-
-        .menu-icon {
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(180deg, var(--primary-dark) 0%, #114b47 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-        }
-
-        .rating-badge {
-            background: rgba(255, 255, 255, 0.1);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin-bottom: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .rating-badge i {
-            color: #fbbf24;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.2;
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: #d1d5db;
-            max-width: 650px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #031b19;
-            transform: translateY(-2px);
-        }
-
-        .hero-subtext {
-            font-size: 0.8rem;
-            color: #9ca3af;
-            margin-top: 12px;
-        }
-
-        /* Stats & Trust Section */
-        .stats-section {
-            background-color: var(--light-bg);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            margin-bottom: 60px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item i {
-            font-size: 1.8rem;
-            color: var(--primary-teal);
-            margin-bottom: 10px;
-        }
-
-        .stat-item h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .stat-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .wellness-intelligence-text {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .wellness-intelligence-text h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--primary-teal);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .wellness-intelligence-text p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header span {
-            color: var(--primary-teal);
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            color: var(--text-main);
-            margin-top: 10px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-size: 1.05rem;
-        }
-
-        .step-card {
-            background: var(--white);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-        }
-
-        .step-card.reverse {
-            direction: rtl;
-        }
-
-        .step-card.reverse > * {
-            direction: ltr;
-        }
-
-        .step-content {
-            padding: 40px;
-        }
-
-        .step-number {
-            background: var(--primary-dark);
-            color: var(--white);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .step-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-            color: var(--text-main);
-        }
-
-        .step-content p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .step-visual {
-            background: var(--primary-teal);
-            min-height: 320px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 20px;
-        }
-
-        .mockup-box {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 20px;
-            border-radius: 16px;
-            width: 80%;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        /* Testimonials / Difference Section */
-        .testimonials-section {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .testimonials-container {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            padding: 20px 0;
-            max-width: 1100px;
-            margin: 40px auto 0 auto;
-            scrollbar-width: none;
-        }
-
-        .testimonials-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .testimonial-card {
-            background: #fffdf9;
-            color: var(--text-main);
-            min-width: 320px;
-            max-width: 380px;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: left;
-            flex-shrink: 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .testimonial-card .stars {
-            color: #fbbf24;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-main);
-            margin-bottom: 20px;
-        }
-
-        .user-profile {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 15px;
-        }
-
-        .user-profile img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .user-profile h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            max-width: 800px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-            cursor: pointer;
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-top: 0;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 150px;
-            margin-top: 10px;
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(45deg);
-        }
-
-        .faq-question i {
-            transition: transform 0.3s ease;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #000000;
-            color: var(--white);
-            padding: 60px 8% 30px 8%;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-col h4 {
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: #9ca3af;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul li a {
-            color: #d1d5db;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--white);
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .newsletter-form input {
-            background: #1f2937;
-            border: 1px solid #374151;
-            padding: 10px 15px;
-            border-radius: 6px;
-            color: var(--white);
-            outline: none;
-            flex: 1;
-        }
-
-        .newsletter-form button {
-            background: #374151;
-            color: var(--white);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .newsletter-form button:hover {
-            background: #4b5563;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            background: #1f2937;
-            color: var(--white);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .social-icons a:hover {
-            background: #374151;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #1f2937;
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: #9ca3af;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .step-card, .step-card.reverse {
-                grid-template-columns: 1fr;
-                direction: ltr;
-            }
-            .stats-grid {
-                gap: 30px;
-            }
-        }
-    </style>
+    <!-- External CSS linked -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header & Glass Navigation -->
     <header>
-        <div class="logo">TAKE</div>
-        <div class="nav-right">
-            <button class="btn-signup">Sign Up</button>
-            <i class="fa-solid fa-bars menu-icon"></i>
+        <div class="logo">UPISTEPS</div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#howitworks">How It Works</a></li>
+            <li><a href="#blogs">Health Blog (20+)</a></li>
+            <li><a href="#safety">AI & Safety</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-glass">Sign In</button>
+            <button class="btn-primary-glow" style="padding: 8px 20px; font-size:0.9rem;">Get Started</button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="rating-badge">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half"></i>
-            <span>4.9/5 from 1k reviews</span>
+    <section class="hero-section">
+        <div class="hero-badge">
+            <i class="fa-solid fa-microchip"></i> Next-Gen AI Health & Biomarker Intelligence
         </div>
-        <h1>Everything Your Health Has to Say</h1>
-        <p>Take Health brings your lab reports, daily habits and long-term trends into one place, and explains what they actually mean — so you always know what to do next.</p>
-        <button class="btn-primary">Start for Free</button>
-        <div class="hero-subtext">*No Credit Card Required</div>
-    </section>
-
-    <!-- Stats & Wellness Intelligence -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <i class="fa-solid fa-hourglass-half"></i>
-                <h3>20+ Years</h3>
-                <p>In Longevity Science</p>
-            </div>
-            <div class="stat-item">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>NSE & BSE</h3>
-                <p>Listed Company</p>
-            </div>
-            <div class="stat-item">
-                <i class="fa-solid fa-users"></i>
-                <h3>5000+</h3>
-                <p>Happy Users</p>
-            </div>
+        <h1>Everything Your Health Has to Say, Decoded by <span>UPISTEPS AI</span></h1>
+        <p>Transform dense, confusing blood reports and biological markers into precise, life-extending daily routines. Built on rigorous longevity science.</p>
+        
+        <div class="hero-cta-group">
+            <a href="#signup" class="btn-primary-glow">Analyze My Reports Free</a>
+            <button class="btn-glass">Explore Documentation</button>
         </div>
 
-        <div class="wellness-intelligence-text">
-            <h2>This is Wellness Intelligence</h2>
-            <p>Not another tracker. A way to finally know what your body's data has been telling you all along.</p>
+        <!-- Medical Warning Notice -->
+        <div class="medical-warning-banner glass-panel">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div>
+                <h4>Important Medical Disclaimer & AI Business Notice</h4>
+                <p>UPISTEPS is an informational and wellness analytics platform powered by AI. It does not replace professional medical diagnosis, treatment, or clinical prescriptions. Always consult a licensed physician for critical health conditions.</p>
+            </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
+    <!-- Core Business Features Section -->
+    <section id="features" class="section-container">
         <div class="section-header">
-            <span>How It Works</span>
-            <h2>Turning Complexity Into Clarity</h2>
-            <p>See how Take Health analyzes your data, explains what it means, and guides you toward better health.</p>
+            <span>Core Capabilities</span>
+            <h2>The Difference You Can Feel</h2>
         </div>
-
-        <!-- Step 1 -->
-        <div class="step-card">
-            <div class="step-content">
-                <div class="step-number">1</div>
-                <h3>Drop Your Reports</h3>
-                <p>Upload your health reports seamlessly and let us do the rest.</p>
+        <div class="grid-3">
+            <div class="feature-card glass-panel">
+                <i class="fa-solid fa-file-pdf"></i>
+                <h3>Instant Lab Report Parsing</h3>
+                <p>Drop PDF medical files or scans. Our secure AI parses blood profiles, hormone panels, and metabolic indices in seconds.</p>
             </div>
-            <div class="step-visual">
-                <div class="mockup-box">
-                    <p style="font-weight:600; font-size:0.9rem; color:#111;">📄 Medical_Report.pdf</p>
-                    <p style="font-size:0.75rem; color:#6b7280; margin-top:5px;">Upload complete - 100%</p>
-                    <div style="background:#e5e7eb; height:6px; border-radius:3px; margin-top:8px;">
-                        <div style="background:#10b981; width:100%; height:100%; border-radius:3px;"></div>
-                    </div>
-                </div>
+            <div class="feature-card glass-panel">
+                <i class="fa-solid fa-dna"></i>
+                <h3>Biological Age Tracking</h3>
+                <p>Go beyond chronological years. Track your true cellular vitality score using advanced multi-parametric biometric data.</p>
             </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step-card reverse">
-            <div class="step-content">
-                <div class="step-number">2</div>
-                <h3>We Analyze It for You</h3>
-                <p>Our AI reviews your data for key health insights instantly.</p>
-            </div>
-            <div class="step-visual">
-                <div class="mockup-box">
-                    <div style="display:flex; justify-content:space-between; font-size:0.85rem; padding:6px 0; border-bottom:1px solid #f3f4f6;">
-                        <span>Vitamin D level</span> <span style="color:#059669; font-weight:600;">Optimal</span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.85rem; padding:6px 0; border-bottom:1px solid #f3f4f6;">
-                        <span>Magnesium Index</span> <span style="color:#dc2626; font-weight:600;">Deficient</span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.85rem; padding:6px 0;">
-                        <span>Glucose regulation</span> <span style="color:#2563eb; font-weight:600;">Normal</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-card">
-            <div class="step-content">
-                <div class="step-number">3</div>
-                <h3>Tailored Recommendations</h3>
-                <p>Turn your medical reports into something you can actually understand and act on.</p>
-            </div>
-            <div class="step-visual">
-                <div class="mockup-box">
-                    <p style="font-size:0.75rem; font-weight:700; color:#059669; text-transform:uppercase;">Recommended Actions</p>
-                    <p style="font-size:0.9rem; font-weight:600; color:#111; margin-top:6px;">Walk 15 mins after lunch</p>
-                    <p style="font-size:0.75rem; color:#6b7280;">Supports Glucose Regulation</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="step-card reverse">
-            <div class="step-content">
-                <div class="step-number">4</div>
-                <h3>Health Progress Insights</h3>
-                <p>Track your health journey with smart progress tracking over time.</p>
-            </div>
-            <div class="step-visual">
-                <div class="mockup-box" style="text-align:center;">
-                    <p style="font-size:0.85rem; color:#6b7280;">Wellness Score</p>
-                    <h3 style="color:#2563eb; font-size:1.8rem; margin-top:5px;">94%</h3>
-                </div>
+            <div class="feature-card glass-panel">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Personalized Action Protocols</h3>
+                <p>Receive hyper-specific micro-habits—from targeted post-lunch walks to precise micro-nutrient adjustments.</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <h2>The Difference You Can Feel</h2>
-        <div class="testimonials-container">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Having all my medical records and lab reports explained in plain English has given me complete confidence in managing my health. Couldn't recommend Take Health enough!"</p>
-                <div class="user-profile">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Sneha S.">
-                    <div>
-                        <h4>Sneha S.</h4>
-                        <span style="font-size:0.8rem; color:#6b7280;">Verified User</span>
-                    </div>
+    <!-- 20+ Health & AI Articles / Blogs Section -->
+    <section id="blogs" class="section-container">
+        <div class="section-header">
+            <span>Knowledge Base</span>
+            <h2>Longevity Science & AI Health Insights (20+ Articles)</h2>
+            <p>Explore our vast collection of clinical insights, biomarker breakdowns, and AI wellness guides.</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Item 1 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500" alt="Health 1">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Biomarkers</span>
+                    <h4>Decoding Your Lipid Panel: Beyond Just LDL & HDL</h4>
+                    <p>Understand ApoB and particle sizes to accurately evaluate cardiovascular longevity risk profiles.</p>
                 </div>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"The personalized daily recommendations and sleep tracking integration changed my energy levels completely. It feels like having a personal physician in your pocket."</p>
-                <div class="user-profile">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Rahul M.">
-                    <div>
-                        <h4>Rahul M.</h4>
-                        <span style="font-size:0.8rem; color:#6b7280;">Verified User</span>
-                    </div>
+            <!-- Blog Item 2 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=500" alt="Health 2">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Metabolism</span>
+                    <h4>Insulin Resistance: The Silent Driver of Accelerated Aging</h4>
+                    <p>How continuous glucose regulation impacts systemic inflammation and cognitive performance.</p>
                 </div>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Super clean app interface and extremely insightful analysis of my complex blood reports. Absolute game-changer for long-term health tracking."</p>
-                <div class="user-profile">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Ananya P.">
-                    <div>
-                        <h4>Ananya P.</h4>
-                        <span style="font-size:0.8rem; color:#6b7280;">Verified User</span>
-                    </div>
+            <!-- Blog Item 3 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500" alt="Health 3">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">AI Diagnostics</span>
+                    <h4>How Large Language Models are Transforming Preventive Medicine</h4>
+                    <p>Bridging the communication gap between complex medical telemetry and everyday patient comprehension.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="section-header" style="margin-bottom: 30px;">
-            <h2>Frequently Asked, <span style="color:var(--primary-teal)">Clearly Answered</span></h2>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How does Take Health work?</span>
-                <i class="fa-solid fa-plus"></i>
+            <!-- Blog Item 4 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500" alt="Health 4">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Sleep Science</span>
+                    <h4>Optimizing Deep Sleep Architecture for Cellular Recovery</h4>
+                    <p>The neuro-glymphatic clearance process and why slow-wave sleep dictates your biological age.</p>
+                </div>
             </div>
-            <div class="faq-answer">Take Health securely aggregates your lab reports, daily fitness inputs, and health history to translate dense medical metrics into simplified, easy-to-understand actionable steps.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Can I trust this with my health data?</span>
-                <i class="fa-solid fa-plus"></i>
+            <!-- Blog Item 5 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500" alt="Health 5">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Nutrition</span>
+                    <h4>Micronutrient Deficiencies: Magnesium, Vitamin D & Beyond</h4>
+                    <p>Identifying sub-optimal reference ranges before they manifest into chronic health disorders.</p>
+                </div>
             </div>
-            <div class="faq-answer">Yes, absolute security and privacy protocols are implemented with encrypted storage to keep all your sensitive personal medical documents fully protected.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>What makes these insights feel personal, not one-size-fits-all?</span>
-                <i class="fa-solid fa-plus"></i>
+            <!-- Blog Item 6 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" alt="Health 6">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Longevity</span>
+                    <h4>The Hallmarks of Aging: Can We Programmatically Reverse Them?</h4>
+                    <p>An overview of cellular senescence, telomere dynamics, and epigenetic reprogramming.</p>
+                </div>
             </div>
-            <div class="faq-answer">The AI continuously studies your exact biometric history, biomarker ranges, and lifestyle habits to customize recommendations tailored uniquely to your biological makeup.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Will I finally understand what my reports mean?</span>
-                <i class="fa-solid fa-plus"></i>
+            <!-- Blog Item 7 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500" alt="Health 7">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Data Security</span>
+                    <h4>HIPAA Compliance & Zero-Knowledge Encryption for Health Records</h4>
+                    <p>How UPISTEPS protects your most sensitive biometric information with military-grade security.</p>
+                </div>
             </div>
-            <div class="faq-answer">Yes, complex medical jargon is completely translated into simple language accompanied by clear highlights of what is optimal or requires attention.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Do I need medical knowledge to use this?</span>
-                <i class="fa-solid fa-plus"></i>
+            <!-- Blog Item 8 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=500" alt="Health 8">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Hormones</span>
+                    <h4>Thyroid Health: Unlocking the Thyroid Panel Puzzle</h4>
+                    <p>Why checking just TSH is insufficient for total metabolic and energy wellness tracking.</p>
+                </div>
             </div>
-            <div class="faq-answer">Not at all! The platform is explicitly built for everyday people who want to navigate their health data without needing a medical degree.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Is the app free to use?</span>
-                <i class="fa-solid fa-plus"></i>
+            <!-- Blog Item 9 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500" alt="Health 9">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Cardio</span>
+                    <h4>Resting Heart Rate & HRV: Metrics That Reveal Your Stress Buffer</h4>
+                    <p>Using wearable telemetry data combined with blood biomarkers for real-time recovery indexing.</p>
+                </div>
             </div>
-            <div class="faq-answer">You can start completely for free with essential report tracking and insights features without entering any credit card details.</div>
+            <!-- Blog Item 10 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500" alt="Health 10">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Gut Health</span>
+                    <h4>The Microbiome-Brain Axis: How Gut Flora Regulates Mood</h4>
+                    <p>Exploring short-chain fatty acids, systemic inflammation, and mucosal barrier integrity.</p>
+                </div>
+            </div>
+            <!-- Blog Item 11 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500" alt="Health 11">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Fitness</span>
+                    <h4>Zone 2 Cardio: The Cornerstone of Mitochondrial Health</h4>
+                    <p>Why steady-state aerobic training is indispensable for cellular energy production and fat oxidation.</p>
+                </div>
+            </div>
+            <!-- Blog Item 12 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500" alt="Health 12">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Mindset</span>
+                    <h4>Chronic Cortisol Overload: Mitigating Stress-Induced Biomarker Drift</h4>
+                    <p>Practical routines to stabilize adrenal function and protect lean muscle tissue.</p>
+                </div>
+            </div>
+            <!-- Blog Item 13 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500" alt="Health 13">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Immunology</span>
+                    <h4>Inflammatory Markers: High-Sensitivity CRP and Systemic Risks</h4>
+                    <p>Uncovering hidden sources of chronic low-grade systemic inflammation through routine testing.</p>
+                </div>
+            </div>
+            <!-- Blog Item 14 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500" alt="Health 14">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Strength</span>
+                    <h4>Sarcopenia Prevention: Why Muscle Mass is Your Metabolic Armor</h4>
+                    <p>Resistance training protocols designed to preserve bone density and metabolic flexibility in later life.</p>
+                </div>
+            </div>
+            <!-- Blog Item 15 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=500" alt="Health 15">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Renal Health</span>
+                    <h4>Creatinine, eGFR, and Cystatin C: Monitoring Kidney Function</h4>
+                    <p>Advanced renal filtering biomarkers that provide superior accuracy over basic creatinine alone.</p>
+                </div>
+            </div>
+            <!-- Blog Item 16 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=500" alt="Health 16">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Liver Panel</span>
+                    <h4>Liver Enzymes Unmasked: ALT, AST, and GGT Insights</h4>
+                    <p>Detecting early stage metabolic dysfunction-associated steatotic liver disease.</p>
+                </div>
+            </div>
+            <!-- Blog Item 17 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?w=500" alt="Health 17">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Future Tech</span>
+                    <h4>Wearable Telemetry + AI: The Dawn of Continuous Health Intelligence</h4>
+                    <p>How real-time data streaming integrates with blood pathology for holistic health forecasting.</p>
+                </div>
+            </div>
+            <!-- Blog Item 18 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=500" alt="Health 18">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Hydration</span>
+                    <h4>Cellular Hydration Dynamics and Electrolyte Homeostasis</h4>
+                    <p>Optimizing intra and extracellular fluid balance for peak athletic and cognitive output.</p>
+                </div>
+            </div>
+            <!-- Blog Item 19 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500" alt="Health 19">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Pharmacology</span>
+                    <h4>Nutrient Depletions Caused by Common Over-the-Counter Meds</h4>
+                    <p>How everyday pharmaceuticals interact with micronutrient absorption pathways.</p>
+                </div>
+            </div>
+            <!-- Blog Item 20 -->
+            <div class="blog-card glass-panel">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500" alt="Health 20">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Longevity Vision</span>
+                    <h4>Building Your Personal Health Span, Not Just Life Span</h4>
+                    <p>Practical frameworks to maintain vigorous physical independence well into your later decades.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -764,71 +311,40 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Platform</h4>
+                <h5>UPISTEPS Platform</h5>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">How it works</a></li>
+                    <li><a href="#">AI Report Parser</a></li>
+                    <li><a href="#">Biological Age Calculator</a></li>
+                    <li><a href="#">Longevity Science</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Support</h4>
+                <h5>Company & Legal</h5>
+                <ul>
+                    <li><a href="#">About UPISTEPS</a></li>
+                    <li><a href="#">Medical Disclaimer</a></li>
+                    <li><a href="#">Privacy & Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Support & Help</h5>
                 <ul>
                     <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Safety Guide</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Safety Guidelines</a></li>
+                    <li><a href="#">Contact Support</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Medical Disclaimer</a></li>
-                </ul>
-            </div>
-            <div class="footer-col" style="grid-column: span 2;">
-                <h4>Stay Updated</h4>
-                <p style="font-size:0.85rem; color:#9ca3af;">Join our newsletter for the latest in longevity research.</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address">
-                    <button>SUBSCRIBE</button>
-                </div>
+                <h5>Stay Updated</h5>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 12px;">Get research-backed longevity digests.</p>
+                <input type="email" placeholder="Enter your email..." style="width:100%; padding:10px; background:rgba(255,255,255,0.05); border:1px solid var(--glass-border); border-radius:8px; color:white; outline:none;">
             </div>
         </div>
-
         <div class="footer-bottom">
-            <div>
-                <p>support@takelimited.com</p>
-                <div class="social-icons" style="margin-top: 10px;">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-            <div>
-                <p>© 2026 Take Health Inc. All rights reserved.</p>
-                <p style="margin-top: 5px;">Designed with purpose. Priced with care.</p>
-            </div>
+            <p>© 2026 UPISTEPS Health Inc. All rights reserved. Designed with purpose, priced with care.</p>
+            <p style="color: var(--warning-yellow);">⚠️ Warning: Not a substitute for professional medical care.</p>
         </div>
     </footer>
 
-    <!-- Working JavaScript for FAQ Accordion -->
-    <script>
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Close other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                // Toggle current item
-                item.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>
