@@ -1,1 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- Favicon Configuration -->
+  <link rel="icon" type="image/png" href="/.trashed-1787496905-favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="/.trashed-1787496905-favicon.png" />
+  <link rel="apple-touch-icon" href="/.trashed-1787496905-favicon.png" />
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>UniquePeice Foundation | Earn Steps App - Fitness & Rewards Framework</title>
+
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root {
+        --bg-primary: #030612;
+        --bg-secondary: rgba(10, 14, 38, 0.75);
+        --bg-panel: linear-gradient(145deg, #070c24 0%, #040817 100%);
+        --bg-header: rgba(3, 6, 18, 0.95);
+        --text-main: #ffffff;
+        --text-muted: #a3aed0;
+        --border-color: rgba(0, 212, 255, 0.15);
+        --card-border: rgba(255, 255, 255, 0.05);
+    }
+
+    [data-theme="light"] {
+        --bg-primary: #f4f7fe;
+        --bg-secondary: rgba(255, 255, 255, 0.9);
+        --bg-panel: linear-gradient(145deg, #ffffff 0%, #f0f4f8 100%);
+        --bg-header: rgba(255, 255, 255, 0.95);
+        --text-main: #1b2559;
+        --text-muted: #707eae;
+        --border-color: rgba(0, 102, 255, 0.15);
+        --card-border: rgba(0, 102, 255, 0.08);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: var(--bg-primary);
+        color: var(--text-main);
+        overflow-x: hidden;
+        position: relative;
+        padding-top: 50px;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    /* Coin Canvas Styling */
+    #coin-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        padding: 14px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--bg-header);
+        backdrop-filter: blur(25px);
+        border-bottom: 2px solid var(--border-color);
+        z-index: 9999;
+    }
+
+    .left-nav-cluster { display: flex; align-items: center; }
+
+    .logo {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text-main);
+        letter-spacing: 0.5px;
+        text-decoration: none;
+    }
+    .logo span { color: #00d4ff; }
+
+    .header-right { display: flex; align-items: center; gap: 15px; }
+
+    .download-btn {
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #00d4ff, #0066ff);
+        border: none;
+        border-radius: 25px;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        transition: .3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    .download-btn:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+
+    .support-menu-anchor { position: relative; }
+    .hamburger-trigger-icon {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-color);
+        width: 42px; height: 42px;
+        border-radius: 50%;
+        color: var(--text-main);
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s ease-in-out;
+    }
+    .hamburger-trigger-icon:hover { background: rgba(0, 212, 255, 0.1); border-color: #00d4ff; }
+
+    .dropdown-panel-wrapper {
+        display: none;
+        position: absolute;
+        top: 50px; right: 0;
+        background: var(--bg-secondary);
+        backdrop-filter: blur(25px);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        width: 260px; padding: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        flex-direction: column; gap: 8px;
+        z-index: 100000;
+    }
+    .dropdown-panel-wrapper.active { display: flex; }
+
+    .menu-theme-toggle-pill {
+        background: linear-gradient(90deg, #f59e0b, #d97706);
+        border: none; padding: 10px; border-radius: 10px;
+        color: white; font-size: 13px; font-weight: 700; cursor: pointer;
+        display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; width: 100%;
+    }
+
+    .dropdown-link-item {
+        display: flex; align-items: center; gap: 12px;
+        color: var(--text-muted); text-decoration: none; font-size: 13.5px;
+        padding: 10px; border-radius: 8px; cursor: pointer; transition: 0.2s;
+    }
+    .dropdown-link-item:hover { background: rgba(0, 212, 255, 0.08); color: #00d4ff; }
+
+    .app-view-container { display: block; }
+    .app-view-container.hidden { display: none; }
+
+    .dedicated-legal-page {
+        display: none;
+        padding: 100px 6% 80px;
+        max-width: 1000px;
+        margin: 0 auto;
+        min-height: 100vh;
+        z-index: 5;
+        position: relative;
+    }
+    .dedicated-legal-page.active { display: block; }
+
+    .back-home-btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        background: rgba(0, 212, 255, 0.1); border: 1px solid #00d4ff;
+        color: #00d4ff; padding: 10px 24px; border-radius: 30px;
+        cursor: pointer; font-weight: 600; margin-bottom: 30px; transition: 0.3s;
+    }
+
+    .hero {
+        position: relative; z-index: 2; min-height: 100vh;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 150px 6% 60px 6%; gap: 40px; max-width: 1600px; margin: 0 auto;
+    }
+    .left { flex: 1.2; }
+    .right { flex: 0.8; display: flex; justify-content: center; }
+
+    .tag {
+        display: inline-block; padding: 8px 18px;
+        background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.2);
+        border-radius: 30px; margin-bottom: 25px; color: #00d4ff; font-weight: 600; font-size: 13px;
+    }
+    .left h1 { font-size: 48px; line-height: 1.25; margin-bottom: 25px; font-weight: 800; }
+    .left p { font-size: 15px; line-height: 1.75; color: var(--text-muted); margin-bottom: 40px; }
+    .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+    .primary {
+        padding: 14px 30px; border: none; border-radius: 50px;
+        background: linear-gradient(90deg, #00d4ff, #0066ff); color: white;
+        font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 212, 255, 0.25); transition: .3s;
+    }
+    .secondary {
+        padding: 14px 30px; border: 2px solid rgba(0, 212, 255, 0.4);
+        background: transparent; color: var(--text-main); font-size: 14px; font-weight: 600; border-radius: 50px; cursor: pointer; transition: .3s;
+    }
+
+    .phone {
+        width: 310px; height: 610px; border-radius: 40px; background: #090d22;
+        border: 4px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column;
+        box-shadow: 0 0 50px rgba(0, 212, 255, 0.15); overflow: hidden; padding: 20px 16px; position: relative; color: #fff;
+    }
+    .app-header { display: flex; justify-content: space-between; font-size: 11px; color: #718096; margin-bottom: 25px; }
+    .app-screen-content { display: flex; flex-direction: column; align-items: center; flex: 1; }
+
+    .step-circle-container {
+        position: relative; width: 170px; height: 170px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px;
+    }
+    .circle-bg { position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 6px solid rgba(255,255,255,0.02); }
+    .circle-progress {
+        position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 6px solid transparent;
+        border-top-color: #00d4ff; border-right-color: #0066ff; transform: rotate(45deg);
+    }
+    .step-data h3 { font-size: 30px; font-weight: 800; text-align: center; }
+    .step-data p { font-size: 11px; color: #718096; text-align: center; text-transform: uppercase; }
+
+    .app-metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; margin-bottom: 30px; }
+    .metric-box { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 14px; padding: 12px; text-align: center; }
+    .metric-box i { color: #00d4ff; margin-bottom: 4px; }
+    .metric-box h4 { font-size: 13px; }
+    .metric-box p { font-size: 10px; color: #718096; }
+
+    .app-btn {
+        width: 100%; padding: 14px; background: linear-gradient(90deg, #00d4ff, #0066ff);
+        border: none; border-radius: 20px; color: white; font-weight: 600; font-size: 12px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+
+    section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; margin: 0 auto; }
+    .section-title { text-align: center; margin-bottom: 50px; }
+    .section-title span { color: #00d4ff; font-weight: 600; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; }
+    .section-title h2 { font-size: 34px; margin-top: 10px; font-weight: 800; }
+
+    /* Custom Engineered Integrity Grid Layout */
+    .integrity-grid-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .integrity-card {
+        background: var(--bg-secondary);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--card-border);
+        border-radius: 24px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .integrity-card.full-width {
+        grid-column: span 2;
+        max-width: 600px;
+    }
+    .integrity-card i {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #00d4ff;
+    }
+    .integrity-card h3 {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--text-main);
+    }
+    .integrity-card p {
+        color: var(--text-muted);
+        font-size: 14.5px;
+        line-height: 1.7;
+    }
+
+    .premium-leaderboard-panel {
+        max-width: 1000px; margin: 0 auto; background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: 24px; padding: 35px;
+    }
+    .leaderboard-meta-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 25px; }
+    .premium-rank-grid { display: flex; flex-direction: column; gap: 15px; }
+    .premium-rank-row { display: flex; align-items: center; justify-content: space-between; padding: 18px 25px; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--card-border); border-radius: 16px; }
+    .rank-left-cluster { display: flex; align-items: center; gap: 20px; }
+    .premium-badge-slot { width: 36px; height: 36px; border-radius: 50%; font-weight: 900; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); }
+    .premium-rank-row:nth-child(1) .premium-badge-slot { background: linear-gradient(135deg, #ffe066 0%, #f5b041 100%); color: #030612; }
+    .premium-rank-row:nth-child(2) .premium-badge-slot { background: linear-gradient(135deg, #e5e8e8 0%, #bdc3c7 100%); color: #030612; }
+    .premium-rank-row:nth-child(3) .premium-badge-slot { background: linear-gradient(135deg, #dc7633 0%, #ba4a00 100%); color: #fff; }
+    .metrics-value { font-size: 18px; font-weight: 800; color: #00d4ff; }
+
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+    .blog-post-card { background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+    .blog-dummy-img { height: 160px; background: var(--bg-panel); display: flex; align-items: center; justify-content: center; }
+    .blog-dummy-img i { font-size: 45px; color: rgba(0, 212, 255, 0.15); }
+    .blog-body { padding: 25px; }
+    .blog-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; display: flex; gap: 15px; }
+    .blog-body h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: var(--text-main); }
+    .blog-body p { color: var(--text-muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 20px; }
+    .blog-read-more { color: #00d4ff; font-weight: 600; font-size: 13.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+
+    .faq-stack-box { max-width: 900px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 15px; }
+    .faq-element { background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; cursor: pointer; transition: 0.3s; }
+    .faq-element h4 { font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer-view { display: none; margin-top: 12px; color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+    .faq-element.active .faq-answer-view { display: block; }
+
+    .social-matrix-container { max-width: 900px; margin: 40px auto 0; text-align: center; }
+    .social-circle-grid { display: flex; justify-content: center; align-items: center; gap: 25px; flex-wrap: wrap; margin-top: 25px; }
+    .social-circle-node {
+        width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px; color: white; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease;
+    }
+    .social-circle-node:hover { transform: translateY(-5px) scale(1.05); }
+    .node-whatsapp { background: #25D366; }
+    .node-telegram { background: #0088cc; }
+    .node-youtube { background: #ff0000; }
+    .node-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+    .node-twitter { background: #000000; border: 1px solid rgba(255, 255, 255, 0.15); }
+
+    .legal-document-layout h1 { font-size: 2.2rem; font-weight: 800; color: var(--text-main); border-bottom: 3px solid #00d4ff; padding-bottom: 12px; margin-bottom: 20px; }
+    .legal-document-layout h2 { font-size: 1.4rem; color: #00d4ff; margin-top: 35px; margin-bottom: 12px; }
+    .legal-document-layout p, .legal-document-layout li { font-size: 15px; line-height: 1.9; color: var(--text-muted); text-align: justify; margin-bottom: 18px; }
+
+    .footer { padding: 80px 6% 40px; background: #02040d; border-top: 1px solid var(--border-color); color: #fff; }
+    .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; max-width: 1600px; margin: 0 auto; }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links h3 { font-size: 16px; margin-bottom: 4px; }
+    .footer-links a { color: #a3aed0; text-decoration: none; font-size: 13.5px; cursor: pointer; }
+    .footer-links a:hover { color: #00d4ff; }
+    .copyright { margin-top: 50px; text-align: center; color: #718096; font-size: 13px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 25px; }
+
+    .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); justify-content: center; align-items: center; z-index: 99999; padding: 20px; }
+    .popup-box { background: #070b1e; padding: 35px; border-radius: 24px; max-width: 500px; width: 100%; border: 1px solid rgba(0, 212, 255, 0.25); color: #fff; }
+    .popup-box h2 { color: #00d4ff; font-size: 22px; margin-bottom: 15px; }
+    .popup-box button { width: 100%; padding: 12px; border: none; border-radius: 30px; background: linear-gradient(90deg, #00d4ff, #0066ff); color: white; font-weight: 700; cursor: pointer; margin-top: 15px; }
+
+    @media (max-width: 900px) {
+        header { padding: 10px 4%; }
+        .hero { flex-direction: column; text-align: center; padding-top: 120px; } 
+        .hero-buttons { justify-content: center; }
+        .left h1 { font-size: 32px; }
+        .integrity-grid-container { grid-template-columns: 1fr; }
+        .integrity-card.full-width { grid-column: span 1; max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- UPI Disclaimer Banner -->
+  <div style="width:100%; background:linear-gradient(90deg, #00E5C0 0%, #0066FF 100%); color:#000; padding:12px 20px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:14px; font-weight:600; position:fixed; top:0; left:0; z-index:10001; box-shadow:0 2px 10px rgba(0, 229, 192, 0.3); flex-wrap:wrap; text-align:center;">
+    <div style="font-size:18px; background:rgba(0,0,0,0.1); padding:4px 8px; border-radius:8px;">ℹ️</div>
+    <div style="flex:1; text-align:center;">
+      <strong>Note:</strong> Upisteps is an independent fitness & activity tracking tool. We are not affiliated with NPCI or official UPI payment services.
+    </div>
+    <button style="background:rgba(0,0,0,0.2); border:none; color:#000; font-size:18px; cursor:pointer; padding:4px 10px; border-radius:6px;" onclick="this.parentElement.style.display='none'">✕</button>
+  </div> 
+
+  <!-- Real EI Golden Coins Canvas Background Animation -->
+  <canvas id="coin-canvas"></canvas>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="left-nav-cluster">
+      <a href="#" class="logo" onclick="returnToMainView()">UNIQUE <span>PIECE</span></a>
+    </div>
+
+    <div class="header-right">
+      <button class="download-btn" onclick="openSupportModal('download')">
+        <i class="fa-solid fa-download"></i> Get Now
+      </button>
+
+      <div class="support-menu-anchor">
+        <button class="hamburger-trigger-icon" onclick="toggleSupportDropdown(event)">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="dropdown-panel-wrapper" id="topCornerDropdown">
+          <button class="menu-theme-toggle-pill" onclick="toggleThemeMode()">
+            <i class="fa-solid fa-sun"></i> Toggle Theme Mode
+          </button>
+          <a href="#" class="dropdown-link-item" onclick="returnToMainView()">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+          <a href="#" class="dropdown-link-item" onclick="openLegalView('about')">
+            <i class="fa-solid fa-circle-info"></i> About Us
+          </a>
+          <a href="#blog-section" class="dropdown-link-item" onclick="returnToMainView();">
+            <i class="fa-solid fa-blog"></i> Blog
+          </a>
+          <a href="#" class="dropdown-link-item" onclick="openLegalView('privacy')">
+            <i class="fa-solid fa-shield-halved"></i> Privacy Policy
+          </a>
+          <a href="#" class="dropdown-link-item" onclick="openLegalView('terms')">
+            <i class="fa-solid fa-file-contract"></i> Terms & Conditions
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main App View Container -->
+  <div class="app-view-container" id="mainAppView">
+      
+      <!-- Hero Section -->
+      <section class="hero">
+          <div class="left">
+              <span class="tag">Powered by Step Tracker</span>
+              <h1>Track Your Daily Fitness & Health Goals with Earn Steps</h1>
+              <p>Welcome to Earn Steps. Easily track your daily steps, set fitness goals, and monitor your everyday movement using our smart activity tracking framework.</p>
+              <div class="hero-buttons">
+                  <button class="primary" onclick="openSupportModal('download')">Get Started Now</button>
+                  <button class="secondary" onclick="scrollToMainSection('features-section')">Explore Features</button>
+              </div>
+          </div>
+          <div class="right">
+              <div class="phone">
+                  <div class="app-header">
+                      <span>Earn Steps</span>
+                      <span id="liveClock">12:00</span>
+                  </div>
+                  <div class="app-screen-content">
+                      <div class="step-circle-container">
+                          <div class="circle-bg"></div>
+                          <div class="circle-progress"></div>
+                          <div class="step-data">
+                              <h3>8,420</h3>
+                              <p>Steps Today</p>
+                          </div>
+                      </div>
+                      <div class="app-metrics-grid">
+                          <div class="metric-box">
+                              <i class="fa-solid fa-fire"></i>
+                              <h4>340 kcal</h4>
+                              <p>Burned</p>
+                          </div>
+                          <div class="metric-box">
+                              <i class="fa-solid fa-route"></i>
+                              <h4>6.2 km</h4>
+                              <p>Distance</p>
+                          </div>
+                      </div>
+                      <button class="app-btn" onclick="openSupportModal('sync')">
+                          <i class="fa-solid fa-arrows-rotate"></i> Sync Live Activity
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Integrity Features Section -->
+      <section id="features-section">
+          <div class="section-title">
+              <span>Smart Engine</span>
+              <h2>Engineered Integrity Framework</h2>
+          </div>
+          <div class="integrity-grid-container">
+              <div class="integrity-card">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <h3>Precision Sensor Tracking</h3>
+                  <p>Accurate step metrics generated using advanced mobile accelerometer algorithms to track movements without high battery consumption.</p>
+              </div>
+              <div class="integrity-card">
+                  <i class="fa-solid fa-award"></i>
+                  <h3>Daily Milestone System</h3>
+                  <p>Set custom walking goals, earn activity streaks, and maintain a healthier lifestyle with real-time feedback.</p>
+              </div>
+              <div class="integrity-card full-width">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <h3>Privacy & Safe Analytics</h3>
+                  <p>Your fitness metrics are safe. We prioritize data privacy with secure client-side storage and standard encryption protocols.</p>
+              </div>
+          </div>
+      </section>
+
+      <!-- Leaderboard Panel -->
+      <section id="leaderboard-section">
+          <div class="section-title">
+              <span>Community Ranking</span>
+              <h2>Daily Top Walkers</h2>
+          </div>
+          <div class="premium-leaderboard-panel">
+              <div class="leaderboard-meta-header">
+                  <h3><i class="fa-solid fa-trophy" style="color: #f5b041;"></i> Global Step Leaderboard</h3>
+                  <span style="font-size: 13px; color: var(--text-muted);">Updated Live</span>
+              </div>
+              <div class="premium-rank-grid">
+                  <div class="premium-rank-row">
+                      <div class="rank-left-cluster">
+                          <div class="premium-badge-slot">1</div>
+                          <div>
+                              <h4 style="font-size: 15px;">Alex R.</h4>
+                              <p style="font-size: 11px; color: var(--text-muted);">Goal Achieved 220%</p>
+                          </div>
+                      </div>
+                      <div class="metrics-value">18,450 Steps</div>
+                  </div>
+                  <div class="premium-rank-row">
+                      <div class="rank-left-cluster">
+                          <div class="premium-badge-slot">2</div>
+                          <div>
+                              <h4 style="font-size: 15px;">Priya M.</h4>
+                              <p style="font-size: 11px; color: var(--text-muted);">Goal Achieved 190%</p>
+                          </div>
+                      </div>
+                      <div class="metrics-value">15,210 Steps</div>
+                  </div>
+                  <div class="premium-rank-row">
+                      <div class="rank-left-cluster">
+                          <div class="premium-badge-slot">3</div>
+                          <div>
+                              <h4 style="font-size: 15px;">Karan S.</h4>
+                              <p style="font-size: 11px; color: var(--text-muted);">Goal Achieved 165%</p>
+                          </div>
+                      </div>
+                      <div class="metrics-value">13,800 Steps</div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog-section">
+          <div class="section-title">
+              <span>Fitness & Guides</span>
+              <h2>Latest Articles & Updates</h2>
+          </div>
+          <div class="blog-grid">
+              <div class="blog-post-card">
+                  <div class="blog-dummy-img"><i class="fa-solid fa-shoe-prints"></i></div>
+                  <div class="blog-body">
+                      <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> Aug 2026</span><span><i class="fa-regular fa-clock"></i> 4 min read</span></div>
+                      <h4>How 10,000 Steps Daily Transforms Your Health</h4>
+                      <p>Discover the physical and psychological benefits of completing daily movement goals consistently.</p>
+                      <div class="blog-read-more" onclick="openSupportModal('blog1')">Read Article <i class="fa-solid fa-arrow-right"></i></div>
+                  </div>
+              </div>
+              <div class="blog-post-card">
+                  <div class="blog-dummy-img"><i class="fa-solid fa-heart-pulse"></i></div>
+                  <div class="blog-body">
+                      <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> Aug 2026</span><span><i class="fa-regular fa-clock"></i> 5 min read</span></div>
+                      <h4>Optimizing Calories Burned Walking vs Running</h4>
+                      <p>Learn the science behind stride efficiency, heart rate zones, and calorie expenditure tracking.</p>
+                      <div class="blog-read-more" onclick="openSupportModal('blog2')">Read Article <i class="fa-solid fa-arrow-right"></i></div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- FAQ Accordion -->
+      <section id="faq-section">
+          <div class="section-title">
+              <span>Help Center</span>
+              <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="faq-stack-box">
+              <div class="faq-element" onclick="toggleFaqAccordion(this)">
+                  <h4>What is Upisteps / Earn Steps Framework? <i class="fa-solid fa-chevron-down"></i></h4>
+                  <div class="faq-answer-view">Upisteps provides an activity and daily movement tracking interface designed to help users log their health stats and stay active.</div>
+              </div>
+              <div class="faq-element" onclick="toggleFaqAccordion(this)">
+                  <h4>Is this app affiliated with NPCI or official UPI payments? <i class="fa-solid fa-chevron-down"></i></h4>
+                  <div class="faq-answer-view">No. Upisteps is strictly a independent health & activity tracking web/app tool and has no affiliation with government or banking UPI portals.</div>
+              </div>
+              <div class="faq-element" onclick="toggleFaqAccordion(this)">
+                  <h4>How do I download the official mobile app? <i class="fa-solid fa-chevron-down"></i></h4>
+                  <div class="faq-answer-view">Click on the 'Get Now' or 'Get Started' button on the main navigation panel to view mobile app release status.</div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Social Matrix Section -->
+      <section>
+          <div class="social-matrix-container">
+              <h3>Connect With Us</h3>
+              <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Join our active community channels for daily wellness updates.</p>
+              <div class="social-circle-grid">
+                  <a href="#" class="social-circle-node node-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="#" class="social-circle-node node-telegram"><i class="fa-brands fa-telegram"></i></a>
+                  <a href="#" class="social-circle-node node-youtube"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#" class="social-circle-node node-instagram"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" class="social-circle-node node-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              </div>
+          </div>
+      </section>
+  </div>
+
+  <!-- Dedicated Legal Pages Modal Container -->
+  <div class="dedicated-legal-page" id="dedicatedLegalContainer">
+      <button class="back-home-btn" onclick="returnToMainView()">
+          <i class="fa-solid fa-arrow-left"></i> Back to Main Homepage
+      </button>
+      <div class="legal-document-layout" id="legalContentHolder">
+          <!-- Dynamic Legal Content populated via JS -->
+      </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-links">
+              <h3>Upisteps Foundation</h3>
+              <p style="color: var(--text-muted); font-size: 13px; line-height: 1.6;">Empowering physical health and daily movement tracking through smart web framework interfaces.</p>
+          </div>
+          <div class="footer-links">
+              <h3>Navigation</h3>
+              <a onclick="returnToMainView()">Home</a>
+              <a onclick="openLegalView('about')">About Us</a>
+              <a onclick="returnToMainView(); scrollToMainSection('blog-section')">Blog</a>
+          </div>
+          <div class="footer-links">
+              <h3>Legal Policies</h3>
+              <a onclick="openLegalView('privacy')">Privacy Policy</a>
+              <a onclick="openLegalView('terms')">Terms & Conditions</a>
+              <a onclick="openLegalView('disclaimer')">Disclaimer</a>
+          </div>
+      </div>
+      <div class="copyright">
+          © 2026 Upisteps Foundation. All rights reserved. Built with Engineered Integrity Framework.
+      </div>
+  </footer>
+
+  <!-- Support / Download Modal Popup -->
+  <div class="popup" id="genericPopupModal">
+      <div class="popup-box">
+          <h2 id="modalTitle">Upisteps Notification</h2>
+          <p id="modalBody" style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-top: 10px;"></p>
+          <button onclick="closeSupportModal()">Close</button>
+      </div>
+  </div>
+
+  <!-- Full Vanilla JavaScript Logic -->
+  <script>
+      // Live Clock Script
+      function refreshLiveClock() {
+          const now = new Date();
+          let hours = now.getHours();
+          let minutes = now.getMinutes();
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12;
+          hours = hours ? hours : 12;
+          minutes = minutes < 10 ? '0' + minutes : minutes;
+          document.getElementById('liveClock').textContent = hours + ':' + minutes + ' ' + ampm;
+      }
+      setInterval(refreshLiveClock, 1000);
+      refreshLiveClock();
+
+      // Dropdown toggle
+      function toggleSupportDropdown(e) {
+          e.stopPropagation();
+          const dropdown = document.getElementById('topCornerDropdown');
+          dropdown.classList.toggle('active');
+      }
+
+      window.addEventListener('click', function() {
+          const dropdown = document.getElementById('topCornerDropdown');
+          if (dropdown && dropdown.classList.contains('active')) {
+              dropdown.classList.remove('active');
+          }
+      });
+
+      // Theme toggle
+      function toggleThemeMode() {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', newTheme);
+      }
+
+      // View switching
+      function openLegalView(type) {
+          const mainView = document.getElementById('mainAppView');
+          const legalContainer = document.getElementById('dedicatedLegalContainer');
+          const holder = document.getElementById('legalContentHolder');
+
+          mainView.classList.add('hidden');
+          legalContainer.classList.add('active');
+
+          if(type === 'privacy') {
+              holder.innerHTML = `
+                  <h1>Privacy Policy</h1>
+                  <p>Welcome to Upisteps Foundation. We prioritize your privacy and are committed to protecting any personal metrics collected while using our app platform.</p>
+                  <h2>1. Information Collection</h2>
+                  <p>We do not collect sensitive banking or payment credentials. Step count analytics and workout goals remain stored on client devices.</p>
+                  <h2>2. Data Usage</h2>
+                  <p>Step metrics are strictly used to render visual progress charts and rank daily achievements inside the leaderboard interface.</p>
+              `;
+          } else if(type === 'terms') {
+              holder.innerHTML = `
+                  <h1>Terms & Conditions</h1>
+                  <p>By accessing Upisteps.in, you agree to comply with our service terms and community guidelines.</p>
+                  <h2>1. Platform Use</h2>
+                  <p>Upisteps provides step tracking analytics for motivational and educational wellness purposes only.</p>
+                  <h2>2. Disclaimer</h2>
+                  <p>We are not affiliated with NPCI or official banking payment infrastructure.</p>
+              `;
+          } else if(type === 'about') {
+              holder.innerHTML = `
+                  <h1>About Upisteps</h1>
+                  <p>Upisteps Foundation is a digital health & fitness initiative designed to encourage daily physical activity through real-time step monitoring.</p>
+              `;
+          } else {
+              holder.innerHTML = `
+                  <h1>Disclaimer</h1>
+                  <p>Upisteps is an independent activity tracking tool. We do not provide banking, financial, or UPI money transfer services.</p>
+              `;
+          }
+          window.scrollTo(0,0);
+      }
+
+      function returnToMainView() {
+          document.getElementById('mainAppView').classList.remove('hidden');
+          document.getElementById('dedicatedLegalContainer').classList.remove('active');
+          window.scrollTo(0,0);
+      }
+
+      function scrollToMainSection(id) {
+          returnToMainView();
+          setTimeout(() => {
+              const el = document.getElementById(id);
+              if(el) el.scrollIntoView({behavior: 'smooth'});
+          }, 100);
+      }
+
+      function toggleFaqAccordion(element) {
+          element.classList.toggle('active');
+      }
+
+      // Modals
+      function openSupportModal(action) {
+          const modal = document.getElementById('genericPopupModal');
+          const title = document.getElementById('modalTitle');
+          const body = document.getElementById('modalBody');
+
+          if(action === 'download') {
+              title.textContent = "Earn Steps Mobile App";
+              body.textContent = "The Earn Steps Android App is coming soon to Google Play Store! Stay tuned for official download updates.";
+          } else if(action === 'sync') {
+              title.textContent = "Live Activity Sync";
+              body.textContent = "Connected to local device sensors. Step count synchronized successfully!";
+          } else {
+              title.textContent = "Upisteps Article";
+              body.textContent = "Full article publication mode active. Check back soon for deeper workout guides!";
+          }
+          modal.style.display = 'flex';
+      }
+
+      function closeSupportModal() {
+          document.getElementById('genericPopupModal').style.display = 'none';
+      }
+
+      // Real Golden Coins Canvas Particles
+      const canvas = document.getElementById('coin-canvas');
+      const ctx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      const particles = [];
+      for (let i = 0; i < 30; i++) {
+          particles.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              r: Math.random() * 4 + 2,
+              speedY: Math.random() * 0.8 + 0.3,
+              alpha: Math.random() * 0.5 + 0.2
+          });
+      }
+
+      function drawParticles() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(p => {
+              p.y -= p.speedY;
+              if (p.y < 0) {
+                  p.y = canvas.height;
+                  p.x = Math.random() * canvas.width;
+              }
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(0, 212, 255, ${p.alpha})`;
+              ctx.shadowBlur = 12;
+              ctx.shadowColor = '#00d4ff';
+              ctx.fill();
+          });
+          requestAnimationFrame(drawParticles);
+      }
+      drawParticles();
+  </script>
+</body>
+</html>
