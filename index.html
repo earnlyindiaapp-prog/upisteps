@@ -647,20 +647,28 @@
 <style>
     .articles-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        padding: 20px;
+        padding: 10px 0;
+    }
+    @media (max-width: 768px) {
+        .articles-grid {
+            grid-template-columns: 1fr;
+        }
     }
     .article-card {
         background: #0d1117;
         border-radius: 16px;
         overflow: hidden;
-        border: 1px solid #1f2937;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
     }
     .article-image {
         width: 100%;
         height: 180px;
         object-fit: cover;
+        display: block;
     }
     .article-content {
         padding: 20px;
@@ -668,55 +676,63 @@
 </style>
 
 <div class="articles-grid">
-    <!-- 1. Earn Step AI -->
+
+    <!-- 1. Earn Step AI (Walking/Fitness) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/ycxpZf6f/image.png" class="article-image">
+        <img src="https://i.ibb.co/ycxpZf6f/image.png" class="article-image" alt="Daily Step Tracker">
         <div class="article-content">
-            <h3 style="color: #fff;">Daily Step Tracker</h3>
-            <p style="color: #9ca3af; font-size: 14px;">Track your daily movement and turn those steps into real rewards effortlessly.</p>
+            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Daily Step Tracker</h3>
+            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Track your daily movement and turn your steps into real rewards effortlessly.</p>
         </div>
     </div>
-    <!-- 2. Earn Step AI -->
+
+    <!-- 2. Earn Step AI (Smart Earning/Dashboard) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/60Cc7MM9/image.png" class="article-image">
+        <img src="https://i.ibb.co/60Cc7MM9/image.png" class="article-image" alt="Smart Earning AI">
         <div class="article-content">
-            <h3 style="color: #fff;">Smart Earning AI</h3>
-            <p style="color: #9ca3af; font-size: 14px;">Let our AI guide your fitness journey and maximize your daily earnings.</p>
+            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Smart Earning AI</h3>
+            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Let our AI guide your fitness journey and maximize your daily earnings.</p>
         </div>
     </div>
-    <!-- 3. CoinsPlay Arena -->
+
+    <!-- 3. CoinsPlay Arena (Tournament Action) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/8n3Fnszk/image.png" class="article-image">
+        <img src="https://i.ibb.co/8n3Fnszk/image.png" class="article-image" alt="Tournament Action">
         <div class="article-content">
-            <h3 style="color: #fff;">Tournament Action</h3>
-            <p style="color: #9ca3af; font-size: 14px;">Compete with pro players in intense matches and prove your skills.</p>
+            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Tournament Action</h3>
+            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Compete with pro players in intense matches and prove your gaming skills.</p>
         </div>
     </div>
-    <!-- 4. CoinsPlay Arena -->
+
+    <!-- 4. CoinsPlay Arena (Win Real Cash / Podium) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/NRjCGfj/image.png" class="article-image">
+        <img src="https://i.ibb.co/NRjCGfj/image.png" class="article-image" alt="Win Real Cash">
         <div class="article-content">
-            <h3 style="color: #fff;">Win Real Cash</h3>
-            <p style="color: #9ca3af; font-size: 14px;">Climb the arena leaderboard, win tournaments, and claim your cash prizes.</p>
+            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Win Real Cash</h3>
+            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Climb the arena leaderboard, win tournaments, and claim your cash prizes.</p>
         </div>
     </div>
-    <!-- 5. Sugar Wheel -->
+
+    <!-- 5. Sugar Wheel (Spin & Win) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/RpkwnK2V/image.png" class="article-image">
+        <img src="https://i.ibb.co/RpkwnK2V/image.png" class="article-image" alt="Spin & Win">
         <div class="article-content">
-            <h3 style="color: #fff;">Spin & Win</h3>
-            <p style="color: #9ca3af; font-size: 14px;">Try your luck daily on the Sugar Wheel for instant bonus surprises.</p>
+            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Spin & Win</h3>
+            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Try your luck daily on the Sugar Wheel for instant bonus surprises.</p>
         </div>
     </div>
-    <!-- 6. Sugar Wheel -->
+
+    <!-- 6. Sugar Wheel (Candy Rewards / Chest) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/zh4dtx8g/image.png" class="article-image">
+        <img src="https://i.ibb.co/zh4dtx8g/image.png" class="article-image" alt="Candy Rewards">
         <div class="article-content">
-            <h3 style="color: #fff;">Candy Rewards</h3>
-            <p style="color: #9ca3af; font-size: 14px;">Collect delicious candy coins and unlock exclusive platform rewards.</p>
+            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Candy Rewards</h3>
+            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Collect delicious candy coins and unlock exclusive platform rewards.</p>
         </div>
     </div>
+
 </div>
+
 
       <!-- FAQ Accordion -->
       <section id="faq-section">
