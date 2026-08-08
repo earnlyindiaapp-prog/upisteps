@@ -528,6 +528,7 @@
           </div>
       </section>
 
+
 <!-- OFFICIAL APPS DOWNLOAD SECTION -->
 <section id="apps-downloads-section">
     <div class="section-title">
@@ -542,7 +543,7 @@
             <div class="app-box-info">
                 <h3>Earn Step AI</h3>
                 <p>Walk daily, track health stats, and play mini-games like Tic-Tac-Toe & Quizzes to earn instant rewards.</p>
-                <button onclick="openSupportModal('download')" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</button>
+                <button onclick="openSupportModal('earnstep')" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</button>
             </div>
         </div>
 
@@ -552,7 +553,7 @@
             <div class="app-box-info">
                 <h3>CoinsPlay Arena</h3>
                 <p>Play Free Fire tournaments. Anti-cheat system, 100% real players, and guaranteed high payout rewards.</p>
-                <button onclick="openSupportModal('download')" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</button>
+                <button onclick="openSupportModal('coinsplay')" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</button>
             </div>
         </div>
 
@@ -562,8 +563,7 @@
             <div class="app-box-info">
                 <h3>Sugar Wheel</h3>
                 <p>Spin the daily lucky wheel, collect sweet bonus coins, and redeem them directly to your wallet.</p>
-                <p style="font-size: 11px; color: #00d4ff; margin-top: 4px; font-weight: 600;">⚡ Coming Soon</p>
-                <button onclick="openSupportModal('download')" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</button>
+                <button onclick="openSupportModal('sugarwheel')" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</button>
             </div>
         </div>
 
@@ -850,15 +850,23 @@
           element.classList.toggle('active');
       }
 
-      // Modals
       function openSupportModal(action) {
           const modal = document.getElementById('genericPopupModal');
           const title = document.getElementById('modalTitle');
           const body = document.getElementById('modalBody');
 
-          if(action === 'download') {
-              title.textContent = "Earn Steps Mobile App";
-              body.textContent = "Click on any app card's Download button to get the APK file directly.";
+          if(action === 'earnstep') {
+              title.textContent = "Earn Step AI — Coming Soon";
+              body.textContent = "Earn Step AI APK version 1.0 is currently under final testing. Official launch coming soon! Stay tuned for daily step rewards.";
+          } else if(action === 'coinsplay') {
+              title.textContent = "CoinsPlay Arena — Esports Tournament";
+              body.textContent = "CoinsPlay Arena APK with Anti-Cheat Esports System is releasing soon! Get ready for Free Fire matches with real cash payouts.";
+          } else if(action === 'sugarwheel') {
+              title.textContent = "Sugar Wheel — Daily Spin Rewards";
+              body.textContent = "Sugar Wheel Spin & Win APK is launching soon! Spin daily to earn instant bonus coins directly into your wallet.";
+          } else if(action === 'download') {
+              title.textContent = "Upisteps App Store";
+              body.textContent = "Select any app card below and click Get Started Now to check the release status.";
           } else if(action === 'sync') {
               title.textContent = "Live Activity Sync";
               body.textContent = "Connected to local device sensors. Step count synchronized successfully!";
@@ -866,8 +874,10 @@
               title.textContent = "Upisteps Article";
               body.textContent = "Full article publication mode active. Check back soon for deeper workout guides!";
           }
+          
           modal.style.display = 'flex';
       }
+
 
       function closeSupportModal() {
           document.getElementById('genericPopupModal').style.display = 'none';
