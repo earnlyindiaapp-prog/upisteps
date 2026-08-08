@@ -236,6 +236,77 @@
         display: flex; align-items: center; justify-content: center; gap: 6px;
     }
 
+    /* Official Apps Section Styling */
+    .app-cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .app-box-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+    .app-box-card:hover {
+        border-color: #00d4ff;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 35px rgba(0, 212, 255, 0.2);
+    }
+    .app-box-logo {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        object-fit: cover;
+        border: 2px solid #00d4ff;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+        flex-shrink: 0;
+        background: #051329;
+    }
+    .app-box-info {
+        flex-grow: 1;
+    }
+    .app-box-info h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 6px;
+    }
+    .app-box-info p {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-bottom: 18px;
+        line-height: 1.6;
+    }
+    .app-action-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+        color: #ffffff;
+        padding: 12px 28px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 0 20px rgba(0, 198, 255, 0.35);
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    .app-action-btn:hover {
+        box-shadow: 0 0 30px rgba(0, 198, 255, 0.6);
+        transform: scale(1.02);
+    }
+
     section { position: relative; z-index: 3; padding: 80px 6%; max-width: 1600px; margin: 0 auto; }
     .section-title { text-align: center; margin-bottom: 50px; }
     .section-title span { color: #00d4ff; font-weight: 600; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; }
@@ -345,6 +416,8 @@
         .left h1 { font-size: 32px; }
         .integrity-grid-container { grid-template-columns: 1fr; }
         .integrity-card.full-width { grid-column: span 1; max-width: 100%; }
+        .app-box-card { flex-direction: column; text-align: center; }
+        .app-action-btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -386,10 +459,13 @@
           <a href="#" class="dropdown-link-item" onclick="returnToMainView()">
             <i class="fa-solid fa-house"></i> Home
           </a>
+          <a href="#apps-downloads-section" class="dropdown-link-item" onclick="returnToMainView(); scrollToMainSection('apps-downloads-section')">
+            <i class="fa-solid fa-mobile-screen-button"></i> Our Apps
+          </a>
           <a href="#" class="dropdown-link-item" onclick="openLegalView('about')">
             <i class="fa-solid fa-circle-info"></i> About Us
           </a>
-          <a href="#blog-section" class="dropdown-link-item" onclick="returnToMainView();">
+          <a href="#blog-section" class="dropdown-link-item" onclick="returnToMainView(); scrollToMainSection('blog-section')">
             <i class="fa-solid fa-blog"></i> Blog
           </a>
           <a href="#" class="dropdown-link-item" onclick="openLegalView('privacy')">
@@ -413,7 +489,7 @@
               <h1>Track Your Daily Fitness & Health Goals with Earn Steps</h1>
               <p>Welcome to Earn Steps. Easily track your daily steps, set fitness goals, and monitor your everyday movement using our smart activity tracking framework.</p>
               <div class="hero-buttons">
-                  <button class="primary" onclick="openSupportModal('download')">Get Started Now</button>
+                  <button class="primary" onclick="scrollToMainSection('apps-downloads-section')">Get Started Now</button>
                   <button class="secondary" onclick="scrollToMainSection('features-section')">Explore Features</button>
               </div>
           </div>
@@ -452,6 +528,47 @@
           </div>
       </section>
 
+      <!-- OFFICIAL APPS DOWNLOAD SECTION -->
+      <section id="apps-downloads-section">
+          <div class="section-title">
+              <span>Official Ecosystem</span>
+              <h2>Download Our Apps</h2>
+          </div>
+          <div class="app-cards-wrapper">
+
+              <!-- App 1: Earn Step AI -->
+              <div class="app-box-card">
+                  <img src="1000106044.jpg" alt="Earn Step AI Logo" class="app-box-logo">
+                  <div class="app-box-info">
+                      <h3>Earn Step AI</h3>
+                      <p>Walk daily, track health stats, and play mini-games like Tic-Tac-Toe & Quizzes to earn instant rewards.</p>
+                      <a href="YOUR_EARN_STEP_APK_LINK" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</a>
+                  </div>
+              </div>
+
+              <!-- App 2: CoinsPlay Arena -->
+              <div class="app-box-card">
+                  <img src="1000105470.png" alt="CoinsPlay Arena Logo" class="app-box-logo">
+                  <div class="app-box-info">
+                      <h3>CoinsPlay Arena</h3>
+                      <p>Play Free Fire tournaments. Anti-cheat system, 100% real players, and guaranteed high payout rewards.</p>
+                      <a href="YOUR_COINSPLAY_APK_LINK" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</a>
+                  </div>
+              </div>
+
+              <!-- App 3: Sugar Wheel -->
+              <div class="app-box-card">
+                  <img src="1000105754.jpg" alt="Sugar Wheel Logo" class="app-box-logo">
+                  <div class="app-box-info">
+                      <h3>Sugar Wheel</h3>
+                      <p>Spin the daily lucky wheel, collect sweet bonus coins, and redeem them directly to your wallet.</p>
+                      <a href="YOUR_SUGAR_WHEEL_APK_LINK" class="app-action-btn"><i class="fa-solid fa-download"></i> Get Started Now</a>
+                  </div>
+              </div>
+
+          </div>
+      </section>
+
       <!-- Integrity Features Section -->
       <section id="features-section">
           <div class="section-title">
@@ -476,48 +593,7 @@
               </div>
           </div>
       </section>
-
-        <h1>UPI STEPS HUB</h1>
-        <p>Walk, Play Games & Earn Real Rewards Daily</p>
-    </header>
-
-    <div class="main-container">
-
-        <div class="app-box">
-            <img src="1000106044.jpg" alt="Earn Step AI Logo" class="app-logo">
-            <div class="app-details">
-                <h2 class="app-title">Earn Step AI</h2>
-                <p class="app-desc">Walk karein, health track karein aur daily mini-games khelein instant UPI cash ke liye.</p>
-                <a href="YOUR_EARN_STEP_APK_LINK" class="download-btn"><i class="fa-solid fa-download"></i> Get Started Now</a>
-            </div>
-        </div>
-
-        <div class="app-box">
-            <img src="1000105470.png" alt="CoinsPlay Arena Logo" class="app-logo">
-            <div class="app-details">
-                <h2 class="app-title">CoinsPlay Arena</h2>
-                <p class="app-desc">Free Fire tournaments khelein. Anti-cheat protection, real players aur guaranteed winner payout.</p>
-                <a href="YOUR_COINSPLAY_APK_LINK" class="download-btn"><i class="fa-solid fa-download"></i> Get Started Now</a>
-            </div>
-        </div>
-
-        <div class="app-box">
-            <img src="1000105754.jpg" alt="Sugar Wheel Logo" class="app-logo">
-            <div class="app-details">
-                <h2 class="app-title">Sugar Wheel</h2>
-                <p class="app-desc">Daily wheel spin karein aur sweet coins collect karke real wallet cash me redeem karein.</p>
-                <a href="YOUR_SUGAR_WHEEL_APK_LINK" class="download-btn"><i class="fa-solid fa-download"></i> Get Started Now</a>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>© 2026 Upisteps.in | All Rights Reserved</p>
-        <p style="margin-top: 5px;"><a href="mailto:support@upisteps.in">Contact Support</a></p>
-    </footer>
     
-
       <!-- Leaderboard Panel -->
       <section id="leaderboard-section">
           <div class="section-title">
@@ -609,7 +685,7 @@
               </div>
               <div class="faq-element" onclick="toggleFaqAccordion(this)">
                   <h4>How do I download the official mobile app? <i class="fa-solid fa-chevron-down"></i></h4>
-                  <div class="faq-answer-view">Click on the 'Get Now' or 'Get Started' button on the main navigation panel to view mobile app release status.</div>
+                  <div class="faq-answer-view">Click on the 'Get Started Now' button on any app card above to download the APK file directly.</div>
               </div>
           </div>
       </section>
@@ -650,6 +726,7 @@
           <div class="footer-links">
               <h3>Navigation</h3>
               <a onclick="returnToMainView()">Home</a>
+              <a onclick="returnToMainView(); scrollToMainSection('apps-downloads-section')">Our Apps</a>
               <a onclick="openLegalView('about')">About Us</a>
               <a onclick="returnToMainView(); scrollToMainSection('blog-section')">Blog</a>
           </div>
@@ -718,6 +795,7 @@
           const holder = document.getElementById('legalContentHolder');
 
           mainView.classList.add('hidden');
+          legalContainer.classList.active ? legalContainer.classList.remove('active') : null;
           legalContainer.classList.add('active');
 
           if(type === 'privacy') {
@@ -778,7 +856,7 @@
 
           if(action === 'download') {
               title.textContent = "Earn Steps Mobile App";
-              body.textContent = "The Earn Steps Android App is coming soon to Google Play Store! Stay tuned for official download updates.";
+              body.textContent = "Click on any app card's Download button to get the APK file directly.";
           } else if(action === 'sync') {
               title.textContent = "Live Activity Sync";
               body.textContent = "Connected to local device sensors. Step count synchronized successfully!";
