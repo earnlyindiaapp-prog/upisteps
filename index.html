@@ -482,73 +482,255 @@
   <!-- Main App View Container -->
   <div class="app-view-container" id="mainAppView">
       
-            <!-- Hero Section -->
-      <section class="hero">
-          <div class="left">
-              <span class="tag">Powered by Unique Piece</span>
-              <h1>Track Your Daily Fitness & Health Goals with Earn Steps</h1>
-              <p>Welcome to Earn Steps. Easily track your daily steps, set fitness goals, and monitor your everyday movement using our smart activity tracking framework.</p>
-              <div class="hero-buttons">
-                  <button class="primary" onclick="scrollToMainSection('apps-downloads-section')">Get Started Now</button>
-                  <button class="secondary" onclick="scrollToMainSection('features-section')">Explore Features</button>
-              </div>
-          </div>
-          <div class="right">
-    <!-- Ultra Premium Ecosystem Showcase Card -->
-    <div style="background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(10, 15, 30, 0.95)); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 24px; padding: 22px; width: 100%; box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2); backdrop-filter: blur(15px); position: relative; overflow: hidden;">
-        
-        <!-- Top Glowing Tag -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px;">
-            <span style="font-size: 13px; font-weight: 800; color: #00d4ff; letter-spacing: 0.5px;"><i class="fa-solid fa-gamepad"></i> FEATURED GAMES & APPS</span>
-            <span style="font-size: 11px; background: linear-gradient(90deg, #00d4ff, #0055ff); color: #fff; padding: 4px 10px; border-radius: 20px; font-weight: 700;">3 APPS LIVE</span>
-        </div>
+<!-- Premium Hero Right Card -->
+<div class="premium-ecosystem-card">
 
-        <!-- Dynamic App Mini Cards Grid -->
-        <div style="display: flex; flex-direction: column; gap: 14px;">
-
-            <!-- Item 1: Earn Step AI -->
-            <div style="display: flex; align-items: center; gap: 14px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.2); padding: 12px; border-radius: 16px;">
-                <img src="https://i.ibb.co/m5STTT5L/1000106044.jpg" alt="Earn Step AI" style="width: 48px; height: 48px; border-radius: 12px; object-fit: cover; border: 1px solid #00d4ff;">
-                <div style="flex: 1;">
-                    <h4 style="font-size: 15px; margin: 0; color: #fff; font-weight: 700;">Earn Step AI</h4>
-                    <p style="font-size: 11px; color: #00d4ff; margin: 2px 0 0 0;">Fitness & Rewards Tracking</p>
-                </div>
-                <span style="font-size: 10px; background: rgba(0, 212, 255, 0.15); color: #00d4ff; padding: 4px 8px; border-radius: 8px; font-weight: 700;">v1.0</span>
-            </div>
-
-            <!-- Item 2: CoinsPlay Arena -->
-            <div style="display: flex; align-items: center; gap: 14px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.2); padding: 12px; border-radius: 16px;">
-                <img src="https://i.ibb.co/ccC495CW/1000105470.png" alt="CoinsPlay Arena" style="width: 48px; height: 48px; border-radius: 12px; object-fit: cover; border: 1px solid #00d4ff;">
-                <div style="flex: 1;">
-                    <h4 style="font-size: 15px; margin: 0; color: #fff; font-weight: 700;">CoinsPlay Arena</h4>
-                    <p style="font-size: 11px; color: #ff0055; margin: 2px 0 0 0;">Free Fire Tournaments</p>
-                </div>
-                <span style="font-size: 10px; background: rgba(255, 0, 85, 0.15); color: #ff0055; padding: 4px 8px; border-radius: 8px; font-weight: 700;">Esports</span>
-            </div>
-
-            <!-- Item 3: Sugar Wheel -->
-            <div style="display: flex; align-items: center; gap: 14px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.2); padding: 12px; border-radius: 16px;">
-                <img src="https://i.ibb.co/DfNpkSXL/1000105754.jpg" alt="Sugar Wheel" style="width: 48px; height: 48px; border-radius: 12px; object-fit: cover; border: 1px solid #00d4ff;">
-                <div style="flex: 1;">
-                    <h4 style="font-size: 15px; margin: 0; color: #fff; font-weight: 700;">Sugar Wheel</h4>
-                    <p style="font-size: 11px; color: #ffaa00; margin: 2px 0 0 0;">Spin & Instant Rewards</p>
-                </div>
-                <span style="font-size: 10px; background: rgba(255, 170, 0, 0.15); color: #ffaa00; padding: 4px 8px; border-radius: 8px; font-weight: 700;">Lucky</span>
-            </div>
-
-        </div>
-
-        <!-- Bottom Live Status Line -->
-        <div style="margin-top: 16px; background: rgba(0, 212, 255, 0.08); padding: 10px; border-radius: 12px; text-align: center; font-size: 12px; color: var(--text-muted); border: 1px dashed rgba(0, 212, 255, 0.3);">
-            🔥 <strong>100% Verified Ecosystem</strong> — All Apps Connected
-        </div>
-
+  <div class="ecosystem-header">
+    <div class="ecosystem-title">
+      <i class="fa-solid fa-bolt"></i>
+      <span>PREMIUM ECOSYSTEM</span>
     </div>
+    <div class="ecosystem-badge">LIVE</div>
+  </div>
+
+  <div class="ecosystem-subtitle">
+    Manage your fitness, rewards, and gaming experience from one connected platform.
+  </div>
+
+  <div class="ecosystem-grid">
+
+    <div class="eco-card fitness">
+      <img src="https://i.ibb.co/m5STTT5L/1000106044.jpg" alt="Earn Step AI">
+      <div class="eco-info">
+        <h4>Earn Step AI</h4>
+        <p>Fitness • Steps • Rewards</p>
+      </div>
+      <div class="eco-status">ONLINE</div>
+    </div>
+
+    <div class="eco-card gaming">
+      <img src="https://i.ibb.co/ccC495CW/1000105470.png" alt="CoinsPlay Arena">
+      <div class="eco-info">
+        <h4>CoinsPlay Arena</h4>
+        <p>Esports • Tournaments • Arena</p>
+      </div>
+      <div class="eco-status gaming-status">ARENA</div>
+    </div>
+
+    <div class="eco-card rewards">
+      <img src="https://i.ibb.co/DfNpkSXL/1000105754.jpg" alt="Sugar Wheel">
+      <div class="eco-info">
+        <h4>Sugar Wheel</h4>
+        <p>Daily Bonuses • Fun Rewards • Activities</p>
+      </div>
+      <div class="eco-status rewards-status">BONUS</div>
+    </div>
+
+  </div>
+
+  <div class="ecosystem-footer">
+    <div class="footer-item">
+      <span class="dot green"></span>
+      3 Connected Apps
+    </div>
+    <div class="footer-item">
+      <span class="dot blue"></span>
+      Secure & Verified Platform
+    </div>
+  </div>
+
 </div>
 
-          </div>
-      </section>
+<style>
+.premium-ecosystem-card {
+  position: relative;
+  width: 100%;
+  padding: 26px;
+  border-radius: 28px;
+  background: linear-gradient(145deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(8, 12, 24, 0.98));
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  backdrop-filter: blur(18px);
+  box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255,255,255,0.04),
+      0 0 40px rgba(0, 229, 255, 0.08);
+  overflow: hidden;
+}
 
+.premium-ecosystem-card::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(0,229,255,0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.ecosystem-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ecosystem-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00e5ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ecosystem-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00e5ff, #2563eb);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 0 18px rgba(0,229,255,0.35);
+}
+
+.ecosystem-subtitle {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.ecosystem-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.eco-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.28s ease;
+}
+
+.eco-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(0,229,255,0.25);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+}
+
+.eco-card img {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+.eco-info {
+  flex: 1;
+}
+
+.eco-info h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.eco-info p {
+  margin: 4px 0 0;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.eco-status {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgba(34,197,94,0.14);
+  color: #22c55e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.gaming-status {
+  background: rgba(236,72,153,0.14);
+  color: #ec4899;
+}
+
+.rewards-status {
+  background: rgba(245,158,11,0.14);
+  color: #f59e0b;
+}
+
+.ecosystem-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.green {
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+.dot.blue {
+  background: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+@media (max-width: 768px) {
+  .premium-ecosystem-card {
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .eco-card {
+    padding: 12px;
+  }
+
+  .eco-card img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .ecosystem-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
       
 
 
