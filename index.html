@@ -644,96 +644,124 @@
           </div>
       </section>
 
- <style>
-    .articles-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 10px 0;
-    }
-    @media (max-width: 768px) {
-        .articles-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-    .article-card {
-        background: #0d1117;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        display: flex;
-        flex-direction: column;
-    }
-    .article-image {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-    }
-    .article-content {
-        padding: 20px;
-    }
+<style>
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.article-card {
+  background: #0f172a;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.25s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.article-image {
+  width: 100%;
+  height: 220px; /* same size for all */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #111827;
+}
+
+.article-content {
+  padding: 18px;
+}
+
+.article-content h3 {
+  color: #fff;
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.article-content p {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
 </style>
 
 <div class="articles-grid">
 
-    <!-- 1. Daily Step Tracker (Fitness Running Image) -->
-    <div class="article-card">
-        <img src="https://i.ibb.co/ycxpZf6f/image.png" class="article-image" alt="Daily Step Tracker">
-        <div class="article-content">
-            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Daily Step Tracker</h3>
-            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Track your daily movement and turn your steps into real rewards effortlessly.</p>
-        </div>
+  <!-- 1 Daily Step Tracker -->
+  <div class="article-card">
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
+         class="article-image" alt="Daily Step Tracker">
+    <div class="article-content">
+      <h3>Daily Step Tracker</h3>
+      <p>Track your daily movement and monitor your walking progress with smart activity insights.</p>
     </div>
+  </div>
 
-    <!-- 2. Smart Earning AI (AI Phone Dashboard Image) -->
-    <div class="article-card">
-        <img src="https://i.ibb.co/60Cc7MM9/image.png" class="article-image" alt="Smart Earning AI">
-        <div class="article-content">
-            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Smart Earning AI</h3>
-            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Let our AI guide your fitness journey and maximize your daily earnings.</p>
-        </div>
+  <!-- 2 Smart Activity AI -->
+  <div class="article-card">
+    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80"
+         class="article-image" alt="Smart Activity AI">
+    <div class="article-content">
+      <h3>Smart Activity AI</h3>
+      <p>Receive personalized activity guidance and intelligent wellness recommendations every day.</p>
     </div>
+  </div>
 
-    <!-- 3. Tournament Action (Esports Gaming Image) -->
-    <div class="article-card">
-        <img src="https://i.ibb.co/8n3Fnszk/image.png" class="article-image" alt="Tournament Action">
-        <div class="article-content">
-            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Tournament Action</h3>
-            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Compete with pro players in intense matches and prove your gaming skills.</p>
-        </div>
+  <!-- 3 Tournament Challenge -->
+  <div class="article-card">
+    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
+         class="article-image" alt="Tournament Challenge">
+    <div class="article-content">
+      <h3>Tournament Challenge</h3>
+      <p>Join exciting gaming challenges and compete with friends in a fun and engaging environment.</p>
     </div>
+  </div>
 
-    <!-- 4. Win Real Cash (Podium Trophy Image) -->
-    <div class="article-card">
-        <img src="https://i.ibb.co/NRjCGfj/image.png" class="article-image" alt="Win Real Cash">
-        <div class="article-content">
-            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Win Real Cash</h3>
-            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Climb the arena leaderboard, win tournaments, and claim your cash prizes.</p>
-        </div>
+  <!-- 4 Gaming Leaderboard -->
+  <div class="article-card">
+    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80"
+         class="article-image" alt="Gaming Leaderboard">
+    <div class="article-content">
+      <h3>Gaming Leaderboard</h3>
+      <p>Track your achievements, improve your ranking, and unlock new milestone rewards as you progress.</p>
     </div>
+  </div>
 
-    <!-- 5. Spin & Win (Lucky Wheel Image) -->
-    <div class="article-card">
-        <img src="https://i.ibb.co/RpkwnK2V/image.png" class="article-image" alt="Spin & Win">
-        <div class="article-content">
-            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Spin & Win</h3>
-            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Try your luck daily on the Sugar Wheel for instant bonus surprises.</p>
-        </div>
+  <!-- 5 Daily Bonus Wheel -->
+  <div class="article-card">
+    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
+         class="article-image" alt="Daily Bonus Wheel">
+    <div class="article-content">
+      <h3>Daily Bonus Wheel</h3>
+      <p>Spin the daily bonus wheel to unlock surprise rewards, activity boosts, and special engagement bonuses.</p>
     </div>
+  </div>
 
-    <!-- 6. Candy Rewards (Chest & Candies Image) -->
-    <div class="article-card">
-        <img src="https://i.ibb.co/zh4dtx8g/image.png" class="article-image" alt="Candy Rewards">
-        <div class="article-content">
-            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Candy Rewards</h3>
-            <p style="color: #9ca3af; font-size: 14px; margin: 0;">Collect delicious candy coins and unlock exclusive platform rewards.</p>
-        </div>
+  <!-- 6 Reward Collection -->
+  <div class="article-card">
+    <img src="https://images.unsplash.com/photo-1516542076529-1ea3854896f2?auto=format&fit=crop&w=1200&q=80"
+         class="article-image" alt="Reward Collection">
+    <div class="article-content">
+      <h3>Reward Collection</h3>
+      <p>Collect reward points through daily activity, complete challenges, and unlock exclusive app features and benefits.</p>
     </div>
+  </div>
 
 </div>
- 
+  
       <!-- FAQ Accordion -->
       <section id="faq-section">
           <div class="section-title">
