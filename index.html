@@ -666,8 +666,10 @@
     }
     .article-image {
         width: 100%;
-        height: 180px;
-        object-fit: cover;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        background: #000;
         display: block;
     }
     .article-content {
@@ -677,18 +679,18 @@
 
 <div class="articles-grid">
 
-    <!-- 1. Earn Step AI (Walking/Fitness) -->
+    <!-- 1. Earn Step AI (Fitness / Step Tracker) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/ycxpZf6f/image.png" class="article-image" alt="Daily Step Tracker">
+        <img src="https://i.ibb.co/60Cc7MM9/image.png" class="article-image" alt="Daily Step Tracker">
         <div class="article-content">
             <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Daily Step Tracker</h3>
             <p style="color: #9ca3af; font-size: 14px; margin: 0;">Track your daily movement and turn your steps into real rewards effortlessly.</p>
         </div>
     </div>
 
-    <!-- 2. Earn Step AI (Smart Earning/Dashboard) -->
+    <!-- 2. Earn Step AI (Smart Earning / Dashboard) -->
     <div class="article-card">
-        <img src="https://i.ibb.co/60Cc7MM9/image.png" class="article-image" alt="Smart Earning AI">
+        <img src="https://i.ibb.co/ycxpZf6f/image.png" class="article-image" alt="Smart Earning AI">
         <div class="article-content">
             <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 18px;">Smart Earning AI</h3>
             <p style="color: #9ca3af; font-size: 14px; margin: 0;">Let our AI guide your fitness journey and maximize your daily earnings.</p>
@@ -733,7 +735,7 @@
 
 </div>
 
-
+  
       <!-- FAQ Accordion -->
       <section id="faq-section">
           <div class="section-title">
