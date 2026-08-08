@@ -482,7 +482,7 @@
   <!-- Main App View Container -->
   <div class="app-view-container" id="mainAppView">
       
-      <!-- Hero Section -->
+            <!-- Hero Section -->
       <section class="hero">
           <div class="left">
               <span class="tag">Powered by Step Tracker</span>
@@ -494,39 +494,45 @@
               </div>
           </div>
           <div class="right">
-              <div class="phone">
-                  <div class="app-header">
-                      <span>Earn Steps</span>
-                      <span id="liveClock">12:00</span>
+              <!-- Premium Stats & Ecosystem Card Box -->
+              <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 24px; padding: 30px; width: 100%; max-width: 420px; box-shadow: 0 10px 40px rgba(0, 212, 255, 0.15); backdrop-filter: blur(20px);">
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 212, 255, 0.15); padding-bottom: 15px; margin-bottom: 20px;">
+                      <span style="font-size: 14px; font-weight: 700; color: #00d4ff;"><i class="fa-solid fa-layer-group"></i> Ecosystem Stats</span>
+                      <span style="font-size: 11px; background: rgba(37, 211, 102, 0.15); color: #25D366; padding: 4px 10px; border-radius: 20px; font-weight: 600;">● Active Platform</span>
                   </div>
-                  <div class="app-screen-content">
-                      <div class="step-circle-container">
-                          <div class="circle-bg"></div>
-                          <div class="circle-progress"></div>
-                          <div class="step-data">
-                              <h3>8,420</h3>
-                              <p>Steps Today</p>
-                          </div>
+
+                  <!-- Quick Stats Grid -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+                      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 15px; border-radius: 16px; text-align: center;">
+                          <h3 style="font-size: 22px; font-weight: 800; color: #00d4ff;">3+</h3>
+                          <p style="font-size: 11px; color: var(--text-muted);">Official Apps</p>
                       </div>
-                      <div class="app-metrics-grid">
-                          <div class="metric-box">
-                              <i class="fa-solid fa-fire"></i>
-                              <h4>340 kcal</h4>
-                              <p>Burned</p>
-                          </div>
-                          <div class="metric-box">
-                              <i class="fa-solid fa-route"></i>
-                              <h4>6.2 km</h4>
-                              <p>Distance</p>
-                          </div>
+                      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 15px; border-radius: 16px; text-align: center;">
+                          <h3 style="font-size: 22px; font-weight: 800; color: #25D366;">100%</h3>
+                          <p style="font-size: 11px; color: var(--text-muted);">Safe & Verified</p>
                       </div>
-                      <button class="app-btn" onclick="openSupportModal('sync')">
-                          <i class="fa-solid fa-arrows-rotate"></i> Sync Live Activity
-                      </button>
+                  </div>
+
+                  <!-- Mini Ecosystem Badges -->
+                  <div style="display: flex; flex-direction: column; gap: 12px;">
+                      <div style="display: flex; align-items: center; gap: 12px; background: rgba(0, 212, 255, 0.05); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1);">
+                          <i class="fa-solid fa-person-walking" style="color: #00d4ff; font-size: 18px;"></i>
+                          <div style="font-size: 12px;"><strong>Earn Step AI</strong> — Fitness Tracker</div>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 12px; background: rgba(0, 212, 255, 0.05); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1);">
+                          <i class="fa-solid fa-gamepad" style="color: #00d4ff; font-size: 18px;"></i>
+                          <div style="font-size: 12px;"><strong>CoinsPlay Arena</strong> — Free Fire Esports</div>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 12px; background: rgba(0, 212, 255, 0.05); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1);">
+                          <i class="fa-solid fa-dharmachakra" style="color: #00d4ff; font-size: 18px;"></i>
+                          <div style="font-size: 12px;"><strong>Sugar Wheel</strong> — Spin & Rewards</div>
+                      </div>
                   </div>
               </div>
           </div>
       </section>
+
+      
 
 
 <!-- OFFICIAL APPS DOWNLOAD SECTION -->
