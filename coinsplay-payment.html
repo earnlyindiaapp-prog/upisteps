@@ -2,96 +2,589 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoinsPlay Arena | Payment Gateway</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CoinsPlay Arena | Secure Payment Gateway</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-        body { background-color: #0f051d; color: #ffffff; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
-        .container { width: 100%; max-width: 400px; padding: 20px; }
-        .card { background-color: #150a28; border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 24px; padding: 30px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
-        h1 { font-size: 24px; font-weight: bold; text-align: center; background: linear-gradient(to right, #c084fc, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px; }
-        .subtitle { text-align: center; font-size: 12px; color: rgba(216, 180, 254, 0.6); margin-bottom: 25px; }
-        .upi-box { background-color: rgba(45, 12, 85, 0.6); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 16px; padding: 15px; text-align: center; margin-bottom: 20px; }
-        .upi-box span { font-size: 11px; color: rgba(216, 180, 254, 0.7); display: block; margin-bottom: 4px; }
-        .upi-id { font-size: 18px; font-family: monospace; font-weight: bold; color: #fbbf24; }
-        label { font-size: 12px; color: rgba(216, 180, 254, 0.7); display: block; margin-bottom: 6px; }
-        input { width: 100%; background-color: rgba(59, 7, 100, 0.4); border: 1px solid rgba(168, 85, 247, 0.4); padding: 14px; border-radius: 12px; color: white; font-family: monospace; font-size: 14px; outline: none; margin-bottom: 15px; }
-        input:focus { border-color: #f472b6; }
-        button { width: 100%; padding: 14px; border-radius: 12px; border: none; background: linear-gradient(to right, #9333ea, #ec4899); color: white; font-weight: bold; font-size: 14px; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(147, 51, 234, 0.3); }
-        button:disabled { opacity: 0.5; }
-        .success-box { background-color: rgba(34, 197, 94, 0.2); border: 1px solid rgba(34, 197, 94, 0.4); color: #86efac; padding: 20px; border-radius: 16px; text-align: center; }
+        :root {
+            --primary: #7C3AED;
+            --secondary: #A855F7;
+            --accent: #22D3EE;
+            --bg: #0B0618;
+            --card-bg: rgba(22, 16, 40, 0.78);
+            --border-color: rgba(168, 85, 247, 0.25);
+            --text-main: #FFFFFF;
+            --text-muted: #A78BFA;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 50% 0%, #2e1065 0%, var(--bg) 70%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating background particles simulation */
+        .particles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+        .particle {
+            position: absolute;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.2; }
+            50% { transform: translateY(-40px) scale(1.2); opacity: 0.6; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            z-index: 1;
+            padding-bottom: 40px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+        .logo-area {
+            font-size: 22px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #C084FC, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .security-badge {
+            font-size: 11px;
+            color: var(--text-muted);
+            background: rgba(124, 58, 237, 0.15);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Glowing Divider */
+        .glow-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--secondary), transparent);
+            margin: 16px 0;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Inputs */
+        .input-group {
+            margin-bottom: 14px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .input-field {
+            width: 100%;
+            background: rgba(11, 6, 24, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 14px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+        }
+
+        /* Amount Selector Grid */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .amount-btn {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .amount-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+        }
+
+        /* Payment Apps Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .app-option {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .app-option.selected {
+            border-color: var(--accent);
+            background: rgba(34, 211, 238, 0.1);
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+        }
+        .app-icon {
+            width: 28px; height: 28px;
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 12px;
+        }
+        .gpay { background: #4285F4; color: white; }
+        .phonepe { background: #5f259f; color: white; }
+        .paytm { background: #00b9f1; color: white; }
+        .fampay { background: #000000; color: #00FF66; border: 1px solid #00FF66; }
+        .app-name { font-size: 13px; font-weight: 600; }
+
+        /* Action Button */
+        .primary-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 14px;
+            padding: 14px;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+            transition: transform 0.1s, opacity 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .primary-btn:active {
+            transform: scale(0.98);
+        }
+        .primary-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Verification Box (Hidden by default) */
+        #verification-section {
+            display: none;
+        }
+
+        /* Modals & Overlays */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 6, 24, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-card {
+            background: #161028;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 24px;
+            width: 90%;
+            max-width: 360px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        /* Processing Spinner */
+        .spinner {
+            width: 50px; height: 50px;
+            border: 4px solid rgba(168, 85, 247, 0.2);
+            border-top: 4px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .processing-steps {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        /* Support Links */
+        .footer-info {
+            font-size: 11px;
+            color: rgba(167, 139, 250, 0.6);
+            text-align: center;
+            line-height: 1.5;
+            margin-top: 16px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
-    <div id="root"></div>
 
-    <script type="text/babel">
-        function PaymentGateway() {
-            const [transactionId, setTransactionId] = React.useState('');
-            const [loading, setLoading] = React.useState(false);
-            const [success, setSuccess] = React.useState(false);
+    <!-- Background Particles -->
+    <div class="particles" id="particles"></div>
 
-            const handleVerify = (e) => {
-                e.preventDefault();
-                if (!transactionId || transactionId.length < 6) {
-                    alert('Please enter a valid UTR / Transaction ID');
-                    return;
-                }
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-area">COINSPLAY ARENA</div>
+            <div class="security-badge">🔒 100% Secure Encrypted Gateway</div>
+        </div>
 
-                setLoading(true);
+        <div class="glow-divider"></div>
 
-                setTimeout(() => {
-                    setLoading(false);
-                    setSuccess(true);
+        <!-- Main Form Card -->
+        <div class="card" id="main-form-card">
+            <div class="section-title">Player Information</div>
+            
+            <div class="input-group">
+                <label>Player ID / UID</label>
+                <input type="text" id="player-uid" class="input-field" placeholder="Enter your UID (e.g. CP8892)" required>
+            </div>
 
-                    setTimeout(() => {
-                        window.location.href = "https://earnlyindiaapp-prog.github.io/upisteps/"; 
-                    }, 2000);
-                }, 2000);
-            };
+            <div class="input-group">
+                <label>Registered Mobile Number</label>
+                <input type="tel" id="player-mobile" class="input-field" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
 
-            return (
-                <div className="container">
-                    <div className="card">
-                        <h1>CoinsPlay Arena</h1>
-                        <p className="subtitle">Secure UPI Payment Gateway</p>
+            <div class="section-title" style="margin-top: 16px;">Select Deposit Amount</div>
+            <div class="amount-grid">
+                <button type="button" class="amount-btn" onclick="setAmount(10)">₹10</button>
+                <button type="button" class="amount-btn" onclick="setAmount(20)">₹20</button>
+                <button type="button" class="amount-btn active" onclick="setAmount(50)">₹50</button>
+                <button type="button" class="amount-btn" onclick="setAmount(100)">₹100</button>
+                <button type="button" class="amount-btn" onclick="setAmount(200)">₹200</button>
+                <button type="button" class="amount-btn" onclick="setAmount(500)">₹500</button>
+            </div>
 
-                        <div className="upi-box">
-                            <span>Pay to Merchant UPI ID</span>
-                            <div className="upi-id">uniquepiece@upi</div>
-                        </div>
+            <div class="input-group">
+                <label>Or Custom Amount (₹)</label>
+                <input type="number" id="custom-amount" class="input-field" value="50" oninput="handleCustomAmount(this.value)">
+            </div>
 
-                        {success ? (
-                            <div className="success-box">
-                                <p style={{fontWeight: 'bold', marginBottom: '5px'}}>Payment Verified Successfully!</p>
-                                <p style={{fontSize: '12px', opacity: 0.8}}>Redirecting back to app...</p>
-                            </div>
-                        ) : (
-                            <form onSubmit={handleVerify}>
-                                <label>Enter UTR / Transaction ID</label>
-                                <input 
-                                    type="text" 
-                                    placeholder="e.g. 436278194562"
-                                    value={transactionId}
-                                    onChange={(e) => setTransactionId(e.target.value)}
-                                    required
-                                />
-                                <button type="submit" disabled={loading}>
-                                    {loading ? 'Verifying Payment...' : 'Verify & Proceed'}
-                                </button>
-                            </form>
-                        )}
-                    </div>
+            <div class="section-title" style="margin-top: 16px;">Choose Payment App</div>
+            <div class="apps-grid">
+                <div class="app-option selected" onclick="selectApp('gpay', this)">
+                    <div class="app-icon gpay">G</div>
+                    <span class="app-name">Google Pay</span>
                 </div>
-            );
+                <div class="app-option" onclick="selectApp('phonepe', this)">
+                    <div class="app-icon phonepe">P</div>
+                    <span class="app-name">PhonePe</span>
+                </div>
+                <div class="app-option" onclick="selectApp('paytm', this)">
+                    <div class="app-icon paytm">Pt</div>
+                    <span class="app-name">Paytm</span>
+                </div>
+                <div class="app-option" onclick="selectApp('fampay', this)">
+                    <div class="app-icon fampay">F</div>
+                    <span class="app-name">Fampay</span>
+                </div>
+            </div>
+
+            <button type="button" class="primary-btn" id="generate-btn" onclick="startPaymentFlow()">Generate Payment</button>
+        </div>
+
+        <!-- Verification Section (Appears after payment app return) -->
+        <div class="card" id="verification-section">
+            <div class="section-title">Verify Transaction</div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
+                Complete payment in your app, copy the 12-digit UTR/UPI Ref ID, and enter it below to claim coins instantly.
+            </p>
+
+            <div class="input-group">
+                <label>UTR / UPI Reference Number (12-16 digits)</label>
+                <input type="text" id="utr-input" class="input-field" placeholder="Enter 12-digit UTR number" maxlength="16">
+            </div>
+
+            <button type="button" class="primary-btn" onclick="verifyUTR()">Verify & Claim Coins</button>
+        </div>
+
+        <!-- Security & Support Notice -->
+        <div class="footer-info">
+            End-to-end encrypted UPI processing. Manual fraud review enabled.<br>
+            Multiple account abuse is strictly prohibited.
+        </div>
+        <div class="footer-links">
+            <a href="https://telegram.me/" target="_blank">Telegram Support</a>
+            <span>•</span>
+            <a href="mailto:support@coinsplayarena.com">Email Support</a>
+        </div>
+    </div>
+
+    <!-- Processing Modal -->
+    <div class="modal-overlay" id="processing-modal">
+        <div class="modal-card">
+            <div class="spinner"></div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Processing Payment</h3>
+            <div class="processing-steps" id="proc-step-text">Creating secure UPI request...</div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-card">
+            <div style="font-size: 40px; margin-bottom: 10px;">🎉</div>
+            <h3 style="font-size: 18px; font-weight: 700; color: #4ade80; margin-bottom: 6px;">Payment Successful!</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
+                Coins will be added to your account after verification.<br>
+                <span id="success-ref" style="font-family: monospace; color: var(--accent);"></span>
+            </p>
+            <button type="button" class="primary-btn" onclick="returnHome()">Continue to CoinsPlay Arena</button>
+        </div>
+    </div>
+
+    <!-- Error/Cancel Modal -->
+    <div class="modal-overlay" id="error-modal">
+        <div class="modal-card">
+            <div style="font-size: 40px; margin-bottom: 10px;">⚠️</div>
+            <h3 id="error-title" style="font-size: 18px; font-weight: 700; color: #f87171; margin-bottom: 6px;">Verification Failed</h3>
+            <p id="error-desc" style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
+                Please enter a valid 12-digit UTR number.
+            </p>
+            <button type="button" class="primary-btn" onclick="closeErrorModal()">Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        // Generate random background particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 15; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 4 + 2;
+            p.style.width = `${size}px`;
+            p.style.height = `${size}px`;
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.top = `${Math.random() * 100}%`;
+            p.style.animationDelay = `${Math.random() * 5}s`;
+            particlesContainer.appendChild(p);
         }
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<PaymentGateway />);
+        let selectedAmount = 50;
+        let selectedApp = 'gpay';
+        const merchantUpi = 'uniquepiece@upi';
+        const merchantName = 'CoinsPlay Arena';
+
+        function setAmount(val) {
+            selectedAmount = val;
+            document.getElementById('custom-amount').value = val;
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.textContent.includes(val)) btn.classList.add('active');
+            });
+        }
+
+        function handleCustomAmount(val) {
+            if(val > 0) {
+                selectedAmount = Number(val);
+                document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+            }
+        }
+
+        function selectApp(app, element) {
+            selectedApp = app;
+            document.querySelectorAll('.app-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function startPaymentFlow() {
+            const uid = document.getElementById('player-uid').value.trim();
+            const mobile = document.getElementById('player-mobile').value.trim();
+
+            if(!uid) {
+                showError("Missing Information", "Please enter your Player ID / UID.");
+                return;
+            }
+            if(mobile.length !== 10) {
+                showError("Invalid Mobile", "Please enter a valid 10-digit mobile number.");
+                return;
+            }
+
+            // Show Processing Animation
+            const modal = document.getElementById('processing-modal');
+            modal.classList.add('active');
+
+            const steps = [
+                "Creating secure UPI request...",
+                "Connecting to payment application...",
+                "Opening UPI Intent..."
+            ];
+
+            let stepIdx = 0;
+            const stepInterval = setInterval(() => {
+                stepIdx++;
+                if(stepIdx < steps.length) {
+                    document.getElementById('proc-step-text').textContent = steps[stepIdx];
+                } else {
+                    clearInterval(stepInterval);
+                    modal.classList.remove('active');
+                    
+                    // Trigger UPI Intent URL
+                    triggerUpiIntent();
+                }
+            }, 800);
+        }
+
+        function triggerUpiIntent() {
+            const upiUrl = `upi://pay?pa=${merchantUpi}&pn=${encodeURIComponent(merchantName)}&am=${selectedAmount}&cu=INR`;
+            
+            // Try launching UPI app directly
+            window.location.href = upiUrl;
+
+            // After returning / timeout, show UTR Verification box
+            setTimeout(() => {
+                document.getElementById('main-form-card').style.display = 'none';
+                document.getElementById('verification-section').style.display = 'block';
+            }, 1500);
+        }
+
+        function verifyUTR() {
+            const utr = document.getElementById('utr-input').value.trim();
+
+            // Frontend UTR Validation Rules
+            const numericRegex = /^\d+$/;
+            
+            if (!numericRegex.test(utr)) {
+                showError("Invalid UTR", "UTR must contain numeric digits only.");
+                return;
+            }
+            if (utr.length < 12 || utr.length > 16) {
+                showError("Invalid Length", "UTR must be between 12 and 16 digits long.");
+                return;
+            }
+            // Block repeated digits like 111111111111
+            if (/^(\d)\1+$/.test(utr)) {
+                showError("Verification Failed", "Fake or repetitive UTR pattern detected.");
+                return;
+            }
+            // Block sequential fake patterns like 123456789012
+            if (utr === "123456789012" || utr === "1234567890123456") {
+                showError("Verification Failed", "Invalid test UTR pattern detected.");
+                return;
+            }
+
+            // Prepare Data payload for future Firebase integration
+            const paymentPayload = {
+                uid: document.getElementById('player-uid').value.trim(),
+                mobile: document.getElementById('player-mobile').value.trim(),
+                amount: selectedAmount,
+                paymentMethod: selectedApp,
+                utr: utr,
+                status: 'pending',
+                createdAt: new Date().toISOString()
+            };
+            console.log("Ready for Firebase storage:", paymentPayload);
+
+            // Show Success Modal
+            document.getElementById('success-ref').textContent = `Ref: ${utr}`;
+            document.getElementById('success-modal').classList.add('active');
+        }
+
+        function showError(title, desc) {
+            document.getElementById('error-title').textContent = title;
+            document.getElementById('error-desc').textContent = desc;
+            document.getElementById('error-modal').classList.add('active');
+        }
+
+        function closeErrorModal() {
+            document.getElementById('error-modal').classList.remove('active');
+        }
+
+        function returnHome() {
+            // Redirect back to app or refresh
+            window.location.href = window.location.pathname;
+        }
     </script>
 </body>
 </html>
