@@ -3,98 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CoinsPlay Arena | Secure Payment Gateway</title>
+    <title>CoinsPlay Arena | Secure UPI Gateway</title>
     <style>
         :root {
             --primary: #7C3AED;
             --secondary: #A855F7;
             --accent: #22D3EE;
             --bg: #0B0618;
-            --card-bg: rgba(22, 16, 40, 0.78);
-            --border-color: rgba(168, 85, 247, 0.25);
+            --card-bg: rgba(22, 16, 40, 0.82);
+            --border-color: rgba(168, 85, 247, 0.28);
             --text-main: #FFFFFF;
             --text-muted: #A78BFA;
+            --success: #10B981;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, #2e1065 0%, var(--bg) 70%);
+            background-image: radial-gradient(circle at 50% -20%, #3b0764 0%, var(--bg) 65%);
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 16px;
+            padding: 12px;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Floating background particles simulation */
+        /* Floating background particles */
         .particles {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.3;
+            opacity: 0.25;
         }
         .particle {
             position: absolute;
             background: var(--accent);
             border-radius: 50%;
-            animation: float 8s infinite ease-in-out;
+            animation: float 9s infinite ease-in-out;
+            will-change: transform, opacity;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.2; }
-            50% { transform: translateY(-40px) scale(1.2); opacity: 0.6; }
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+            50% { transform: translateY(-50px) scale(1.3); opacity: 0.5; }
         }
 
         .container {
             width: 100%;
-            max-width: 440px;
+            max-width: 420px;
             z-index: 1;
-            padding-bottom: 40px;
+            padding-bottom: 30px;
+        }
+
+        /* Top Status Strip */
+        .status-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 11px;
+            color: var(--text-muted);
+            background: rgba(124, 58, 237, 0.12);
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border-color);
+            letter-spacing: 0.3px;
+        }
+        .status-strip svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--accent);
         }
 
         /* Header */
         .header {
             text-align: center;
-            margin-bottom: 20px;
-            padding-top: 10px;
+            margin-bottom: 14px;
         }
         .logo-area {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 900;
-            background: linear-gradient(135deg, #C084FC, var(--accent));
+            background: linear-gradient(135deg, #E9D5FF, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: 0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+            text-transform: uppercase;
         }
-        .security-badge {
-            font-size: 11px;
+        .subtitle {
+            font-size: 12px;
             color: var(--text-muted);
-            background: rgba(124, 58, 237, 0.15);
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            border: 1px solid var(--border-color);
         }
 
-        /* Glowing Divider */
-        .glow-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), var(--secondary), transparent);
-            margin: 16px 0;
-            box-shadow: 0 0 10px var(--accent);
+        /* Glowing Animated Border Container */
+        .glow-wrapper {
+            position: relative;
+            border-radius: 24px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, var(--accent), var(--primary), var(--secondary));
+            box-shadow: 0 12px 35px rgba(124, 58, 237, 0.3);
+            margin-bottom: 14px;
+            will-change: transform;
         }
 
         /* Glassmorphism Card */
@@ -102,16 +123,14 @@
             background: var(--card-bg);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            margin-bottom: 16px;
+            border-radius: 23px;
+            padding: 18px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .section-title {
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 700;
             color: var(--text-muted);
             margin-bottom: 10px;
             text-transform: uppercase;
@@ -120,28 +139,29 @@
 
         /* Form Inputs */
         .input-group {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
         .input-group label {
             display: block;
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
-            margin-bottom: 6px;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
         .input-field {
             width: 100%;
-            background: rgba(11, 6, 24, 0.6);
+            background: rgba(11, 6, 24, 0.7);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 12px 14px;
             color: #fff;
             font-size: 14px;
             outline: none;
-            transition: all 0.3s ease;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
         .input-field:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+            box-shadow: 0 0 12px rgba(34, 211, 238, 0.25);
         }
 
         /* Amount Selector Grid */
@@ -152,56 +172,85 @@
             margin-bottom: 12px;
         }
         .amount-btn {
-            background: rgba(124, 58, 237, 0.1);
+            background: rgba(124, 58, 237, 0.08);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 10px;
+            border-radius: 12px;
+            padding: 10px 6px;
             color: #fff;
-            font-size: 14px;
-            font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+        .amount-btn:active {
+            transform: scale(0.96);
         }
         .amount-btn.active {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(168, 85, 247, 0.3));
             border-color: var(--accent);
-            box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 12px rgba(34, 211, 238, 0.3);
+        }
+        .rs-text {
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .coin-text {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 2px;
         }
 
         /* Payment Apps Grid */
         .apps-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 16px;
         }
         .app-option {
-            background: rgba(15, 23, 42, 0.4);
+            background: rgba(15, 23, 42, 0.5);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 12px;
+            padding: 10px 12px;
             display: flex;
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
+            will-change: transform;
+        }
+        .app-option:active {
+            transform: scale(0.97);
         }
         .app-option.selected {
             border-color: var(--accent);
-            background: rgba(34, 211, 238, 0.1);
+            background: rgba(34, 211, 238, 0.08);
             box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
         }
         .app-icon {
-            width: 28px; height: 28px;
-            border-radius: 6px;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; font-size: 12px;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .gpay { background: #4285F4; color: white; }
-        .phonepe { background: #5f259f; color: white; }
-        .paytm { background: #00b9f1; color: white; }
-        .fampay { background: #000000; color: #00FF66; border: 1px solid #00FF66; }
-        .app-name { font-size: 13px; font-weight: 600; }
+        .app-icon svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+        }
+        .app-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #E2E8F0;
+        }
 
         /* Action Button */
         .primary-btn {
@@ -211,23 +260,39 @@
             border-radius: 14px;
             padding: 14px;
             color: white;
-            font-size: 15px;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
-            transition: transform 0.1s, opacity 0.2s;
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+            transition: transform 0.15s ease, opacity 0.2s;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
         }
         .primary-btn:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
         .primary-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
 
-        /* Verification Box (Hidden by default) */
+        /* Ripple effect */
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-anim 0.5s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple-anim {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* Verification Section */
         #verification-section {
             display: none;
         }
@@ -236,31 +301,34 @@
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 6, 24, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(11, 6, 24, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 999;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.25s ease;
+            will-change: opacity;
         }
         .modal-overlay.active {
             opacity: 1;
             pointer-events: auto;
         }
         .modal-card {
-            background: #161028;
+            background: #150a28;
             border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 24px;
-            width: 90%;
-            max-width: 360px;
+            width: 88%;
+            max-width: 340px;
             text-align: center;
             box-shadow: 0 25px 50px rgba(0,0,0,0.8);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
+            transform: scale(0.92);
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform;
         }
         .modal-overlay.active .modal-card {
             transform: scale(1);
@@ -268,12 +336,13 @@
 
         /* Processing Spinner */
         .spinner {
-            width: 50px; height: 50px;
-            border: 4px solid rgba(168, 85, 247, 0.2);
-            border-top: 4px solid var(--accent);
+            width: 48px; height: 48px;
+            border: 3.5px solid rgba(168, 85, 247, 0.2);
+            border-top: 3.5px solid var(--accent);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
             margin: 0 auto 16px auto;
+            will-change: transform;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -282,29 +351,31 @@
 
         .processing-steps {
             font-size: 13px;
+            font-weight: 600;
             color: var(--text-muted);
-            margin-top: 10px;
-            min-height: 20px;
+            margin-top: 8px;
+            min-height: 22px;
+            transition: opacity 0.2s ease;
         }
 
-        /* Support Links */
+        /* Footer info */
         .footer-info {
-            font-size: 11px;
-            color: rgba(167, 139, 250, 0.6);
+            font-size: 10px;
+            color: rgba(167, 139, 250, 0.55);
             text-align: center;
-            line-height: 1.5;
-            margin-top: 16px;
+            line-height: 1.4;
+            margin-top: 14px;
         }
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 16px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 8px;
         }
         .footer-links a {
             color: var(--accent);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
         }
     </style>
@@ -315,79 +386,137 @@
     <div class="particles" id="particles"></div>
 
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="logo-area">COINSPLAY ARENA</div>
-            <div class="security-badge">🔒 100% Secure Encrypted Gateway</div>
+        <!-- Top Status Strip -->
+        <div class="status-strip">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Secure UPI Payment Gateway
         </div>
 
-        <div class="glow-divider"></div>
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-area">CoinsPlay Arena</div>
+            <div class="subtitle">Instant Wallet Top-up & Rewards</div>
+        </div>
 
-        <!-- Main Form Card -->
-        <div class="card" id="main-form-card">
-            <div class="section-title">Player Information</div>
-            
-            <div class="input-group">
-                <label>Player ID / UID</label>
-                <input type="text" id="player-uid" class="input-field" placeholder="Enter your UID (e.g. CP8892)" required>
-            </div>
-
-            <div class="input-group">
-                <label>Registered Mobile Number</label>
-                <input type="tel" id="player-mobile" class="input-field" placeholder="10-digit mobile number" maxlength="10" required>
-            </div>
-
-            <div class="section-title" style="margin-top: 16px;">Select Deposit Amount</div>
-            <div class="amount-grid">
-                <button type="button" class="amount-btn" onclick="setAmount(10)">₹10</button>
-                <button type="button" class="amount-btn" onclick="setAmount(20)">₹20</button>
-                <button type="button" class="amount-btn active" onclick="setAmount(50)">₹50</button>
-                <button type="button" class="amount-btn" onclick="setAmount(100)">₹100</button>
-                <button type="button" class="amount-btn" onclick="setAmount(200)">₹200</button>
-                <button type="button" class="amount-btn" onclick="setAmount(500)">₹500</button>
-            </div>
-
-            <div class="input-group">
-                <label>Or Custom Amount (₹)</label>
-                <input type="number" id="custom-amount" class="input-field" value="50" oninput="handleCustomAmount(this.value)">
-            </div>
-
-            <div class="section-title" style="margin-top: 16px;">Choose Payment App</div>
-            <div class="apps-grid">
-                <div class="app-option selected" onclick="selectApp('gpay', this)">
-                    <div class="app-icon gpay">G</div>
-                    <span class="app-name">Google Pay</span>
+        <!-- Main Form Card wrapper with glowing border -->
+        <div class="glow-wrapper">
+            <div class="card" id="main-form-card">
+                <div class="section-title">Player Details</div>
+                
+                <div class="input-group">
+                    <label>Player ID / UID</label>
+                    <input type="text" id="player-uid" class="input-field" placeholder="Enter your unique UID" required>
                 </div>
-                <div class="app-option" onclick="selectApp('phonepe', this)">
-                    <div class="app-icon phonepe">P</div>
-                    <span class="app-name">PhonePe</span>
-                </div>
-                <div class="app-option" onclick="selectApp('paytm', this)">
-                    <div class="app-icon paytm">Pt</div>
-                    <span class="app-name">Paytm</span>
-                </div>
-                <div class="app-option" onclick="selectApp('fampay', this)">
-                    <div class="app-icon fampay">F</div>
-                    <span class="app-name">Fampay</span>
-                </div>
-            </div>
 
-            <button type="button" class="primary-btn" id="generate-btn" onclick="startPaymentFlow()">Generate Payment</button>
+                <div class="input-group">
+                    <label>Registered Mobile Number</label>
+                    <input type="tel" id="player-mobile" class="input-field" placeholder="10-digit mobile number" maxlength="10" required>
+                </div>
+
+                <div class="section-title" style="margin-top: 14px;">Select Coin Pack</div>
+                <div class="amount-grid">
+                    <button type="button" class="amount-btn" onclick="setAmount(10, this)">
+                        <span class="rs-text">₹10</span>
+                        <span class="coin-text">100 Coins</span>
+                    </button>
+                    <button type="button" class="amount-btn" onclick="setAmount(20, this)">
+                        <span class="rs-text">₹20</span>
+                        <span class="coin-text">200 Coins</span>
+                    </button>
+                    <button type="button" class="amount-btn active" onclick="setAmount(50, this)">
+                        <span class="rs-text">₹50</span>
+                        <span class="coin-text">500 Coins</span>
+                    </button>
+                    <button type="button" class="amount-btn" onclick="setAmount(100, this)">
+                        <span class="rs-text">₹100</span>
+                        <span class="coin-text">1000 Coins</span>
+                    </button>
+                    <button type="button" class="amount-btn" onclick="setAmount(200, this)">
+                        <span class="rs-text">₹200</span>
+                        <span class="coin-text">2000 Coins</span>
+                    </button>
+                    <button type="button" class="amount-btn" onclick="setAmount(500, this)">
+                        <span class="rs-text">₹500</span>
+                        <span class="coin-text">5000 Coins</span>
+                    </button>
+                </div>
+
+                <div class="input-group">
+                    <label>Custom Amount (₹)</label>
+                    <input type="number" id="custom-amount" class="input-field" value="50" oninput="handleCustomAmount(this.value)">
+                </div>
+
+                <div class="section-title" style="margin-top: 14px;">Choose Payment App</div>
+                <div class="apps-grid">
+                    <!-- Google Pay Official SVG Logo -->
+                    <div class="app-option selected" onclick="selectApp('gpay', this)">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 48 48">
+                                <path fill="#EA4335" d="M24 9.5c3.54 0 6.7 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Google Pay</span>
+                    </div>
+
+                    <!-- PhonePe Official SVG Logo -->
+                    <div class="app-option" onclick="selectApp('phonepe', this)">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 512 512">
+                                <rect width="512" height="512" rx="100" fill="#5f259f"/>
+                                <path d="M245.2 124.6H172V387.4h73.2c61.5 0 111.4-49.9 111.4-111.4s-49.9-151.4-111.4-151.4zm0 223.8H206V164.6h39.2c38 0 68.8 30.8 68.8 68.8s-30.8 115-68.8 115z" fill="#fff"/>
+                                <path d="M339.6 226.4h-64.8V170h64.8c15.7 0 28.4 12.7 28.4 28.4s-12.7 28-28.4 28z" fill="#5f259f"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">PhonePe</span>
+                    </div>
+
+                    <!-- Paytm Official SVG Logo -->
+                    <div class="app-option" onclick="selectApp('paytm', this)">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 512 512">
+                                <rect width="512" height="512" rx="100" fill="#002970"/>
+                                <path d="M116.4 176h48.8v160h-48.8V176z" fill="#00b9f1"/>
+                                <path d="M196.4 176h48.8l32 78.4 32-78.4h48.8L277.2 336h-48.8l-32-160z" fill="#fff"/>
+                                <path d="M374 176h48.8v160H374V176z" fill="#00b9f1"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Paytm</span>
+                    </div>
+
+                    <!-- Fampay Official SVG Logo -->
+                    <div class="app-option" onclick="selectApp('fampay', this)">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 512 512">
+                                <rect width="512" height="512" rx="100" fill="#000000"/>
+                                <path d="M140 140h232v48H188v84h160v48H188v116h-48V140z" fill="#00FF66"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Fampay</span>
+                    </div>
+                </div>
+
+                <button type="button" class="primary-btn" id="generate-btn" onclick="startPaymentFlow(event)">Generate Payment</button>
+            </div>
         </div>
 
         <!-- Verification Section (Appears after payment app return) -->
-        <div class="card" id="verification-section">
-            <div class="section-title">Verify Transaction</div>
-            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
-                Complete payment in your app, copy the 12-digit UTR/UPI Ref ID, and enter it below to claim coins instantly.
-            </p>
+        <div class="glow-wrapper" id="verification-section">
+            <div class="card">
+                <div class="section-title">Verify Transaction</div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
+                    Complete payment in your app, copy the 12 to 16-digit UTR/UPI Ref ID, and enter it below to claim coins instantly.
+                </p>
 
-            <div class="input-group">
-                <label>UTR / UPI Reference Number (12-16 digits)</label>
-                <input type="text" id="utr-input" class="input-field" placeholder="Enter 12-digit UTR number" maxlength="16">
+                <div class="input-group">
+                    <label>UTR / UPI Reference Number</label>
+                    <input type="text" id="utr-input" class="input-field" placeholder="Enter 12-16 digit UTR number" maxlength="16">
+                </div>
+
+                <button type="button" class="primary-btn" onclick="verifyUTR(event)">Verify & Claim Coins</button>
             </div>
-
-            <button type="button" class="primary-btn" onclick="verifyUTR()">Verify & Claim Coins</button>
         </div>
 
         <!-- Security & Support Notice -->
@@ -406,48 +535,54 @@
     <div class="modal-overlay" id="processing-modal">
         <div class="modal-card">
             <div class="spinner"></div>
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Processing Payment</h3>
-            <div class="processing-steps" id="proc-step-text">Creating secure UPI request...</div>
+            <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 4px;">Processing Payment</h3>
+            <div class="processing-steps" id="proc-step-text">Securing Payment Request...</div>
         </div>
     </div>
 
     <!-- Success Modal -->
     <div class="modal-overlay" id="success-modal">
         <div class="modal-card">
-            <div style="font-size: 40px; margin-bottom: 10px;">🎉</div>
-            <h3 style="font-size: 18px; font-weight: 700; color: #4ade80; margin-bottom: 6px;">Payment Successful!</h3>
-            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
-                Coins will be added to your account after verification.<br>
-                <span id="success-ref" style="font-family: monospace; color: var(--accent);"></span>
+            <div style="width: 56px; height: 56px; background: rgba(16, 185, 129, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h3 style="font-size: 18px; font-weight: 800; color: #34D399; margin-bottom: 4px;">Payment Successful!</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4;">
+                Coins will be credited after verification.<br>
+                <span id="success-ref" style="font-family: monospace; color: var(--accent); font-weight: 600;"></span><br>
+                <span style="font-size: 11px; color: #FBBF24; display: inline-block; margin-top: 4px;">Status: Pending Verification</span>
             </p>
             <button type="button" class="primary-btn" onclick="returnHome()">Continue to CoinsPlay Arena</button>
         </div>
     </div>
 
-    <!-- Error/Cancel Modal -->
+    <!-- Error / Cancel Modal -->
     <div class="modal-overlay" id="error-modal">
         <div class="modal-card">
-            <div style="font-size: 40px; margin-bottom: 10px;">⚠️</div>
-            <h3 id="error-title" style="font-size: 18px; font-weight: 700; color: #f87171; margin-bottom: 6px;">Verification Failed</h3>
-            <p id="error-desc" style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
-                Please enter a valid 12-digit UTR number.
+            <div style="width: 56px; height: 56px; background: rgba(248, 113, 113, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </div>
+            <h3 id="error-title" style="font-size: 18px; font-weight: 800; color: #F87171; margin-bottom: 4px;">Payment Cancelled</h3>
+            <p id="error-desc" style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4;">
+                No amount was charged. Please try again or change payment method.
             </p>
             <button type="button" class="primary-btn" onclick="closeErrorModal()">Try Again</button>
         </div>
     </div>
 
     <script>
-        // Generate random background particles
+        // Generate optimized background particles
         const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 12; i++) {
             const p = document.createElement('div');
             p.className = 'particle';
-            const size = Math.random() * 4 + 2;
+            const size = Math.random() * 3 + 2;
             p.style.width = `${size}px`;
             p.style.height = `${size}px`;
             p.style.left = `${Math.random() * 100}%`;
             p.style.top = `${Math.random() * 100}%`;
-            p.style.animationDelay = `${Math.random() * 5}s`;
+            p.style.animationDelay = `${Math.random() * 6}s`;
+            p.style.animationDuration = `${6 + Math.random() * 6}s`;
             particlesContainer.appendChild(p);
         }
 
@@ -456,13 +591,22 @@
         const merchantUpi = 'uniquepiece@upi';
         const merchantName = 'CoinsPlay Arena';
 
-        function setAmount(val) {
+        // Coin conversion mapping
+        const coinMap = {
+            10: 100,
+            20: 200,
+            50: 500,
+            100: 1000,
+            200: 2000,
+            500: 5000
+        };
+
+        function setAmount(val, element) {
             selectedAmount = val;
             document.getElementById('custom-amount').value = val;
-            document.querySelectorAll('.amount-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.textContent.includes(val)) btn.classList.add('active');
-            });
+            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            createRipple(event, element);
         }
 
         function handleCustomAmount(val) {
@@ -476,14 +620,33 @@
             selectedApp = app;
             document.querySelectorAll('.app-option').forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected');
+            createRipple(event, element);
         }
 
-        function startPaymentFlow() {
+        function createRipple(e, element) {
+            const circle = document.createElement('span');
+            const diameter = Math.max(element.clientWidth, element.clientHeight);
+            const radius = diameter / 2;
+            
+            const rect = element.getBoundingClientRect();
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${(e.clientX || rect.left + radius) - rect.left - radius}px`;
+            circle.style.top = `${(e.clientY || rect.top + radius) - rect.top - radius}px`;
+            circle.classList.add('ripple');
+            
+            const existingRipple = element.getElementsByClassName('ripple')[0];
+            if (existingRipple) existingRipple.remove();
+            
+            element.appendChild(circle);
+        }
+
+        function startPaymentFlow(e) {
+            createRipple(e, e.target);
             const uid = document.getElementById('player-uid').value.trim();
             const mobile = document.getElementById('player-mobile').value.trim();
 
             if(!uid) {
-                showError("Missing Information", "Please enter your Player ID / UID.");
+                showError("Missing Information", "Please enter your Player ID / UID to proceed.");
                 return;
             }
             if(mobile.length !== 10) {
@@ -491,21 +654,29 @@
                 return;
             }
 
-            // Show Processing Animation
+            // Show Processing Modal with smooth step progression
             const modal = document.getElementById('processing-modal');
             modal.classList.add('active');
 
             const steps = [
-                "Creating secure UPI request...",
-                "Connecting to payment application...",
-                "Opening UPI Intent..."
+                "Securing Payment Request...",
+                "Opening UPI Application...",
+                "Waiting for Confirmation...",
+                "Verifying Transaction..."
             ];
 
             let stepIdx = 0;
+            const stepTextElem = document.getElementById('proc-step-text');
+            stepTextElem.textContent = steps[stepIdx];
+
             const stepInterval = setInterval(() => {
                 stepIdx++;
                 if(stepIdx < steps.length) {
-                    document.getElementById('proc-step-text').textContent = steps[stepIdx];
+                    stepTextElem.style.opacity = 0;
+                    setTimeout(() => {
+                        stepTextElem.textContent = steps[stepIdx];
+                        stepTextElem.style.opacity = 1;
+                    }, 150);
                 } else {
                     clearInterval(stepInterval);
                     modal.classList.remove('active');
@@ -513,61 +684,64 @@
                     // Trigger UPI Intent URL
                     triggerUpiIntent();
                 }
-            }, 800);
+            }, 750);
         }
 
         function triggerUpiIntent() {
             const upiUrl = `upi://pay?pa=${merchantUpi}&pn=${encodeURIComponent(merchantName)}&am=${selectedAmount}&cu=INR`;
             
-            // Try launching UPI app directly
+            // Try launching UPI app directly via intent
             window.location.href = upiUrl;
 
-            // After returning / timeout, show UTR Verification box
+            // Transition smoothly to UTR verification screen after app return
             setTimeout(() => {
-                document.getElementById('main-form-card').style.display = 'none';
-                document.getElementById('verification-section').style.display = 'block';
-            }, 1500);
+                document.getElementById('main-form-card').parentElement.style.display = 'none';
+                const verSec = document.getElementById('verification-section');
+                verSec.style.display = 'block';
+                verSec.scrollIntoView({ behavior: 'smooth' });
+            }, 1200);
         }
 
-        function verifyUTR() {
+        function verifyUTR(e) {
+            createRipple(e, e.target);
             const utr = document.getElementById('utr-input').value.trim();
-
-            // Frontend UTR Validation Rules
             const numericRegex = /^\d+$/;
             
             if (!numericRegex.test(utr)) {
-                showError("Invalid UTR", "UTR must contain numeric digits only.");
+                showError("Verification Failed", "UTR must contain numeric digits only.");
                 return;
             }
             if (utr.length < 12 || utr.length > 16) {
-                showError("Invalid Length", "UTR must be between 12 and 16 digits long.");
+                showError("Invalid Length", "UTR reference number must be between 12 and 16 digits.");
                 return;
             }
-            // Block repeated digits like 111111111111
+            // Block repeated digits (e.g. 111111111111)
             if (/^(\d)\1+$/.test(utr)) {
-                showError("Verification Failed", "Fake or repetitive UTR pattern detected.");
+                showError("Verification Failed", "Invalid or fake repetitive UTR pattern detected.");
                 return;
             }
-            // Block sequential fake patterns like 123456789012
-            if (utr === "123456789012" || utr === "1234567890123456") {
+            // Block sequential patterns
+            if (utr === "123456789012" || utr === "1234567890123456" || utr === "000000000000") {
                 showError("Verification Failed", "Invalid test UTR pattern detected.");
                 return;
             }
 
-            // Prepare Data payload for future Firebase integration
+            // Data Payload prepared for Firebase Integration storage
+            const calculatedCoins = coinMap[selectedAmount] || (selectedAmount * 10);
             const paymentPayload = {
                 uid: document.getElementById('player-uid').value.trim(),
                 mobile: document.getElementById('player-mobile').value.trim(),
                 amount: selectedAmount,
+                coins: calculatedCoins,
                 paymentMethod: selectedApp,
                 utr: utr,
                 status: 'pending',
                 createdAt: new Date().toISOString()
             };
-            console.log("Ready for Firebase storage:", paymentPayload);
+            console.log("Firebase Payload Ready:", paymentPayload);
 
             // Show Success Modal
-            document.getElementById('success-ref').textContent = `Ref: ${utr}`;
+            document.getElementById('success-ref').textContent = `UTR Ref: ${utr} | Coins: ${calculatedCoins}`;
             document.getElementById('success-modal').classList.add('active');
         }
 
@@ -582,7 +756,6 @@
         }
 
         function returnHome() {
-            // Redirect back to app or refresh
             window.location.href = window.location.pathname;
         }
     </script>
